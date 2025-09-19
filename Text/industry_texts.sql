@@ -1,0 +1,134 @@
+-- English
+--------------------------------------------------------------
+INSERT OR REPLACE INTO EnglishText
+        (Tag,                                                           Text)
+VALUES  ('LOC_BUILDING_JNR_DUMMY_IZ_RIVER_NAME',                        'river-adjacent Industrial Zone'),
+        ('LOC_BUILDING_JNR_MILL_RACE_NAME',                             'Mill Race'),
+        ('LOC_BUILDING_JNR_MILL_RACE_DESCRIPTION',                      'Automatically created in every city with an Industrial Zone built adjacent to a river.'),
+        ('LOC_BUILDING_JNR_WIND_MILL_NAME',                             'Wind Mill'),
+        ('LOC_BUILDING_JNR_MANUFACTURY_NAME',                           'Manufactury'),
+        ('LOC_BUILDING_JNR_CHEMICAL_NAME',                              'Chemical Plant'),
+        ('LOC_BUILDING_JNR_FREIGHT_YARD_NAME',                          'Logistics Center'),
+        ('LOC_BUILDING_JNR_FREIGHT_YARD_DESCRIPTION',                   'Strategic Resource Stockpiles increased +20 (on Standard Speed).[NEWLINE][NEWLINE]Domestic [ICON_TradeRoute] Trade Routes to this city gain +1 [ICON_Production] Production.'),
+        ('LOC_BUILDING_JNR_RENEWABLE_DISTRIBUTION_DESCRIPTION_UC_JNR',  'Automatically converts any amount of [ICON_RESOURCE_JNR_BATTERY_CHARGE] Renewable Battery Charges into [ICON_Power] Power for cities within 6 tiles that need it each turn, at the rate of:[NEWLINE][ICON_Bullet]1 [ICON_RESOURCE_JNR_BATTERY_CHARGE] Renewable Battery Charges [ICON_PowerRight] 1 [ICON_Power] Power[NEWLINE][ICON_Bullet]No CO2 into the atmosphere[NEWLINE]Its [ICON_Production] Production bonus is extended to all City Centers within 6 tiles that do not already have a bonus from a Power Plant building.[NEWLINE][NEWLINE]Domestic [ICON_TradeRoute] Trade Routes to this city gain +1 [ICON_Production] Production.'),
+        -- ('LOC_DISTRICT_INDUSTRIAL_ZONE_HD_DESCRIPTION',                 'A district in your city for industrial activity. -1 Appeal to adjacent tiles. +1 [ICON_PRODUCTION] Production for Quarries and Lumber mills over bonus resources in this city.'), -- All [ICON_Citizen] citizens in this city provide +0.5 [ICON_PRODUCTION] Production.
+        -- ('LOC_DISTRICT_HANSA_HD_DESCRIPTION',                           'A district unique to Germany for industrial activity. Replaces the Industrial Zone district and cheaper to build.[NEWLINE][NEWLINE]+2 [ICON_Production] when adjacent to River. +2 [ICON_Production] Production bonus for each adjacent Harbor, Aqueduct, and Dam districts. +2 [ICON_Production] Production bonus for each adjacent Canal districts. +1 [ICON_Production] Production bonus for each adjacent Commercial Hub districts and Resources (doubles after researching Apprenticeship). +1 [ICON_Production] Production bonus for every two adjacent District tiles. +1 [Icon_Production] Production to adjacent Resources. Provides Major adjacency bonus to Commercial Hub Districts. -1 Appeal to adjacent tiles.  +1 [ICON_PRODUCTION] Production for Quarries and Lumber mills over bonus resources in this city.'),
+        -- ('LOC_DISTRICT_OPPIDUM_HD_DESCRIPTION',                         'A district unique to Gaul that is cheaper than the district it replaces, the Industrial Zone. The Oppidum district is defensible with a ranged attack. +2 [ICON_FOOD] Food, and +1 [ICON_FOOD] Food bonus for each adjacent district. -1 Appeal to adjacent tiles.[NEWLINE] +1 [ICON_PRODUCTION] Production for Quarries and Lumber mills over bonus resources in this city.'),
+        ('LOC_POLICY_THIRD_ALTERNATIVE_DESCRIPTION_JNR_UC_PRD',         '+1 [ICON_Culture] Culture and +2 [ICON_Gold] Gold from each Encampment building, Aerodrome building, Power Plant, and Logistics Center.'),
+        ('LOC_PROJECT_JNR_CONVERT_REACTOR_TO_FREIGHT_NAME',             'Convert to Logistics Center'),
+        ('LOC_PROJECT_JNR_CONVERT_REACTOR_TO_FREIGHT_SHORT_NAME',       'Convert to Logistics Center'),
+        ('LOC_PROJECT_JNR_CONVERT_REACTOR_TO_FREIGHT_DESCRIPTION',      'Decommissions the current Power Plant in this city, and replaces it with the {LOC_BUILDING_JNR_FREIGHT_YARD_NAME}.[NEWLINE][NEWLINE]{LOC_BUILDING_JNR_FREIGHT_YARD_NAME}:[NEWLINE]{LOC_BUILDING_JNR_FREIGHT_YARD_DESCRIPTION}'),
+        ('LOC_GREAT_PERSON_INDIVIDUAL_JNR_ARCHIMEDES_NAME',             'Archimedes'),
+        ('LOC_GREAT_PERSON_INDIVIDUAL_JNR_LI_BING_NAME',                'Li Bing'),
+        ('LOC_GREAT_PERSON_INDIVIDUAL_JNR_MA_JUN_NAME',                 'Ma Jun'),
+        ('LOC_GREAT_PERSON_INDIVIDUAL_JNR_MARTINE_DE_BERTEREAU_NAME',   'Martine de Bertereau');
+--------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+-- Language: en_US
+insert or replace into EnglishText
+    (Tag,                                               Text)
+values
+    ("LOC_BUILDING_JNR_MILL_RACE_NAME",                 "Industrial Zone Adjacen to River"),
+    ("LOC_BUILDING_JNR_TOOLING_SHOP_NAME",              "Smithy"),
+    ("LOC_BUILDING_JNR_TOOLING_SHOP_DESCRIPTION",       "Provides 1 [ICON_RESOURCE_IRON] Iron per turn. +2 [ICON_PRODUCTION] Production if this city owns Quarries or Mines over resources."),
+    ("LOC_BUILDING_HD_CHARCOAL_KILN_NAME",              "Charcoal Kiln"),
+    ("LOC_BUILDING_HD_CHARCOAL_KILN_DESCRIPTION",       "Provides 1 [ICON_RESOURCE_COAL] Coal per turn. +2 [ICON_PRODUCTION] Production if this city owns Farms or Lumber Mills over resources."),
+    ("LOC_BUILDING_IZ_WATER_MILL_NAME",                 "Hydraulic Artisans"), -- Water-powered Workshop
+    ("LOC_BUILDING_IZ_WATER_MILL_DESCRIPTION",          "Can only be built when the Industrial Zone is adjacent to River. +1 [ICON_Production] Production for Districts adjacent to river in this city."),
+    ("LOC_BUILDING_JNR_WIND_MILL_DESCRIPTION",          "+1 [ICON_Production] Production for Districts adjacent to sea or lakes or in the sea or lakes."), -- improved tiles adjacent to sea or lakes.
+    ("LOC_BUILDING_WORKSHOP_DESCRIPTION",               "Improved tiles in the City have +1 [ICON_Production] Production"), -- Mines, Quarries and Lumber mills over resources in this city gain +1 [ICON_Production] Production.
+    ("LOC_BUILDING_JNR_MANUFACTURY_DESCRIPTION",        "Each [ICON_Citizen] Citizen in the city provides +0.5 [ICON_PRODUCTION] Production."), -- Farms, Plantations, Camps and Pastures over resources in this city gain +1 [ICON_Production] Production.
+    ("LOC_BUILDING_JNR_CHEMICAL_DESCRIPTION",           "+7% [ICON_Production] Production and +7 [ICON_SCIENCE] Science for each type of Strategic resource this City has properly improved."),
+    ("LOC_BUILDING_JNR_FREIGHT_YARD_DESCRIPTION",       "[ICON_Citizen] Citizens in this city provide +1 [ICON_Production] Production and +2 [ICON_Gold] Gold."),
+    -- ("LOC_BUILDING_ELECTRONICS_FACTORY_DESCRIPTION_UC_JNR",  "A building unique to Japan that replace Logistics Center. Provides regional [ICON_Science] Science and [ICON_Culture] Culture yields. [ICON_Citizen] Citizens in this city provide +1 [ICON_Production] Production and +2 [ICON_Gold] Gold."),
+    -- Boosts
+    ("LOC_BOOST_TRIGGER_MASS_PRODUCTION_JNR_UC",        "Build 1 Manufactury."),
+    ("LOC_BOOST_TRIGGER_LONGDESC_MASS_PRODUCTION_JNR_UC", "Handicraft workshops are growing in size, and more efficient production methods are being bred."),
+    ("LOC_BOOST_TRIGGER_CHEMISTRY_JNR_UC",              "Build 1 Chemical Plant."),
+    ("LOC_BOOST_TRIGGER_LONGDESC_CHEMISTRY_JNR_UC",     "The booming chemical industry has also driven research in theoretical aspects of chemistry."),
+    ("LOC_BOOST_TRIGGER_CLASS_STRUGGLE_HD",             "Build 3 Tier 3 buildings of Industrial Zone."),
+    -- Great Person
+    ("LOC_GREATPERSON_WORKSHOP_CULTURE",                "Provides +1 [ICON_Culture] Culture to Tier 2 buildings in Industrial Zone district."),
+    ("LOC_HD_GREATPERSON_GRANT_IZ_TIER1_BUILDING",      "Instantly builds a Hydraulic Artisans in this district if it is adjacent to River. [NEWLINE]Provides +1 [ICON_PRODUCTION] Production to Tier 1 buildings in Industrial Zone district."),
+    -- ("LOC_HD_GREATPERSON_BUILDING_JNR_TOOLING_SHOP_PRODUCTION",     "Smithy, Hydraulic Artisans and Wind Mill provides +1 [ICON_PRODUCTION] Production."),
+    ("LOC_GREATPERSON_JAMES_WATT_ACTIVE",     			"Instantly builds a Smithy, a Workshop and a Factory in this district. [NEWLINE]Provides +3 [ICON_PRODUCTION] Production to Tier 3 buildings in Industrial Zone district."),
+    -- Wonder
+    -- ("LOC_BUILDING_RUHR_VALLEY_DESCRIPTION",                  "+20% [ICON_Production] Production in this city, and Mines and Quarries in this City provide +2 [ICON_Production] Production. International [ICON_TradeRoute] Trade Route to this city provides +3 [ICON_Production] Production for both sides. Domestic [ICON_TradeRoute] Trade Route to this City provides +5 [ICON_Production] Production. Must be built adjacent to an Industrial Zone district with a Factory, Electronics Factory or Chemical Plant, and next to a River."),
+    -- Policies
+    -- ("LOC_POLICY_INVENTION_DESCRIPTION_XP2",            "+4 [ICON_GreatEngineer] Great Engineer points per turn. +4 [ICON_GreatEngineer] Great Engineer points per turn for every Workshop and Manufactury."),
+    -- ("LOC_POLICY_SCIENCE_FOUNDATIONS_DL_DESCRIPTION",   "+4 [ICON_GreatScientist] Great Scientist points per turn for every University and +8 [ICON_GreatScientist] Great Scientist points per turn for every Research Lab. +4 [ICON_GreatEngineer] Great Engineer points per turn for every Factory, Electronics Factory and Chemical Plant, and +8 [ICON_GreatEngineer] Great Engineer points per turn for every Power Plant and Logistics Center."),
+    -- 尤里卡
+    ("LOC_BOOST_TRIGGER_BIG_DATA_HD_JNR",                        "Build 2 Logistics Centers."),
+    ("LOC_BOOST_TRIGGER_LONGDESC_BIG_DATA_HD_JNR",               "Busy logistics centers need more efficient and intelligent management models. It is time to develop big data and IoT technologies.");
+
+--------------------------------------------------------------------------------
+-- Language: zh_Hans_CN
+insert or replace into LocalizedText
+    (Language,      Tag,                                                        Text)
+values
+    -- Resume
+    ("zh_Hans_CN",  "LOC_BUILDING_JNR_MILL_RACE_NAME",                          "工业区相邻河流"),
+    ("zh_Hans_CN",  "LOC_BUILDING_JNR_MILL_RACE_DESCRIPTION",                   "该城的工业区相邻河流。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_JNR_TOOLING_SHOP_NAME",                       "铁匠铺"),
+    ("zh_Hans_CN",  "LOC_BUILDING_JNR_TOOLING_SHOP_DESCRIPTION",                "每回合提供1点 [ICON_RESOURCE_IRON] 铁。如果城市拥有改良资源的矿山或采石场，铁匠铺额外+2 [ICON_PRODUCTION] 生产力。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_HD_CHARCOAL_KILN_NAME",                       "炭窑"),
+    ("zh_Hans_CN",  "LOC_BUILDING_HD_CHARCOAL_KILN_DESCRIPTION",                "每回合提供1点 [ICON_RESOURCE_COAL] 煤。如果城市拥有改良资源的农场或伐木场，炭窑额外+2 [ICON_PRODUCTION] 生产力。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_IZ_WATER_MILL_NAME",                          "水力作坊"),
+    ("zh_Hans_CN",  "LOC_BUILDING_IZ_WATER_MILL_DESCRIPTION",                   "只有工业区相邻河流时才能建造。与河流相邻的区域+1 [ICON_Production] 生产力。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_JNR_WIND_MILL_NAME",                          "风车"),
+    ("zh_Hans_CN",  "LOC_BUILDING_JNR_WIND_MILL_DESCRIPTION",                   "与湖泊或海岸相邻或位于水域中的区域+1 [ICON_Production] 生产力。"), --已改良的相邻湖泊或海岸的单元格+1 [ICON_Production] 生产力。
+    ("zh_Hans_CN",  "LOC_BUILDING_JNR_MANUFACTURY_NAME",                        "手工工场"),
+    ("zh_Hans_CN",  "LOC_BUILDING_WORKSHOP_DESCRIPTION",                        "本城已改良单元格+1 [ICON_Production] 生产力。"), -- 为本城改良资源的矿山、采石场和伐木场+1 [ICON_Production] 生产力。
+    ("zh_Hans_CN",  "LOC_BUILDING_JNR_MANUFACTURY_DESCRIPTION",                 "城市中每位 [ICON_Citizen] 公民提供+0.5 [ICON_PRODUCTION] 生产力。"), -- 为本城改良资源的农场、种植园、营地和牧场+1 [ICON_Production] 生产力。
+    ("zh_Hans_CN",  "LOC_BUILDING_JNR_CHEMICAL_NAME",                           "化工厂"),
+    ("zh_Hans_CN",  "LOC_BUILDING_JNR_CHEMICAL_DESCRIPTION",                    "本城每拥有一种被改良的战略资源，获得+7 [ICON_Science] 科技值和+7% [ICON_Production] 生产力。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_JNR_FREIGHT_YARD_NAME",                       "物流中心"),
+    ("zh_Hans_CN",  "LOC_BUILDING_JNR_FREIGHT_YARD_DESCRIPTION",                "本城每个 [ICON_Citizen] 公民额外产出+1 [ICON_Production] 生产力和+2 [ICON_Gold] 金币。"),
+    -- ("zh_Hans_CN",  "LOC_BUILDING_ELECTRONICS_FACTORY_DESCRIPTION_UC_JNR",      "日本特色建筑，取代物流中心，提供可辐射的 [ICON_Science] 科技和 [ICON_Culture] 文化值。 本城每个 [ICON_Citizen] 公民额外产出+1 [ICON_Production] 生产力和+2 [ICON_Gold] 金币。"),
+    -- Boosts
+    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_MASS_PRODUCTION_JNR_UC",                 "建造1座手工工场。"),
+    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_MASS_PRODUCTION_JNR_UC",        "手工工场规模日益增大，更为高效的生产方式也孕育而生。"),
+    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_CHEMISTRY_JNR_UC",                       "建造1座化工厂。"),
+    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_CHEMISTRY_JNR_UC",              "化学工业的蓬勃发展也推动了化学理论方面的研究。"),
+    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_CLASS_STRUGGLE_HD",                      "建造3座工业区三级建筑。"),
+    -- Districts
+    -- ("zh_Hans_CN",  "LOC_DISTRICT_INDUSTRIAL_ZONE_HD_DESCRIPTION",              "您城市里的工业活动区。为相邻单元格-1魅力。[NEWLINE]为本城改良加成资源的采石场和伐木场+1 [ICON_PRODUCTION] 生产力。"), -- 本城每位 [ICON_Citizen] 公民+0.5 [ICON_PRODUCTION] 生产力。
+    -- ("zh_Hans_CN",  "LOC_DISTRICT_HANSA_HD_DESCRIPTION",                        "德国特色工业区域，替代“工业区”，建造费用更低。[NEWLINE][NEWLINE]相邻河流时获得+2 [ICON_Production] 生产力加成。可从每个相邻的港口、水渠和堤坝区域处获得+2 [ICON_Production] 生产力加成。可从每个相邻的运河区域处获得+3 [ICON_Production] 生产力加成。可从每个相邻的商业中心和资源处获得+1 [ICON_Production] 生产力加成（研究学徒后变为+2）。每两处相邻区域为其提供1点 [ICON_Production] 生产力加成。为相邻的资源+1 [ICON_Production] 生产力，为商业中心提供大量相邻加成。给相邻单元格-1魅力。[NEWLINE]为本城改良加成资源的采石场和伐木场+1 [ICON_PRODUCTION] 生产力。"),
+    -- ("zh_Hans_CN",  "LOC_DISTRICT_OPPIDUM_HD_DESCRIPTION",                      "高卢特色区域，替代“工业区”，建造花费更低。“奥皮杜姆”区域具有防御力且可执行远程攻击。+2 [ICON_FOOD] 食物，每个相邻区域+1 [ICON_FOOD] 食物。为相邻单元格-1魅力。[NEWLINE]为本城改良加成资源的采石场和伐木场+1 [ICON_PRODUCTION] 生产力。"),
+    -- Great Person
+    ("zh_Hans_CN",  "LOC_GREATPERSON_WORKSHOP_CULTURE",                         "工业区二级建筑+1 [ICON_Culture] 文化值。"),
+    ("zh_Hans_CN",  "LOC_HD_GREATPERSON_GRANT_IZ_TIER1_BUILDING",               "若相邻河流，立即在该区域建造水力作坊。[NEWLINE]工业区一级建筑+1 [ICON_PRODUCTION] 生产力。"),
+    -- ("zh_Hans_CN",  "LOC_HD_GREATPERSON_BUILDING_JNR_TOOLING_SHOP_PRODUCTION",  "铁匠铺、水力作坊和风车+1 [ICON_PRODUCTION] 生产力。"),
+    ("zh_Hans_CN",  "LOC_GREATPERSON_JAMES_WATT_ACTIVE",  						"立即在该区域建造铁匠铺、工作坊和工厂。[NEWLINE]工业区三级建筑+3 [ICON_PRODUCTION] 生产力。"),
+    -- Policies
+    -- ("zh_Hans_CN",  "LOC_POLICY_INVENTION_DESCRIPTION_XP2",                     "每回合的 [ICON_GreatEngineer] 大工程师点数+4。每有一座工作坊或手工工场，每回合的 [ICON_GreatEngineer] 大工程师点数便+4。"),
+    -- ("zh_Hans_CN",  "LOC_POLICY_SCIENCE_FOUNDATIONS_DL_DESCRIPTION",            "每有一所大学，每回合的 [ICON_GreatScientist] 大科学家点数便+4；每有一所研究实验室，每回合的 [ICON_GreatScientist] 大科学家点数便+8。每有一座工厂、电子厂或化工厂，每回合的 [ICON_GreatEngineer] 大工程师点数便+4；每有一座发电厂或物流中心，每回合的 [ICON_GreatEngineer] 大工程师点数便+8。"),
+    -- ("zh_Hans_CN",  "LOC_POLICY_THIRD_ALTERNATIVE_DESCRIPTION_JNR_UC_PRD",      "每座军营建筑、航空港建筑、物流中心、燃煤发电厂、燃油发电厂和核电站产出的 [ICON_Culture] 文化值+1、[ICON_Gold] 金币+2。"),
+    -- 奇观
+    -- ("zh_Hans_CN",  "LOC_BUILDING_RUHR_VALLEY_DESCRIPTION",                  "该城市+20% [ICON_Production] 生产力，此城中每个矿山和采石场+2 [ICON_Production] 生产力。通往此城的国际 [ICON_TradeRoute] 商路为双方+3 [ICON_PRODUCTION] 生产力。通往此城的国内 [ICON_TradeRoute] 商路+5 [ICON_PRODUCTION] 生产力。必须沿河而建，且与拥有工厂、电子厂或化工厂的工业区区域相邻。"),
+    -- Project
+    ("zh_Hans_CN",  "LOC_PROJECT_JNR_CONVERT_TOOLING_SHOP_TO_WATER_MILL_NAME",          "转换为水力作坊"),
+    ("zh_Hans_CN",  "LOC_PROJECT_JNR_CONVERT_TOOLING_SHOP_TO_WATER_MILL_SHORT_NAME",    "转换为水力作坊"),
+    ("zh_Hans_CN",  "LOC_PROJECT_JNR_CONVERT_TOOLING_SHOP_TO_WATER_MILL_DESCRIPTION",   "将城市中的{LOC_BUILDING_JNR_TOOLING_SHOP_NAME}变更为{LOC_BUILDING_IZ_WATER_MILL_NAME}，需要工业区相邻河流。[NEWLINE][NEWLINE]{LOC_BUILDING_IZ_WATER_MILL_NAME}:[NEWLINE]{LOC_BUILDING_IZ_WATER_MILL_DESCRIPTION}"),
+    ("zh_Hans_CN",  "LOC_PROJECT_JNR_CONVERT_TOOLING_SHOP_TO_WIND_MILL_NAME",           "转换为风车"),
+    ("zh_Hans_CN",  "LOC_PROJECT_JNR_CONVERT_TOOLING_SHOP_TO_WIND_MILL_SHORT_NAME",     "转换为风车"),
+    ("zh_Hans_CN",  "LOC_PROJECT_JNR_CONVERT_TOOLING_SHOP_TO_WIND_MILL_DESCRIPTION",    "将城市中的{LOC_BUILDING_JNR_TOOLING_SHOP_NAME}变更为{LOC_BUILDING_JNR_WIND_MILL_NAME}。[NEWLINE][NEWLINE]{LOC_BUILDING_JNR_WIND_MILL_NAME}:[NEWLINE]{LOC_BUILDING_JNR_WIND_MILL_DESCRIPTION}"),
+    -- 
+    ("zh_Hans_CN",  "LOC_PROJECT_JNR_CONVERT_REACTOR_TO_FREIGHT_NAME",          "转换为物流中心"),
+    ("zh_Hans_CN",  "LOC_PROJECT_JNR_CONVERT_REACTOR_TO_FREIGHT_SHORT_NAME",    "转换为物流中心"),
+    ("zh_Hans_CN",  "LOC_PROJECT_JNR_CONVERT_REACTOR_TO_FREIGHT_DESCRIPTION",   "将城市中的发电站变更为{LOC_BUILDING_JNR_FREIGHT_YARD_NAME}.[NEWLINE][NEWLINE]{LOC_BUILDING_JNR_FREIGHT_YARD_NAME}:[NEWLINE]{LOC_BUILDING_JNR_FREIGHT_YARD_DESCRIPTION}"),
+    -- 尤里卡
+    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_BIG_DATA_HD_JNR",                        "建造2座物流中心。"),
+    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_BIG_DATA_HD_JNR",               "繁忙的物流中心需要更高效和智能的管理模式，是时候发展大数据和物联网技术了。");
+
+UPDATE LocalizedText SET Text=REPLACE(Text, 'Workshop','Tier 2 building of Industrial Zone') WHERE Tag in (
+    'LOC_TRAIT_LEADER_VICTORIA_ALT_DESCRIPTION',
+    'LOC_POLICY_INVENTION_DESCRIPTION_XP2'
+);
+UPDATE LocalizedText SET Text=REPLACE(Text, '工作坊','工业区二级建筑') WHERE Tag in (
+    'LOC_TRAIT_LEADER_VICTORIA_ALT_DESCRIPTION',
+    'LOC_POLICY_INVENTION_DESCRIPTION_XP2'
+);
+UPDATE LocalizedText SET Text=REPLACE(Text, 'Tier 2','Tier 3') WHERE Tag = 'LOC_BUILDING_RUHR_VALLEY_DESCRIPTION';
+UPDATE LocalizedText SET Text=REPLACE(Text, '二级建筑','三级建筑') WHERE Tag = 'LOC_BUILDING_RUHR_VALLEY_DESCRIPTION';
