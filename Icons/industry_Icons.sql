@@ -27,8 +27,7 @@ VALUES  ('ICON_ATLAS_JNR_UC_PRD_PROJECTS',      30,         1,              1,  
 --------------------------------------------------------------
 INSERT OR REPLACE INTO IconDefinitions
         (Name,                                          Atlas,                              'Index')
-VALUES  
-        -- ('ICON_BUILDING_JNR_TOOLING_SHOP',              'ICON_ATLAS_BUILDINGS',             20),
+VALUES
         ('ICON_BUILDING_WATER_MILL',                    'ICON_ATLAS_BUILDINGS',             7),
         ('ICON_BUILDING_JNR_MILL_RACE',                 'ICON_ATLAS_JNR_UC_PRD_BUILDINGS',  7),
         ('ICON_BUILDING_IZ_WATER_MILL',                 'ICON_ATLAS_JNR_UC_PRD_BUILDINGS',  0),
@@ -45,7 +44,6 @@ VALUES
         -- ('ICON_BUILDING_JNR_MODE_PHARMA',               'ICON_ATLAS_JNR_UC_PRD_BUILDINGS',  12),
         -- ('ICON_BUILDING_JNR_MODE_PLASTICS',             'ICON_ATLAS_JNR_UC_PRD_BUILDINGS',  13),
 
-        -- ('ICON_BUILDING_JNR_TOOLING_SHOP_FOW',          'ICON_ATLAS_BUILDINGS_FOW',         7),
         ('ICON_BUILDING_WATER_MILL_FOW',                'ICON_ATLAS_BUILDINGS_FOW',         7),
         ('ICON_BUILDING_JNR_MILL_RACE_FOW',             'ICON_ATLAS_BUILDINGS_FOW',         7),
         ('ICON_BUILDING_IZ_WATER_MILL_FOW',             'ICON_ATLAS_BUILDINGS_FOW',         7),
@@ -61,7 +59,5 @@ VALUES
         -- ('ICON_BUILDING_JNR_MODE_PHARMA_FOW',           'ICON_ATLAS_BUILDINGS_FOW',         26),
         -- ('ICON_BUILDING_JNR_MODE_PLASTICS_FOW',         'ICON_ATLAS_BUILDINGS_FOW',         26),
 
-        -- ('ICON_PROJECT_JNR_CONVERT_TOOLING_SHOP_TO_WATER_MILL', 'ICON_ATLAS_JNR_UC_PRD_BUILDINGS', 0),
-        -- ('ICON_PROJECT_JNR_CONVERT_TOOLING_SHOP_TO_WIND_MILL',  'ICON_ATLAS_JNR_UC_PRD_BUILDINGS', 1),
         ('ICON_PROJECT_JNR_CONVERT_REACTOR_TO_FREIGHT',         'ICON_ATLAS_JNR_UC_PRD_PROJECTS',   0);
 --------------------------------------------------------------

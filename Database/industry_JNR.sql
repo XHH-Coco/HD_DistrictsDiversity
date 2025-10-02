@@ -8,8 +8,6 @@ INSERT OR IGNORE INTO Types
         (Type,                              Kind)
 VALUES  ('BUILDING_JNR_DUMMY_IZ_RIVER',     'KIND_BUILDING'),
         ('BUILDING_JNR_MILL_RACE',          'KIND_BUILDING'),
-        ('BUILDING_JNR_TOOLING_SHOP',       'KIND_BUILDING'),
-        ('BUILDING_HD_CHARCOAL_KILN',       'KIND_BUILDING'),
         ('BUILDING_IZ_WATER_MILL',          'KIND_BUILDING'),
         ('BUILDING_JNR_WIND_MILL',          'KIND_BUILDING'),
         ('BUILDING_JNR_MANUFACTURY',        'KIND_BUILDING'),
@@ -29,8 +27,6 @@ insert or ignore into Buildings
         (BuildingType,                      PrereqDistrict,             PrereqTech,             Cost,   Maintenance,    CitizenSlots,   PurchaseYield,  AdvisorType,        Name,                                       Description)
 VALUES  ('BUILDING_JNR_DUMMY_IZ_RIVER',     'DISTRICT_CITY_CENTER',     NULL,                   1,      0,              Null,           NULL,           'ADVISOR_GENERIC',  'LOC_BUILDING_JNR_DUMMY_IZ_RIVER_NAME',     NULL),
         ('BUILDING_JNR_MILL_RACE',          NULL,                       NULL,                   1,      0,              Null,           NULL,           'ADVISOR_GENERIC',  'LOC_BUILDING_JNR_MILL_RACE_NAME',          'LOC_BUILDING_JNR_MILL_RACE_DESCRIPTION'),
-        ('BUILDING_JNR_TOOLING_SHOP',       'DISTRICT_INDUSTRIAL_ZONE', 'TECH_IRON_WORKING',    100,    1,              1,              'YIELD_GOLD',   'ADVISOR_GENERIC',  'LOC_BUILDING_JNR_TOOLING_SHOP_NAME',       'LOC_BUILDING_JNR_TOOLING_SHOP_DESCRIPTION'),
-        ('BUILDING_HD_CHARCOAL_KILN',       'DISTRICT_INDUSTRIAL_ZONE', 'TECH_FUEL_HD',         100,    1,              1,              'YIELD_GOLD',   'ADVISOR_GENERIC',  'LOC_BUILDING_HD_CHARCOAL_KILN_NAME',       'LOC_BUILDING_HD_CHARCOAL_KILN_DESCRIPTION'),
         ('BUILDING_IZ_WATER_MILL',          'DISTRICT_INDUSTRIAL_ZONE', 'TECH_ENGINEERING',     100,    1,              1,              'YIELD_GOLD',   'ADVISOR_GENERIC',  'LOC_BUILDING_IZ_WATER_MILL_NAME',          'LOC_BUILDING_IZ_WATER_MILL_DESCRIPTION'),
         ('BUILDING_JNR_WIND_MILL',          'DISTRICT_INDUSTRIAL_ZONE', 'TECH_CONSTRUCTION',    100,    1,              1,              'YIELD_GOLD',   'ADVISOR_GENERIC',  'LOC_BUILDING_JNR_WIND_MILL_NAME',          'LOC_BUILDING_JNR_WIND_MILL_DESCRIPTION'),
         ('BUILDING_JNR_MANUFACTURY',        'DISTRICT_INDUSTRIAL_ZONE', 'TECH_APPRENTICESHIP',  200,    4,              1,              'YIELD_GOLD',   'ADVISOR_GENERIC',  'LOC_BUILDING_JNR_MANUFACTURY_NAME',        'LOC_BUILDING_JNR_MANUFACTURY_DESCRIPTION'),
@@ -89,11 +85,7 @@ INSERT OR IGNORE INTO BuildingPrereqs
         (Building,                          PrereqBuilding)
 VALUES  ('BUILDING_JNR_MILL_RACE',          'BUILDING_JNR_DUMMY_IZ_RIVER'),
         ('BUILDING_IZ_WATER_MILL',          'BUILDING_JNR_MILL_RACE'),
-        
-        ('BUILDING_WORKSHOP',               'BUILDING_JNR_TOOLING_SHOP'),
-        ('BUILDING_JNR_MANUFACTURY',        'BUILDING_JNR_TOOLING_SHOP'),
-        ('BUILDING_WORKSHOP',               'BUILDING_HD_CHARCOAL_KILN'),
-        ('BUILDING_JNR_MANUFACTURY',        'BUILDING_HD_CHARCOAL_KILN'),
+
         ('BUILDING_WORKSHOP',               'BUILDING_IZ_WATER_MILL'),
         ('BUILDING_JNR_MANUFACTURY',        'BUILDING_IZ_WATER_MILL'),
         ('BUILDING_JNR_CHEMICAL',           'BUILDING_WORKSHOP'),
@@ -168,8 +160,6 @@ INSERT OR IGNORE INTO MutuallyExclusiveBuildings
         (Building,                              MutuallyExclusiveBuilding)
 VALUES  ('BUILDING_JNR_MILL_RACE',              'BUILDING_JNR_WIND_MILL'),
         
-        ('BUILDING_JNR_TOOLING_SHOP',           'BUILDING_HD_CHARCOAL_KILN'),
-        ('BUILDING_HD_CHARCOAL_KILN',           'BUILDING_JNR_TOOLING_SHOP'),
         ('BUILDING_IZ_WATER_MILL',              'BUILDING_JNR_WIND_MILL'),
         ('BUILDING_JNR_WIND_MILL',              'BUILDING_IZ_WATER_MILL'),
         ('BUILDING_WORKSHOP',                   'BUILDING_JNR_MANUFACTURY'),
@@ -313,8 +303,7 @@ UPDATE Buildings SET RegionalRange=6 WHERE BuildingType='BUILDING_JNR_RENEWABLE_
 --------------------------------------------------------------
 INSERT OR IGNORE INTO Building_YieldChanges
         (BuildingType,                      YieldType,          YieldChange)
-VALUES  ('BUILDING_JNR_TOOLING_SHOP',       'YIELD_PRODUCTION', 3),
-        ('BUILDING_HD_CHARCOAL_KILN',       'YIELD_PRODUCTION', 3),
+VALUES
         ('BUILDING_IZ_WATER_MILL',          'YIELD_PRODUCTION', 2),
         ('BUILDING_JNR_WIND_MILL',          'YIELD_PRODUCTION', 2);
         -- ('BUILDING_JNR_MODE_MACHINES',      'YIELD_PRODUCTION', 2),
@@ -396,8 +385,7 @@ VALUES  ('BUILDING_JNR_FREIGHT_YARD',       'YIELD_PRODUCTION', 'YIELD_PRODUCTIO
 --------------------------------------------------------------
 INSERT OR IGNORE INTO Building_GreatPersonPoints
         (BuildingType,                      GreatPersonClassType,           PointsPerTurn)
-VALUES  ('BUILDING_JNR_TOOLING_SHOP',       'GREAT_PERSON_CLASS_ENGINEER',  1),
-        ('BUILDING_HD_CHARCOAL_KILN',       'GREAT_PERSON_CLASS_ENGINEER',  1),
+VALUES
         ('BUILDING_IZ_WATER_MILL',          'GREAT_PERSON_CLASS_ENGINEER',  1),
         ('BUILDING_JNR_WIND_MILL',          'GREAT_PERSON_CLASS_ENGINEER',  1),
         ('BUILDING_JNR_MANUFACTURY',        'GREAT_PERSON_CLASS_ENGINEER',  1),

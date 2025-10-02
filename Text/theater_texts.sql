@@ -30,8 +30,7 @@ values
     ("LOC_BUILDING_MUSEUM_ARTIFACT_DESCRIPTION_JNR",            "Holds [ICON_GreatWork_Artifact] Artifacts. May not be built in a Theater Square district that already has an Art Museum."),
     -- 歌剧院
     ("LOC_BUILDING_JNR_OPERA_NAME",                             "Opera House"),
-    ("LOC_BUILDING_JNR_OPERA_DESCRIPTION",                      "{LOC_BUILDING_JNR_OPERA_THEMINGBONUS}+3 [ICON_CULTURE] Culture for [ICON_GreatWork_Music] Great Works of Music in this city. +10% accumulation rate for [ICON_GREATMUSICIAN] Great Musician Points."),
-    ("LOC_BUILDING_JNR_OPERA_THEMINGBONUS",                     "+100% Theming bonus when displaying objects from different musicians of same era. "),
+    ("LOC_BUILDING_JNR_OPERA_DESCRIPTION",                      "+3 [ICON_CULTURE] Culture for [ICON_GreatWork_Music] Great Works of Music in this city. +10% accumulation rate for [ICON_GREATMUSICIAN] Great Musician Points."),
     -- 大酒店
     ("LOC_BUILDING_JNR_GRAND_HOTEL_NAME",                       "Grand Hotel"),
     ("LOC_BUILDING_JNR_GRAND_HOTEL_DESCRIPTION",                "Bonus [ICON_CULTURE] Culture equal to the adjacency bonus of the Theater district. Provided [ICON_TOURISM] Tourism equal to the adjacency bonus of the Theater District. +50% [ICON_TOURISM] Tourism from improvements in this city."),
@@ -40,17 +39,17 @@ values
     ("LOC_BUILDING_HD_ART_PUBLISHING_HOUSE_DESCRIPTION",        "[ICON_CITIZEN] Citizens in this City provide +1 [ICON_CULTURE] Culture. +2 [ICON_CULTURE] Culture for [ICON_GreatWork_LANDSCAPE] Great Works of Art in this city. +10% accumulation rate for [ICON_GREATARTIST] Great Artist Points."),
     -- ("LOC_BUILDING_HD_ART_PUBLISHING_HOUSE_THEMINGBONUS",       "+100% Theming bonus when displaying objects from different artists of same era."),
     -- 电影院
-    ("LOC_BUILDING_HD_CINEMA_NAME",                             "Cinema"),
-    ("LOC_BUILDING_HD_CINEMA_DESCRIPTION",                      "+10% [ICON_CULTURE] Culture in this City. Additional +10% [ICON_CULTURE] Culture if this City is fully [ICON_POWER] Powered. +3 [ICON_CULTURE] Culture for all districts in this city. [ICON_GreatWork_Writing] Great Works of Writing and [ICON_GreatWork_LANDSCAPE] Great Works of Art provide +100% [ICON_TOURISM] Tourism in this City."),
+    ("LOC_BUILDING_JNR_MEDIA_CENTER_NAME",                      "Cinema"),
+    ("LOC_BUILDING_JNR_MEDIA_CENTER_DESCRIPTION",               "+10% [ICON_CULTURE] Culture in this City. Additional +10% [ICON_CULTURE] Culture if this City is fully [ICON_POWER] Powered. +3 [ICON_CULTURE] Culture for all districts in this city. [ICON_GreatWork_Writing] Great Works of Writing and [ICON_GreatWork_LANDSCAPE] Great Works of Art provide +100% [ICON_TOURISM] Tourism in this City."),
     -- 广播中心
     ("LOC_BUILDING_BROADCAST_CENTER_NAME_UC_JNR",               "Broadcast Center"),
     ("LOC_BUILDING_BROADCAST_CENTER_DESCRIPTION_UC_JNR",        "+10% [ICON_CULTURE] Culture in this City. Additional +10% [ICON_CULTURE] Culture if this City is fully [ICON_POWER] Powered. [ICON_GreatWork_Music] Great Works of Music provide +100% [ICON_TOURISM] Tourism in this City."),
-    -- 媒体中心
-    ("LOC_BUILDING_JNR_MEDIA_CENTER_NAME",                      "Media Center"),
-    ("LOC_BUILDING_JNR_MEDIA_CENTER_DESCRIPTION",               "+10% [ICON_CULTURE] Culture in this City. Additional +10% [ICON_CULTURE] Culture if this City is fully [ICON_POWER] Powered. [ICON_CITIZEN] Citizens in this City provide +1 [ICON_CULTURE] Culture and +3 [ICON_GOLD] Gold. [NEWLINE]Wonders and National Parks across your empire have +25% [ICON_Tourism] Tourism, double if this City is fully [ICON_POWER] Powered."),
+    -- -- 媒体中心
+    -- ("LOC_BUILDING_JNR_MEDIA_CENTER_NAME",                      "Media Center"),
+    -- ("LOC_BUILDING_JNR_MEDIA_CENTER_DESCRIPTION",               "+10% [ICON_CULTURE] Culture in this City. Additional +10% [ICON_CULTURE] Culture if this City is fully [ICON_POWER] Powered. [ICON_CITIZEN] Citizens in this City provide +1 [ICON_CULTURE] Culture and +3 [ICON_GOLD] Gold. [NEWLINE]Wonders and National Parks across your empire have +25% [ICON_Tourism] Tourism, double if this City is fully [ICON_POWER] Powered."),
     -- 电影厂
     ("LOC_BUILDING_FILM_STUDIO_CENTER_NAME_UC_JNR",             "Film Studio"),
-    ("LOC_BUILDING_FILM_STUDIO_DESCRIPTION_UC_JNR",             "A building unique to America. {LOC_BUILDING_HD_FILM_STUDIO_THEMINGBONUS}+10% [ICON_CULTURE] Culture in this city. +10% [ICON_CULTURE] Culture if this city is fully powered. +50% [ICON_Tourism] Tourism pressure from this city. +100% [ICON_TOURISM] Tourism for [ICON_GreatWork_Writing] Great Works of Writing, [ICON_GreatWork_LANDSCAPE] Great Works of Art and [ICON_GreatWork_Music] Great Works of Music in this city."),
+    ("LOC_BUILDING_FILM_STUDIO_DESCRIPTION_UC_JNR",             "A building unique to America. {LOC_BUILDING_HD_FILM_STUDIO_THEMINGBONUS}+10% [ICON_CULTURE] Culture in this city. +10% [ICON_CULTURE] Culture if this city is fully powered. +3 [ICON_CULTURE] Culture for all districts in this city. +50% [ICON_Tourism] Tourism pressure from this city. +100% [ICON_TOURISM] Tourism for [ICON_GreatWork_Writing] Great Works of Writing, [ICON_GreatWork_LANDSCAPE] Great Works of Art and [ICON_GreatWork_Music] Great Works of Music in this city."),
     ("LOC_BUILDING_HD_FILM_STUDIO_THEMINGBONUS",                "+100% Theming bonus when displaying objects of same era. "),
     -- 尤里卡 鼓舞
     ("LOC_BOOST_TECH_TELECOMMUNICATIONS_HD_LONG",               "People want to listen to the radio or watch movies on portable communication devices."),
@@ -101,8 +100,7 @@ values
     ("zh_Hans_CN",  "LOC_BUILDING_MUSEUM_ARTIFACT_DESCRIPTION_JNR",            "可存放 [ICON_GreatWork_Artifact] 文物。如果在剧院广场已经有一座艺术博物馆则无法修建。"),
     -- 歌剧院
     ("zh_Hans_CN",  "LOC_BUILDING_JNR_OPERA_NAME",                             "歌剧院"),
-    ("zh_Hans_CN",  "LOC_BUILDING_JNR_OPERA_DESCRIPTION",                      "{LOC_BUILDING_JNR_OPERA_THEMINGBONUS}本城所有 [ICON_GreatWork_Music] 音乐巨作+3 [ICON_CULTURE] 文化值。玩家的 [ICON_GREATMUSICIAN] 大音乐家点数积累速度+10%。"),
-    ("zh_Hans_CN",  "LOC_BUILDING_JNR_OPERA_THEMINGBONUS",                     "当展示来自相同时代不同音乐家的作品时，+100%主题化加成。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_JNR_OPERA_DESCRIPTION",                      "本城所有 [ICON_GreatWork_Music] 音乐巨作+3 [ICON_CULTURE] 文化值。玩家的 [ICON_GREATMUSICIAN] 大音乐家点数积累速度+10%。"),
     -- 大酒店
     ("zh_Hans_CN",  "LOC_BUILDING_JNR_GRAND_HOTEL_NAME",                       "大酒店"),
     ("zh_Hans_CN",  "LOC_BUILDING_JNR_GRAND_HOTEL_DESCRIPTION",                "[ICON_Culture] 文化值加成等于剧院广场区域的相邻加成。剧院广场的相邻加成也提供相等的 [ICON_TOURISM] 旅游业绩。所在城市中提供 [ICON_TOURISM] 旅游业绩的改良设施产出的 [ICON_TOURISM] 旅游业绩+50%。"),
@@ -111,17 +109,17 @@ values
     ("zh_Hans_CN",  "LOC_BUILDING_HD_ART_PUBLISHING_HOUSE_DESCRIPTION",        "每位 [ICON_CITIZEN] 市民+1 [ICON_CULTURE] 文化值。本城所有 [ICON_GreatWork_LANDSCAPE] 艺术巨作+2 [ICON_CULTURE] 文化值。玩家的 [ICON_GREATARTIST] 大艺术家点数积累速度+10%。"),
     -- ("zh_Hans_CN",  "LOC_BUILDING_HD_ART_PUBLISHING_HOUSE_THEMINGBONUS",       "当展示来自相同时代不同艺术家的作品时，+100%主题化加成。"),
     -- 电影院
-    ("zh_Hans_CN",  "LOC_BUILDING_HD_CINEMA_NAME",                             "电影院"),
-    ("zh_Hans_CN",  "LOC_BUILDING_HD_CINEMA_DESCRIPTION",                      "本城+10% [ICON_CULTURE] 文化值，[ICON_POWER] 供电充足时额外+10% [ICON_CULTURE] 文化值。此城市的区域+3 [ICON_CULTURE] 文化值。本城所有 [ICON_GreatWork_Writing] 著作和 [ICON_GreatWork_LANDSCAPE] 艺术巨作产出的 [ICON_TOURISM] 旅游业绩+100%。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_JNR_MEDIA_CENTER_NAME",                      "电影院"),
+    ("zh_Hans_CN",  "LOC_BUILDING_JNR_MEDIA_CENTER_DESCRIPTION",               "本城+10% [ICON_CULTURE] 文化值，[ICON_POWER] 供电充足时额外+10% [ICON_CULTURE] 文化值。此城市的区域+3 [ICON_CULTURE] 文化值。本城所有 [ICON_GreatWork_Writing] 著作和 [ICON_GreatWork_LANDSCAPE] 艺术巨作产出的 [ICON_TOURISM] 旅游业绩+100%。"),
     -- 广播中心
     ("zh_Hans_CN",  "LOC_BUILDING_BROADCAST_CENTER_NAME_UC_JNR",               "广播中心"),
     ("zh_Hans_CN",  "LOC_BUILDING_BROADCAST_CENTER_DESCRIPTION_UC_JNR",        "本城+10% [ICON_CULTURE] 文化值，[ICON_POWER] 供电充足时额外+10% [ICON_CULTURE] 文化值。所在城市中的 [ICON_GreatWork_Music] 音乐巨作产出的 [ICON_TOURISM] 旅游业绩+100%。"),
-    -- 媒体中心
-    ("zh_Hans_CN",  "LOC_BUILDING_JNR_MEDIA_CENTER_NAME",                      "媒体中心"),
-    ("zh_Hans_CN",  "LOC_BUILDING_JNR_MEDIA_CENTER_DESCRIPTION",               "本城+10% [ICON_CULTURE] 文化值，[ICON_POWER] 供电充足时额外+10% [ICON_CULTURE] 文化值。所在城市每位 [ICON_CITIZEN] 市民+1 [ICON_CULTURE] 文化值和+3 [ICON_GOLD] 金币。全国来自国家公园和奇观的 [ICON_Tourism] 旅游业绩+25%；此城 [ICON_POWER] 供电充足时，该效果翻倍。"),
+    -- -- 媒体中心
+    -- ("zh_Hans_CN",  "LOC_BUILDING_JNR_MEDIA_CENTER_NAME",                      "媒体中心"),
+    -- ("zh_Hans_CN",  "LOC_BUILDING_JNR_MEDIA_CENTER_DESCRIPTION",               "本城+10% [ICON_CULTURE] 文化值，[ICON_POWER] 供电充足时额外+10% [ICON_CULTURE] 文化值。所在城市每位 [ICON_CITIZEN] 市民+1 [ICON_CULTURE] 文化值和+3 [ICON_GOLD] 金币。全国来自国家公园和奇观的 [ICON_Tourism] 旅游业绩+25%；此城 [ICON_POWER] 供电充足时，该效果翻倍。"),
     -- 电影厂
     ("zh_Hans_CN",  "LOC_BUILDING_FILM_STUDIO_CENTER_NAME_UC_JNR",             "电影制片厂"),
-    ("zh_Hans_CN",  "LOC_BUILDING_FILM_STUDIO_DESCRIPTION_UC_JNR",             "美国特色建筑。{LOC_BUILDING_HD_FILM_STUDIO_THEMINGBONUS}本城+10% [ICON_CULTURE] 文化值，[ICON_POWER] 供电充足时额外+10% [ICON_CULTURE] 文化值。本城+50% [ICON_TOURISM] 旅游业绩。本城中的 [ICON_GreatWork_Writing] 著作、[ICON_GreatWork_LANDSCAPE] 艺术和 [ICON_GreatWork_Music] 音乐巨作产出的 [ICON_TOURISM] 旅游业绩+100%。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_FILM_STUDIO_DESCRIPTION_UC_JNR",             "美国特色建筑。{LOC_BUILDING_HD_FILM_STUDIO_THEMINGBONUS}本城+10% [ICON_CULTURE] 文化值，[ICON_POWER] 供电充足时额外+10% [ICON_CULTURE] 文化值。此城市的区域+3 [ICON_CULTURE] 文化值。本城+50% [ICON_TOURISM] 旅游业绩。本城中的 [ICON_GreatWork_Writing] 著作、[ICON_GreatWork_LANDSCAPE] 艺术和 [ICON_GreatWork_Music] 音乐巨作产出的 [ICON_TOURISM] 旅游业绩+100%。"),
     ("zh_Hans_CN",  "LOC_BUILDING_HD_FILM_STUDIO_THEMINGBONUS",                "当展示来自相同时代的作品时，+100%主题化加成。"),
     -- 尤里卡 鼓舞
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_TELECOMMUNICATIONS_HD",        "人们开始希望在便携通讯设备上收听广播或看电影了。"),

@@ -7,6 +7,9 @@
 insert or replace into EnglishText
     (Tag,                                                           Text)
 values
+    -- 货栈
+    ("LOC_BUILDING_JNR_WAYSTATION_NAME",                            "Emporium"),
+    ("LOC_BUILDING_JNR_WAYSTATION_DESCRIPTION",                     "Each improved resource provides +4 [ICON_GOLD] Gold in this city."),
     -- 市场
     ("LOC_BUILDING_MARKET_NAME",                                    "Market"),
     ("LOC_BUILDING_MARKET_DESCRIPTION_UC_JNR",                      "+1 [ICON_TradeRoute] Trade Route capacity. [ICON_CITIZEN] Citizens in the City provide +1 [ICON_GOLD] Gold."),
@@ -14,9 +17,6 @@ values
     ("LOC_BUILDING_JNR_MINT_NAME",                                  "Mint"),
     ("LOC_BUILDING_JNR_MINT_DESCRIPTION",                           "+1 [ICON_TradeRoute] Trade Route capacity. +3 [ICON_Gold] Gold for [ICON_Resource_Gold] Gold, [ICON_Resource_Silver] Silver and [ICON_Resource_Copper] Copper in this city."),
     ("LOC_BUILDING_JNR_MINT_ALT_DESCRIPTION",                       "+1 [ICON_TradeRoute] Trade Route capacity. Each [ICON_Resource_Gold] Gold, [ICON_Resource_Silver] Silver, [ICON_Resource_Seashells] Money Cowrie and [ICON_Resource_Copper] Copper in this City provide +3 [ICON_Gold] Gold."), -- Money Cowries
-    -- 货栈
-    ("LOC_BUILDING_JNR_WAYSTATION_NAME",                            "Emporium"),
-    ("LOC_BUILDING_JNR_WAYSTATION_DESCRIPTION",                     "+1 [ICON_TradeRoute] Trade Route capacity. Costs 2 [ICON_RESOURCE_HORSES] Horses per turn to provide an extra +10 [ICON_GOLD] Gold. Immediately create a [ICON_TRADINGPOST] Trading Post in this city."),
     -- 纺织会馆
     ("LOC_BUILDING_SUKIENNICE_NAME",                                "Krakow Sukiennice"),
     ("LOC_BUILDING_SUKIENNICE_DESCRIPTION_UC_JNR",                  "A building unique to Poland. This building can only be built once per civilization. [NEWLINE][NEWLINE]Culture Bomb adjacent tiles when completing a Commercial Hub district. [NEWLINE]For each +8 adjacency bonus of Commercial Hub district in this city, provides +1 [ICON_TradeRoute] Trade Route capacity. Provides [ICON_PRODUCTION] Production equal to 25% adjacency of Commercial Hub district in this city to Domestic [ICON_TRADEROUTE] Trade Routes to this city. Provides [ICON_GOLD] Gold equal to 75% adjacency of Commercial Hub district in this city to International [ICON_TRADEROUTE] Trade Routes starting from this city. [NEWLINE][NEWLINE] When you build International [ICON_TradeRoute] Trade Routes, receive a random luxury resource and its yields improved by the destination city. This effect can only be obtained once from each destination city."),
@@ -42,18 +42,6 @@ values
     ("LOC_BUILDING_JNR_MARKETING_AGENCY_NAME",                      "Marketing Agency"),
     ("LOC_BUILDING_JNR_MARKETING_AGENCY_DESCRIPTION",               "+5% [ICON_Tourism] Tourism output (at most 25%) to civilizations to which you have a [ICON_TradeRoute] Trade Route, double when city is powered. +10% accumulation rate for [ICON_GREATMERCHANT] Great Merchant Points. Commercial Hub district's adjacency bonus provides [ICON_TOURISM] Tourism as well."),
     ("LOC_BUILDING_JNR_MARKETING_AGENCY_MONOPOLY_DESCRIPTION",      "+50% [ICON_Tourism] Tourism to [ICON_Greatwork_Product] Products in this City, doubled when this City is fully [ICON_POWER] Powered. +10% [ICON_GREATMERCHANT] Great Merchant points you generate. Commercial Hub district's adjacency bonus provides [ICON_TOURISM] Tourism as well."),
-    -- 沿岸市中心
-    ("LOC_BUILDING_JNR_DUMMY_CITY_COASTAL_NAME",                    "Coastal Access"),
-    ("LOC_BUILDING_JNR_DUMMY_CITY_COASTAL_DESCRIPTION",             "DUMMY: City is Coastal"),
-    -- 码头地基
-    ("LOC_BUILDING_JNR_WHARF_BASE_NAME",                            "Wharf"),
-    ("LOC_BUILDING_JNR_WHARF_BASE_DESCRIPTION",                     "Automatically created in city which has either direct coastal access or via Canal district (or Panama Canal wonder)."),
-    -- 渔业港市
-    ("LOC_BUILDING_JNR_WHARF_FISHING_NAME",                         "Fishing Dock"),
-    ("LOC_BUILDING_JNR_WHARF_FISHING_DESCRIPTION",                  "Extra +1 [ICON_Food] Food and +1 [ICON_Production] Production if the city owns Fishing Boats over Bonus resources.[NEWLINE][NEWLINE]Can only be built in city which has either direct coastal access or via Canal district (or Panama Canal wonder). May not be built in cities that already have a Trade Dock."),
-    -- 贸易港市
-    ("LOC_BUILDING_JNR_WHARF_TRADE_NAME",                           "Trade Dock"),
-    ("LOC_BUILDING_JNR_WHARF_TRADE_DESCRIPTION",                    "Extra +1 [ICON_Food] Food and +3 [ICON_Gold] Gold if the city owns Fishing Boats over Luxury resources.[NEWLINE][NEWLINE]Can only be built in city which has either direct coastal access or via Canal district (or Panama Canal wonder). May not be built in cities that already have a Fishing Dock."),
     -- 贸易码头
     ("LOC_BUILDING_LIGHTHOUSE_NAME",                                "Trade Port"),
     ("LOC_BUILDING_LIGHTHOUSE_DESCRIPTION_UC_JNR",                  "+25% combat experience for all naval units trained in this city. Fishing Boats provide +1 [ICON_Production] Production in this city. +1 [ICON_TradeRoute] Trade Route capacity. +2 [ICON_Gold] Gold for International [ICON_TradeRoute] Trade Route starting from this city."),
@@ -124,6 +112,9 @@ values
 insert or replace into LocalizedText
     (Language,      Tag,                                                           Text)
 values
+    -- 货栈
+    ("zh_Hans_CN",  "LOC_BUILDING_JNR_WAYSTATION_NAME",                            "货栈"),
+    ("zh_Hans_CN",  "LOC_BUILDING_JNR_WAYSTATION_DESCRIPTION",                     "本城每种改良的资源为本城+4 [ICON_GOLD] 金币。"),
     -- 市场
     ("zh_Hans_CN",  "LOC_BUILDING_MARKET_NAME",                                    "市场"),
     ("zh_Hans_CN",  "LOC_BUILDING_MARKET_DESCRIPTION_UC_JNR",                      "+1 [ICON_TradeRoute] 贸易路线容量。所在城市每位 [ICON_Citizen] 公民+1 [ICON_GOLD] 金币。"),
@@ -131,9 +122,6 @@ values
     ("zh_Hans_CN",  "LOC_BUILDING_JNR_MINT_NAME",                                  "铸币厂"),
     ("zh_Hans_CN",  "LOC_BUILDING_JNR_MINT_DESCRIPTION",                           "+1 [ICON_TradeRoute] 贸易路线容量。城市中每个 [ICON_Resource_Gold] 黄金、 [ICON_Resource_Silver] 银和 [ICON_Resource_Copper] 铜 +3 [ICON_Gold] 金币。"),
     ("zh_Hans_CN",  "LOC_BUILDING_JNR_MINT_ALT_DESCRIPTION",                       "+1 [ICON_TradeRoute] 贸易路线容量。城市中每个 [ICON_Resource_Gold] 黄金、 [ICON_Resource_Silver] 银、 [ICON_Resource_Seashells] 货贝和 [ICON_Resource_Copper] 铜 +3 [ICON_Gold] 金币。"),
-    -- 货栈
-    ("zh_Hans_CN",  "LOC_BUILDING_JNR_WAYSTATION_NAME",                            "货栈"),
-    ("zh_Hans_CN",  "LOC_BUILDING_JNR_WAYSTATION_DESCRIPTION",                     "+1 [ICON_TRADEROUTE] 贸易路线容量。每回合消耗2 [ICON_RESOURCE_HORSES] 马来额外提供+10 [ICON_GOLD] 金币。本城建立一个 [ICON_TRADINGPOST] 贸易站。"),
     -- 纺织会馆
     ("zh_Hans_CN",  "LOC_BUILDING_SUKIENNICE_NAME",                                "克拉科夫纺织会馆"),
     ("zh_Hans_CN",  "LOC_BUILDING_SUKIENNICE_DESCRIPTION_UC_JNR",                  "波兰特色建筑，文明中一次仅限建造一座该建筑。[NEWLINE][NEWLINE]建成商业中心后对相邻单元格释放文化炸弹。[NEWLINE]本城的商业中心每拥有+8相邻加成，提供+1 [ICON_TradeRoute] 贸易路线容量。以本城为目的地的国内 [ICON_TRADEROUTE] 贸易路线获得25%本城商业中心相邻加成的 [ICON_PRODUCTION] 生产力；本城出发的国际 [ICON_TRADEROUTE] 贸易路线获得75%本城商业中心相邻加成的 [ICON_GOLD] 金币。[NEWLINE][NEWLINE]本城建立国际 [ICON_TRADEROUTE] 贸易路线时，随机获得一份目的地城市开发的奢侈资源以及其产出，仅能从每座目的地城市获得一次该效果。"),
@@ -159,18 +147,6 @@ values
     ("zh_Hans_CN",  "LOC_BUILDING_JNR_MARKETING_AGENCY_NAME",                      "市场部"),
     ("zh_Hans_CN",  "LOC_BUILDING_JNR_MARKETING_AGENCY_DESCRIPTION",               "您向有 [ICON_TradeRoute] 贸易路线连接的文明输出的 [ICON_Tourism] 旅游业绩+5%；此城 [ICON_POWER] 供电充足时，该效果翻倍。最多只能有5个市场部生效。玩家的 [ICON_GREATMERCHANT] 大商人点数积累速度+10%。商业中心的相邻加成也产生等量 [ICON_Tourism] 旅游业绩。"),
     ("zh_Hans_CN",  "LOC_BUILDING_JNR_MARKETING_AGENCY_MONOPOLY_DESCRIPTION",      "此城市的 [ICON_GreatWork_Product] 产品提供的 [ICON_Tourism] 旅游业绩+50%；此城 [ICON_POWER] 供电充足时，该效果翻倍。玩家的 [ICON_GREATMERCHANT] 大商人点数积累速度+10%。商业中心的相邻加成也产生等量 [ICON_Tourism] 旅游业绩。"),
-    -- 沿岸市中心
-    ("zh_Hans_CN",  "LOC_BUILDING_JNR_DUMMY_CITY_COASTAL_NAME",                    "沿岸市中心"),
-    ("zh_Hans_CN",  "LOC_BUILDING_JNR_DUMMY_CITY_COASTAL_DESCRIPTION",             "该城市毗邻湖泊、海洋或运河（包括巴拿马运河）。"),
-    -- 市中心相邻湖泊、海岸或运河
-    ("zh_Hans_CN",  "LOC_BUILDING_JNR_WHARF_BASE_NAME",                            "市中心相邻湖泊、海岸或运河"),
-    ("zh_Hans_CN",  "LOC_BUILDING_JNR_WHARF_BASE_DESCRIPTION",                     "该城市毗邻湖泊、海洋或运河（包括巴拿马运河）。"),
-    -- 渔业港市
-    ("zh_Hans_CN",  "LOC_BUILDING_JNR_WHARF_FISHING_NAME",                         "渔业港市"),
-    ("zh_Hans_CN",  "LOC_BUILDING_JNR_WHARF_FISHING_DESCRIPTION",                  "如果城市拥有改良加成资源的渔船，则额外+1 [ICON_Food] 食物和+1 [ICON_Production] 生产力。[NEWLINE][NEWLINE]只能建造在相邻湖泊、海岸或运河的城市中。无法建造在已有贸易港市的城市中。"),
-    -- 贸易港市
-    ("zh_Hans_CN",  "LOC_BUILDING_JNR_WHARF_TRADE_NAME",                           "贸易港市"),
-    ("zh_Hans_CN",  "LOC_BUILDING_JNR_WHARF_TRADE_DESCRIPTION",                    "如果城市拥有改良奢侈资源的渔船，则额外+1 [ICON_Food] 食物和+3 [ICON_Gold] 金币。[NEWLINE][NEWLINE]只能建造在相邻湖泊、海岸或运河的城市中。无法建造在已有渔业港市的城市中。"),
     -- 贸易码头
     ("zh_Hans_CN",  "LOC_BUILDING_LIGHTHOUSE_NAME",                                "贸易码头"),
     ("zh_Hans_CN",  "LOC_BUILDING_LIGHTHOUSE_DESCRIPTION_UC_JNR",                  "+1 [ICON_TradeRoute] 贸易路线容量。此城生产的所有海军单位+25%战斗经验值。为本城的渔船+1 [ICON_Production] 生产力。此城出发的 [ICON_TradeRoute] 国际贸易路线+2 [ICON_Gold] 金币。"),

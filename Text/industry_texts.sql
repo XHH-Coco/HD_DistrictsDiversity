@@ -30,10 +30,6 @@ insert or replace into EnglishText
     (Tag,                                               Text)
 values
     ("LOC_BUILDING_JNR_MILL_RACE_NAME",                 "Industrial Zone Adjacen to River"),
-    ("LOC_BUILDING_JNR_TOOLING_SHOP_NAME",              "Smithy"),
-    ("LOC_BUILDING_JNR_TOOLING_SHOP_DESCRIPTION",       "Provides 1 [ICON_RESOURCE_IRON] Iron per turn. +2 [ICON_PRODUCTION] Production if this city owns Quarries or Mines over resources."),
-    ("LOC_BUILDING_HD_CHARCOAL_KILN_NAME",              "Charcoal Kiln"),
-    ("LOC_BUILDING_HD_CHARCOAL_KILN_DESCRIPTION",       "Provides 1 [ICON_RESOURCE_COAL] Coal per turn. +2 [ICON_PRODUCTION] Production if this city owns Farms or Lumber Mills over resources."),
     ("LOC_BUILDING_IZ_WATER_MILL_NAME",                 "Hydraulic Artisans"), -- Water-powered Workshop
     ("LOC_BUILDING_IZ_WATER_MILL_DESCRIPTION",          "Can only be built when the Industrial Zone is adjacent to River. +1 [ICON_Production] Production for Districts adjacent to river in this city."),
     ("LOC_BUILDING_JNR_WIND_MILL_DESCRIPTION",          "+1 [ICON_Production] Production for Districts adjacent to sea or lakes or in the sea or lakes."), -- improved tiles adjacent to sea or lakes.
@@ -51,7 +47,6 @@ values
     -- Great Person
     ("LOC_GREATPERSON_WORKSHOP_CULTURE",                "Provides +1 [ICON_Culture] Culture to Tier 2 buildings in Industrial Zone district."),
     ("LOC_HD_GREATPERSON_GRANT_IZ_TIER1_BUILDING",      "Instantly builds a Hydraulic Artisans in this district if it is adjacent to River. [NEWLINE]Provides +1 [ICON_PRODUCTION] Production to Tier 1 buildings in Industrial Zone district."),
-    -- ("LOC_HD_GREATPERSON_BUILDING_JNR_TOOLING_SHOP_PRODUCTION",     "Smithy, Hydraulic Artisans and Wind Mill provides +1 [ICON_PRODUCTION] Production."),
     ("LOC_GREATPERSON_JAMES_WATT_ACTIVE",     			"Instantly builds a Smithy, a Workshop and a Factory in this district. [NEWLINE]Provides +3 [ICON_PRODUCTION] Production to Tier 3 buildings in Industrial Zone district."),
     -- Wonder
     -- ("LOC_BUILDING_RUHR_VALLEY_DESCRIPTION",                  "+20% [ICON_Production] Production in this city, and Mines and Quarries in this City provide +2 [ICON_Production] Production. International [ICON_TradeRoute] Trade Route to this city provides +3 [ICON_Production] Production for both sides. Domestic [ICON_TradeRoute] Trade Route to this City provides +5 [ICON_Production] Production. Must be built adjacent to an Industrial Zone district with a Factory, Electronics Factory or Chemical Plant, and next to a River."),
@@ -70,10 +65,6 @@ values
     -- Resume
     ("zh_Hans_CN",  "LOC_BUILDING_JNR_MILL_RACE_NAME",                          "工业区相邻河流"),
     ("zh_Hans_CN",  "LOC_BUILDING_JNR_MILL_RACE_DESCRIPTION",                   "该城的工业区相邻河流。"),
-    ("zh_Hans_CN",  "LOC_BUILDING_JNR_TOOLING_SHOP_NAME",                       "铁匠铺"),
-    ("zh_Hans_CN",  "LOC_BUILDING_JNR_TOOLING_SHOP_DESCRIPTION",                "每回合提供1点 [ICON_RESOURCE_IRON] 铁。如果城市拥有改良资源的矿山或采石场，铁匠铺额外+2 [ICON_PRODUCTION] 生产力。"),
-    ("zh_Hans_CN",  "LOC_BUILDING_HD_CHARCOAL_KILN_NAME",                       "炭窑"),
-    ("zh_Hans_CN",  "LOC_BUILDING_HD_CHARCOAL_KILN_DESCRIPTION",                "每回合提供1点 [ICON_RESOURCE_COAL] 煤。如果城市拥有改良资源的农场或伐木场，炭窑额外+2 [ICON_PRODUCTION] 生产力。"),
     ("zh_Hans_CN",  "LOC_BUILDING_IZ_WATER_MILL_NAME",                          "水力作坊"),
     ("zh_Hans_CN",  "LOC_BUILDING_IZ_WATER_MILL_DESCRIPTION",                   "只有工业区相邻河流时才能建造。与河流相邻的区域+1 [ICON_Production] 生产力。"),
     ("zh_Hans_CN",  "LOC_BUILDING_JNR_WIND_MILL_NAME",                          "风车"),
@@ -99,22 +90,13 @@ values
     -- Great Person
     ("zh_Hans_CN",  "LOC_GREATPERSON_WORKSHOP_CULTURE",                         "工业区二级建筑+1 [ICON_Culture] 文化值。"),
     ("zh_Hans_CN",  "LOC_HD_GREATPERSON_GRANT_IZ_TIER1_BUILDING",               "若相邻河流，立即在该区域建造水力作坊。[NEWLINE]工业区一级建筑+1 [ICON_PRODUCTION] 生产力。"),
-    -- ("zh_Hans_CN",  "LOC_HD_GREATPERSON_BUILDING_JNR_TOOLING_SHOP_PRODUCTION",  "铁匠铺、水力作坊和风车+1 [ICON_PRODUCTION] 生产力。"),
-    ("zh_Hans_CN",  "LOC_GREATPERSON_JAMES_WATT_ACTIVE",  						"立即在该区域建造铁匠铺、工作坊和工厂。[NEWLINE]工业区三级建筑+3 [ICON_PRODUCTION] 生产力。"),
+    ("zh_Hans_CN",  "LOC_GREATPERSON_JAMES_WATT_ACTIVE",  						"立即在该区域建造风车、工作坊和工厂。[NEWLINE]工业区三级建筑+3 [ICON_PRODUCTION] 生产力。"),
     -- Policies
     -- ("zh_Hans_CN",  "LOC_POLICY_INVENTION_DESCRIPTION_XP2",                     "每回合的 [ICON_GreatEngineer] 大工程师点数+4。每有一座工作坊或手工工场，每回合的 [ICON_GreatEngineer] 大工程师点数便+4。"),
     -- ("zh_Hans_CN",  "LOC_POLICY_SCIENCE_FOUNDATIONS_DL_DESCRIPTION",            "每有一所大学，每回合的 [ICON_GreatScientist] 大科学家点数便+4；每有一所研究实验室，每回合的 [ICON_GreatScientist] 大科学家点数便+8。每有一座工厂、电子厂或化工厂，每回合的 [ICON_GreatEngineer] 大工程师点数便+4；每有一座发电厂或物流中心，每回合的 [ICON_GreatEngineer] 大工程师点数便+8。"),
     -- ("zh_Hans_CN",  "LOC_POLICY_THIRD_ALTERNATIVE_DESCRIPTION_JNR_UC_PRD",      "每座军营建筑、航空港建筑、物流中心、燃煤发电厂、燃油发电厂和核电站产出的 [ICON_Culture] 文化值+1、[ICON_Gold] 金币+2。"),
     -- 奇观
-    -- ("zh_Hans_CN",  "LOC_BUILDING_RUHR_VALLEY_DESCRIPTION",                  "该城市+20% [ICON_Production] 生产力，此城中每个矿山和采石场+2 [ICON_Production] 生产力。通往此城的国际 [ICON_TradeRoute] 商路为双方+3 [ICON_PRODUCTION] 生产力。通往此城的国内 [ICON_TradeRoute] 商路+5 [ICON_PRODUCTION] 生产力。必须沿河而建，且与拥有工厂、电子厂或化工厂的工业区区域相邻。"),
-    -- Project
-    ("zh_Hans_CN",  "LOC_PROJECT_JNR_CONVERT_TOOLING_SHOP_TO_WATER_MILL_NAME",          "转换为水力作坊"),
-    ("zh_Hans_CN",  "LOC_PROJECT_JNR_CONVERT_TOOLING_SHOP_TO_WATER_MILL_SHORT_NAME",    "转换为水力作坊"),
-    ("zh_Hans_CN",  "LOC_PROJECT_JNR_CONVERT_TOOLING_SHOP_TO_WATER_MILL_DESCRIPTION",   "将城市中的{LOC_BUILDING_JNR_TOOLING_SHOP_NAME}变更为{LOC_BUILDING_IZ_WATER_MILL_NAME}，需要工业区相邻河流。[NEWLINE][NEWLINE]{LOC_BUILDING_IZ_WATER_MILL_NAME}:[NEWLINE]{LOC_BUILDING_IZ_WATER_MILL_DESCRIPTION}"),
-    ("zh_Hans_CN",  "LOC_PROJECT_JNR_CONVERT_TOOLING_SHOP_TO_WIND_MILL_NAME",           "转换为风车"),
-    ("zh_Hans_CN",  "LOC_PROJECT_JNR_CONVERT_TOOLING_SHOP_TO_WIND_MILL_SHORT_NAME",     "转换为风车"),
-    ("zh_Hans_CN",  "LOC_PROJECT_JNR_CONVERT_TOOLING_SHOP_TO_WIND_MILL_DESCRIPTION",    "将城市中的{LOC_BUILDING_JNR_TOOLING_SHOP_NAME}变更为{LOC_BUILDING_JNR_WIND_MILL_NAME}。[NEWLINE][NEWLINE]{LOC_BUILDING_JNR_WIND_MILL_NAME}:[NEWLINE]{LOC_BUILDING_JNR_WIND_MILL_DESCRIPTION}"),
-    -- 
+    -- ("zh_Hans_CN",  "LOC_BUILDING_RUHR_VALLEY_DESCRIPTION",                  "该城市+20% [ICON_Production] 生产力，此城中每个矿山和采石场+2 [ICON_Production] 生产力。通往此城的国际 [ICON_TradeRoute] 商路为双方+3 [ICON_PRODUCTION] 生产力。通往此城的国内 [ICON_TradeRoute] 商路+5 [ICON_PRODUCTION] 生产力。必须沿河而建，且与拥有工厂、电子厂或化工厂的工业区区域相邻。"), 
     ("zh_Hans_CN",  "LOC_PROJECT_JNR_CONVERT_REACTOR_TO_FREIGHT_NAME",          "转换为物流中心"),
     ("zh_Hans_CN",  "LOC_PROJECT_JNR_CONVERT_REACTOR_TO_FREIGHT_SHORT_NAME",    "转换为物流中心"),
     ("zh_Hans_CN",  "LOC_PROJECT_JNR_CONVERT_REACTOR_TO_FREIGHT_DESCRIPTION",   "将城市中的发电站变更为{LOC_BUILDING_JNR_FREIGHT_YARD_NAME}.[NEWLINE][NEWLINE]{LOC_BUILDING_JNR_FREIGHT_YARD_NAME}:[NEWLINE]{LOC_BUILDING_JNR_FREIGHT_YARD_DESCRIPTION}"),
@@ -130,5 +112,19 @@ UPDATE LocalizedText SET Text=REPLACE(Text, '工作坊','工业区二级建筑')
     'LOC_TRAIT_LEADER_VICTORIA_ALT_DESCRIPTION',
     'LOC_POLICY_INVENTION_DESCRIPTION_XP2'
 );
-UPDATE LocalizedText SET Text=REPLACE(Text, 'Tier 2','Tier 3') WHERE Tag = 'LOC_BUILDING_RUHR_VALLEY_DESCRIPTION';
-UPDATE LocalizedText SET Text=REPLACE(Text, '二级建筑','三级建筑') WHERE Tag = 'LOC_BUILDING_RUHR_VALLEY_DESCRIPTION';
+
+UPDATE LocalizedText SET Text=REPLACE(Text, 'Tier 3','Tier 4') WHERE Tag in (
+    'LOC_POLICY_HD_UNMANNED_FACTORY_DESCRIPTION'
+);
+UPDATE LocalizedText SET Text=REPLACE(Text, '三级建筑','四级建筑') WHERE Tag in (
+    'LOC_POLICY_HD_UNMANNED_FACTORY_DESCRIPTION'
+);
+
+UPDATE LocalizedText SET Text=REPLACE(Text, 'Tier 2','Tier 3') WHERE Tag in (
+    'LOC_BUILDING_RUHR_VALLEY_DESCRIPTION',
+    'LOC_POLICY_HD_UNMANNED_FACTORY_DESCRIPTION'
+);
+UPDATE LocalizedText SET Text=REPLACE(Text, '二级建筑','三级建筑') WHERE Tag in (
+    'LOC_BUILDING_RUHR_VALLEY_DESCRIPTION',
+    'LOC_POLICY_HD_UNMANNED_FACTORY_DESCRIPTION'
+);

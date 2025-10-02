@@ -12,8 +12,7 @@ VALUES  ('BUILDING_JNR_ASSEMBLY',       'KIND_BUILDING'),
         ('BUILDING_JNR_OPERA',          'KIND_BUILDING'),
         ('BUILDING_JNR_GRAND_HOTEL',    'KIND_BUILDING'),
         ('BUILDING_HD_ART_PUBLISHING_HOUSE',    'KIND_BUILDING'),
-        ('BUILDING_JNR_MEDIA_CENTER',   'KIND_BUILDING'),
-        ('BUILDING_HD_CINEMA',   'KIND_BUILDING');
+        ('BUILDING_JNR_MEDIA_CENTER',   'KIND_BUILDING');
 --------------------------------------------------------------
 
 -- Buildings
@@ -26,8 +25,7 @@ VALUES  ('BUILDING_JNR_ASSEMBLY',               'DISTRICT_THEATER', 'CIVIC_DRAMA
         ('BUILDING_JNR_OPERA',                  'DISTRICT_THEATER', 'CIVIC_OPERA_BALLET',                       450,    7,              1,              0,              'YIELD_GOLD',   'ADVISOR_CULTURE',  'LOC_BUILDING_JNR_OPERA_NAME',          'LOC_BUILDING_JNR_OPERA_DESCRIPTION'),
         ('BUILDING_JNR_GRAND_HOTEL',            'DISTRICT_THEATER', null,                                       450,    7,              1,              0,              'YIELD_GOLD',   'ADVISOR_CULTURE',  'LOC_BUILDING_JNR_GRAND_HOTEL_NAME',    'LOC_BUILDING_JNR_GRAND_HOTEL_DESCRIPTION'),
         ('BUILDING_HD_ART_PUBLISHING_HOUSE',    'DISTRICT_THEATER', 'CIVIC_JOURNALISM_STUDIES_HD',              450,    7,              1,              0,              'YIELD_GOLD',   'ADVISOR_CULTURE',  'LOC_BUILDING_HD_ART_PUBLISHING_HOUSE_NAME',    'LOC_BUILDING_HD_ART_PUBLISHING_HOUSE_DESCRIPTION'),
-        ('BUILDING_JNR_MEDIA_CENTER',           'DISTRICT_THEATER', 'CIVIC_MASS_MEDIA',                         700,    10,             1,              0,              'YIELD_GOLD',   'ADVISOR_CULTURE',  'LOC_BUILDING_JNR_MEDIA_CENTER_NAME',   'LOC_BUILDING_JNR_MEDIA_CENTER_DESCRIPTION'),
-        ('BUILDING_HD_CINEMA',                  'DISTRICT_THEATER', 'CIVIC_MASS_MEDIA',                         700,    10,             1,              0,              'YIELD_GOLD',   'ADVISOR_CULTURE',  'LOC_BUILDING_HD_CINEMA_NAME',          'LOC_BUILDING_HD_CINEMA_DESCRIPTION');
+        ('BUILDING_JNR_MEDIA_CENTER',           'DISTRICT_THEATER', 'CIVIC_MASS_MEDIA',                         700,    10,             1,              0,              'YIELD_GOLD',   'ADVISOR_CULTURE',  'LOC_BUILDING_JNR_MEDIA_CENTER_NAME',   'LOC_BUILDING_JNR_MEDIA_CENTER_DESCRIPTION');
 update Buildings set PrereqTech = 'TECH_CIVIL_ENGINEERING_HD' where BuildingType = 'BUILDING_JNR_GRAND_HOTEL';
 --------------------------------------------------------------
 
@@ -45,12 +43,6 @@ INSERT OR IGNORE INTO Buildings_XP2
 SELECT  'BUILDING_JNR_MEDIA_CENTER',    RequiredPower
 FROM    Buildings_XP2
 WHERE   BuildingType='BUILDING_BROADCAST_CENTER';
-
-INSERT OR IGNORE INTO Buildings_XP2
-        (BuildingType,                  RequiredPower)
-SELECT  'BUILDING_HD_CINEMA',           RequiredPower
-FROM    Buildings_XP2
-WHERE   BuildingType='BUILDING_BROADCAST_CENTER';
 --------------------------------------------------------------
 
 -- BuildingReplaces
@@ -62,7 +54,7 @@ INSERT OR IGNORE INTO BuildingReplaces
         (CivUniqueBuildingType,     ReplacesBuildingType)
 VALUES  ('BUILDING_MARAE',          'BUILDING_JNR_ASSEMBLY'),
 --        ('BUILDING_MARAE',          'BUILDING_AMPHITHEATER'),
-        ('BUILDING_FILM_STUDIO',    'BUILDING_HD_CINEMA');
+        ('BUILDING_FILM_STUDIO',    'BUILDING_JNR_MEDIA_CENTER');
 --------------------------------------------------------------
 
 -- BuildingPrereqs
@@ -100,10 +92,7 @@ VALUES
         ('BUILDING_JNR_MEDIA_CENTER',   'BUILDING_HD_ART_PUBLISHING_HOUSE'),
         ('BUILDING_FILM_STUDIO',        'BUILDING_JNR_OPERA'),
         ('BUILDING_FILM_STUDIO',        'BUILDING_JNR_GRAND_HOTEL'),
-        ('BUILDING_FILM_STUDIO',        'BUILDING_HD_ART_PUBLISHING_HOUSE'),
-        ('BUILDING_HD_CINEMA',          'BUILDING_JNR_OPERA'),
-        ('BUILDING_HD_CINEMA',          'BUILDING_JNR_GRAND_HOTEL'),
-        ('BUILDING_HD_CINEMA',          'BUILDING_HD_ART_PUBLISHING_HOUSE');
+        ('BUILDING_FILM_STUDIO',        'BUILDING_HD_ART_PUBLISHING_HOUSE');
 --------------------------------------------------------------
 
 -- MutuallyExclusiveBuildings
@@ -126,13 +115,9 @@ VALUES
         ('BUILDING_HD_ART_PUBLISHING_HOUSE',    'BUILDING_JNR_GRAND_HOTEL'),
         -- 四级建筑
         ('BUILDING_BROADCAST_CENTER',   'BUILDING_JNR_MEDIA_CENTER'),
-        ('BUILDING_BROADCAST_CENTER',   'BUILDING_HD_CINEMA'),
         ('BUILDING_JNR_MEDIA_CENTER',   'BUILDING_BROADCAST_CENTER'),
-        ('BUILDING_JNR_MEDIA_CENTER',   'BUILDING_HD_CINEMA'),
-        ('BUILDING_HD_CINEMA',          'BUILDING_BROADCAST_CENTER'),
-        ('BUILDING_HD_CINEMA',          'BUILDING_JNR_MEDIA_CENTER'),
         ('BUILDING_FILM_STUDIO',        'BUILDING_BROADCAST_CENTER'),
-        ('BUILDING_FILM_STUDIO',        'BUILDING_JNR_MEDIA_CENTER');
+        ('BUILDING_BROADCAST_CENTER',   'BUILDING_FILM_STUDIO');
 
 -- Uniques
 INSERT OR IGNORE INTO MutuallyExclusiveBuildings
@@ -144,16 +129,6 @@ INSERT OR IGNORE INTO MutuallyExclusiveBuildings
         (Building,                          MutuallyExclusiveBuilding)
 SELECT  CivUniqueBuildingType,              'BUILDING_JNR_MEDIA_CENTER'
 FROM    BuildingReplaces    WHERE   ReplacesBuildingType='BUILDING_BROADCAST_CENTER' AND CivUniqueBuildingType NOT IN ('BUILDING_FILM_STUDIO');
-
-INSERT OR IGNORE INTO MutuallyExclusiveBuildings
-        (Building,                          MutuallyExclusiveBuilding)
-SELECT  BuildingType,                       'BUILDING_JNR_MEDIA_CENTER'
-FROM    Buildings    WHERE   BuildingType='BUILDING_FILM_STUDIO';
-
-INSERT OR IGNORE INTO MutuallyExclusiveBuildings
-        (Building,                          MutuallyExclusiveBuilding)
-SELECT  'BUILDING_JNR_MEDIA_CENTER',        BuildingType
-FROM    Buildings    WHERE   BuildingType='BUILDING_FILM_STUDIO';
 
 insert or ignore into MutuallyExclusiveBuildings
 	(Building,					MutuallyExclusiveBuilding)
