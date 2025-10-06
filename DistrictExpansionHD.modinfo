@@ -120,34 +120,6 @@
     </ImportFiles>
   </FrontEndActions>
   <InGameActions>
-    <!-- Icons -->
-    <ImportFiles id="Campus_Tier3_New_Icons">
-      <Properties><LoadOrder>1</LoadOrder></Properties>
-      <File>Assets/Campus_Tier3_New_32.dds</File>
-      <File>Assets/Campus_Tier3_New_38.dds</File>
-      <File>Assets/Campus_Tier3_New_50.dds</File>
-      <File>Assets/Campus_Tier3_New_80.dds</File>
-      <File>Assets/Campus_Tier3_New_128.dds</File>
-      <File>Assets/Campus_Tier3_New_256.dds</File>
-    </ImportFiles>
-    <ImportFiles id="JNR_Commerce_New_Icons">
-      <Properties><LoadOrder>1</LoadOrder></Properties>
-      <File>Assets/JNR_Commerce_New_32.dds</File>
-      <File>Assets/JNR_Commerce_New_38.dds</File>
-      <File>Assets/JNR_Commerce_New_50.dds</File>
-      <File>Assets/JNR_Commerce_New_80.dds</File>
-      <File>Assets/JNR_Commerce_New_128.dds</File>
-      <File>Assets/JNR_Commerce_New_256.dds</File>
-    </ImportFiles>
-    <ImportFiles id="JNR_Suburb_New_Icons">
-      <Properties><LoadOrder>1</LoadOrder></Properties>
-      <File>Assets/JNR_Suburb_New_32.dds</File>
-      <File>Assets/JNR_Suburb_New_38.dds</File>
-      <File>Assets/JNR_Suburb_New_50.dds</File>
-      <File>Assets/JNR_Suburb_New_80.dds</File>
-      <File>Assets/JNR_Suburb_New_128.dds</File>
-      <File>Assets/JNR_Suburb_New_256.dds</File>
-    </ImportFiles>
     <UpdateIcons id="DistrictExpansion_Icons" criteria="Expansion2">
       <Properties><LoadOrder>12000</LoadOrder></Properties>
       <File>Icons/Icons.sql</File>
@@ -398,24 +370,5 @@
     <File>Text/holysite_texts.sql</File>
     <File>Text/encampment_texts.sql</File>
     <File>Text/diplomacy_texts.sql</File>
-    <!-- Assets -->
-    <File>Assets/Campus_Tier3_New_32.dds</File>
-    <File>Assets/Campus_Tier3_New_38.dds</File>
-    <File>Assets/Campus_Tier3_New_50.dds</File>
-    <File>Assets/Campus_Tier3_New_80.dds</File>
-    <File>Assets/Campus_Tier3_New_128.dds</File>
-    <File>Assets/Campus_Tier3_New_256.dds</File>
-    <File>Assets/JNR_Commerce_New_32.dds</File>
-    <File>Assets/JNR_Commerce_New_38.dds</File>
-    <File>Assets/JNR_Commerce_New_50.dds</File>
-    <File>Assets/JNR_Commerce_New_80.dds</File>
-    <File>Assets/JNR_Commerce_New_128.dds</File>
-    <File>Assets/JNR_Commerce_New_256.dds</File>
-    <File>Assets/JNR_Suburb_New_32.dds</File>
-    <File>Assets/JNR_Suburb_New_38.dds</File>
-    <File>Assets/JNR_Suburb_New_50.dds</File>
-    <File>Assets/JNR_Suburb_New_80.dds</File>
-    <File>Assets/JNR_Suburb_New_128.dds</File>
-    <File>Assets/JNR_Suburb_New_256.dds</File>
   </Files>
 </Mod>

@@ -11,14 +11,7 @@ VALUES  ('ICON_ATLAS_JNR_UC_COM_BUILDINGS',     32,         4,              4,  
         ('ICON_ATLAS_JNR_UC_COM_BUILDINGS',     50,         4,              4,              'UC_COM_Buildings50.dds'),
         ('ICON_ATLAS_JNR_UC_COM_BUILDINGS',     80,         4,              4,              'UC_COM_Buildings80.dds'),
         ('ICON_ATLAS_JNR_UC_COM_BUILDINGS',     128,        4,              4,              'UC_COM_Buildings128.dds'),
-        ('ICON_ATLAS_JNR_UC_COM_BUILDINGS',     256,        4,              4,              'UC_COM_Buildings256.dds'),
-        -- 
-        ('ICON_ATLAS_JNR_COMMERCE_NEW',         32,         2,              1,              'JNR_Commerce_New_32.dds'),
-        ('ICON_ATLAS_JNR_COMMERCE_NEW',         38,         2,              1,              'JNR_Commerce_New_38.dds'),
-        ('ICON_ATLAS_JNR_COMMERCE_NEW',         50,         2,              1,              'JNR_Commerce_New_50.dds'),
-        ('ICON_ATLAS_JNR_COMMERCE_NEW',         80,         2,              1,              'JNR_Commerce_New_80.dds'),
-        ('ICON_ATLAS_JNR_COMMERCE_NEW',         128,        2,              1,              'JNR_Commerce_New_128.dds'),
-        ('ICON_ATLAS_JNR_COMMERCE_NEW',         256,        2,              1,              'JNR_Commerce_New_256.dds');
+        ('ICON_ATLAS_JNR_UC_COM_BUILDINGS',     256,        4,              4,              'UC_COM_Buildings256.dds');
 --------------------------------------------------------------
 
 -- IconDefinitions
@@ -37,8 +30,6 @@ VALUES  ('ICON_BUILDING_JNR_WAYSTATION',                'ICON_ATLAS_JNR_UC_COM_B
         ('ICON_BUILDING_SHIPYARD',                      'ICON_ATLAS_JNR_UC_COM_BUILDINGS',  8),
         ('ICON_BUILDING_JNR_FISH_MARKET',                  'ICON_ATLAS_JNR_UC_COM_BUILDINGS',  10),
         ('ICON_BUILDING_JNR_ENTREPOT',                     'ICON_ATLAS_JNR_UC_COM_BUILDINGS',  9),
-        ('ICON_BUILDING_JNR_OFFSHORE_TERMINAL',           'ICON_ATLAS_JNR_COMMERCE_NEW',      1),
-        ('ICON_BUILDING_JNR_NAVAL_BASE',                'ICON_ATLAS_JNR_COMMERCE_NEW',      0),
         ('ICON_BUILDING_JNR_WHARF_BASE',                'ICON_ATLAS_JNR_UC_COM_BUILDINGS',  12),
 
         ('ICON_BUILDING_JNR_MINT_FOW',                  'ICON_ATLAS_BUILDINGS_FOW', 11),
@@ -50,8 +41,6 @@ VALUES  ('ICON_BUILDING_JNR_WAYSTATION',                'ICON_ATLAS_JNR_UC_COM_B
         ('ICON_BUILDING_JNR_WHARF_BASE_FOW',            'ICON_ATLAS_BUILDINGS_FOW', 22),
         ('ICON_BUILDING_JNR_LIGHTHOUSE_FISHING_FOW',      'ICON_ATLAS_BUILDINGS_FOW', 10),
         ('ICON_BUILDING_JNR_ENTREPOT_FOW',                 'ICON_ATLAS_BUILDINGS_FOW', 22),
-        ('ICON_BUILDING_JNR_FISH_MARKET_FOW',              'ICON_ATLAS_BUILDINGS_FOW', 22),
-        ('ICON_BUILDING_JNR_OFFSHORE_TERMINAL_FOW',       'ICON_ATLAS_BUILDINGS_FOW', 33),
-        ('ICON_BUILDING_JNR_NAVAL_BASE_FOW',            'ICON_ATLAS_JNR_COMMERCE_NEW',0);
+        ('ICON_BUILDING_JNR_FISH_MARKET_FOW',              'ICON_ATLAS_BUILDINGS_FOW', 22);
 
 --------------------------------------------------------------
