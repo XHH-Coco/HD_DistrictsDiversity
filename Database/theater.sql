@@ -73,7 +73,6 @@ values
 	('BUILDING_JNR_ASSEMBLY',								'GREATWORKSLOT_MUSIC',				1),
 	('BUILDING_JNR_CABINET',								'GREATWORKSLOT_ART',					2),
 	('BUILDING_JNR_MANSION',								'GREATWORKSLOT_WRITING',			2),
-	('BUILDING_JNR_OPERA',									'GREATWORKSLOT_MUSIC',				3),
 	('BUILDING_HD_ART_PUBLISHING_HOUSE',		'GREATWORKSLOT_WRITING',			1),
 	('BUILDING_HD_ART_PUBLISHING_HOUSE',		'GREATWORKSLOT_ART',					2),
 	('BUILDING_JNR_MEDIA_CENTER',						'GREATWORKSLOT_WRITING',			2),
@@ -88,6 +87,7 @@ where exists (select GreatWorkSlotType from GreatWorkSlotTypes where GreatWorkSl
 insert or replace into Building_GreatWorks
 	(BuildingType,												GreatWorkSlotType,					NumSlots,		ThemingUniquePerson,		ThemingSameEras,		ThemingYieldMultiplier,		ThemingTourismMultiplier,		ThemingBonusDescription)
 values
+	('BUILDING_JNR_OPERA',								'GREATWORKSLOT_MUSIC',			3,					1,											1,									100,											100,												'LOC_BUILDING_JNR_OPERA_THEMINGBONUS'),
 	('BUILDING_FILM_STUDIO',							'GREATWORKSLOT_PALACE',			4,					0,											1,									100,											100,												'LOC_BUILDING_HD_FILM_STUDIO_THEMINGBONUS');
 
 	-- 专家产出

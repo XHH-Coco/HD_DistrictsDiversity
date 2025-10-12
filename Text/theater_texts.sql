@@ -30,7 +30,8 @@ values
     ("LOC_BUILDING_MUSEUM_ARTIFACT_DESCRIPTION_JNR",            "Holds [ICON_GreatWork_Artifact] Artifacts. May not be built in a Theater Square district that already has an Art Museum."),
     -- 歌剧院
     ("LOC_BUILDING_JNR_OPERA_NAME",                             "Opera House"),
-    ("LOC_BUILDING_JNR_OPERA_DESCRIPTION",                      "+3 [ICON_CULTURE] Culture for [ICON_GreatWork_Music] Great Works of Music in this city. +10% accumulation rate for [ICON_GREATMUSICIAN] Great Musician Points."),
+    ("LOC_BUILDING_JNR_OPERA_DESCRIPTION",                      "{LOC_BUILDING_JNR_OPERA_THEMINGBONUS}+3 [ICON_CULTURE] Culture for [ICON_GreatWork_Music] Great Works of Music in this city. +10% accumulation rate for [ICON_GREATMUSICIAN] Great Musician Points."),
+    ("LOC_BUILDING_JNR_OPERA_THEMINGBONUS",                     "+100% Theming bonus when displaying objects from different musicians of same era. "),
     -- 大酒店
     ("LOC_BUILDING_JNR_GRAND_HOTEL_NAME",                       "Grand Hotel"),
     ("LOC_BUILDING_JNR_GRAND_HOTEL_DESCRIPTION",                "Bonus [ICON_CULTURE] Culture equal to the adjacency bonus of the Theater district. Provided [ICON_TOURISM] Tourism equal to the adjacency bonus of the Theater District. +50% [ICON_TOURISM] Tourism from improvements in this city."),
@@ -57,7 +58,7 @@ values
     ("LOC_BOOST_TRIGGER_LONGDESC_HUMANISM",                     "Frequent theatrical performances led to a new wave of thinking among the people."),
     ("LOC_BOOST_TRIGGER_LAW_HD",                                "Build 2 Assemblies."),
     ("LOC_BOOST_TRIGGER_LONGDESC_LAW_HD",                       "The continuous exploration of social system by generations of politicians and thinkers inspired the construction of modern legal system."),
-    ("LOC_BOOST_TRIGGER_FINANCE_HD",                            "Build a Shopping Mall and a Grand Hotel."),
+    ("LOC_BOOST_TRIGGER_FINANCE_HD",                            "Build a Department Store and a Grand Hotel."),
     -- 政策卡 士大夫文化
     -- ("LOC_POLICY_SCHOLAR_BUREAUCRAT_DESCRIPTION",               "+4 [ICON_GreatWriter] Great Writer points per turn. +2 [ICON_GreatWriter] Great Writer points per turn for every Amphitheater or Assembly."),
     -- 政策卡 壁画
@@ -100,7 +101,8 @@ values
     ("zh_Hans_CN",  "LOC_BUILDING_MUSEUM_ARTIFACT_DESCRIPTION_JNR",            "可存放 [ICON_GreatWork_Artifact] 文物。如果在剧院广场已经有一座艺术博物馆则无法修建。"),
     -- 歌剧院
     ("zh_Hans_CN",  "LOC_BUILDING_JNR_OPERA_NAME",                             "歌剧院"),
-    ("zh_Hans_CN",  "LOC_BUILDING_JNR_OPERA_DESCRIPTION",                      "本城所有 [ICON_GreatWork_Music] 音乐巨作+3 [ICON_CULTURE] 文化值。玩家的 [ICON_GREATMUSICIAN] 大音乐家点数积累速度+10%。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_JNR_OPERA_DESCRIPTION",                      "{LOC_BUILDING_JNR_OPERA_THEMINGBONUS}本城所有 [ICON_GreatWork_Music] 音乐巨作+3 [ICON_CULTURE] 文化值。玩家的 [ICON_GREATMUSICIAN] 大音乐家点数积累速度+10%。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_JNR_OPERA_THEMINGBONUS",                     "当展示来自相同时代不同音乐家的作品时，+100%主题化加成。"),
     -- 大酒店
     ("zh_Hans_CN",  "LOC_BUILDING_JNR_GRAND_HOTEL_NAME",                       "大酒店"),
     ("zh_Hans_CN",  "LOC_BUILDING_JNR_GRAND_HOTEL_DESCRIPTION",                "[ICON_Culture] 文化值加成等于剧院广场区域的相邻加成。剧院广场的相邻加成也提供相等的 [ICON_TOURISM] 旅游业绩。所在城市中提供 [ICON_TOURISM] 旅游业绩的改良设施产出的 [ICON_TOURISM] 旅游业绩+50%。"),
@@ -127,7 +129,7 @@ values
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_HUMANISM",                     "频繁戏剧的演出引领了人民的新思潮。"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LAW_HD",                                "建造2座公民大会。"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_LAW_HD",                       "一代代政治家和思想家对社会制度的不断探索启发了近现代法律体系的构建。"),
-    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_FINANCE_HD",                            "建造1座购物商场和1座大酒店。"),
+    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_FINANCE_HD",                            "建造1座百货大楼和1座大酒店。"),
     -- 政策卡 士大夫文化
     -- ("zh_Hans_CN",  "LOC_POLICY_SCHOLAR_BUREAUCRAT_DESCRIPTION",               "每回合+4 [ICON_GreatWriter] 大作家点数。每有一座公民大会或古罗马剧场，每回合的 [ICON_GreatWriter] 大作家点数便+2。"),
     -- 政策卡 壁画

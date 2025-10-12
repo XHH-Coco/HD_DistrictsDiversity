@@ -8,19 +8,21 @@
 insert or replace into Building_YieldChanges
 	(BuildingType,						          YieldType,				      YieldChange)
 values
-  ('BUILDING_JNR_TRANSIT_HUB',        'YIELD_GOLD',           10),
-  ('BUILDING_JNR_RECYCLING_PLANT',    'YIELD_PRODUCTION',     3),
-  ('BUILDING_JNR_HOSPITAL',           'YIELD_SCIENCE',        6),
-  ('BUILDING_JNR_ART_GALLERY',        'YIELD_CULTURE',        3),
-  ('BUILDING_JNR_MEDITATION',         'YIELD_GOLD',           9);
+  ('BUILDING_JNR_TRANSIT_HUB',        'YIELD_GOLD',           6),
+  ('BUILDING_JNR_RECYCLING_PLANT',    'YIELD_PRODUCTION',     2),
+  ('BUILDING_JNR_HOSPITAL',           'YIELD_SCIENCE',        2),
+  ('BUILDING_JNR_ART_GALLERY',        'YIELD_CULTURE',        2),
+  ('BUILDING_JNR_MEDITATION',         'YIELD_GOLD',           6);
 
 	-- 通电产出
 insert or replace into Building_YieldChangesBonusWithPower
 	(BuildingType,						          YieldType,				      YieldChange)
 values
-  ('BUILDING_JNR_HOSPITAL',           'YIELD_SCIENCE',        6),
-  ('BUILDING_JNR_ART_GALLERY',        'YIELD_CULTURE',        6),
-  ('BUILDING_JNR_MEDITATION',         'YIELD_GOLD',           18);
+  ('BUILDING_JNR_TRANSIT_HUB',        'YIELD_GOLD',           6),
+  ('BUILDING_JNR_RECYCLING_PLANT',    'YIELD_PRODUCTION',     2),
+  ('BUILDING_JNR_HOSPITAL',           'YIELD_SCIENCE',        2),
+  ('BUILDING_JNR_ART_GALLERY',        'YIELD_CULTURE',        2),
+  ('BUILDING_JNR_MEDITATION',         'YIELD_GOLD',           6);
 
 	-- 巨作槽位
 insert or replace into Building_GreatWorks
@@ -50,15 +52,14 @@ values
 
   ('BUILDING_JNR_HOSPITAL',           'HD_JNR_HOSPITAL_UNIT_HEAL'),
   ('BUILDING_JNR_HOSPITAL',           'HD_JNR_HOSPITAL_EXTRA_GREAT_SCIENTIST_POINTS_1'),
-  ('BUILDING_JNR_HOSPITAL',           'HD_JNR_HOSPITAL_EXTRA_GREAT_SCIENTIST_POINTS_3'),
-  ('BUILDING_JNR_HOSPITAL',           'HD_JNR_HOSPITAL_EXTRA_GREAT_SCIENTIST_POINTS_4'),
+  ('BUILDING_JNR_HOSPITAL',           'HD_JNR_HOSPITAL_EXTRA_GREAT_SCIENTIST_POINTS_2'),
+  ('BUILDING_JNR_HOSPITAL',           'HD_JNR_HOSPITAL_SET_PROPERTY'),
   
-  ('BUILDING_JNR_RECYCLING_PLANT',    'HD_JNR_RECYCLING_PLANT_POP_GOLD'),
-  ('BUILDING_JNR_RECYCLING_PLANT',    'HD_JNR_RECYCLING_PLANT_POP_GOLD_2'),
-  ('BUILDING_JNR_RECYCLING_PLANT',    'HD_JNR_RECYCLING_PLANT_POP_GOLD_3'),
   ('BUILDING_JNR_RECYCLING_PLANT',    'HD_JNR_RECYCLING_PLANT_APPEAL'),
+  ('BUILDING_JNR_RECYCLING_PLANT',    'HD_JNR_RECYCLING_PLANT_GREAT_ENGINEER_POINTS_1'),
+  ('BUILDING_JNR_RECYCLING_PLANT',    'HD_JNR_RECYCLING_PLANT_GREAT_ENGINEER_POINTS_2'),
+  ('BUILDING_JNR_RECYCLING_PLANT',    'HD_JNR_RECYCLING_PLANT_SET_PROPERTY'),
 
-  ('BUILDING_JNR_ART_GALLERY',        'HD_JNR_ART_GALLERY_THEATER_BONUS'),
   ('BUILDING_JNR_ART_GALLERY',        'HD_JNR_ART_GALLERY_PLAYER_WRITER_GPP'),
   ('BUILDING_JNR_ART_GALLERY',        'HD_JNR_ART_GALLERY_PLAYER_ARTIST_GPP'),
   ('BUILDING_JNR_ART_GALLERY',        'HD_JNR_ART_GALLERY_PLAYER_MUSICIAN_GPP'),
@@ -68,8 +69,14 @@ values
   ('BUILDING_JNR_ART_GALLERY',        'HD_JNR_ART_GALLERY_CITIES_LANDSCAPE_TOURISM'),
   ('BUILDING_JNR_ART_GALLERY',        'HD_JNR_ART_GALLERY_CITIES_RELIGIOUS_TOURISM'),
   ('BUILDING_JNR_ART_GALLERY',        'HD_JNR_ART_GALLERY_CITIES_MUSIC_TOURISM'),
-  ('BUILDING_JNR_ART_GALLERY',        'HD_JNR_ART_GALLERY_POP_CULTURE'),
+  ('BUILDING_JNR_ART_GALLERY',        'HD_JNR_ART_GALLERY_CITIES_WRITING_CULTURE'),
+  ('BUILDING_JNR_ART_GALLERY',        'HD_JNR_ART_GALLERY_CITIES_SCULPTURE_CULTURE'),
+  ('BUILDING_JNR_ART_GALLERY',        'HD_JNR_ART_GALLERY_CITIES_PORTRAIT_CULTURE'),
+  ('BUILDING_JNR_ART_GALLERY',        'HD_JNR_ART_GALLERY_CITIES_LANDSCAPE_CULTURE'),
+  ('BUILDING_JNR_ART_GALLERY',        'HD_JNR_ART_GALLERY_CITIES_RELIGIOUS_CULTURE'),
+  ('BUILDING_JNR_ART_GALLERY',        'HD_JNR_ART_GALLERY_CITIES_MUSIC_CULTURE'),
 
+  ('BUILDING_JNR_MEDITATION',         'HD_JNR_MEDITATION_WONDER_BONUS'),
   ('BUILDING_JNR_MEDITATION',         'HD_JNR_MEDITATION_IMPROVEMENT_BONUS_1'),
   ('BUILDING_JNR_MEDITATION',         'HD_JNR_MEDITATION_IMPROVEMENT_BONUS_2'),
   ('BUILDING_JNR_MEDITATION',         'HD_JNR_MEDITATION_CITIES_WONDER_TOURISM'),
@@ -80,26 +87,21 @@ insert or replace into Modifiers
 	(ModifierId,									                      ModifierType,												                        OwnerRequirementSetId,                                       SubjectRequirementSetId,							SubjectStackLimit)
 values
   -- 客运中心
-  ('HD_JNR_TRANSIT_HUB_CIVILIAN_MOVE',                'MODIFIER_SINGLE_CITY_GRANT_ABILITY_FOR_TRAINED_UNITS',     Null,                                                        'UNIT_IS_CIVILIAN_CLASS',             Null),
+  ('HD_JNR_TRANSIT_HUB_CIVILIAN_MOVE',                'MODIFIER_SINGLE_CITY_GRANT_ABILITY_FOR_TRAINED_UNITS',     Null,                                                        'UNIT_IS_CIVILIAN_CLASS',            Null),
   
   -- 医院
-  ('HD_JNR_HOSPITAL_UNIT_HEAL',                       'MODIFIER_PLAYER_UNITS_ADJUST_HEAL_PER_TURN',               Null,                                                        'OBJECT_IS_AT_OR_ADJACENT',           Null),
-  ('HD_JNR_HOSPITAL_EXTRA_GREAT_SCIENTIST_POINTS_1',  'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',                   Null,                                                        'HD_OBJECT_WITHIN_6_TILES',           1),
-  ('HD_JNR_HOSPITAL_EXTRA_GREAT_SCIENTIST_POINTS_3',  'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',                   'CAMPUS_HAS_HIGH_ADJACENCY',                                 'HD_OBJECT_WITHIN_6_TILES',           1),
-  ('HD_JNR_HOSPITAL_EXTRA_GREAT_SCIENTIST_POINTS_4',  'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',                   'PLAYER_HAS_TECH_MEDICAL_SCIENCE_HD_REQUIREMENTS',           'HD_OBJECT_WITHIN_6_TILES',           1),
-  ('HD_JNR_HOSPITAL_EXTRA_GREAT_SCIENTIST_POINTS',    'MODIFIER_PLAYER_ADJUST_GREAT_PERSON_POINTS_PERCENT',       Null,                                                        Null,                                 Null),
+  ('HD_JNR_HOSPITAL_UNIT_HEAL',                       'MODIFIER_PLAYER_UNITS_ADJUST_HEAL_PER_TURN',               Null,                                                        'OBJECT_IS_AT_OR_ADJACENT',          Null),
+  ('HD_JNR_HOSPITAL_EXTRA_GREAT_SCIENTIST_POINTS_1',  'MODIFIER_PLAYER_ADJUST_GREAT_PERSON_POINTS_PERCENT',       Null,                                                        Null,                                Null),
+  ('HD_JNR_HOSPITAL_EXTRA_GREAT_SCIENTIST_POINTS_2',  'MODIFIER_PLAYER_ADJUST_GREAT_PERSON_POINTS_PERCENT',       'PLAYER_HAS_TECH_MEDICAL_SCIENCE_HD_REQUIREMENTS',           Null,                                Null),
+  ('HD_JNR_HOSPITAL_SET_PROPERTY',                    'MODIFIER_PLAYER_ADJUST_PROPERTY',                          Null,                                                        Null,                                Null),
   
   -- 垃圾回收中心
-  ('HD_JNR_RECYCLING_PLANT_POP_GOLD',                 'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_PER_POPULATION',  Null,                                                        'HD_OBJECT_WITHIN_6_TILES',           1),
-  ('HD_JNR_RECYCLING_PLANT_POP_PRODUCTION',           'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_PER_POPULATION',  Null,                                                        'HD_OBJECT_WITHIN_6_TILES',           1),
-  ('HD_JNR_RECYCLING_PLANT_POP_GOLD_2',               'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_PER_POPULATION',  'INDUSTRIAL_ZONE_HAS_HIGH_ADJACENCY',                        'HD_OBJECT_WITHIN_6_TILES',           1),
-  ('HD_JNR_RECYCLING_PLANT_POP_PRODUCTION_2',         'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_PER_POPULATION',  'INDUSTRIAL_ZONE_HAS_HIGH_ADJACENCY',                        'HD_OBJECT_WITHIN_6_TILES',           1),
-  ('HD_JNR_RECYCLING_PLANT_POP_GOLD_3',               'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_PER_POPULATION',  'PLAYER_HAS_TECH_INDUSTRIAL_AUTOMATION_HD_REQUIREMENTS',     'HD_OBJECT_WITHIN_6_TILES',           1),
-  ('HD_JNR_RECYCLING_PLANT_POP_PRODUCTION_3',         'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_PER_POPULATION',  'PLAYER_HAS_TECH_INDUSTRIAL_AUTOMATION_HD_REQUIREMENTS',     'HD_OBJECT_WITHIN_6_TILES',           1),
-  ('HD_JNR_RECYCLING_PLANT_APPEAL',                   'MODIFIER_SINGLE_CITY_ADJUST_CITY_APPEAL',                  Null,                                                         Null,                                 Null),
-  
+  ('HD_JNR_RECYCLING_PLANT_APPEAL',                   'MODIFIER_SINGLE_CITY_ADJUST_CITY_APPEAL',                  Null,                                                        Null,                                Null),
+  ('HD_JNR_RECYCLING_PLANT_GREAT_ENGINEER_POINTS_1',  'MODIFIER_PLAYER_ADJUST_GREAT_PERSON_POINTS_PERCENT',       Null,                                                        Null,                                Null),
+  ('HD_JNR_RECYCLING_PLANT_GREAT_ENGINEER_POINTS_2',  'MODIFIER_PLAYER_ADJUST_GREAT_PERSON_POINTS_PERCENT',       'PLAYER_HAS_TECH_INDUSTRIAL_AUTOMATION_HD_REQUIREMENTS',     Null,                                Null),
+  ('HD_JNR_RECYCLING_PLANT_SET_PROPERTY',             'MODIFIER_SINGLE_CITY_ADJUST_PROPERTY',                     Null,                                                        Null,                                Null),
+    
   -- 艺术街区
-  ('HD_JNR_ART_GALLERY_THEATER_BONUS',                'MODIFIER_CITY_DISTRICTS_ADJUST_YIELD_MODIFIER',            Null,                       'DISTRICT_IS_THEATER',                                          Null),
   ('HD_JNR_ART_GALLERY_PLAYER_WRITER_GPP',            'MODIFIER_PLAYER_ADJUST_GREAT_PERSON_POINTS_PERCENT',       Null,                       Null,                                                           Null),
   ('HD_JNR_ART_GALLERY_PLAYER_ARTIST_GPP',            'MODIFIER_PLAYER_ADJUST_GREAT_PERSON_POINTS_PERCENT',       Null,                       Null,                                                           Null),
   ('HD_JNR_ART_GALLERY_PLAYER_MUSICIAN_GPP',          'MODIFIER_PLAYER_ADJUST_GREAT_PERSON_POINTS_PERCENT',       Null,                       Null,                                                           Null),
@@ -109,9 +111,15 @@ values
   ('HD_JNR_ART_GALLERY_CITIES_LANDSCAPE_TOURISM',     'MODIFIER_PLAYER_CITIES_ADJUST_TOURISM',                    'CITY_IS_POWERED',          Null,                                                           Null),
   ('HD_JNR_ART_GALLERY_CITIES_RELIGIOUS_TOURISM',     'MODIFIER_PLAYER_CITIES_ADJUST_TOURISM',                    'CITY_IS_POWERED',          Null,                                                           Null),
   ('HD_JNR_ART_GALLERY_CITIES_MUSIC_TOURISM',         'MODIFIER_PLAYER_CITIES_ADJUST_TOURISM',                    'CITY_IS_POWERED',          Null,                                                           Null),
-  ('HD_JNR_ART_GALLERY_POP_CULTURE',                  'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_PER_POPULATION',    Null,                       Null,                                                           Null),
+  ('HD_JNR_ART_GALLERY_CITIES_WRITING_CULTURE',       'MODIFIER_PLAYER_CITIES_ADJUST_GREATWORK_YIELD',            'CITY_IS_POWERED',          Null,                                                           Null),
+  ('HD_JNR_ART_GALLERY_CITIES_SCULPTURE_CULTURE',     'MODIFIER_PLAYER_CITIES_ADJUST_GREATWORK_YIELD',            'CITY_IS_POWERED',          Null,                                                           Null),
+  ('HD_JNR_ART_GALLERY_CITIES_PORTRAIT_CULTURE',      'MODIFIER_PLAYER_CITIES_ADJUST_GREATWORK_YIELD',            'CITY_IS_POWERED',          Null,                                                           Null),
+  ('HD_JNR_ART_GALLERY_CITIES_LANDSCAPE_CULTURE',     'MODIFIER_PLAYER_CITIES_ADJUST_GREATWORK_YIELD',            'CITY_IS_POWERED',          Null,                                                           Null),
+  ('HD_JNR_ART_GALLERY_CITIES_RELIGIOUS_CULTURE',     'MODIFIER_PLAYER_CITIES_ADJUST_GREATWORK_YIELD',            'CITY_IS_POWERED',          Null,                                                           Null),
+  ('HD_JNR_ART_GALLERY_CITIES_MUSIC_CULTURE',         'MODIFIER_PLAYER_CITIES_ADJUST_GREATWORK_YIELD',            'CITY_IS_POWERED',          Null,                                                           Null),
 
   -- 房车营地
+  ('HD_JNR_MEDITATION_WONDER_BONUS',                  'MODIFIER_PLAYER_CITIES_ADJUST_WONDER_YIELD_CHANGE',        Null,                       Null,                                                           Null),
   ('HD_JNR_MEDITATION_IMPROVEMENT_BONUS_1',           'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',                        Null,                       'HD_IMPROVEMENT_CHARMING_APPEAL_REQUIREMENTS',                  Null),
   ('HD_JNR_MEDITATION_IMPROVEMENT_BONUS_2',           'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',                        Null,                       'HD_IMPROVEMENT_BREATHTAKING_APPEAL_REQUIREMENTS',              Null),
   ('HD_JNR_MEDITATION_CITIES_WONDER_TOURISM',         'MODIFIER_PLAYER_CITIES_ADJUST_TOURISM',                    'CITY_IS_POWERED',          Null,                                                           Null),
@@ -129,30 +137,23 @@ values
   -- 医院
   ('HD_JNR_HOSPITAL_UNIT_HEAL',                       'Amount',                   20),
   ('HD_JNR_HOSPITAL_UNIT_HEAL',                       'Type',                     'ALL'),
-  ('HD_JNR_HOSPITAL_EXTRA_GREAT_SCIENTIST_POINTS_1',  'ModifierId',               'HD_JNR_HOSPITAL_EXTRA_GREAT_SCIENTIST_POINTS'),
-  ('HD_JNR_HOSPITAL_EXTRA_GREAT_SCIENTIST_POINTS_3',  'ModifierId',               'HD_JNR_HOSPITAL_EXTRA_GREAT_SCIENTIST_POINTS'),
-  ('HD_JNR_HOSPITAL_EXTRA_GREAT_SCIENTIST_POINTS_4',  'ModifierId',               'HD_JNR_HOSPITAL_EXTRA_GREAT_SCIENTIST_POINTS'),
-  ('HD_JNR_HOSPITAL_EXTRA_GREAT_SCIENTIST_POINTS',    'GreatPersonClassType',     'GREAT_PERSON_CLASS_SCIENTIST'),
-  ('HD_JNR_HOSPITAL_EXTRA_GREAT_SCIENTIST_POINTS',    'Amount',                   10),
+  ('HD_JNR_HOSPITAL_EXTRA_GREAT_SCIENTIST_POINTS_1',  'GreatPersonClassType',     'GREAT_PERSON_CLASS_SCIENTIST'),
+  ('HD_JNR_HOSPITAL_EXTRA_GREAT_SCIENTIST_POINTS_1',  'Amount',                   10),
+  ('HD_JNR_HOSPITAL_EXTRA_GREAT_SCIENTIST_POINTS_2',  'GreatPersonClassType',     'GREAT_PERSON_CLASS_SCIENTIST'),
+  ('HD_JNR_HOSPITAL_EXTRA_GREAT_SCIENTIST_POINTS_2',  'Amount',                   10),
+  ('HD_JNR_HOSPITAL_SET_PROPERTY',                    'Key',                      'HD_PLAYER_HAS_JNR_HOSPITAL'),
+  ('HD_JNR_HOSPITAL_SET_PROPERTY',                    'Amount',                   1),
   
   -- 垃圾回收中心
-  ('HD_JNR_RECYCLING_PLANT_POP_GOLD',                 'YieldType',                'YIELD_GOLD'),
-  ('HD_JNR_RECYCLING_PLANT_POP_GOLD',                 'Amount',                   1),
-  ('HD_JNR_RECYCLING_PLANT_POP_PRODUCTION',           'YieldType',                'YIELD_PRODUCTION'),
-  ('HD_JNR_RECYCLING_PLANT_POP_PRODUCTION',           'Amount',                   0.4),
-  ('HD_JNR_RECYCLING_PLANT_POP_GOLD_2',               'YieldType',                'YIELD_GOLD'),
-  ('HD_JNR_RECYCLING_PLANT_POP_GOLD_2',               'Amount',                   1),
-  ('HD_JNR_RECYCLING_PLANT_POP_PRODUCTION_2',         'YieldType',                'YIELD_PRODUCTION'),
-  ('HD_JNR_RECYCLING_PLANT_POP_PRODUCTION_2',         'Amount',                   0.4),
-  ('HD_JNR_RECYCLING_PLANT_POP_GOLD_3',               'YieldType',                'YIELD_GOLD'),
-  ('HD_JNR_RECYCLING_PLANT_POP_GOLD_3',               'Amount',                   1),
-  ('HD_JNR_RECYCLING_PLANT_POP_PRODUCTION_3',         'YieldType',                'YIELD_PRODUCTION'),
-  ('HD_JNR_RECYCLING_PLANT_POP_PRODUCTION_3',         'Amount',                   0.4),
   ('HD_JNR_RECYCLING_PLANT_APPEAL',                   'Amount',                   1),
+  ('HD_JNR_RECYCLING_PLANT_GREAT_ENGINEER_POINTS_1',  'GreatPersonClassType',     'GREAT_PERSON_CLASS_ENGINEER'),
+  ('HD_JNR_RECYCLING_PLANT_GREAT_ENGINEER_POINTS_1',  'Amount',                   10),
+  ('HD_JNR_RECYCLING_PLANT_GREAT_ENGINEER_POINTS_2',  'GreatPersonClassType',     'GREAT_PERSON_CLASS_ENGINEER'),
+  ('HD_JNR_RECYCLING_PLANT_GREAT_ENGINEER_POINTS_2',  'Amount',                   10),
+  ('HD_JNR_RECYCLING_PLANT_SET_PROPERTY',             'Key',                      'HD_CITY_HAS_JNR_RECYCLING_PLANT'),
+  ('HD_JNR_RECYCLING_PLANT_SET_PROPERTY',             'Amount',                   1),
   
   -- 艺术街区
-  ('HD_JNR_ART_GALLERY_THEATER_BONUS',                'Amount',                   100),
-  ('HD_JNR_ART_GALLERY_THEATER_BONUS',                'YieldType',                'YIELD_CULTURE'),
   ('HD_JNR_ART_GALLERY_PLAYER_WRITER_GPP',            'Amount',                   10),
   ('HD_JNR_ART_GALLERY_PLAYER_WRITER_GPP',            'GreatPersonClassType',     'GREAT_PERSON_CLASS_WRITER'),
   ('HD_JNR_ART_GALLERY_PLAYER_ARTIST_GPP',            'Amount',                   10),
@@ -171,20 +172,38 @@ values
   ('HD_JNR_ART_GALLERY_CITIES_RELIGIOUS_TOURISM',     'GreatWorkObjectType',      'GREATWORKOBJECT_RELIGIOUS'),
   ('HD_JNR_ART_GALLERY_CITIES_MUSIC_TOURISM',         'ScalingFactor',            300),
   ('HD_JNR_ART_GALLERY_CITIES_MUSIC_TOURISM',         'GreatWorkObjectType',      'GREATWORKOBJECT_MUSIC'),
-  ('HD_JNR_ART_GALLERY_POP_CULTURE',                  'Amount',                   1),
-  ('HD_JNR_ART_GALLERY_POP_CULTURE',                  'YieldType',                'YIELD_CULTURE'),
+  ('HD_JNR_ART_GALLERY_CITIES_WRITING_CULTURE',       'YieldType',                'YIELD_CULTURE'),
+  ('HD_JNR_ART_GALLERY_CITIES_WRITING_CULTURE',       'ScalingFactor',            125),
+  ('HD_JNR_ART_GALLERY_CITIES_WRITING_CULTURE',       'GreatWorkObjectType',      'GREATWORKOBJECT_WRITING'),
+  ('HD_JNR_ART_GALLERY_CITIES_SCULPTURE_CULTURE',     'YieldType',                'YIELD_CULTURE'),
+  ('HD_JNR_ART_GALLERY_CITIES_SCULPTURE_CULTURE',     'ScalingFactor',            125),
+  ('HD_JNR_ART_GALLERY_CITIES_SCULPTURE_CULTURE',     'GreatWorkObjectType',      'GREATWORKOBJECT_SCULPTURE'),
+  ('HD_JNR_ART_GALLERY_CITIES_PORTRAIT_CULTURE',      'YieldType',                'YIELD_CULTURE'),
+  ('HD_JNR_ART_GALLERY_CITIES_PORTRAIT_CULTURE',      'ScalingFactor',            125),
+  ('HD_JNR_ART_GALLERY_CITIES_PORTRAIT_CULTURE',      'GreatWorkObjectType',      'GREATWORKOBJECT_PORTRAIT'),
+  ('HD_JNR_ART_GALLERY_CITIES_LANDSCAPE_CULTURE',     'YieldType',                'YIELD_CULTURE'),
+  ('HD_JNR_ART_GALLERY_CITIES_LANDSCAPE_CULTURE',     'ScalingFactor',            125),
+  ('HD_JNR_ART_GALLERY_CITIES_LANDSCAPE_CULTURE',     'GreatWorkObjectType',      'GREATWORKOBJECT_LANDSCAPE'),
+  ('HD_JNR_ART_GALLERY_CITIES_RELIGIOUS_CULTURE',     'YieldType',                'YIELD_CULTURE'),
+  ('HD_JNR_ART_GALLERY_CITIES_RELIGIOUS_CULTURE',     'ScalingFactor',            125),
+  ('HD_JNR_ART_GALLERY_CITIES_RELIGIOUS_CULTURE',     'GreatWorkObjectType',      'GREATWORKOBJECT_RELIGIOUS'),
+  ('HD_JNR_ART_GALLERY_CITIES_MUSIC_CULTURE',         'YieldType',                'YIELD_CULTURE'),
+  ('HD_JNR_ART_GALLERY_CITIES_MUSIC_CULTURE',         'ScalingFactor',            125),
+  ('HD_JNR_ART_GALLERY_CITIES_MUSIC_CULTURE',         'GreatWorkObjectType',      'GREATWORKOBJECT_MUSIC'),
   
   -- 房车营地
-  ('HD_JNR_MEDITATION_IMPROVEMENT_BONUS_1',           'YieldType',                'YIELD_CULTURE,YIELD_GOLD'),
-  ('HD_JNR_MEDITATION_IMPROVEMENT_BONUS_1',           'Amount',                   '1,3'),
-  ('HD_JNR_MEDITATION_IMPROVEMENT_BONUS_2',           'YieldType',                'YIELD_CULTURE,YIELD_GOLD'),
-  ('HD_JNR_MEDITATION_IMPROVEMENT_BONUS_2',           'Amount',                   '1,3'),
+  ('HD_JNR_MEDITATION_WONDER_BONUS',                  'YieldType',                'YIELD_CULTURE'),
+  ('HD_JNR_MEDITATION_WONDER_BONUS',                  'Amount',                   1),
+  ('HD_JNR_MEDITATION_IMPROVEMENT_BONUS_1',           'YieldType',                'YIELD_GOLD'),
+  ('HD_JNR_MEDITATION_IMPROVEMENT_BONUS_1',           'Amount',                   3),
+  ('HD_JNR_MEDITATION_IMPROVEMENT_BONUS_2',           'YieldType',                'YIELD_CULTURE'),
+  ('HD_JNR_MEDITATION_IMPROVEMENT_BONUS_2',           'Amount',                   1),
   ('HD_JNR_MEDITATION_CITIES_WONDER_TOURISM',         'BoostsWonders',            1),
   ('HD_JNR_MEDITATION_CITIES_WONDER_TOURISM',         'ScalingFactor',            300),
   ('HD_JNR_MEDITATION_CITIES_NATIONALPARK_TOURISM',   'Amount',                   200),
   ('HD_JNR_MEDITATION_CITIES_IMPROVEMENT_TOURISM',    'Amount',                   200);
 
-    -- 能力
+  -- 能力
 insert or ignore into Types (Type, Kind) values
   ('ABILITY_JNR_TRANSIT_HUB_CIVILIAN_MOVE', 'KIND_ABILITY');
 
@@ -260,9 +279,11 @@ insert or replace into ModifierArguments (ModifierId, Name, Value) select
 from DistrictCorrespondingYieldType_HD where HasAdjacency = 1;
 
 -------------------------------------------------------------- 
-
--- 垃圾回收中心回收效率
 insert or replace into GlobalParameters (Name, Value) values
+  -- 中心医院
+	('HD_JNR_HOSPITAL_PREVENT_POP_LOST_CHANCE',         0.75),
+	('HD_JNR_HOSPITAL_EXTRA_POP_BOOST_CHANCE', 	        0.25),
+  -- 垃圾回收中心回收效率
   ('RECYCLING_PLANT_PRODUCTION_PERCENT',              200),
   ('RECYCLING_PLANT_RESOURCE_HORSES_MULTIPLIER',      10),
   ('RECYCLING_PLANT_RESOURCE_IRON_MULTIPLIER',        15),
