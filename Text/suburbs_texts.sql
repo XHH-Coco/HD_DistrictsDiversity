@@ -22,7 +22,7 @@ values
 
     ("LOC_ABILITY_JNR_TRANSIT_HUB_CIVILIAN_MOVE_DESCRIPTION",       "Passenger Transportation Center: +2 [ICON_MOVEMENT] Movement."),
 
-    ("LOC_DISTRICT_MBANZA_HD_DESCRIPTION",                          "A district unique to the Congo, replacing the Neighborhood district. Can only be built in Rainforest or Woods. Provides +3 [ICON_HOUSING] Housing, +2 [ICON_FOOD] Food, and +2 [ICON_GOLD] Gold, regardless of Appeal. +1 [ICON_FOOD] Food and +1 Appeal to all adjacent tiles. Receives +1 [Icon_Production] Production from every Bonus Resource, +2 [Icon_Gold] Gold from every Luxury Resource and +1 [Icon_Science] Science from every Strategic Resource. Allows the purchasing of Settlers and Builders using [ICON_FAITH] Faith."),
+    ("LOC_DISTRICT_MBANZA_HD_DESCRIPTION",                          "A district unique to the Congo, replacing the Neighborhood district. [NEWLINE]Can only be built in Rainforest or Woods. Provides +3 [ICON_HOUSING] Housing, +2 [ICON_FOOD] Food, and +2 [ICON_GOLD] Gold, regardless of Appeal. +1 [ICON_FOOD] Food and +1 Appeal to all adjacent tiles. Receives +1 [Icon_Production] Production from every Bonus Resource, +2 [Icon_Gold] Gold from every Luxury Resource and +1 [Icon_Science] Science from every Strategic Resource. Allows the purchasing of Settlers and Builders using [ICON_FAITH] Faith."),
     -- 尤里卡 鼓舞
     ("LOC_BOOST_TRIGGER_MEDICAL_SCIENCE_HD_JNR",                    "Build a Central Hospital."),
     ("LOC_BOOST_TRIGGER_LONGDESC_MEDICAL_SCIENCE_HD_JNR",           "Scientists began to develop various antibiotics and modern medical equipment for use in hospitals."),
@@ -56,7 +56,7 @@ values
 
     ("zh_Hans_CN",  "LOC_ABILITY_JNR_TRANSIT_HUB_CIVILIAN_MOVE_DESCRIPTION",    "客运中心：城市交通便利，永久+2 [ICON_MOVEMENT] 移动力。"),
 
-    ("zh_Hans_CN",  "LOC_DISTRICT_MBANZA_HD_DESCRIPTION",                       "刚果特色区域，取代“社区”。只能建在雨林或树林里。无视魅力值，固定提供+3 [ICON_Housing] 住房、+2 [ICON_Food] 食物和+2 [ICON_Gold] 金币。为相邻的单元格提供 +1 [ICON_FOOD] 食物和+1魅力。从每个相邻的加成资源获得+1 [ICON_PRODUCTION] 生产力；从每个相邻的奢侈品资源获得+2 [ICON_Gold] 金币；从每个相邻的战略资源获得+1 [ICON_Science] 科技值。允许使用 [ICON_Faith] 信仰值购买开拓者和建造者。"),
+    ("zh_Hans_CN",  "LOC_DISTRICT_MBANZA_HD_DESCRIPTION",                       "刚果特色区域，取代“社区”。[NEWLINE]只能建在雨林或树林里。无视魅力值，固定提供+3 [ICON_Housing] 住房、+2 [ICON_Food] 食物和+2 [ICON_Gold] 金币。为相邻的单元格提供 +1 [ICON_FOOD] 食物和+1魅力。从每个相邻的加成资源获得+1 [ICON_PRODUCTION] 生产力；从每个相邻的奢侈品资源获得+2 [ICON_Gold] 金币；从每个相邻的战略资源获得+1 [ICON_Science] 科技值。允许使用 [ICON_Faith] 信仰值购买开拓者和建造者。"),
     -- 尤里卡 鼓舞
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_MEDICAL_SCIENCE_HD_JNR",                 "建造1座中心医院。"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_MEDICAL_SCIENCE_HD_JNR",        "科学家们开始研制各种抗生素和现代化医疗设备以供医院使用。"),
