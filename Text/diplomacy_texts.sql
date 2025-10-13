@@ -43,4 +43,4 @@ values
     ("zh_Hans_CN",  "LOC_BUILDING_JNR_CHANCERY_CITY_STATES_NAME",                   "国际汇兑处"),
     ("zh_Hans_CN",  "LOC_BUILDING_JNR_CHANCERY_CITYSTATES_DESCRIPTION",             "每回合影响力点数+3。获得1名 [ICON_ENVOY] 使者。[NEWLINE]每个已派遣的使者提供+1 [ICON_Gold] 金币。从其他文明处获得的每个代表团和大使馆提供+6 [ICON_Gold] 金币。[NEWLINE]文明中一次仅限建造一座该建筑。"),
     -- 外交区
-	("zh_Hans_CN",	"LOC_DISTRICT_DIPLOMATIC_QUARTER_HD_DESCRIPTION",				"所有盟友的同盟点数每回合额外增加0.25点。通过外交，外国文明的每个代表团或大使馆将为您的文明提供+1 [ICON_FAVOR] 外交支持。获得1名 [ICON_ENVOY] 使者。+1间谍容量，允许招募间谍（如果您尚未解锁）。将此区域和相邻区域当做目标的敌方间谍降低2级。使相邻区域获得的相邻加成+1。其中的每个建筑文明中一次仅限建造一座。");
+	("zh_Hans_CN",	"LOC_DISTRICT_DIPLOMATIC_QUARTER_HD_DESCRIPTION",				"所有盟友的同盟点数每回合额外增加0.25点。外国文明的每个代表团或大使馆将为您的文明提供+1 [ICON_FAVOR] 外交支持。获得1名 [ICON_ENVOY] 使者。+1间谍容量，允许招募间谍（如果您尚未解锁）。将此区域和相邻区域当做目标的敌方间谍降低2级。使相邻区域获得的相邻加成+1。其中的每个建筑文明中一次仅限建造一座。");
