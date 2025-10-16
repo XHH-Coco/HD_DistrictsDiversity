@@ -547,7 +547,7 @@ select
 where exists (select GreatWorkSlotType from GreatWorkSlotTypes where GreatWorkSlotType = 'GREATWORKSLOT_PRODUCT');
 
 -- 植物园
-insert or replace into HD_Building_ResourceClassification (BuildingType, ResourceClassificationType, DetectRange, PropertyKey) values
+insert or replace into HD_Building_Base_On_ResourceClassification (BuildingType, ResourceClassificationType, DetectRange, PropertyKey) values
 	('BUILDING_JNR_BOTANICAL_GARDEN', 	'RESOURCE_CLASSIFICATION_IMPROVEMENT_FARM',						'PLAYER', 'HD_PLOT_BINARY_COMPRESS_BOTANICAL_GARDEN'),
 	('BUILDING_JNR_BOTANICAL_GARDEN', 	'RESOURCE_CLASSIFICATION_IMPROVEMENT_PLANTATION',			'PLAYER', 'HD_PLOT_BINARY_COMPRESS_BOTANICAL_GARDEN'),
 	('BUILDING_JNR_BOTANICAL_GARDEN', 	'RESOURCE_CLASSIFICATION_IMPROVEMENT_LUMBER_MILL',		'PLAYER',	'HD_PLOT_BINARY_COMPRESS_BOTANICAL_GARDEN');

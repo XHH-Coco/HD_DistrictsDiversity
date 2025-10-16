@@ -50,7 +50,7 @@ values
     ("LOC_BUILDING_JNR_LIGHTHOUSE_FISHING_DESCRIPTION",             "+25% combat experience for all naval units trained in this city. +1 [ICON_Food] Food on all Coast tiles for this city. +1 [ICON_TradeRoute] Trade Route capacity."),
     -- 造船厂
     ("LOC_BUILDING_SHIPYARD_NAME",                                  "Shipyard"),
-    ("LOC_BUILDING_SHIPYARD_DESCRIPTION_UC_JNR",                    "Bonus [ICON_Production] Production equal to the adjacency bonus of the Harbor district. +1 [ICON_PRODUCTION] Production on all Coast and Lake tiles for this city."),
+    ("LOC_BUILDING_SHIPYARD_DESCRIPTION_UC_JNR",                    "Bonus [ICON_Production] Production equal to the adjacency bonus of the Harbor district. +1 [ICON_PRODUCTION] Production on all Shallow Sea and Lake tiles for this city."),
     -- 避风港
     ("LOC_BUILDING_JNR_ENTREPOT_NAME",                              "Haven"),
     ("LOC_BUILDING_JNR_ENTREPOT_DESCRIPTION",                       "Each [ICON_Citizen] Citizen in the city provides +1 [ICON_PRODUCTION] Production. +25% combat experience for all naval units trained in this city. +50% production speed for Naval Units. Naval units trained in this city start with a free promotion. Provides you with 1 of each Strategic resource per turn that you have revealed."),
@@ -59,16 +59,14 @@ values
     ("LOC_BUILDING_JNR_FISH_MARKET_DESCRIPTION",                    "Bonus [ICON_GOLD] Gold equal to the adjacency bonus of the Harbor district. +6 [ICON_GOLD] Gold to Domestic [ICON_TRADEROUTE] Trade Routes to this city and International [ICON_TRADEROUTE] Trade Routes starting from this city."),
     -- 海港
     ("LOC_BUILDING_SEAPORT_NAME",                                   "Seaport"),
-    ("LOC_BUILDING_SEAPORT_DESCRIPTION_UC_JNR",                     "+1 [ICON_FOOD] Food on all Coast and Lake tiles for this city. Bonus [ICON_Food] Food equal to the adjacency bonus of the Harbor district. Allows Fleets and Armadas to be trained directly. Fleet and Armada training costs reduced by 10%. +2 [ICON_Production] Production from Fishery, Offshore Oil Rig, Offshore Wind Farm, Seastead."),
+    ("LOC_BUILDING_SEAPORT_DESCRIPTION_UC_JNR",                     "+1 [ICON_FOOD] Food on all Shallow Sea and Lake tiles for this city. Bonus [ICON_Food] Food equal to the adjacency bonus of the Harbor district. Allows Fleets and Armadas to be trained directly. Fleet and Armada training costs reduced by 10%. +2 [ICON_Production] Production from Fishery, Offshore Oil Rig, Offshore Wind Farm, Seastead."),
     -- 游轮码头
     ("LOC_BUILDING_JNR_OFFSHORE_TERMINAL_NAME",                     "Cruise Terminal"),
-    ("LOC_BUILDING_JNR_OFFSHORE_TERMINAL_DESCRIPTION",              "+3 [ICON_GOLD] Gold on all Coast and Lake tiles for this city. Harbor district's adjacency bonus provides [ICON_TOURISM] Tourism as well, doubled when adjacent to Entertainment Complex or Water Park. +1 Appeal in this City. Seaside Resorts in this City provide +50% [ICON_Tourism] Tourism."),
-    ("LOC_BUILDING_JNR_OFFSHORE_TERMINAL_MONOPOLY_DESCRIPTION",     "+3 [ICON_GOLD] Gold on all Coast and Lake tiles for this city. Harbor district's adjacency bonus provides [ICON_TOURISM] Tourism as well. +50% [ICON_Tourism] Tourism for [ICON_Greatwork_Product] Product in this city, doubled when adjacent to Entertainment Complex or Water Park. +1 Appeal in this city. +50% [ICON_Tourism] Tourism for Seaside Resort."),
+    ("LOC_BUILDING_JNR_OFFSHORE_TERMINAL_DESCRIPTION",              "+3 [ICON_GOLD] Gold on all Shallow Sea and Lake tiles for this city. Harbor district's adjacency bonus provides [ICON_TOURISM] Tourism as well, doubled when adjacent to Entertainment Complex or Water Park. +1 Appeal in this City. Seaside Resorts in this City provide +50% [ICON_Tourism] Tourism."),
+    ("LOC_BUILDING_JNR_OFFSHORE_TERMINAL_MONOPOLY_DESCRIPTION",     "+3 [ICON_GOLD] Gold on all Shallow Sea and Lake tiles for this city. Harbor district's adjacency bonus provides [ICON_TOURISM] Tourism as well. +50% [ICON_Tourism] Tourism for [ICON_Greatwork_Product] Product in this city, doubled when adjacent to Entertainment Complex or Water Park. +1 Appeal in this city. +50% [ICON_Tourism] Tourism for Seaside Resort."),
     -- 海军基地
     ("LOC_BUILDING_JNR_NAVAL_BASE_NAME",                            "Naval Base"),
     ("LOC_BUILDING_JNR_NAVAL_BASE_DESCRIPTION",                     "+25% combat experience for all naval units trained in this city. +75% production speed for Naval Units. Allows Fleets and Armadas to be trained directly. Fleet and Armada training costs reduced by 25%. [NEWLINE]+10% accumulation rate for [ICON_GREATADMIRAL] Great Admiral Points. +3 [ICON_STRENGTH] Combat Strength for all navy units trained in this city."),
-    -- 大灯塔
-    ("LOC_BUILDING_GREAT_LIGHTHOUSE_DESCRIPTION",                   "+1 [ICON_Movement] Movement for all Naval and Embarked units. Grants a free Great Admiral. [NEWLINE][NEWLINE]Must be built on the Coast, and adjacent to land and a Harbor district with a Fishing Port or a Trade Port."),
     -- 大本钟
     ("LOC_BUILDING_BIG_BEN_EXPANSION2_DESCRIPTION",                 "+1 Economic policy slot[NEWLINE][NEWLINE]Immediately after construction [ICON_GOLD] Gold in treasury is increased by 50%. Must be built next to a River adjacent to a Commercial Hub district with a Bank, a Guildhall or a Merchant Quarter."),
     -- 乌菲兹美术馆
@@ -155,7 +153,7 @@ values
     ("zh_Hans_CN",  "LOC_BUILDING_JNR_LIGHTHOUSE_FISHING_DESCRIPTION",             "+1 [ICON_TradeRoute] 贸易路线容量。此城生产的所有海军单位+25%战斗经验值。此城的所有近海和湖泊单元格+1 [ICON_Food] 食物。"),
     -- 造船厂
     ("zh_Hans_CN",  "LOC_BUILDING_SHIPYARD_NAME",                                  "造船厂"),
-    ("zh_Hans_CN",  "LOC_BUILDING_SHIPYARD_DESCRIPTION_UC_JNR",                    "[ICON_Production] 生产力加成等于港口区域的相邻加成。此城所有海岸和湖泊单元格+1 [ICON_PRODUCTION] 生产力。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_SHIPYARD_DESCRIPTION_UC_JNR",                    "[ICON_Production] 生产力加成等于港口区域的相邻加成。此城所有浅海和湖泊单元格+1 [ICON_PRODUCTION] 生产力。"),
     -- 避风港
     ("zh_Hans_CN",  "LOC_BUILDING_JNR_ENTREPOT_NAME",                              "军港"),
     ("zh_Hans_CN",  "LOC_BUILDING_JNR_ENTREPOT_DESCRIPTION",                       "城市中每位 [ICON_Citizen] 公民提供+1 [ICON_PRODUCTION] 生产力。此城中生产的所有海军单位+25%战斗经验值。对所有海军单位+50% [ICON_PRODUCTION] 生产力。此城中生产的海军单位若初始未拥有免费晋升，则其初始可获得免费晋升。每回合提供1份文明已解锁战略资源。"),
@@ -164,16 +162,14 @@ values
     ("zh_Hans_CN",  "LOC_BUILDING_JNR_FISH_MARKET_DESCRIPTION",                    "[ICON_Gold] 金币加成等于港口区域的相邻加成。以本城为目的地的国内 [ICON_TRADEROUTE] 贸易路线和本城出发的国际 [ICON_TRADEROUTE] 贸易路线+6 [ICON_GOLD] 金币。"),
     -- 海港
     ("zh_Hans_CN",  "LOC_BUILDING_SEAPORT_NAME",                                   "海港"),
-    ("zh_Hans_CN",  "LOC_BUILDING_SEAPORT_DESCRIPTION_UC_JNR",                     "[ICON_FOOD] 食物加成等于港口区域的相邻加成。本城海岸和湖泊单元格+1 [ICON_FOOD] 食物，渔场、海上钻井平台、离岸风力发电厂和海洋家园+2 [ICON_Production] 生产力。可直接生产舰队和无敌舰队。舰队和无敌舰队的生产费用降低10%。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_SEAPORT_DESCRIPTION_UC_JNR",                     "[ICON_FOOD] 食物加成等于港口区域的相邻加成。本城浅海和湖泊单元格+1 [ICON_FOOD] 食物，渔场、海上钻井平台、离岸风力发电厂和海洋家园+2 [ICON_Production] 生产力。可直接生产舰队和无敌舰队。舰队和无敌舰队的生产费用降低10%。"),
     -- 游轮码头
     ("zh_Hans_CN",  "LOC_BUILDING_JNR_OFFSHORE_TERMINAL_NAME",                     "游轮码头"),
-    ("zh_Hans_CN",  "LOC_BUILDING_JNR_OFFSHORE_TERMINAL_DESCRIPTION",              "本城海岸和湖泊单元格+3 [ICON_GOLD] 金币。港口的相邻加成也产生等量 [ICON_Tourism] 旅游业绩，相邻娱乐中心或水上乐园时该业绩翻倍。此城市单元格+1魅力，海滨度假区的 [ICON_Tourism] 旅游业绩+50%。"),
-    ("zh_Hans_CN",  "LOC_BUILDING_JNR_OFFSHORE_TERMINAL_MONOPOLY_DESCRIPTION",     "本城海岸和湖泊单元格+3 [ICON_GOLD] 金币。港口的相邻加成也产生等量 [ICON_Tourism] 旅游业绩。此城市的 [ICON_GreatWork_Product] 产品提供的 [ICON_Tourism] 旅游业绩+50%；相邻娱乐中心或水上乐园时该效果翻倍。此城市单元格+1魅力，海滨度假区的 [ICON_Tourism] 旅游业绩+50%。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_JNR_OFFSHORE_TERMINAL_DESCRIPTION",              "本城浅海和湖泊单元格+3 [ICON_GOLD] 金币。港口的相邻加成也产生等量 [ICON_Tourism] 旅游业绩，相邻娱乐中心或水上乐园时该业绩翻倍。此城市单元格+1魅力，海滨度假区的 [ICON_Tourism] 旅游业绩+50%。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_JNR_OFFSHORE_TERMINAL_MONOPOLY_DESCRIPTION",     "本城浅海和湖泊单元格+3 [ICON_GOLD] 金币。港口的相邻加成也产生等量 [ICON_Tourism] 旅游业绩。此城市的 [ICON_GreatWork_Product] 产品提供的 [ICON_Tourism] 旅游业绩+50%；相邻娱乐中心或水上乐园时该效果翻倍。此城市单元格+1魅力，海滨度假区的 [ICON_Tourism] 旅游业绩+50%。"),
     -- 海军基地
     ("zh_Hans_CN",  "LOC_BUILDING_JNR_NAVAL_BASE_NAME",                            "海军基地"),
     ("zh_Hans_CN",  "LOC_BUILDING_JNR_NAVAL_BASE_DESCRIPTION",                     "此城中生产的所有海军单位+25%经验值。可直接生产舰队和无敌舰队。舰队和无敌舰队的生产费用降低25%。生产海军单位加速+75%。所有训练的海军单位+3 [ICON_STRENGTH] 战斗力。玩家的 [ICON_GREATADMIRAL] 海军统帅点数积累速度+10%。"),
-    -- 大灯塔
-    ("zh_Hans_CN",  "LOC_BUILDING_GREAT_LIGHTHOUSE_DESCRIPTION",                   "所有海军单位和海运单位+1 [ICON_Movement] 移动力。建成时市中心出现一位大提督。[NEWLINE][NEWLINE]必须建在海岸上，且必须与陆地和已有渔业码头或贸易码头的港口相邻。"),
     -- 大本钟
     ("zh_Hans_CN",  "LOC_BUILDING_BIG_BEN_EXPANSION2_DESCRIPTION",                 "经济政策槽位+1。+50% [ICON_Gold] 金币。[NEWLINE][NEWLINE]必须建在邻近带有银行、行会会馆或商人中心的商业中心的河流旁边。"),
     -- 乌菲兹美术馆

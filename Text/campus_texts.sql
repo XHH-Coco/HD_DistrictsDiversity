@@ -25,7 +25,7 @@ VALUES  ('LOC_BUILDING_JNR_ACADEMY_NAME',                           'Sishu'),
         ('LOC_BUILDING_JNR_EDUCATION_NAME',                         'Community College'),
         ('LOC_BUILDING_JNR_EDUCATION_DESCRIPTION',                  '[ICON_Citizen] Citizen provides +1 [ICON_SCIENCE] Science. [NEWLINE]When fully [ICON_POWER] Powered: +10% [ICON_Science] Science; extra +10% with at least 15 [ICON_Citizen] Citizens; extra +10% after completing Integrated Circuit.'),
         ('LOC_BUILDING_MADRASA_DESCRIPTION_UC_JNR',                 '"LOC_BUILDING_MADRASA_DESCRIPTION",                          "A building unique to Arabia. This building can only be built once per civilization. [NEWLINE][NEWLINE]Campus and Theater Square districts within 6 tiles provide [ICON_Faith] Faith equal to the adjacency bonus. [NEWLINE]For each city follows your Religion, Campus district in this city receives +1 adjacency bonus. If at least 20 cities follow your Religion, your cities can purchase buildings in Campus districts with [ICON_FAITH] Faith. [NEWLINE]For each cultural policy slot in your government, Theater Square district in this city receives +2 adjacency bonus. If your governmrnt has at least 6 cultural policy slots, your cities can purchase buildings in Theater Square districts with [ICON_FAITH] Faith.'),
-        ('LOC_BUILDING_NAVIGATION_SCHOOL_DESCRIPTION_UC_JNR',       'A building unique to Portugal. Replaces the City School. +25% [ICON_PRODUCTION] Production towards naval units in this city. +1 [ICON_SCIENCE] Science for every two coastal or lake tiles in this city. +2 [ICON_GreatAdmiral] Great Admiral points. +2 [ICON_Science] Science for each specialty districts in this city. Campus gain standard adjacency bonus from districts.'), -- +5% [ICON_SCIENCE] Science in this city. 
+        ('LOC_BUILDING_NAVIGATION_SCHOOL_DESCRIPTION_UC_JNR',       'A building unique to Portugal. Replaces the City School. +25% [ICON_PRODUCTION] Production towards naval units in this city. +1 [ICON_SCIENCE] Science for every two Shallow Sea and Lake tiles in this city. +2 [ICON_GreatAdmiral] Great Admiral points. +2 [ICON_Science] Science for each specialty districts in this city. Campus gain standard adjacency bonus from districts.'), -- +5% [ICON_SCIENCE] Science in this city. 
         -- Techs
     --   ('LOC_TECH_ASTRONOMY_HD_DESCRIPTION',                       '+5% [ICON_Science] Science for cities have University.'),
         -- ('LOC_TECH_SCIENTIFIC_THEORY_HD_DESCRIPTION',               'Plantation improvements receive +1 [ICON_Food] Food.'),
@@ -73,7 +73,6 @@ VALUES  ('LOC_BUILDING_JNR_ACADEMY_NAME',                           'Sishu'),
 UPDATE LocalizedText SET Text=REPLACE(Text, 'with a Library',       'with a Library or Sishu')                              WHERE Tag LIKE 'LOC_NAT_WONDER_CL_COLLEGE%';
 UPDATE LocalizedText SET Text=REPLACE(Text, 'with a Library',       'with a Library or Sishu')                              WHERE Tag LIKE 'LOC_BUILDING_GREAT_LIBRARY%';
 UPDATE LocalizedText SET Text=REPLACE(Text, 'with a University',    'with a University or City School')                     WHERE Tag LIKE 'LOC_BUILDING_OXFORD_UNIVERSITY%';
-UPDATE LocalizedText SET Text=REPLACE(Text, 'with a University',    'with a University or City School')                     WHERE Tag LIKE 'LOC_CIVIC_FEUDALISM_HD_DESCRIPTION%';
 UPDATE LocalizedText SET Text=REPLACE(Text, 'with a University',    'with a University or City School')                     WHERE Tag LIKE 'LOC_BUILDING_UNIVERSITY_SANKORE%';
 UPDATE LocalizedText SET Text=REPLACE(Text, 'with a Research Lab',  'with an Institute of Technology or Community College') WHERE Tag LIKE 'LOC_BUILDING_AMUNDSEN_SCOTT%';
 --------------------------------------------------------------
@@ -110,7 +109,7 @@ values
     ("zh_Hans_CN",  "LOC_BUILDING_JNR_EDUCATION_DESCRIPTION",                   "城市中每位 [ICON_Citizen] 公民+1 [ICON_SCIENCE] 科技值产出。[NEWLINE]此城 [ICON_POWER] 供电充足时：+10% [ICON_Science] 科技值；若城市中拥有至少15个 [ICON_CITIZEN] 公民，额外+10% [ICON_Science] 科技值；解锁“集成电路”科技后，额外+10% [ICON_Science] 科技值。"),
     -- UD & UB
     ("zh_Hans_CN",  "LOC_BUILDING_MADRASA_DESCRIPTION_UC_JNR",                  "阿拉伯特色建筑，文明中一次仅限建造一座该建筑。[NEWLINE][NEWLINE]6个单元格内的学院和剧院广场的相邻加成也提供 [ICON_FAITH] 信仰值。[NEWLINE][NEWLINE]每座信仰你创立的宗教的城市为本城的学院+1相邻加成；若至少有20座城市信仰你创立的宗教，则你的所有城市可以用 [ICON_FAITH] 信仰值购买学院建筑。[NEWLINE]你的政体中的每个文化政策槽位为本城的剧院广场+2相邻加成；若你的政体至少有6个文化政策槽位，则你的所有城市可以用 [ICON_FAITH] 信仰值购买剧院广场建筑。"),
-    ("zh_Hans_CN",  "LOC_BUILDING_NAVIGATION_SCHOOL_DESCRIPTION_UC_JNR",        "葡萄牙特色建筑。在此城中生产海军单位时+25%生产力。此城中每拥有2个海岸或湖泊单元格，则+1 [ICON_Science] 科技值。+2 [ICON_GreatAdmiral] 海军统帅点数。此城市每个专业化区域+2 [ICON_Science] 科技值。此学院从每个相邻区域获得标准相邻加成。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_NAVIGATION_SCHOOL_DESCRIPTION_UC_JNR",        "葡萄牙特色建筑。在此城中生产海军单位时+25%生产力。此城中每拥有2浅海或湖泊单元格，则+1 [ICON_Science] 科技值。+2 [ICON_GreatAdmiral] 海军统帅点数。此城市每个专业化区域+2 [ICON_Science] 科技值。此学院从每个相邻区域获得标准相邻加成。"),
     -- Techs
 --    ("zh_Hans_CN",  "LOC_TECH_ASTRONOMY_HD_DESCRIPTION",                        "拥有大学的城市+5% [ICON_Science] 科技值。"),
     -- ("zh_Hans_CN",  "LOC_TECH_SCIENTIFIC_THEORY_HD_DESCRIPTION",                "种植园改良设施+1 [ICON_Food] 食物。"),
@@ -144,7 +143,6 @@ values
 UPDATE LocalizedText SET Text=REPLACE(Text, '有图书馆',      '有图书馆或私塾')                       WHERE Tag LIKE 'LOC_NAT_WONDER_CL_COLLEGE%';
 UPDATE LocalizedText SET Text=REPLACE(Text, '有图书馆',      '有图书馆或私塾')                       WHERE Tag LIKE 'LOC_BUILDING_GREAT_LIBRARY%';
 UPDATE LocalizedText SET Text=REPLACE(Text, '有大学',        '有大学或城市学校')                     WHERE Tag LIKE 'LOC_BUILDING_OXFORD_UNIVERSITY%';
-UPDATE LocalizedText SET Text=REPLACE(Text, '有大学',        '有大学或城市学校')                     WHERE Tag LIKE 'LOC_CIVIC_FEUDALISM_HD_DESCRIPTION%';
 UPDATE LocalizedText SET Text=REPLACE(Text, '有大学',        '有大学或城市学校')                     WHERE Tag LIKE 'LOC_BUILDING_UNIVERSITY_SANKORE%';
 UPDATE LocalizedText SET Text=REPLACE(Text, '有“研究实验室”', '有“理工学院”或“综合大学”')             WHERE Tag LIKE 'LOC_BUILDING_AMUNDSEN_SCOTT%';
 -- --------------------------------------------------------------

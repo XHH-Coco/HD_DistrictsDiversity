@@ -100,15 +100,12 @@ update Buildings set RegionalRange = 4 where BuildingType = 'BUILDING_JNR_ACADEM
 update Buildings set RegionalRange = 6 where BuildingType = 'BUILDING_JNR_LABORATORY';
 update Buildings set RegionalRange = 6 where BuildingType = 'BUILDING_UNIVERSITY';
 --------------------------------------------------------------
-update Modifiers set SubjectRequirementSetId = 'PLAYER_HAS_ASTRONOMY_REQUIREMENTS' where ModifierId = 'UNIVERSITY_SCIENCE_PERCENTAGE_BOOST';
-
 delete from BuildingModifiers where BuildingType = 'BUILDING_RESEARCH_LAB';
 insert or replace into BuildingModifiers
     (BuildingType,                  ModifierId)
 values
     ('BUILDING_JNR_SCHOOL',         'CITY_SCHOOL_SPECILTY_DISTRICT_SCIENCE'),
     ('BUILDING_JNR_SCHOOL',         'CITY_SCHOOL_CAMPUS_DISTRICT_ADJACENCY'),
-    ('BUILDING_JNR_SCHOOL',         'FEUDALISM_ADD_RAINFOREST_ADJACENCY'),
 --    ('BUILDING_JNR_SCHOOL',         'CITY_SCHOOL_PRINTING_DISTRICT_PERCENT_ATTACH'),
     --('BUILDING_JNR_REAL_ACADEMY',   'REAL_ACADEMY_DISTRICT_ADJACENCY'),
     ('BUILDING_JNR_REAL_ACADEMY',   'REAL_ACADEMY_CHEMISTRY_DISTRICT_ADJACENCY'),
@@ -402,9 +399,6 @@ WHERE   GreatWorkObjectType not in ('GREATWORKOBJECT_PRODUCT', 'GREATWORKOBJECT_
 -- UB
 update Buildings set RegionalRange = 0, PrereqTech = NULL, PrereqCivic = 'CIVIC_NAVAL_TRADITION' where BuildingType = 'BUILDING_NAVIGATION_SCHOOL';
 delete from Building_YieldChanges where BuildingType = 'BUILDING_NAVIGATION_SCHOOL';
-delete from BuildingModifiers where BuildingType = 'BUILDING_NAVIGATION_SCHOOL' and ModifierId = 'UNIVERSITY_SCIENCE_PERCENTAGE_BOOST';
--- delete from BuildingModifiers where BuildingType = 'BUILDING_NAVIGATION_SCHOOL' and ModifierId = 'FEUDALISM_ADD_RAINFOREST_ADJACENCY';
--- delete from BuildingModifiers where BuildingType = 'BUILDING_NAVIGATION_SCHOOL' and ModifierId = 'UNIVERSITY_ADD_ADJACENT_RAINFOREST_SCIENCE';
 delete from BuildingModifiers where BuildingType = 'BUILDING_NAVIGATION_SCHOOL' and ModifierId = 'UNIVERSITY_ADD_POPULATION_SCIENCE';
 
 insert or replace into BuildingModifiers (BuildingType,   ModifierId)

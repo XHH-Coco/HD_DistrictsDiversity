@@ -29,7 +29,7 @@ values
     ("LOC_BUILDING_JNR_MILL_RACE_NAME",                 "Industrial Zone Adjacen to River"),
     ("LOC_BUILDING_IZ_WATER_MILL_NAME",                 "Hydraulic Artisans"), -- Water-powered Workshop
     ("LOC_BUILDING_IZ_WATER_MILL_DESCRIPTION",          "Can only be built when the Industrial Zone is adjacent to River. +1 [ICON_Production] Production for Districts adjacent to river in this city."),
-    ("LOC_BUILDING_JNR_WIND_MILL_DESCRIPTION",          "+1 [ICON_Production] Production for Districts adjacent to sea or lakes or in the sea or lakes."), -- improved tiles adjacent to sea or lakes.
+    ("LOC_BUILDING_JNR_WIND_MILL_DESCRIPTION",          "+1 [ICON_Production] Production for Districts on or adjacent to Shallow Sea and Lake."), -- improved tiles adjacent to sea or lakes.
     ("LOC_BUILDING_WORKSHOP_DESCRIPTION",               "Improved tiles in the City have +1 [ICON_Production] Production"), -- Mines, Quarries and Lumber mills over resources in this city gain +1 [ICON_Production] Production.
     ("LOC_BUILDING_JNR_MANUFACTURY_DESCRIPTION",        "Each [ICON_Citizen] Citizen in the city provides +0.5 [ICON_PRODUCTION] Production."), -- Farms, Plantations, Camps and Pastures over resources in this city gain +1 [ICON_Production] Production.
     ("LOC_BUILDING_JNR_CHEMICAL_DESCRIPTION",           "+7% [ICON_Production] Production and +7 [ICON_SCIENCE] Science for each type of Strategic resource this City has properly improved."),
@@ -65,7 +65,7 @@ values
     ("zh_Hans_CN",  "LOC_BUILDING_IZ_WATER_MILL_NAME",                          "水力作坊"),
     ("zh_Hans_CN",  "LOC_BUILDING_IZ_WATER_MILL_DESCRIPTION",                   "只有工业区相邻河流时才能建造。与河流相邻的区域+1 [ICON_Production] 生产力。"),
     ("zh_Hans_CN",  "LOC_BUILDING_JNR_WIND_MILL_NAME",                          "风车"),
-    ("zh_Hans_CN",  "LOC_BUILDING_JNR_WIND_MILL_DESCRIPTION",                   "与湖泊或海岸相邻或位于水域中的区域+1 [ICON_Production] 生产力。"), --已改良的相邻湖泊或海岸的单元格+1 [ICON_Production] 生产力。
+    ("zh_Hans_CN",  "LOC_BUILDING_JNR_WIND_MILL_DESCRIPTION",                   "与浅海与湖泊相邻或位于水域中的区域+1 [ICON_Production] 生产力。"),
     ("zh_Hans_CN",  "LOC_BUILDING_JNR_MANUFACTURY_NAME",                        "手工工场"),
     ("zh_Hans_CN",  "LOC_BUILDING_WORKSHOP_DESCRIPTION",                        "本城已改良单元格+1 [ICON_Production] 生产力。"), -- 为本城改良资源的矿山、采石场和伐木场+1 [ICON_Production] 生产力。
     ("zh_Hans_CN",  "LOC_BUILDING_JNR_MANUFACTURY_DESCRIPTION",                 "城市中每位 [ICON_Citizen] 公民提供+0.5 [ICON_PRODUCTION] 生产力。"), -- 为本城改良资源的农场、种植园、营地和牧场+1 [ICON_Production] 生产力。

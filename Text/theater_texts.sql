@@ -15,7 +15,7 @@ values
     ("LOC_BUILDING_AMPHITHEATER_DESCRIPTION_UC_JNR",            "+2 [ICON_CULTURE] Culture and +50% [ICON_TOURISM] Tourism for [ICON_GreatWork_Writing] Great Works of Writing in this city."),
     -- 毛利会堂
     ("LOC_BUILDING_MARAE_NAME_UC_JNR",                          "Marae"),
-    ("LOC_BUILDING_MARAE_DESCRIPTION_UC_JNR",                   "A building unique to the Māori. Replaces Assembly. +2 [ICON_CULTURE] Culture and +2 [ICON_FAITH] Faith to all of this city's tiles with a passable feature or natural wonder. +1 [ICON_CULTURE] Culture for every three coast or lake tiles in this city. After Flight is researched, receive +1 [ICON_TOURISM] Tourism to all of this city's tiles with a feature or natural wonder. Has no Great Work slots."),
+    ("LOC_BUILDING_MARAE_DESCRIPTION_UC_JNR",                   "A building unique to the Māori. Replaces Assembly. +2 [ICON_CULTURE] Culture and +2 [ICON_FAITH] Faith to all of this city's tiles with a passable feature or natural wonder. +1 [ICON_CULTURE] Culture for every three Shallow Sea and Lake tiles in this city. After Flight is researched, receive +1 [ICON_TOURISM] Tourism to all of this city's tiles with a feature or natural wonder. Has no Great Work slots."),
     -- 陈列室
     ("LOC_BUILDING_JNR_CABINET_NAME",                           "Cabinet"),
     ("LOC_BUILDING_JNR_CABINET_DESCRIPTION",                    "+2 [ICON_CULTURE] Culture for all Speciality District. +50% [ICON_TOURISM] Tourism for Great Works in this city."),
@@ -86,7 +86,7 @@ values
     ("zh_Hans_CN",  "LOC_BUILDING_AMPHITHEATER_DESCRIPTION_UC_JNR",            "本城所有 [ICON_GreatWork_Writing] 著作+2 [ICON_CULTURE] 文化值和+50% [ICON_TOURISM] 旅游业绩。"),
     -- 毛利会堂
     ("zh_Hans_CN",  "LOC_BUILDING_MARAE_NAME_UC_JNR",                          "毛利会堂"),
-    ("zh_Hans_CN",  "LOC_BUILDING_MARAE_DESCRIPTION_UC_JNR",                   "毛利特色建筑。取代公民大会。城市中所有包含可通行地貌或自然奇观的单元格+2 [ICON_CULTURE] 文化值与 [ICON_FAITH] 信仰值。此城中每拥有3个海岸或湖泊单元格，则+1 [ICON_CULTURE] 文化值。研究“飞行”科技后，城市中所有包含地貌或自然奇观的单元格+1 [ICON_TOURISM] 旅游业绩。无巨作槽位。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_MARAE_DESCRIPTION_UC_JNR",                   "毛利特色建筑。取代公民大会。城市中所有包含可通行地貌或自然奇观的单元格+2 [ICON_CULTURE] 文化值与 [ICON_FAITH] 信仰值。此城中每拥有3个浅海或湖泊单元格，则+1 [ICON_CULTURE] 文化值。研究“飞行”科技后，城市中所有包含地貌或自然奇观的单元格+1 [ICON_TOURISM] 旅游业绩。无巨作槽位。"),
     -- 陈列室
     ("zh_Hans_CN",  "LOC_BUILDING_JNR_CABINET_NAME",                           "陈列室"),
     ("zh_Hans_CN",  "LOC_BUILDING_JNR_CABINET_DESCRIPTION",                    "此城市每个专业化区域+2 [ICON_CULTURE] 文化值。所在城市所有巨作+50% [ICON_TOURISM] 旅游业绩。"),

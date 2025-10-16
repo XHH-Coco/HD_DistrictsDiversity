@@ -16,7 +16,7 @@ values
     ("LOC_BUILDING_JNR_CHANCERY_CITY_STATES_NAME",			        "Foreign Exchange"),
     ("LOC_BUILDING_JNR_CHANCERY_CITYSTATES_DESCRIPTION",			"+3 Influence Points per turn. Gain +1 [ICON_ENVOY] Envoy.[NEWLINE]+1 [ICON_Gold] Gold from each of your [ICON_Envoy] Envoys at city-states. +6 [ICON_Gold] Gold from each Delegations and Embassies. [NEWLINE]Can only be built once in a civilization."),
     -- 外交区
-	("LOC_DISTRICT_DIPLOMATIC_QUARTER_HD_DESCRIPTION",				"Your civilization receives +1 [ICON_FAVOR] Diplomatic Favor for each Delegation or Embassy from a foreign civilization through diplomacy. Awards 1 [ICON_Envoy] Envoy when completed. Enemy Spies operate at 2 levels below normal when targeting this District and adjacent Districts. Grants the ability to construct an additional Spy. Districts recieve +1 adjacency bonuses from being adjacent to Diplomatic Quater. Each building in it can only be built once in your empire.");
+	("LOC_DISTRICT_DIPLOMATIC_QUARTER_HD_DESCRIPTION",				"A district for diplomatic activities and national security in your city. [NEWLINE]Your civilization receives +1 [ICON_FAVOR] Diplomatic Favor for each Delegation or Embassy from a foreign civilization through diplomacy. Awards 1 [ICON_Envoy] Envoy when completed. Enemy Spies operate at 2 levels below normal when targeting this District and adjacent Districts. Grants the ability to construct an additional Spy. Districts recieve +1 adjacency bonuses from being adjacent to Diplomatic Quater. Each building in it can only be built once in your empire.");
 
 insert or replace into LocalizedText
     (Language,      Tag,                                                            Text)
@@ -43,4 +43,4 @@ values
     ("zh_Hans_CN",  "LOC_BUILDING_JNR_CHANCERY_CITY_STATES_NAME",                   "国际汇兑处"),
     ("zh_Hans_CN",  "LOC_BUILDING_JNR_CHANCERY_CITYSTATES_DESCRIPTION",             "每回合影响力点数+3。获得1名 [ICON_ENVOY] 使者。[NEWLINE]每个已派遣的使者提供+1 [ICON_Gold] 金币。从其他文明处获得的每个代表团和大使馆提供+6 [ICON_Gold] 金币。[NEWLINE]文明中一次仅限建造一座该建筑。"),
     -- 外交区
-	("zh_Hans_CN",	"LOC_DISTRICT_DIPLOMATIC_QUARTER_HD_DESCRIPTION",				"所有盟友的同盟点数每回合额外增加0.25点。外国文明的每个代表团或大使馆将为您的文明提供+1 [ICON_FAVOR] 外交支持。获得1名 [ICON_ENVOY] 使者。+1间谍容量，允许招募间谍（如果您尚未解锁）。将此区域和相邻区域当做目标的敌方间谍降低2级。使相邻区域获得的相邻加成+1。其中的每个建筑文明中一次仅限建造一座。");
+	("zh_Hans_CN",	"LOC_DISTRICT_DIPLOMATIC_QUARTER_HD_DESCRIPTION",				"城市中专注于外交活动与国家安全的区域。[NEWLINE]所有盟友的同盟点数每回合额外增加0.25点。外国文明的每个代表团或大使馆将为您的文明提供+1 [ICON_FAVOR] 外交支持。获得1名 [ICON_ENVOY] 使者。+1间谍容量，允许招募间谍（如果您尚未解锁）。将此区域和相邻区域当做目标的敌方间谍降低2级。使相邻区域获得的相邻加成+1。其中的每个建筑文明中一次仅限建造一座。");
