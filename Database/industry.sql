@@ -22,7 +22,6 @@ values
     ('BUILDING_JNR_FREIGHT_YARD',   'YIELD_PRODUCTION', 1),
     ('BUILDING_JNR_FREIGHT_YARD',   'YIELD_GOLD',       -1);
 
-delete from Building_YieldChanges where BuildingType = 'BUILDING_COAL_POWER_PLANT' and YieldType = 'YIELD_PRODUCTION';
 update Building_YieldChanges set YieldChange = 3 where BuildingType = 'BUILDING_FOSSIL_FUEL_POWER_PLANT' and YieldType = 'YIELD_PRODUCTION';
 update Building_YieldChanges set YieldChange = 4 where BuildingType = 'BUILDING_POWER_PLANT' and YieldType = 'YIELD_PRODUCTION';
 update Building_GreatPersonPoints set PointsPerTurn = 1 where BuildingType in ('BUILDING_JNR_WIND_MILL', 'BUILDING_IZ_WATER_MILL');
