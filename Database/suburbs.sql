@@ -173,22 +173,22 @@ values
   ('HD_JNR_ART_GALLERY_CITIES_MUSIC_TOURISM',         'ScalingFactor',            300),
   ('HD_JNR_ART_GALLERY_CITIES_MUSIC_TOURISM',         'GreatWorkObjectType',      'GREATWORKOBJECT_MUSIC'),
   ('HD_JNR_ART_GALLERY_CITIES_WRITING_CULTURE',       'YieldType',                'YIELD_CULTURE'),
-  ('HD_JNR_ART_GALLERY_CITIES_WRITING_CULTURE',       'ScalingFactor',            125),
+  ('HD_JNR_ART_GALLERY_CITIES_WRITING_CULTURE',       'ScalingFactor',            120),
   ('HD_JNR_ART_GALLERY_CITIES_WRITING_CULTURE',       'GreatWorkObjectType',      'GREATWORKOBJECT_WRITING'),
   ('HD_JNR_ART_GALLERY_CITIES_SCULPTURE_CULTURE',     'YieldType',                'YIELD_CULTURE'),
-  ('HD_JNR_ART_GALLERY_CITIES_SCULPTURE_CULTURE',     'ScalingFactor',            125),
+  ('HD_JNR_ART_GALLERY_CITIES_SCULPTURE_CULTURE',     'ScalingFactor',            120),
   ('HD_JNR_ART_GALLERY_CITIES_SCULPTURE_CULTURE',     'GreatWorkObjectType',      'GREATWORKOBJECT_SCULPTURE'),
   ('HD_JNR_ART_GALLERY_CITIES_PORTRAIT_CULTURE',      'YieldType',                'YIELD_CULTURE'),
-  ('HD_JNR_ART_GALLERY_CITIES_PORTRAIT_CULTURE',      'ScalingFactor',            125),
+  ('HD_JNR_ART_GALLERY_CITIES_PORTRAIT_CULTURE',      'ScalingFactor',            120),
   ('HD_JNR_ART_GALLERY_CITIES_PORTRAIT_CULTURE',      'GreatWorkObjectType',      'GREATWORKOBJECT_PORTRAIT'),
   ('HD_JNR_ART_GALLERY_CITIES_LANDSCAPE_CULTURE',     'YieldType',                'YIELD_CULTURE'),
-  ('HD_JNR_ART_GALLERY_CITIES_LANDSCAPE_CULTURE',     'ScalingFactor',            125),
+  ('HD_JNR_ART_GALLERY_CITIES_LANDSCAPE_CULTURE',     'ScalingFactor',            120),
   ('HD_JNR_ART_GALLERY_CITIES_LANDSCAPE_CULTURE',     'GreatWorkObjectType',      'GREATWORKOBJECT_LANDSCAPE'),
   ('HD_JNR_ART_GALLERY_CITIES_RELIGIOUS_CULTURE',     'YieldType',                'YIELD_CULTURE'),
-  ('HD_JNR_ART_GALLERY_CITIES_RELIGIOUS_CULTURE',     'ScalingFactor',            125),
+  ('HD_JNR_ART_GALLERY_CITIES_RELIGIOUS_CULTURE',     'ScalingFactor',            120),
   ('HD_JNR_ART_GALLERY_CITIES_RELIGIOUS_CULTURE',     'GreatWorkObjectType',      'GREATWORKOBJECT_RELIGIOUS'),
   ('HD_JNR_ART_GALLERY_CITIES_MUSIC_CULTURE',         'YieldType',                'YIELD_CULTURE'),
-  ('HD_JNR_ART_GALLERY_CITIES_MUSIC_CULTURE',         'ScalingFactor',            125),
+  ('HD_JNR_ART_GALLERY_CITIES_MUSIC_CULTURE',         'ScalingFactor',            120),
   ('HD_JNR_ART_GALLERY_CITIES_MUSIC_CULTURE',         'GreatWorkObjectType',      'GREATWORKOBJECT_MUSIC'),
   
   -- 房车营地
@@ -282,7 +282,7 @@ from DistrictCorrespondingYieldType_HD where HasAdjacency = 1;
 insert or replace into GlobalParameters (Name, Value) values
   -- 中心医院
 	('HD_JNR_HOSPITAL_PREVENT_POP_LOST_CHANCE',         0.75),
-	('HD_JNR_HOSPITAL_EXTRA_POP_BOOST_CHANCE', 	        0.25),
+	('HD_JNR_HOSPITAL_EXTRA_POP_BOOST_CHANCE', 	        0.2),
   -- 垃圾回收中心回收效率
   ('RECYCLING_PLANT_PRODUCTION_PERCENT',              200),
   ('RECYCLING_PLANT_RESOURCE_HORSES_MULTIPLIER',      10),
