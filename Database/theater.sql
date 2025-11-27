@@ -87,8 +87,8 @@ where exists (select GreatWorkSlotType from GreatWorkSlotTypes where GreatWorkSl
 insert or replace into Building_GreatWorks
 	(BuildingType,												GreatWorkSlotType,					NumSlots,		ThemingUniquePerson,		ThemingSameEras,		ThemingYieldMultiplier,		ThemingTourismMultiplier,		ThemingBonusDescription)
 values
-	('BUILDING_JNR_OPERA',								'GREATWORKSLOT_MUSIC',			3,					1,											1,									100,											100,												'LOC_BUILDING_JNR_OPERA_THEMINGBONUS'),
-	('BUILDING_FILM_STUDIO',							'GREATWORKSLOT_PALACE',			4,					0,											1,									100,											100,												'LOC_BUILDING_HD_FILM_STUDIO_THEMINGBONUS');
+	('BUILDING_JNR_OPERA',								'GREATWORKSLOT_MUSIC',			3,					1,											1,									100,											100,												'LOC_BUILDING_THEMINGBONUS_JNR_OPERA'),
+	('BUILDING_FILM_STUDIO',							'GREATWORKSLOT_PALACE',			4,					0,											1,									100,											100,												'LOC_BUILDING_THEMINGBONUS_HD_FILM_STUDIO');
 
 	-- 专家产出
 update Building_CitizenYieldChanges set YieldChange = 1 where YieldType = 'YIELD_CULTURE' and BuildingType = 'BUILDING_BROADCAST_CENTER';
