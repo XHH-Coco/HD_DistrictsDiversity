@@ -16,7 +16,7 @@ values
     ("LOC_BUILDING_JNR_CHANCERY_CITY_STATES_NAME",			        "Foreign Exchange"),
     ("LOC_BUILDING_JNR_CHANCERY_CITYSTATES_DESCRIPTION",			"+3 Influence Points per turn. Gain +1 [ICON_ENVOY] Envoy.[NEWLINE]+1 [ICON_Gold] Gold from each of your [ICON_Envoy] Envoys at city-states. +6 [ICON_Gold] Gold from each Delegations and Embassies. [NEWLINE]Can only be built once in a civilization."),
     -- 外交区
-	("LOC_DISTRICT_DIPLOMATIC_QUARTER_HD_DESCRIPTION",				"A district for diplomatic activities and national security in your city. [NEWLINE]Your civilization receives +1 [ICON_FAVOR] Diplomatic Favor for each Delegation or Embassy from a foreign civilization through diplomacy. Awards 1 [ICON_Envoy] Envoy when completed. Enemy Spies operate at 2 levels below normal when targeting this District and adjacent Districts. Grants the ability to construct an additional Spy. Districts recieve +1 adjacency bonuses from being adjacent to Diplomatic Quater. Each building in it can only be built once in your empire.");
+	("LOC_DISTRICT_DIPLOMATIC_QUARTER_HD_DESCRIPTION",				"A district for diplomatic activities and national security in your city. [NEWLINE]Your civilization receives +1 [ICON_FAVOR] Diplomatic Favor for each Delegation or Embassy from a foreign civilization through diplomacy. Awards 1 [ICON_Envoy] Envoy when completed. Enemy Spies operate at 2 levels below normal when targeting this District and adjacent Districts. Grants the ability to construct an additional Spy. Districts receive +1 adjacency bonuses from being adjacent to Diplomatic Quater. Each building in it can only be built once in your empire.");
 
 insert or replace into LocalizedText
     (Language,      Tag,                                                            Text)
