@@ -44,7 +44,7 @@ values
     ("zh_Hans_CN",  "LOC_BUILDING_JNR_HOSPITAL_PREVENT_POP_LOST_VIEWTEXT",      "中心医院避免了以下城市的 [ICON_CITIZEN] 市民损失"),
     ("zh_Hans_CN",  "LOC_BUILDING_JNR_HOSPITAL_EXTRA_POP_BOOST_VIEWTEXT",       "中心医院使以下城市的 [ICON_CITIZEN] 市民额外增长"),
     ("zh_Hans_CN",  "LOC_BUILDING_JNR_RECYCLING_PLANT_NAME",                    "回收中心"),
-    ("zh_Hans_CN",  "LOC_BUILDING_JNR_RECYCLING_PLANT_DESCRIPTION",             "此城单元格+1魅力。玩家的 [ICON_GREATENGINEER] 大工程师点数积累速度+10%；解锁“工业自动化”科技后翻倍。[NEWLINE][NEWLINE]未受伤的军事单位可以在本城“回收装备”：陆军需要位于社区，陆军需要位于港口，空军需要位于航空港。[NEWLINE]“回收装备”{LOC_HD_RECYCLE_FORMULA}[NEWLINE][NEWLINE]文明中一次仅限建造一座该建筑。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_JNR_RECYCLING_PLANT_DESCRIPTION",             "此城单元格+1魅力。玩家的 [ICON_GREATENGINEER] 大工程师点数积累速度+10%；解锁“工业自动化”科技后翻倍。[NEWLINE][NEWLINE]未受伤的军事单位可以在本城“回收装备”：陆军需要位于社区，海军需要位于港口，空军需要位于航空港。[NEWLINE]“回收装备”{LOC_HD_RECYCLE_FORMULA}[NEWLINE][NEWLINE]文明中一次仅限建造一座该建筑。"),
     ("zh_Hans_CN",  "LOC_UNITCOMMAND_RECYCLE_NAME",                             "装备回收"),
     ("zh_Hans_CN",  "LOC_UNITCOMMAND_RECYCLE_DESCRIPTION",                      "返还{1_Amount} [ICON_GOLD] 金币。"),
     ("zh_Hans_CN",  "LOC_UNITCOMMAND_RECYCLE_DISABLED_TT",                      "必须未受伤。"),
