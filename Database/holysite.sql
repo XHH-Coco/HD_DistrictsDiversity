@@ -254,18 +254,22 @@ values
 insert or replace into PolicyModifiers
 	(PolicyType,					ModifierId)
 values
-	('POLICY_MINARET',				'POLICY_MINARET_POP_FAITH_4');
+	('POLICY_MINARET',				'POLICY_MINARET_POP_FAITH_4'),
+	('POLICY_HD_PSALM',				'HD_PSALM_GREAT_MUSICIAN_4');
 
 insert or replace into Modifiers
 	(ModifierId,					ModifierType,														SubjectRequirementSetId)
 values
-	('POLICY_MINARET_POP_FAITH_4',	'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_PER_POPULATION',			'CITY_HAS_DISTRICT_HOLY_SITE_TIER_4_BUILDING_REQUIREMENTS');
+	('POLICY_MINARET_POP_FAITH_4',	'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_PER_POPULATION',			'CITY_HAS_DISTRICT_HOLY_SITE_TIER_4_BUILDING_REQUIREMENTS'),
+	('HD_PSALM_GREAT_MUSICIAN_4',	'MODIFIER_PLAYER_DISTRICTS_ADJUST_GREAT_PERSON_POINTS',			    'HD_PLOT_HAS_DISTRICT_HOLY_SITE_TIER_4_BUILDING_REQUIREMENTS');
 
 insert or replace into ModifierArguments
-	(ModifierId,					Name,				Value)
+	(ModifierId,					Name,				    Value)
 values
-	('POLICY_MINARET_POP_FAITH_4',	'YieldType',		'YIELD_FAITH'),
-	('POLICY_MINARET_POP_FAITH_4',	'Amount',			0.5);
+	('POLICY_MINARET_POP_FAITH_4',	'YieldType',		    'YIELD_FAITH'),
+	('POLICY_MINARET_POP_FAITH_4',	'Amount',			    0.5),
+	('HD_PSALM_GREAT_MUSICIAN_4',	'GreatPersonClassType',	'GREAT_PERSON_CLASS_MUSICIAN'),
+	('HD_PSALM_GREAT_MUSICIAN_4',	'Amount',				4);
 
 -- 再工业化
 -- update RequirementSetRequirements set RequirementId = 'REQUIRES_CITY_HAS_DISTRICT_HOLY_SITE_TIER_4_BUILDING' where
