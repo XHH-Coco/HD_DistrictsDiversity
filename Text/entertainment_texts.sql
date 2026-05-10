@@ -20,7 +20,7 @@ values
     ("LOC_BUILDING_JNR_MARINA_DESCRIPTION",                      "Districts, Wonders on or adjacent to Shallow Sea and Lake tiles in this city provide +2 [ICON_GREATMUSICIAN] Great Musician points per turn. +50% [ICON_TOURISM] Tourism to [ICON_GreatWork_Music] Great Work of Music in this city."),
     ("LOC_BUILDING_FERRIS_WHEEL_DESCRIPTION_UC_JNR",             "Districts, Wonders and Improvements on or adjacent to Shallow Sea and Lake tiles in this city provide +3 [ICON_Gold] Gold. +50% [ICON_TOURISM] Tourism to Seaside Resort in this city."),
     ("LOC_BUILDING_JNR_CASINO_NAME",                             "Visitor Center"),
-    ("LOC_BUILDING_JNR_CASINO_DESCRIPTION",                      "Wonders in this City provide +1 [ICON_CULTURE] Culture and +3 [ICON_Gold] Gold. Transportation facilities provide +50% [ICON_TOURISM] Tourism to Wonders in this City."),
+    ("LOC_BUILDING_JNR_CASINO_DESCRIPTION",                      "Wonders in this City provide +1 [ICON_CULTURE] Culture and +3 [ICON_Gold] Gold. Transportation provide +50% [ICON_TOURISM] Tourism to Wonders in this City."),
     ("LOC_BUILDING_AQUATICS_CENTER_DESCRIPTION_UC_JNR",          "If this City is fully [ICON_POWER] Powered, each specialty district in this city provide 4 copies of corresponding yield to all District on or adjacent to Shallow Sea and Lake tiles."),
     ("LOC_BUILDING_JNR_FOOD_COURT_NAME",                         "Souvenir Store"),
     ("LOC_BUILDING_JNR_FOOD_COURT_DESCRIPTION",                  "+1 [ICON_Amenities] Amenity for every Luxury resource this city has improved. Cities receive +5 [ICON_Gold] Gold for every improved resource type. Double these yields if city is [ICON_POWER] powered."),

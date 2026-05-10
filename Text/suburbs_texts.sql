@@ -4,7 +4,7 @@ insert or replace into EnglishText
     (Tag,                                                           Text)
 values
     ("LOC_BUILDING_JNR_TRANSIT_HUB_NAME",                           "Passenger Transportation Center"),
-    ("LOC_BUILDING_JNR_TRANSIT_HUB_DESCRIPTION",                    "+2 [ICON_MOVEMENT] Movement to Civilian units trained in this city. +50% adjacency bonus to districts adjacent to any transportation facilities. [NEWLINE][NEWLINE]Can only be built once in a civilization."),
+    ("LOC_BUILDING_JNR_TRANSIT_HUB_DESCRIPTION",                    "+2 [ICON_MOVEMENT] Movement to Civilian units trained in this city. +50% adjacency bonus to districts adjacent to any Transportation. [NEWLINE][NEWLINE]Can only be built once in a civilization."),
     ("LOC_BUILDING_JNR_HOSPITAL_NAME",                              "Central Hospital"),
     ("LOC_BUILDING_JNR_HOSPITAL_DESCRIPTION",                       "Your units on or adjacent this tile heals +20 HP per turn. +10% accumulation rate for [ICON_GREATSCIENTIST] Great Scientist Points; this bonus is doubled after Medical Science is researched. [NEWLINE][NEWLINE]Your city has a chance to avoid [ICON_CITIZEN] lost; when grants a [ICON_CITIZEN] citizen, there is a probability of obtaining an additional [ICON_CITIZEN] citizen. [NEWLINE][NEWLINE]Can only be built once in a civilization."),
     ("LOC_BUILDING_JNR_HOSPITAL_PREVENT_POP_LOST_VIEWTEXT",         "Central Hospital has prevented the loss of [ICON_CITIZEN] citizens"),
