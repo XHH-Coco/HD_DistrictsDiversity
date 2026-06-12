@@ -22,13 +22,13 @@ values
     ("LOC_BUILDING_SUKIENNICE_DESCRIPTION_UC_JNR",                  "A building unique to Poland. This building can only be built once per civilization. [NEWLINE][NEWLINE]Culture Bomb adjacent tiles when completing a Commercial Hub district. [NEWLINE]For each +8 adjacency bonus of Commercial Hub district in this city, provides +1 [ICON_TradeRoute] Trade Route capacity. Provides [ICON_PRODUCTION] Production equal to 25% adjacency of Commercial Hub district in this city to Domestic [ICON_TRADEROUTE] Trade Routes to this city. Provides [ICON_GOLD] Gold equal to 75% adjacency of Commercial Hub district in this city to International [ICON_TRADEROUTE] Trade Routes starting from this city. [NEWLINE][NEWLINE] When you build International [ICON_TradeRoute] Trade Routes, receive a random luxury resource and its yields improved by the destination city. This effect can only be obtained once from each destination city."),
     -- 银行
     ("LOC_BUILDING_BANK_NAME",                                      "Bank"),
-    ("LOC_BUILDING_BANK_DESCRIPTION_UC_JNR",                        "[ICON_CITIZEN] Citizens in this city provide +3 [ICON_GOLD] Gold. If Commercial Hub district in this city has at least +6 adjacency bonus, +10% accumulation rate for [ICON_GREATMERCHANT] Great Merchant Points."),
+    ("LOC_BUILDING_BANK_DESCRIPTION_UC_JNR",                        "[ICON_CITIZEN] Citizens in this city provide +3 [ICON_GOLD] Gold. If Commercial Hub district in this city has at least +6 basic adjacency bonus, +10% accumulation rate for [ICON_GREATMERCHANT] Great Merchant Points."),
     -- 会馆
     ("LOC_BUILDING_JNR_GUILDHALL_NAME",                             "Guildhall"),
-    ("LOC_BUILDING_JNR_GUILDHALL_DESCRIPTION",                      "+5 [ICON_GOLD] Gold for Domestic [ICON_TRADEROUTE] Trade Route to this City. If Industrial Zone district in this city has at least +6 adjacency bonus, +10% accumulation rate for [ICON_GREATENGINEER] Great Engineer Points."),
+    ("LOC_BUILDING_JNR_GUILDHALL_DESCRIPTION",                      "+5 [ICON_GOLD] Gold for Domestic [ICON_TRADEROUTE] Trade Route to this City. If Industrial Zone district in this city has at least +6 basic adjacency bonus, +10% accumulation rate for [ICON_GREATENGINEER] Great Engineer Points."),
     -- 商人中心
     ("LOC_BUILDING_JNR_MERCHANT_QUARTER_NAME",                      "Merchant Quarter"),
-    ("LOC_BUILDING_JNR_MERCHANT_QUARTER_DESCRIPTION",               "+6 [ICON_GOLD] Gold to International [ICON_TRADEROUTE] Trade Routes starting from this city. If Harbor district in this city has at least +6 adjacency bonus, +10% accumulation rate for [ICON_GREATADMIRAL] Great Admiral Points."),
+    ("LOC_BUILDING_JNR_MERCHANT_QUARTER_DESCRIPTION",               "+6 [ICON_GOLD] Gold to International [ICON_TRADEROUTE] Trade Routes starting from this city. If Harbor district in this city has at least +6 basic adjacency bonus, +10% accumulation rate for [ICON_GREATADMIRAL] Great Admiral Points."),
     -- 大巴扎
     ("LOC_BUILDING_GRAND_BAZAAR_NAME",                              "Grand Bazaar"),
     ("LOC_BUILDING_GRAND_BAZAAR_DESCRIPTION_UC_JNR",                "A building unique to the Ottomans. [ICON_CITIZEN] Citizens in this city provide +3 [ICON_GOLD] Gold."),
