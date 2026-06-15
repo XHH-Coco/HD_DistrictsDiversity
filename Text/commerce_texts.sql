@@ -25,10 +25,10 @@ values
     ("LOC_BUILDING_BANK_DESCRIPTION_UC_JNR",                        "[ICON_CITIZEN] Citizens in this city provide +3 [ICON_GOLD] Gold. If Commercial Hub district in this city has at least +6 basic adjacency bonus, +10% accumulation rate for [ICON_GREATMERCHANT] Great Merchant Points."),
     -- 会馆
     ("LOC_BUILDING_JNR_GUILDHALL_NAME",                             "Guildhall"),
-    ("LOC_BUILDING_JNR_GUILDHALL_DESCRIPTION",                      "+5 [ICON_GOLD] Gold for Domestic [ICON_TRADEROUTE] Trade Route to this City. If Industrial Zone district in this city has at least +6 basic adjacency bonus, +10% accumulation rate for [ICON_GREATENGINEER] Great Engineer Points."),
+    ("LOC_BUILDING_JNR_GUILDHALL_DESCRIPTION",                      "If Industrial Zone district in this city has at least +6 basic adjacency bonus, +10% accumulation rate for [ICON_GREATENGINEER] Great Engineer Points."),
     -- 商人中心
     ("LOC_BUILDING_JNR_MERCHANT_QUARTER_NAME",                      "Merchant Quarter"),
-    ("LOC_BUILDING_JNR_MERCHANT_QUARTER_DESCRIPTION",               "+6 [ICON_GOLD] Gold to International [ICON_TRADEROUTE] Trade Routes starting from this city. If Harbor district in this city has at least +6 basic adjacency bonus, +10% accumulation rate for [ICON_GREATADMIRAL] Great Admiral Points."),
+    ("LOC_BUILDING_JNR_MERCHANT_QUARTER_DESCRIPTION",               "+9 [ICON_GOLD] Gold to Domestic [ICON_TRADEROUTE] Trade Routes to this city and International [ICON_TRADEROUTE] Trade Routes starting from this city. If Harbor district in this city has at least +6 basic adjacency bonus, +10% accumulation rate for [ICON_GREATADMIRAL] Great Admiral Points."),
     -- 大巴扎
     ("LOC_BUILDING_GRAND_BAZAAR_NAME",                              "Grand Bazaar"),
     ("LOC_BUILDING_GRAND_BAZAAR_DESCRIPTION_UC_JNR",                "A building unique to the Ottomans. [ICON_CITIZEN] Citizens in this city provide +3 [ICON_GOLD] Gold."),
@@ -37,7 +37,7 @@ values
     ("LOC_BUILDING_STOCK_EXCHANGE_DESCRIPTION_UC_JNR",              "+10% [ICON_gold] Gold and +10% accumulation rate for [ICON_GREATMERCHANT] Great Merchant Points from all cities within 6 tiles that do not already have a bonus from another Stock Exchange. These bonuses are doubled if the city is fully powered."),
     -- 商务写字楼
     ("LOC_BUILDING_JNR_COMMODITY_EXCHANGE_NAME",                    "Commercial Office Building"),
-    ("LOC_BUILDING_JNR_COMMODITY_EXCHANGE_DESCRIPTION",             "Bonus [ICON_Gold] Gold equal to the adjacency bonus of the Commercial Hub district. +1 [ICON_Production] Production per [ICON_Citizen] Citizen when City is fully [ICON_POWER] Powered."),
+    ("LOC_BUILDING_JNR_COMMODITY_EXCHANGE_DESCRIPTION",             "Bonus [ICON_Gold] Gold equal to the adjacency bonus of the Commercial Hub district. +1 [ICON_Production] Production and +3 [ICON_GOLD] Gold per [ICON_Citizen] Citizen in this city."),
     -- 市场部
     ("LOC_BUILDING_JNR_MARKETING_AGENCY_NAME",                      "Marketing Agency"),
     ("LOC_BUILDING_JNR_MARKETING_AGENCY_DESCRIPTION",               "+5% [ICON_Tourism] Tourism output (at most 25%) to civilizations to which you have a [ICON_TradeRoute] Trade Route, double when city is powered. +10% accumulation rate for [ICON_GREATMERCHANT] Great Merchant Points. Commercial Hub district's adjacency bonus provides [ICON_TOURISM] Tourism as well."),
@@ -56,7 +56,7 @@ values
     ("LOC_BUILDING_JNR_ENTREPOT_DESCRIPTION",                       "Each [ICON_Citizen] Citizen in the city provides +1 [ICON_PRODUCTION] Production. +25% combat experience for all naval units trained in this city. +50% production speed for Naval Units. Naval units trained in this city start with a free promotion. Provides you with 1 of each Strategic resource per turn that you have revealed."),
     -- 商港
     ("LOC_BUILDING_JNR_FISH_MARKET_NAME",                           "Entrepot"),
-    ("LOC_BUILDING_JNR_FISH_MARKET_DESCRIPTION",                    "Bonus [ICON_GOLD] Gold equal to the adjacency bonus of the Harbor district. +6 [ICON_GOLD] Gold to Domestic [ICON_TRADEROUTE] Trade Routes to this city and International [ICON_TRADEROUTE] Trade Routes starting from this city."),
+    ("LOC_BUILDING_JNR_FISH_MARKET_DESCRIPTION",                    "Bonus [ICON_GOLD] Gold equal to the adjacency bonus of the Harbor district. +9 [ICON_GOLD] Gold to Domestic [ICON_TRADEROUTE] Trade Routes to this city and International [ICON_TRADEROUTE] Trade Routes starting from this city."),
     -- 海港
     ("LOC_BUILDING_SEAPORT_NAME",                                   "Seaport"),
     ("LOC_BUILDING_SEAPORT_DESCRIPTION_UC_JNR",                     "Bonus [ICON_Food] Food equal to the adjacency bonus of the Harbor district. Improvements on water area provide +1 [ICON_FOOD] Food and [ICON_Production] Production in this city. Allows Fleets and Armadas to be trained directly. Fleet and Armada training costs reduced by 10%."),
@@ -128,10 +128,10 @@ values
     ("zh_Hans_CN",  "LOC_BUILDING_BANK_DESCRIPTION_UC_JNR",                        "城市中每位 [ICON_CITIZEN] 公民+3 [ICON_GOLD] 金币。若此城的商业中心基础相邻加成至少+6，则玩家的 [ICON_GREATMERCHANT] 大商人点数积累速度+10%。"),
     -- 会馆
     ("zh_Hans_CN",  "LOC_BUILDING_JNR_GUILDHALL_NAME",                             "工商会馆"),
-    ("zh_Hans_CN",  "LOC_BUILDING_JNR_GUILDHALL_DESCRIPTION",                      "以本城为目的地的国内 [ICON_TRADEROUTE] 贸易路线+5 [ICON_GOLD] 金币。若此城的工业区基础相邻加成至少+6，则玩家的 [ICON_GREATENGINEER] 大工程师点数积累速度+10%。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_JNR_GUILDHALL_DESCRIPTION",                      "若此城的工业区基础相邻加成至少+6，则玩家的 [ICON_GREATENGINEER] 大工程师点数积累速度+10%。"),
     -- 商人中心
     ("zh_Hans_CN",  "LOC_BUILDING_JNR_MERCHANT_QUARTER_NAME",                      "商人中心"),
-    ("zh_Hans_CN",  "LOC_BUILDING_JNR_MERCHANT_QUARTER_DESCRIPTION",               "此城出发的国际 [ICON_TRADEROUTE] 贸易路线+6 [ICON_GOLD] 金币。若此城的港口基础相邻加成至少+6，则玩家的 [ICON_GREATADMIRAL] 海军统帅点数积累速度+10%。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_JNR_MERCHANT_QUARTER_DESCRIPTION",               "以本城为目的地的国内 [ICON_TRADEROUTE] 贸易路线和本城出发的国际 [ICON_TRADEROUTE] 贸易路线+9 [ICON_GOLD] 金币。若此城的港口基础相邻加成至少+6，则玩家的 [ICON_GREATADMIRAL] 海军统帅点数积累速度+10%。"),
     -- 大巴扎
     ("zh_Hans_CN",  "LOC_BUILDING_GRAND_BAZAAR_NAME",                              "大巴扎"),
     ("zh_Hans_CN",  "LOC_BUILDING_GRAND_BAZAAR_DESCRIPTION_UC_JNR",                "奥斯曼特色建筑。城市中每位 [ICON_CITIZEN] 公民+3 [ICON_GOLD] 金币。玩家的 [ICON_GREATMERCHANT] 大商人点数积累速度+10%。"),
@@ -140,7 +140,7 @@ values
     ("zh_Hans_CN",  "LOC_BUILDING_STOCK_EXCHANGE_DESCRIPTION_UC_JNR",              "6个单元格内的城市+10% [ICON_GOLD] 金币，并使玩家的 [ICON_GREATMERCHANT] 大商人点数积累速度+10%（前提是其尚未从其他的“证券交易所”建筑获得加成）；此城 [ICON_POWER] 供电充足时效果翻倍。"),
     -- 商务写字楼
     ("zh_Hans_CN",  "LOC_BUILDING_JNR_COMMODITY_EXCHANGE_NAME",                    "商务写字楼"),
-    ("zh_Hans_CN",  "LOC_BUILDING_JNR_COMMODITY_EXCHANGE_DESCRIPTION",             "[ICON_Gold] 金币加成等于商业中心区域的相邻加成。此城 [ICON_POWER] 供电充足时，城市中每位 [ICON_Citizen] 公民+1 [ICON_Production] 生产力。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_JNR_COMMODITY_EXCHANGE_DESCRIPTION",             "[ICON_Gold] 金币加成等于商业中心区域的相邻加成。城市中每位 [ICON_Citizen] 公民+1 [ICON_Production] 生产力和+3 [ICON_GOLD] 金币。"),
     -- 市场部
     ("zh_Hans_CN",  "LOC_BUILDING_JNR_MARKETING_AGENCY_NAME",                      "市场部"),
     ("zh_Hans_CN",  "LOC_BUILDING_JNR_MARKETING_AGENCY_DESCRIPTION",               "您向有 [ICON_TradeRoute] 贸易路线连接的文明输出的 [ICON_Tourism] 旅游业绩+5%；此城 [ICON_POWER] 供电充足时，该效果翻倍。最多只能有5个市场部生效。玩家的 [ICON_GREATMERCHANT] 大商人点数积累速度+10%。商业中心的相邻加成也产生等量 [ICON_Tourism] 旅游业绩。"),
@@ -159,7 +159,7 @@ values
     ("zh_Hans_CN",  "LOC_BUILDING_JNR_ENTREPOT_DESCRIPTION",                       "城市中每位 [ICON_Citizen] 公民提供+1 [ICON_PRODUCTION] 生产力。此城中生产的所有海军单位+25%战斗经验值。对所有海军单位+50% [ICON_PRODUCTION] 生产力。此城中生产的海军单位若初始未拥有免费晋升，则其初始可获得免费晋升。每回合提供1份文明已解锁战略资源。"),
     -- 商港
     ("zh_Hans_CN",  "LOC_BUILDING_JNR_FISH_MARKET_NAME",                           "商港"),
-    ("zh_Hans_CN",  "LOC_BUILDING_JNR_FISH_MARKET_DESCRIPTION",                    "[ICON_Gold] 金币加成等于港口区域的相邻加成。以本城为目的地的国内 [ICON_TRADEROUTE] 贸易路线和本城出发的国际 [ICON_TRADEROUTE] 贸易路线+6 [ICON_GOLD] 金币。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_JNR_FISH_MARKET_DESCRIPTION",                    "[ICON_Gold] 金币加成等于港口区域的相邻加成。以本城为目的地的国内 [ICON_TRADEROUTE] 贸易路线和本城出发的国际 [ICON_TRADEROUTE] 贸易路线+9 [ICON_GOLD] 金币。"),
     -- 海港
     ("zh_Hans_CN",  "LOC_BUILDING_SEAPORT_NAME",                                   "海港"),
     ("zh_Hans_CN",  "LOC_BUILDING_SEAPORT_DESCRIPTION_UC_JNR",                     "[ICON_FOOD] 食物加成等于港口区域的相邻加成。本城建造在水域上的改良+1 [ICON_FOOD] 食物和 [ICON_Production] 生产力。可直接生产舰队和无敌舰队。舰队和无敌舰队的生产费用降低10%。"),
@@ -221,11 +221,3 @@ UPDATE LocalizedText SET Text=REPLACE(Text, '造船厂和码头','商港、军�
 --UPDATE LocalizedText SET Text=REPLACE(Text, 'Lighthouse','Trade Port or Fishing Port') WHERE Tag = 'LOC_TRAIT_CIVILIZATION_GROTE_RIVIEREN_EXPANSION2_DESCRIPTION';
 -- UPDATE LocalizedText SET Text=REPLACE(Text, 'Market','Market, Mint or Emporium') WHERE Tag = 'LOC_BUILDING_GREAT_ZIMBABWE_DESCRIPTION';
 -- UPDATE LocalizedText SET Text=REPLACE(Text, '市场','市场、铸币厂或货栈') WHERE Tag = 'LOC_BUILDING_GREAT_ZIMBABWE_DESCRIPTION';
-UPDATE LocalizedText SET Text=REPLACE(Text, 'Lighthouse','Tier 1 building of Harbor') WHERE Tag = 'LOC_BOOST_TRIGGER_COMPASS_HD';
-UPDATE LocalizedText SET Text=REPLACE(Text, '灯塔','港口一级建筑') WHERE Tag = 'LOC_BOOST_TRIGGER_COMPASS_HD';
-UPDATE LocalizedText SET Text=REPLACE(Text, 'Bank','Tier 2 building of Commercial Hub') WHERE Tag in (
-    'LOC_BOOST_TRIGGER_HUMAN_RIGHTS_HD'
-);
-UPDATE LocalizedText SET Text=REPLACE(Text, '银行','商业中心二级建筑') WHERE Tag in (
-    'LOC_BOOST_TRIGGER_HUMAN_RIGHTS_HD'
-);
