@@ -8,7 +8,7 @@
 		-- 商业中心
 update Buildings set	PrereqCivic = NULL,				PrereqTech = 'TECH_CURRENCY',					Maintenance = 1,		Cost = 110,	CitizenSlots = 1,	Description = 'LOC_BUILDING_MARKET_DESCRIPTION_UC_JNR'			where BuildingType = 'BUILDING_MARKET';
 update Buildings set	PrereqCivic = NULL,				PrereqTech = 'TECH_TEXTILE_HD',				Description = 'LOC_BUILDING_SUKIENNICE_DESCRIPTION_UC_JNR'		where BuildingType = 'BUILDING_SUKIENNICE';
-update Buildings set	PrereqCivic = null,				PrereqTech = 'TECH_BANKING',					Maintenance = 4,		Cost = 250,	CitizenSlots = 1,	Description = 'LOC_BUILDING_BANK_DESCRIPTION_UC_JNR'			where BuildingType = 'BUILDING_BANK';
+update Buildings set	PrereqCivic = 'CIVIC_GUILDS', PrereqTech = NULL,					Maintenance = 4,		Cost = 250,	CitizenSlots = 1,	Description = 'LOC_BUILDING_BANK_DESCRIPTION_UC_JNR'			where BuildingType = 'BUILDING_BANK';
 update Buildings set	PrereqCivic = 'CIVIC_GUILDS',	PrereqTech = NULL,								Maintenance = 4,		Cost = 225,	CitizenSlots = 1,	Description = 'LOC_BUILDING_GRAND_BAZAAR_DESCRIPTION_UC_JNR', Entertainment = 2	where BuildingType = 'BUILDING_GRAND_BAZAAR';
 update Buildings set	PrereqCivic = NULL,				PrereqTech = 'TECH_ECONOMICS',					Maintenance = 10,		Cost = 450,	CitizenSlots = 1,	Description = 'LOC_BUILDING_STOCK_EXCHANGE_DESCRIPTION_UC_JNR'	where BuildingType = 'BUILDING_STOCK_EXCHANGE';
 		-- 港口
