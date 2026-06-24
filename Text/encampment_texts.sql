@@ -1,12 +1,6 @@
 insert or replace into EnglishText
 	(Tag,															Text)
 values
-	("LOC_UNIT_MILITARY_ENGINEER_ALT_DESCRIPTION",        			"Medieval era support unit. Requires an Armory, Conscription Service or Supply Depot to produce. Can construct Roads, Railroads, Forts, Airstrips, Missile Silos, and Mountain Tunnel improvements. One of their build charges can also be used to complete 30% of a Canal, Dam or Aqueduct district or a Seawall building. Ignore [ICON_MOVEMENT] movement penalty from all Terrians, Features and Rivers."), -- Can move with ability that ignore all the terrain and river.
-
---兵马俑
-	-- ("LOC_BUILDING_TERRACOTTA_ARMY_DESCRIPTION",					"Grants 1 promotion level to all current units. +1 Military policy slot. [NEWLINE][NEWLINE]Must be built on flat Grassland or Plains adjacent to an Encampment district with a Barracks, Stable or Frontier Juncture."),
---勃兰登堡门
-	-- ("LOC_BUILDING_BRANDENBURG_GATE_DESCRIPTION",					"Your cities yield +8% [ICON_Science] Science when you are at war with any Civilization, yield +8% [ICON_Production] Production when you are at peace with all Civilizations. +3 Loyalty per turn for cities with a garrisoned unit. [NEWLINE][NEWLINE]Must be built in a City with a Military Academy, Military Propaganda Agency or Military Science Academy. Must be built on a flat Grassland, Plains, Desert or Tundra tile adjacent to City Center."),
 --火药
 	("LOC_BOOST_TRIGGER_GUNPOWDER_HD",								"Build a Tier 2 building in Encampment district."),
 --兵营
@@ -41,12 +35,6 @@ values
 insert or replace into LocalizedText
 	(Language,		Tag,														Text)
 values
-	("zh_Hans_CN",  "LOC_UNIT_MILITARY_ENGINEER_ALT_DESCRIPTION",        		"中世纪支援单位。需要兵工厂、募兵所或补给站才能生产。能建造道路、堡垒、飞机跑道、导弹发射井和穿山隧道改良设施。其建造次数可用于加快运河、堤坝、水渠区域或拦海堤30%的建造进度。无视地形、地貌和河流的移动力消耗。"),
-
---兵马俑
-	-- ("zh_Hans_CN",  "LOC_BUILDING_TERRACOTTA_ARMY_DESCRIPTION",					"目前所有单位获得1次强化等级。+1 军事政策槽位。[NEWLINE][NEWLINE]必须建在平坦的草原或平原上，且靠近带有兵营、马厩或边关的军营区域。"),
---勃兰登堡门
-    -- ("zh_Hans_CN",  "LOC_BUILDING_BRANDENBURG_GATE_DESCRIPTION",				"当您与任何文明发生战争时，您的城市+8% [ICON_Science] 科技值。当您不与任何文明发生战争时，您的城市+8% [ICON_Production] 生产力。拥有驻军单位的城市每回合的忠诚度+3。[NEWLINE][NEWLINE]要求此城已有军事学院、军事政治处或军事研究院。必须建在相邻市中心的平坦的草原、平原、冻土或沙漠单元格上。"),
 --火药
 	("zh_Hans_CN",	"LOC_BOOST_TRIGGER_GUNPOWDER_HD",							"建造1座军营二级建筑。"),
 --兵营
@@ -94,14 +82,3 @@ values
 -- MINOR_CIV_LAHORE_NIHANG
 UPDATE LocalizedText SET Text=REPLACE(Text, 'Barracks, Armory, and Military Academy','Barracks or Stable or Frontier Juncture, Supply Depot or Conscription Service or Armory and Military Academy or Military Propaganda Agency or Military Science Academy') WHERE Tag = 'LOC_LEADER_TRAIT_LAHORE_DESCRIPTION';
 UPDATE LocalizedText SET Text=REPLACE(Text, '兵营、兵工厂和军事学院时','兵营或马厩或边关、兵工厂或募兵所或补给站和军事学院或军事政治处或军事研究院时') WHERE Tag = 'LOC_LEADER_TRAIT_LAHORE_DESCRIPTION';
-
-insert or replace into EnglishText
-	(Tag,															Text)
-select
-	"LOC_UNIT_MILITARY_ENGINEER_ALT_DESCRIPTION",        			"Medieval era support unit. Requires an Armory, Conscription Service, Supply Depot or Haven to produce. Can construct Roads, Railroads, Forts, Airstrips, Missile Silos, and Mountain Tunnel improvements. One of their build charges can also be used to complete 30% of a Canal, Dam or Aqueduct district or a Seawall building. Ignore [ICON_MOVEMENT] movement penalty from all Terrians, Features and Rivers."
-where exists (select Tag from LocalizedText where Tag = 'LOC_BUILDING_JNR_ENTREPOT_NAME');
-insert or replace into LocalizedText
-	(Language,		Tag,														Text)
-select
-	"zh_Hans_CN",   "LOC_UNIT_MILITARY_ENGINEER_ALT_DESCRIPTION",        		"中世纪支援单位。需要兵工厂、募兵所、补给站或军港才能生产。能建造道路、堡垒、飞机跑道、导弹发射井和穿山隧道改良设施。其建造次数可用于加快运河、堤坝、水渠区域或拦海堤30%的建造进度。无视地形、地貌和河流的移动力消耗。"
-where exists (select Tag from LocalizedText where Tag = 'LOC_BUILDING_JNR_ENTREPOT_NAME');
