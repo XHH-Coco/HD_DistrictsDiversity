@@ -69,8 +69,6 @@ select
 	'BUILDING_JNR_FOOD_COURT',				'GREATWORKSLOT_PRODUCT',			2
 where exists (select GreatWorkSlotType from GreatWorkSlotTypes where GreatWorkSlotType = 'GREATWORKSLOT_PRODUCT');
 
-	-- 区域修改
-update Districts set PrereqTech = 'TECH_CARTOGRAPHY' where DistrictType = 'DISTRICT_WATER_ENTERTAINMENT_COMPLEX' or DistrictType = 'DISTRICT_WATER_STREET_CARNIVAL';
 --------------------------------------------------------------
 
 -- 建筑特效修改

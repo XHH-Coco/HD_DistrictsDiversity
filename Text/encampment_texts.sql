@@ -42,7 +42,7 @@ values
 --马厩
 	("zh_Hans_CN",	"LOC_BUILDING_STABLE_DESCRIPTION_UC_JNR",					"该城市中训练的所有骑兵类和攻城类单位+25%战斗经验值。[NEWLINE][NEWLINE]不能建造在已有兵营或边关的军营区域中。[NEWLINE][NEWLINE]本城的所有已开发的 [ICON_RESOURCE_HORSES] 马资源+2 [ICON_Production] 生产力。为在本城训练的轻重骑兵和攻城类单位提供永久+2 [ICON_Strength] 战斗力。"),
 --斡耳朵
-	("zh_Hans_CN",	"LOC_BUILDING_ORDU_DESCRIPTION_UC_JNR",						"蒙古特色建筑，取代和马厩。其所在城市中训练的轻重骑兵单位 [ICON_MOVEMENT] 移动力+1。其所在城市中训练的所有骑兵类和攻城类单位+25%战斗经验值。[NEWLINE][NEWLINE]无法建造在已拥有兵营或边关的军营区域中。[NEWLINE][NEWLINE]本城的所有已开发的 [ICON_RESOURCE_HORSES] 马资源+3 [ICON_Production] 生产力。为在本城训练的轻重骑兵、攻城类单位、怯薛歹提供永久+3 [ICON_Strength] 战斗力。"),
+	("zh_Hans_CN",	"LOC_BUILDING_ORDU_DESCRIPTION_UC_JNR",						"蒙古特色建筑，取代马厩。其所在城市中训练的轻重骑兵单位 [ICON_MOVEMENT] 移动力+1。其所在城市中训练的所有骑兵类和攻城类单位+25%战斗经验值。[NEWLINE][NEWLINE]无法建造在已拥有兵营或边关的军营区域中。[NEWLINE][NEWLINE]本城的所有已开发的 [ICON_RESOURCE_HORSES] 马资源+3 [ICON_Production] 生产力。为在本城训练的轻重骑兵、攻城类单位、怯薛歹提供永久+3 [ICON_Strength] 战斗力。"),
 --皇家学堂
 	("zh_Hans_CN",	"LOC_BUILDING_BASILIKOI_PAIDES_DESCRIPTION_UC_JNR",			"马其顿特色建筑，取代兵营和马厩且解锁更早。该城中训练的陆地近战、远程单位和伙友骑兵+25%战斗经验值。非平民单位在此城中创建时，获得等同于单位花费25%的 [ICON_SCIENCE] 科技值。[NEWLINE][NEWLINE]无法建造在已拥有边关的军营区域中。[NEWLINE][NEWLINE]本城的所有已开发的 [ICON_RESOURCE_HORSES] 马资源和 [ICON_RESOURCE_IRON] 铁资源+2 [ICON_Production] 生产力。为在本城训练的近战、远程、抗骑兵、攻城单位和伙友骑兵提供永久+3 [ICON_Strength] 战斗力。"),
 --边关
