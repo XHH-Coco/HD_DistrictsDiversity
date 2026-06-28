@@ -15,8 +15,7 @@ values
     ("LOC_BUILDING_MARKET_DESCRIPTION_UC_JNR",                      "+1 [ICON_TradeRoute] Trade Route capacity. [ICON_CITIZEN] Citizens in the City provide +1 [ICON_GOLD] Gold."),
     -- 铸币厂
     ("LOC_BUILDING_JNR_MINT_NAME",                                  "Mint"),
-    ("LOC_BUILDING_JNR_MINT_DESCRIPTION",                           "+1 [ICON_TradeRoute] Trade Route capacity. +3 [ICON_Gold] Gold for [ICON_Resource_Gold] Gold, [ICON_Resource_Silver] Silver and [ICON_Resource_Copper] Copper in this city."),
-    ("LOC_BUILDING_JNR_MINT_ALT_DESCRIPTION",                       "+1 [ICON_TradeRoute] Trade Route capacity. Each [ICON_Resource_Gold] Gold, [ICON_Resource_Silver] Silver, [ICON_Resource_Seashells] Money Cowrie and [ICON_Resource_Copper] Copper in this City provide +3 [ICON_Gold] Gold."), -- Money Cowries
+    ("LOC_BUILDING_JNR_MINT_DESCRIPTION",                           "+1 [ICON_TradeRoute] Trade Route capacity. For each Minting Resource you controlled, +3 [ICON_Gold] Gold for regional yield. If you have at least 2 Minting Resources, +1 regional range tile."),
     -- 纺织会馆
     ("LOC_BUILDING_SUKIENNICE_NAME",                                "Krakow Sukiennice"),
     ("LOC_BUILDING_SUKIENNICE_DESCRIPTION_UC_JNR",                  "A building unique to Poland. This building can only be built once per civilization. [NEWLINE][NEWLINE]Culture Bomb adjacent tiles when completing a Commercial Hub district. [NEWLINE]For each +8 adjacency bonus of Commercial Hub district in this city, provides +1 [ICON_TradeRoute] Trade Route capacity. Provides [ICON_PRODUCTION] Production equal to 25% adjacency of Commercial Hub district in this city to Domestic [ICON_TRADEROUTE] Trade Routes to this city. Provides [ICON_GOLD] Gold equal to 75% adjacency of Commercial Hub district in this city to International [ICON_TRADEROUTE] Trade Routes starting from this city. [NEWLINE][NEWLINE] When you build International [ICON_TradeRoute] Trade Routes, receive a random luxury resource and its yields improved by the destination city. This effect can only be obtained once from each destination city."),
@@ -69,10 +68,6 @@ values
     ("LOC_BUILDING_JNR_NAVAL_BASE_DESCRIPTION",                     "+25% combat experience for all naval units trained in this city. +75% production speed for Naval Units. Allows Fleets and Armadas to be trained directly. Fleet and Armada training costs reduced by 25%. [NEWLINE]+10% accumulation rate for [ICON_GREATADMIRAL] Great Admiral Points. +3 [ICON_STRENGTH] Combat Strength for all navy units trained in this city."),
     -- 大本钟
     ("LOC_BUILDING_BIG_BEN_EXPANSION2_DESCRIPTION",                 "+1 Economic policy slot[NEWLINE][NEWLINE]Immediately after construction [ICON_GOLD] Gold in treasury is increased by 50%. Must be built next to a River adjacent to a Commercial Hub district with a Bank, a Guildhall or a Merchant Quarter."),
-    -- 乌菲兹美术馆
-    -- ("LOC_BUILDING_UFFIZI_DESCRIPTION",                             "1 free [ICON_GreatArtist] Great Artist appears near the city where the wonder was built. [ICON_GreatWork_SCULPTURE] Art Great Works provide +50% [ICON_TOURISM] Tourism in the City. Themed when displaying Great Works of the same type. Commercial Hub and Theater districts gain standard adjacency bonus from adjacent districts and +50% adjacency from each other. [NEWLINE][NEWLINE] It must be built on flat Grassland or Plains next to a City Centre. Requires Bank or Guildhall or Merchant Quarter Building."),
-    -- 大津巴布韦
-    -- ("LOC_BUILDING_GREAT_ZIMBABWE_DESCRIPTION",                     "+1 [ICON_TRADEROUTE] Trade Route capacity. Grants a Trader unit. Your International [ICON_TradeRoute] Trade Routes from this city get +3 [ICON_Gold] Gold for every improved land Bonus resource in this city. [NEWLINE][NEWLINE] Must be built adjacent to a Commercial Hub district with Market, Mint or Emporium and a Pasture."),
     -- 鼓舞/尤里卡
     ("LOC_BOOST_TRIGGER_CAPITALISM_HD",                             "Build 1 Stock Exchanges."),
     ("LOC_BOOST_TRIGGER_GUILDS_HD",                                 "Build 2 Commercial Hubs."),
@@ -80,13 +75,6 @@ values
     ("LOC_BOOST_TRIGGER_LONGDESC_ECONOMICS_HD",                     "The influence of new business organizations continues to grow. It's time to formally examine the driving forces that are shaping your country's economy."),
     ("LOC_BOOST_TRIGGER_STEAM_POWER_HD",                            "Build 2 Shipyards, Havens or Entrepots."),
     ("LOC_BOOST_TRIGGER_LONGDESC_STEAM_POWER_HD",                   "Better port facilities offered the possibility of mass production of steam ships."),
-    -- 政策卡
-    -- ("LOC_POLICY_FREE_MARKET_DESCRIPTION",                          "Regional effects from Commercial Hub district reach 3 tiles farther. Banks, Guildhalls and Merchant Quarters generate 0.9 [ICON_GOLD] Gold; Stock Exchanges, Commercial Office Buildings and Marketing Agencies generate 1.5 [ICON_GOLD] gold per [ICON_Citizen] citizen in the city."),
---    ("LOC_POLICY_MILITARY_RESEARCH_EXPANSION1_DESCRIPTION",         "Military Academies, Seaports, Cruise Terminals, Naval Bases and Renaissance Walls generate +5 [ICON_SCIENCE] Science. +100% Encampment district adjacency bonuses."),
-    -- ("LOC_POLICY_NAVIGATION_DESCRIPTION",                           "+4 [ICON_GreatAdmiral] Great Admiral points per turn. +4 [ICON_GreatAdmiral] Great Admiral points per turn for every Fishing Port or Trade Port."),
-    -- ("LOC_POLICY_TRAVELING_MERCHANTS_DESCRIPTION",                  "+4 [ICON_GreatMerchant] Great Merchant points per turn. +4 [ICON_GreatMerchant] Great Merchant points per turn for every Market, Mint or Emporium."),
-    -- ("LOC_POLICY_LAISSEZ_FAIRE_DESCRIPTION_XP2",                    "+4 [ICON_GreatMerchant] Great Merchant points per turn for every Bank, Guildhall and Merchant Quarter; +8 [ICON_GreatMerchant] Great Merchant points per turn for every Stock Exchange, Commercial Office Building and Marketing Agency. +4 [ICON_GreatAdmiral] Great Admiral points per turn for every Shipyard, Haven and Entrepot; +8 [ICON_GreatAdmiral] Great Admiral points per turn for every Seaport, Cruise Terminal and Naval Base. "),
-    -- ("LOC_POLICY_DEEP_WATER_PORT_DESCRIPTION",                      "+4 [ICON_Production] Production to all coastal Cities. Seaport, Naval Base and Cruise Terminal provide +6 [ICON_GOLD] Gold and +3 [ICON_Housing] Housing."),
     -- 伟人
     ("LOC_ARTEMISIA_LIGHTHOUSE",                                    "Instantly builds a Fishing Port in this district."),
     ("LOC_ARTEMISIA_FISHING_PORT_FOOD",                             "Fishing Ports provide +{Amount} [ICON_Food] Food."),
@@ -118,8 +106,7 @@ values
     ("zh_Hans_CN",  "LOC_BUILDING_MARKET_DESCRIPTION_UC_JNR",                      "+1 [ICON_TradeRoute] 贸易路线容量。所在城市每位 [ICON_Citizen] 公民+1 [ICON_GOLD] 金币。"),
     -- 铸币厂
     ("zh_Hans_CN",  "LOC_BUILDING_JNR_MINT_NAME",                                  "铸币厂"),
-    ("zh_Hans_CN",  "LOC_BUILDING_JNR_MINT_DESCRIPTION",                           "+1 [ICON_TradeRoute] 贸易路线容量。城市中每个 [ICON_Resource_Gold] 黄金、 [ICON_Resource_Silver] 银和 [ICON_Resource_Copper] 铜 +3 [ICON_Gold] 金币。"),
-    ("zh_Hans_CN",  "LOC_BUILDING_JNR_MINT_ALT_DESCRIPTION",                       "+1 [ICON_TradeRoute] 贸易路线容量。城市中每个 [ICON_Resource_Gold] 黄金、 [ICON_Resource_Silver] 银、 [ICON_Resource_Seashells] 货贝和 [ICON_Resource_Copper] 铜 +3 [ICON_Gold] 金币。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_JNR_MINT_DESCRIPTION",                           "+1 [ICON_TradeRoute] 贸易路线容量。你每拥有一种货币资源，辐射产出+3 [ICON_Gold] 金币。若你拥有至少2种货币资源，辐射范围+1单元格。"),
     -- 纺织会馆
     ("zh_Hans_CN",  "LOC_BUILDING_SUKIENNICE_NAME",                                "克拉科夫纺织会馆"),
     ("zh_Hans_CN",  "LOC_BUILDING_SUKIENNICE_DESCRIPTION_UC_JNR",                  "波兰特色建筑，文明中一次仅限建造一座该建筑。[NEWLINE][NEWLINE]建成商业中心后对相邻单元格释放文化炸弹。[NEWLINE]本城的商业中心每拥有+8相邻加成，提供+1 [ICON_TradeRoute] 贸易路线容量。以本城为目的地的国内 [ICON_TRADEROUTE] 贸易路线获得25%本城商业中心相邻加成的 [ICON_PRODUCTION] 生产力；本城出发的国际 [ICON_TRADEROUTE] 贸易路线获得75%本城商业中心相邻加成的 [ICON_GOLD] 金币。[NEWLINE][NEWLINE]本城建立国际 [ICON_TRADEROUTE] 贸易路线时，随机获得一份目的地城市开发的奢侈资源以及其产出，仅能从每座目的地城市获得一次该效果。"),
@@ -172,10 +159,6 @@ values
     ("zh_Hans_CN",  "LOC_BUILDING_JNR_NAVAL_BASE_DESCRIPTION",                     "此城中生产的所有海军单位+25%经验值。可直接生产舰队和无敌舰队。舰队和无敌舰队的生产费用降低25%。生产海军单位加速+75%。所有训练的海军单位+3 [ICON_STRENGTH] 战斗力。玩家的 [ICON_GREATADMIRAL] 海军统帅点数积累速度+10%。"),
     -- 大本钟
     ("zh_Hans_CN",  "LOC_BUILDING_BIG_BEN_EXPANSION2_DESCRIPTION",                 "经济政策槽位+1。+50% [ICON_Gold] 金币。[NEWLINE][NEWLINE]必须建在邻近带有银行、行会会馆或商人中心的商业中心的河流旁边。"),
-    -- 乌菲兹美术馆
-    -- ("zh_Hans_CN",  "LOC_BUILDING_UFFIZI_DESCRIPTION",                             "建成时，获得一位免费的 [ICON_GreatArtist] 大艺术家。本城 [ICON_GreatWork_SCULPTURE] 艺术巨作的 [ICON_TOURISM] 旅游业绩+100%。商业中心和剧院从相邻区域获得标准相邻加成，并且商业中心与剧院相邻时各自获得 +50% 相邻加成。当展示来自相同类型的作品时获得主题化加成。[NEWLINE][NEWLINE] 必须建在靠近市中心的平地上，且必须是草原或平原单元格。同时该城必须有银行、行会会馆或商人中心建筑。"),
-    -- 大津巴布韦
-    -- ("zh_Hans_CN",  "LOC_BUILDING_GREAT_ZIMBABWE_DESCRIPTION",                     "+1 [ICON_TRADEROUTE] 贸易路线容量。获得1个商人单位。此城市中每个已改良的陆地加成资源为从此城市出发的国际 [ICON_TradeRoute] 贸易路线+3 [ICON_Gold] 金币。[NEWLINE][NEWLINE]必须建在与商业中心区域（要求拥有市场、铸币厂或货栈）和牧场相邻的单元格上。"),
     -- 鼓舞/尤里卡
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_CAPITALISM_HD",                             "建造1座证券交易所。"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_GUILDS_HD",                                 "建造2座商业中心。"),
@@ -183,13 +166,6 @@ values
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_ECONOMICS_HD",                     "新的商业机构影响力不断增加。是时候正式研究那些塑造您国家经济的驱动力了。"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_STEAM_POWER_HD",                            "建造2座造船厂、军港或商港。"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_STEAM_POWER_HD",                   "更完善的港口设施为批量生产蒸汽舰艇提供了可能。"),
-    -- 政策卡
-    -- ("zh_Hans_CN",  "LOC_POLICY_FREE_MARKET_DESCRIPTION",                          "来自商业中心区域建筑的辐射范围增加3个单元格。拥有银行、行会会馆或商人中心的城市每位 [ICON_Citizen] 公民提供0.9 [ICON_GOLD] 金币。拥有证券交易所、商务写字楼或市场部的城市每位 [ICON_Citizen] 公民提供1.5 [ICON_GOLD] 金币。"),
---    ("zh_Hans_CN",  "LOC_POLICY_MILITARY_RESEARCH_EXPANSION1_DESCRIPTION",         "军事学院、海港、游轮码头、海军基地和文艺复兴城墙提供+5 [ICON_SCIENCE] 科技值。+100%军营相邻加成。"),
-    -- ("zh_Hans_CN",  "LOC_POLICY_NAVIGATION_DESCRIPTION",                           "每回合+4 [ICON_GreatAdmiral] 海军统帅点数。每有一座渔业码头或贸易码头，每回合的 [ICON_GreatAdmiral] 海军统帅点数便+4。"),
-    -- ("zh_Hans_CN",  "LOC_POLICY_TRAVELING_MERCHANTS_DESCRIPTION",                  "每回合+4 [ICON_GreatMerchant] 大商人点数。每有一座市场、铸币厂或货栈，每回合的 [ICON_GreatMerchant] 大商人点数便+4。"),
-    -- ("zh_Hans_CN",  "LOC_POLICY_LAISSEZ_FAIRE_DESCRIPTION_XP2",                    "每有一座银行、行会会馆或商人中心，每回合的 [ICON_GreatMerchant] 大商人点数便+4；每有一座证券交易所、商务写字楼或市场部，每回合的 [ICON_GreatMerchant] 大商人点数便+8。每有一座造船厂、军港或商港，每回合的 [ICON_GreatAdmiral] 海军统帅点数便+4；每有一座海港、游轮码头或海军基地，每回合的 [ICON_GreatAdmiral] 海军统帅点数便+8。"),
-    -- ("zh_Hans_CN",  "LOC_POLICY_DEEP_WATER_PORT_DESCRIPTION",                      "为所有沿海城市+4 [ICON_Production] 生产力。每座海港、游轮码头或海军基地额外+6 [ICON_GOLD] 金币和+3 [ICON_Housing] 住房。"),
     -- 伟人
     ("zh_Hans_CN",  "LOC_ARTEMISIA_LIGHTHOUSE",                                    "立即在该区域建造渔业码头。"),
     ("zh_Hans_CN",  "LOC_ARTEMISIA_FISHING_PORT_FOOD",                             "所有渔业码头+{Amount} [ICON_Food] 食物。"),
@@ -213,11 +189,5 @@ UPDATE LocalizedText SET Text=REPLACE(Text, 'with a Stock Exchange','with a Stoc
 UPDATE LocalizedText SET Text=REPLACE(Text, '有证券交易所','有证券交易所、商务写字楼或市场部') WHERE Tag LIKE 'LOC_NAT_WON_CL_FINANCE%';
 UPDATE LocalizedText SET Text=REPLACE(Text, 'with a Bank','with a Bank, Guildhall or Merchant Quarter') WHERE Tag LIKE 'LOC_NAT_WON_CL_FINANCE%';
 UPDATE LocalizedText SET Text=REPLACE(Text, '有银行','有银行、行会会馆或商人中心') WHERE Tag LIKE 'LOC_NAT_WON_CL_FINANCE%';
--- UPDATE LocalizedText SET Text=REPLACE(Text, 'Seaports','Seaports, Cruise Terminals, Naval Bases') WHERE Tag = 'LOC_POLICY_MILITARY_RESEARCH_EXPANSION1_DESCRIPTION';
--- UPDATE LocalizedText SET Text=REPLACE(Text, '码头','海港、游轮码头、海军基地') WHERE Tag = 'LOC_POLICY_MILITARY_RESEARCH_EXPANSION1_DESCRIPTION';
 UPDATE LocalizedText SET Text=REPLACE(Text, 'Shipyard and Seaport','Entrepot, Haven, Shipyard, Seaport, Cruise Terminal and Naval Base') WHERE Tag = 'LOC_CIVILIZATION_CARDIFF_BONUS' or Tag = 'LOC_LEADER_TRAIT_CARDIFF_DESCRIPTION';
 UPDATE LocalizedText SET Text=REPLACE(Text, '造船厂和码头','商港、军港、造船厂、海港、游轮码头和海军基地') WHERE Tag = 'LOC_CIVILIZATION_CARDIFF_BONUS' or Tag = 'LOC_LEADER_TRAIT_CARDIFF_DESCRIPTION';
---UPDATE LocalizedText SET Text=REPLACE(Text, '灯塔','贸易码头或渔业码头') WHERE Tag = 'LOC_TRAIT_CIVILIZATION_GROTE_RIVIEREN_EXPANSION2_DESCRIPTION';
---UPDATE LocalizedText SET Text=REPLACE(Text, 'Lighthouse','Trade Port or Fishing Port') WHERE Tag = 'LOC_TRAIT_CIVILIZATION_GROTE_RIVIEREN_EXPANSION2_DESCRIPTION';
--- UPDATE LocalizedText SET Text=REPLACE(Text, 'Market','Market, Mint or Emporium') WHERE Tag = 'LOC_BUILDING_GREAT_ZIMBABWE_DESCRIPTION';
--- UPDATE LocalizedText SET Text=REPLACE(Text, '市场','市场、铸币厂或货栈') WHERE Tag = 'LOC_BUILDING_GREAT_ZIMBABWE_DESCRIPTION';

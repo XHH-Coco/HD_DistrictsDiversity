@@ -7,8 +7,7 @@
 INSERT OR REPLACE INTO EnglishText
         (Tag,                                                       Text)
 VALUES  ('LOC_BUILDING_JNR_ACADEMY_NAME',                           'Sishu'),
-        ('LOC_BUILDING_JNR_ACADEMY_DESCRIPTION',                    'Sishu is a community primary educational institution in Imperial China. It spreads Confucianism and is a vital part of private school system. After Paper Making is researched,+1 [ICON_Culture] Culture.'),
-        -- ('LOC_BUILDING_LIBRARY_DESCRIPTION',                        'After Paper Making is researched, [ICON_Citizen] Citizens in this city provide +0.3 [ICON_SCIENCE] Science.'),
+        ('LOC_BUILDING_JNR_ACADEMY_DESCRIPTION',                    'If you have at least 2 Stationery Resources, +1 [ICON_Culture] Culture for regional yield. After Paper Making is researched, +1 regional range tile.'),
         ('LOC_BUILDING_JNR_SCHOOL_NAME',                            'City School'),
         ('LOC_BUILDING_JNR_SCHOOL_DESCRIPTION',                     '+2 [ICON_Science] Science for each specialty districts in this city. Campus gain standard adjacency bonus from districts.'),
         ('LOC_BUILDING_UNIVERSITY_DESCRIPTION',                     '[ICON_CITIZEN] Citizens in this city provide +0.5 [ICON_SCIENCE] Science.'),
@@ -90,8 +89,7 @@ insert or replace into LocalizedText
     (Language,      Tag,                                                        Text)
 values
     ("zh_Hans_CN",  "LOC_BUILDING_JNR_ACADEMY_NAME",                            "私塾"),
-    ("zh_Hans_CN",  "LOC_BUILDING_JNR_ACADEMY_DESCRIPTION",                     "私塾是中国古代社会一种开设于家庭、宗族或乡村内部的民间幼儿教育机构。它是旧时私人所办的学校，以儒家思想为中心，它是私学的重要组成部分（研究造纸术科技后，基础产出+1 [ICON_CULTURE]琴（只改了文本））。"),
-    -- ("zh_Hans_CN",  "LOC_BUILDING_LIBRARY_DESCRIPTION",                         "研究造纸术科技后，城市中每位 [ICON_Citizen] 公民 +0.3 [ICON_SCIENCE] 科技值产出。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_JNR_ACADEMY_DESCRIPTION",                     "若你拥有至少2种文具资源，辐射产出+1 [ICON_Culture] 文化值。解锁“造纸术”科技后，辐射范围+1单元格。"),
     ("zh_Hans_CN",  "LOC_BUILDING_JNR_SCHOOL_NAME",                             "城市学校"),
     ("zh_Hans_CN",  "LOC_BUILDING_JNR_SCHOOL_DESCRIPTION",                      "本城的每个专业化区域+2 [ICON_Science] 科技值。此学院从每个相邻区域获得标准相邻加成。"),
     ("zh_Hans_CN",  "LOC_BUILDING_UNIVERSITY_DESCRIPTION",                      "每位 [ICON_CITIZEN] 公民+0.5 [ICON_Science] 科技值。"),

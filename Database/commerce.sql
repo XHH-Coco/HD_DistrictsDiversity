@@ -27,7 +27,7 @@ update Building_YieldChanges set YieldChange = 2 where YieldType = 'YIELD_FOOD' 
 insert or replace into Building_YieldChanges
 	(BuildingType,						YieldType,				YieldChange)
 values
-	('BUILDING_JNR_MINT',				'YIELD_GOLD',			8),
+	('BUILDING_JNR_MINT',				'YIELD_GOLD',			9),
 	('BUILDING_JNR_MERCHANT_QUARTER',	'YIELD_GOLD',			10),
 	('BUILDING_JNR_GUILDHALL',			'YIELD_PRODUCTION',			2),
 	('BUILDING_JNR_GUILDHALL',			'YIELD_GOLD',			9),
@@ -157,7 +157,7 @@ values
 	('BUILDING_MARKET',	                    'MARKET_POP_GOLD'),
 	-- 铸币厂
 	('BUILDING_JNR_MINT',				'MARKET_TRADE_ROUTE_CAPACITY'),
-	('BUILDING_JNR_MINT',				'MINT_RESOURCE_ADD_GOLD'),
+	('BUILDING_JNR_MINT',				'HD_MINT_ADD_REGIONAL_RANGE'),
 	-- 银行
 	('BUILDING_BANK',	                    'BANK_POP_GOLD'),
 	('BUILDING_BANK',			'BANK_EXTRA_GREAT_MERCHANT_POINTS'),
@@ -216,16 +216,13 @@ values
 	('BUILDING_JNR_NAVAL_BASE',			'SEAPORT_TRAINED_CORPS_ARMY_DISCOUNT'),
 	('BUILDING_JNR_NAVAL_BASE',			'NAVALBASE_NAVAL_PRODUCTION');
 
-insert or replace into Modifiers
-	(ModifierId,									ModifierType,															SubjectRequirementSetId)
-values
+insert or replace into Modifiers (ModifierId, ModifierType, SubjectRequirementSetId) values
 	-- 货栈
 	('WAYSTATION_RESOURCES_GOLD',				'MODIFIER_SINGLE_CITY_ADJUST_YIELD_BY_NUMBER_RESOURCES',							NULL),
 	-- 市场
 	('MARKET_POP_GOLD',				                'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_PER_POPULATION',				NULL),
 	-- 铸币厂
-	('MINT_RESOURCE_ADD_GOLD',						'MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD',							'HD_PLOT_HAS_COPPER_GOLD_SILVER'),
-	-- 纺织会馆
+	('HD_MINT_ADD_REGIONAL_RANGE',						'MODIFIER_SINGLE_CITY_ADJUST_PROPERTY',		'HD_PLOT_BINARY_COMPRESS_MINT_1_REQUIREMENTS'),
 	-- 银行
 	('BANK_POP_GOLD',								'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_PER_POPULATION',				NULL),
 	('BANK_EXTRA_GREAT_MERCHANT_POINTS',								'MODIFIER_PLAYER_ADJUST_GREAT_PERSON_POINTS_PERCENT',				NULL),
@@ -285,8 +282,8 @@ values
 	('MARKET_POP_GOLD',				            	'YieldType',				'YIELD_GOLD'),
 	('MARKET_POP_GOLD',					            'Amount',					1),
 	-- 铸币厂
-	('MINT_RESOURCE_ADD_GOLD',						'YieldType',				'YIELD_GOLD'),
-	('MINT_RESOURCE_ADD_GOLD',						'Amount',					3),
+	('HD_MINT_ADD_REGIONAL_RANGE',				            	'Key',				'HD_SINGLE_BUILDING_EXTRA_REGIONAL_RANGE_BUILDING_JNR_MINT'),
+	('HD_MINT_ADD_REGIONAL_RANGE',					            'Amount',			1),
 	-- 银行
 	('BANK_POP_GOLD',				            	'YieldType',				'YIELD_GOLD'),
 	('BANK_POP_GOLD',					            'Amount',					3),
@@ -360,80 +357,44 @@ update ModifierArguments set Value = 50 where Name = 'Amount' and ModifierId = '
 delete from BuildingModifiers where ModifierId = 'GRANDBAZAAR_ACCUMULATION_STRATEGICS';
 update ModifierArguments set Value = 2 where Name = 'Amount' and ModifierId = 'GRANDBAZAAR_ACCUMULATION_STRATEGICS';
 
-insert or ignore into RequirementSets
-	(RequirementSetId,										RequirementSetType)
-values
-	-- 铸币厂
-	('HD_PLOT_HAS_COPPER_GOLD_SILVER',						'REQUIREMENTSET_TEST_ANY'),
-	-- 货栈
-	-- 会馆
-	('CITY_HAS_BUILDING_WORKSHOP',							'REQUIREMENTSET_TEST_ALL'),
-	-- 贸易码头
-	('HD_PLOT_HAS_SEA_LUXURY_RESOURCE_REQUIREMENTS',		'REQUIREMENTSET_TEST_ALL'),
-	('HD_PLOT_HAS_COAST_LUXURY_RESOURCE_REQUIREMENTS',		'REQUIREMENTSET_TEST_ALL'),
-	('HD_PLOT_HAS_SEA_BONUS_RESOURCE_REQUIREMENTS',			'REQUIREMENTSET_TEST_ALL'),
-	('HD_PLOT_HAS_COAST_BONUS_RESOURCE_REQUIREMENTS',		'REQUIREMENTSET_TEST_ALL'),
-	-- 游轮码头
+insert or ignore into RequirementSets (RequirementSetId, RequirementSetType) values
 	('HD_ADJACENT_TO_ANY_ENTERTAINMENT_COMPLEX',			'REQUIREMENTSET_TEST_ANY');
 
-insert or ignore into RequirementSetRequirements
-	(RequirementSetId,										RequirementId)
-values
-	-- 铸币厂
-	('HD_PLOT_HAS_COPPER_GOLD_SILVER',						'REQUIRES_RESOURCE_COPPER_IN_PLOT'),
-	('HD_PLOT_HAS_COPPER_GOLD_SILVER',						'REQUIRES_RESOURCE_GOLD_IN_PLOT'),
-	('HD_PLOT_HAS_COPPER_GOLD_SILVER',						'REQUIRES_RESOURCE_SILVER_IN_PLOT'),
-	-- 货栈
-	-- 会馆
-	('CITY_HAS_BUILDING_WORKSHOP',							'REQUIRES_CITY_HAS_BUILDING_WORKSHOP'),
-	-- 贸易码头
-	('HD_PLOT_HAS_SEA_LUXURY_RESOURCE_REQUIREMENTS',		'REQUIRES_PLOT_HAS_IMPROVED_LUXURY'),
-	('HD_PLOT_HAS_SEA_LUXURY_RESOURCE_REQUIREMENTS',		'REQUIRES_PLOT_HAS_COAST'),
-	('HD_PLOT_HAS_COAST_LUXURY_RESOURCE_REQUIREMENTS',		'REQUIRES_PLOT_HAS_IMPROVED_LUXURY'),
-	('HD_PLOT_HAS_COAST_LUXURY_RESOURCE_REQUIREMENTS',		'HD_REQUIRES_PLOT_ADJACENT_TO_COAST'),
-	('HD_PLOT_HAS_COAST_LUXURY_RESOURCE_REQUIREMENTS',		'REQUIRES_PLOT_HAS_NOT_COAST'),
-	('HD_PLOT_HAS_SEA_BONUS_RESOURCE_REQUIREMENTS',			'REQUIRES_PLOT_HAS_IMPROVED_BONUS'),
-	('HD_PLOT_HAS_SEA_BONUS_RESOURCE_REQUIREMENTS',			'REQUIRES_PLOT_HAS_COAST'),
-	('HD_PLOT_HAS_COAST_BONUS_RESOURCE_REQUIREMENTS',		'REQUIRES_PLOT_HAS_IMPROVED_BONUS'),
-	('HD_PLOT_HAS_COAST_BONUS_RESOURCE_REQUIREMENTS',		'HD_REQUIRES_PLOT_ADJACENT_TO_COAST'),
-	('HD_PLOT_HAS_COAST_BONUS_RESOURCE_REQUIREMENTS',		'REQUIRES_PLOT_HAS_NOT_COAST'),
-	-- 游轮码头
+insert or ignore into RequirementSetRequirements (RequirementSetId, RequirementId) values
 	('HD_ADJACENT_TO_ANY_ENTERTAINMENT_COMPLEX',			'REQUIRES_PLOT_ADJACENT_TO_DISTRICT_WATER_ENTERTAINMENT_COMPLEX'),
 	('HD_ADJACENT_TO_ANY_ENTERTAINMENT_COMPLEX',			'REQUIRES_PLOT_ADJACENT_TO_DISTRICT_ENTERTAINMENT_COMPLEX');
 
-insert or ignore into Requirements
-    (RequirementId,                        			RequirementType)
-values
-	('REQUIRES_PLOT_HAS_IMPROVED_LUXURY',			'REQUIREMENT_PLOT_IMPROVED_RESOURCE_CLASS_TYPE_MATCHES'),
-	('REQUIRES_PLOT_HAS_IMPROVED_BONUS',			'REQUIREMENT_PLOT_IMPROVED_RESOURCE_CLASS_TYPE_MATCHES'),
-    ('HD_REQUIRES_PLOT_HAS_OFFSHORE_OIL_RIG',       'REQUIREMENT_PLOT_IMPROVEMENT_TYPE_MATCHES'),
-    ('HD_REQUIRES_PLOT_HAS_OFFSHORE_WIND_FARM',     'REQUIREMENT_PLOT_IMPROVEMENT_TYPE_MATCHES'),
-    ('HD_REQUIRES_PLOT_HAS_SEASTEAD',       		'REQUIREMENT_PLOT_IMPROVEMENT_TYPE_MATCHES');
-
-insert or ignore into RequirementArguments
-    (RequirementId,                        					Name,                Value)
-values
-	('REQUIRES_PLOT_HAS_IMPROVED_LUXURY',					'ResourceClassType', 'RESOURCECLASS_LUXURY'),
-	('REQUIRES_PLOT_HAS_IMPROVED_BONUS',					'ResourceClassType', 'RESOURCECLASS_BONUS'),
-    ('HD_REQUIRES_PLOT_HAS_OFFSHORE_OIL_RIG',       		'ImprovementType',   'IMPROVEMENT_OFFSHORE_OIL_RIG'),
-    ('HD_REQUIRES_PLOT_HAS_OFFSHORE_WIND_FARM',     		'ImprovementType',   'IMPROVEMENT_OFFSHORE_WIND_FARM'),
-    ('HD_REQUIRES_PLOT_HAS_SEASTEAD',       				'ImprovementType',   'IMPROVEMENT_SEASTEAD');
-
-    -- 铸币厂
-insert or replace into RequirementSetRequirements
-	(RequirementSetId,					RequirementId)
-select
-	'HD_PLOT_HAS_COPPER_GOLD_SILVER',   'REQUIRES_RESOURCE_SEASHELLS_IN_PLOT'
-where exists (select ResourceType from Resources where ResourceType = 'RESOURCE_SEASHELLS');
-
-	-- 交易中心
+-- 交易中心
 insert or replace into Building_YieldDistrictCopies
 	(BuildingType,							OldYieldType,			NewYieldType)
 values
 	('BUILDING_JNR_COMMODITY_EXCHANGE',		'YIELD_GOLD',			'YIELD_GOLD'),
 	('BUILDING_JNR_FISH_MARKET',   			'YIELD_GOLD',   		'YIELD_GOLD');
 
-	-- 市场部：公司模式
+-- 铸币厂
+insert or replace into HD_Building_Base_On_ResourceClassification (BuildingType, ResourceClassificationType, DetectRange, PropertyKey) values
+	('BUILDING_JNR_MINT', 'RESOURCE_CLASSIFICATION_HD_MINTING', 'PLAYER', 'HD_PLOT_BINARY_COMPRESS_MINT');
+
+insert or replace into HD_Binary_Compress_Keys (Key, MaxExp) values
+	('HD_PLOT_BINARY_COMPRESS_MINT', 2);
+
+insert or replace into BuildingModifiers (BuildingType, ModifierId) select
+ 'BUILDING_JNR_MINT', 'HD_MINT_GOLD_' || Exp
+from HD_Binary_Compress where Exp < 3;
+
+insert or replace into Modifiers (ModifierId, ModifierType, OwnerRequirementSetId) select
+	'HD_MINT_GOLD_' || Exp, 'MODIFIER_SINGLE_CITY_ADJUST_PROPERTY', 'HD_PLOT_BINARY_COMPRESS_MINT_' || Exp || '_REQUIREMENTS'
+from HD_Binary_Compress where Exp < 3;
+
+insert or replace into ModifierArguments (ModifierId, Name, Value) select
+	'HD_MINT_GOLD_' || Exp, 'Key', 'HD_SINGLE_BUILDING_PROVIDE_REGIONAL_YIELD_BONUS_BUILDING_JNR_MINT_YIELD_GOLD'
+from HD_Binary_Compress where Exp < 3;
+
+insert or replace into ModifierArguments (ModifierId, Name, Value) select
+	'HD_MINT_GOLD_' || Exp, 'Amount', Amount * 3
+from HD_Binary_Compress where Exp < 3;
+
+-- 市场部：公司模式
 delete from BuildingModifiers where (ModifierId = 'MARKETING_TOURISM_BONUS_TRADE' or ModifierId = 'MARKETING_TOURISM_BONUS_TRADE_POWERED')
 	and exists (select GreatWorkSlotType from GreatWorkSlotTypes where GreatWorkSlotType = 'GREATWORKSLOT_PRODUCT');
 
@@ -488,7 +449,7 @@ select
 	'MARKETING_PRODUCT_TOURISM_POWERED',			'ScalingFactor',			150
 where exists (select GreatWorkSlotType from GreatWorkSlotTypes where GreatWorkSlotType = 'GREATWORKSLOT_PRODUCT');
 
-	-- 游轮码头：公司模式
+-- 游轮码头：公司模式
 delete from BuildingModifiers where ModifierId = 'CRUISE_WATERPARK_DOUBLE_TOURISM'
 	and exists (select GreatWorkSlotType from GreatWorkSlotTypes where GreatWorkSlotType = 'GREATWORKSLOT_PRODUCT');
 

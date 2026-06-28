@@ -41,8 +41,6 @@ values
 	('BUILDING_JNR_OFFSHORE_TERMINAL',	'DISTRICT_HARBOR',			'TECH_ECONOMICS',				NULL,						400,   0,		10,				1,				'YIELD_GOLD',	'ADVISOR_GENERIC',	'LOC_BUILDING_JNR_OFFSHORE_TERMINAL_NAME',	'LOC_BUILDING_JNR_OFFSHORE_TERMINAL_DESCRIPTION'),
 	('BUILDING_JNR_NAVAL_BASE',			'DISTRICT_HARBOR',			NULL,							'CIVIC_COLONIALISM',		320,   0,		10,				1,				'YIELD_GOLD',	'ADVISOR_GENERIC',	'LOC_BUILDING_JNR_NAVAL_BASE_NAME',			'LOC_BUILDING_JNR_NAVAL_BASE_DESCRIPTION');
 
-update Buildings set Description = 'LOC_BUILDING_JNR_MINT_ALT_DESCRIPTION' where BuildingType = 'BUILDING_JNR_MINT' and exists (select ResourceType from Resources where ResourceType = 'RESOURCE_SEASHELLS');
-
 --------------------------------------------------------------
 
 -- Buildings_XP2

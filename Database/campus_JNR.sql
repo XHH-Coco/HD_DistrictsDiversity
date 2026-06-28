@@ -19,7 +19,7 @@ VALUES  ('BUILDING_JNR_ACADEMY',        'KIND_BUILDING'), -- Tier 1 Sishu
 --------------------------------------------------------------
 insert or ignore into Buildings
         (BuildingType,                  PrereqDistrict,     PrereqTech,                 Cost,   Maintenance,    CitizenSlots,   Housing,    PurchaseYield,  AdvisorType,            Name,                                   Description)
-VALUES  ('BUILDING_JNR_ACADEMY',        'DISTRICT_CAMPUS',  'TECH_WRITING',     	95,     1,              1,              0,          'YIELD_GOLD',   'ADVISOR_TECHNOLOGY',   'LOC_BUILDING_JNR_ACADEMY_NAME',        null),
+VALUES  ('BUILDING_JNR_ACADEMY',        'DISTRICT_CAMPUS',  'TECH_WRITING',     	95,     1,              1,              0,          'YIELD_GOLD',   'ADVISOR_TECHNOLOGY',   'LOC_BUILDING_JNR_ACADEMY_NAME',        'LOC_BUILDING_JNR_ACADEMY_DESCRIPTION'),
         ('BUILDING_JNR_SCHOOL',         'DISTRICT_CAMPUS',  NULL,                       275,    4,              1,              0,          'YIELD_GOLD',   'ADVISOR_TECHNOLOGY',   'LOC_BUILDING_JNR_SCHOOL_NAME',         'LOC_BUILDING_JNR_SCHOOL_DESCRIPTION'),
         ('BUILDING_JNR_REAL_ACADEMY',   'DISTRICT_CAMPUS',  'TECH_SCIENTIFIC_THEORY',   500,    7,              1,              0,          'YIELD_GOLD',   'ADVISOR_TECHNOLOGY',   'LOC_BUILDING_JNR_REAL_ACADEMY_NAME',   'LOC_BUILDING_JNR_REAL_ACADEMY_DESCRIPTION'),
         ('BUILDING_JNR_ARCHITECTURE',   'DISTRICT_CAMPUS',  'TECH_CIVIL_ENGINEERING_HD',500,    7,              1,              0,          'YIELD_GOLD',   'ADVISOR_TECHNOLOGY',   'LOC_BUILDING_JNR_ARCHITECTURE_NAME',   'LOC_BUILDING_JNR_ARCHITECTURE_DESCRIPTION'),

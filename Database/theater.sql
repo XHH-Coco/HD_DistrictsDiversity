@@ -545,11 +545,12 @@ update Civics set Cost = 850 where Cost = 600;
 update Civics set Cost = 650 where Cost = 450;
 -- 古典
 update Civics set Cost = 260 where Cost = 240;
+update Civics set Cost = 180 where Cost = 180;
 update Civics set Cost = 150 where Cost = 150;
 -- 远古
-update Civics set Cost = 80 where Cost = 70;
-update Civics set Cost = 50 where Cost = 50;
-update Civics set Cost = 40 where Cost = 30;
+update Civics set Cost = 90 where Cost = 90;
+update Civics set Cost = 60 where Cost = 60;
+update Civics set Cost = 40 where Cost = 40;
 
 -- -- Civic Tree v4
 -- update Civics set Cost = 260 where CivicType = 'CIVIC_LITERARY_TRADITION_HD';  

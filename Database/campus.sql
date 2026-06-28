@@ -67,7 +67,6 @@ insert or replace into Building_YieldChanges
     (BuildingType,                  YieldType,          YieldChange)
 values
     ('BUILDING_JNR_ACADEMY',        'YIELD_SCIENCE',    1),
-    ('BUILDING_JNR_ACADEMY',        'YIELD_CULTURE',    1),
     ('BUILDING_JNR_REAL_ACADEMY',   'YIELD_SCIENCE',    2),
     ('BUILDING_JNR_LABORATORY',     'YIELD_SCIENCE',    10),
     ('BUILDING_JNR_ARCHITECTURE',   'YIELD_SCIENCE',    2),
@@ -100,10 +99,18 @@ update Buildings set RegionalRange = 4 where BuildingType = 'BUILDING_JNR_ACADEM
 update Buildings set RegionalRange = 6 where BuildingType = 'BUILDING_JNR_LABORATORY';
 update Buildings set RegionalRange = 6 where BuildingType = 'BUILDING_UNIVERSITY';
 --------------------------------------------------------------
+insert or replace into HD_Building_Base_On_ResourceClassification (BuildingType, ResourceClassificationType, DetectRange, PropertyKey) values
+	('BUILDING_JNR_ACADEMY', 'RESOURCE_CLASSIFICATION_HD_STATIONERY', 'PLAYER', 'HD_PLOT_BINARY_COMPRESS_ACADEMY');
+
+insert or replace into HD_Binary_Compress_Keys (Key, MaxExp) values
+	('HD_PLOT_BINARY_COMPRESS_ACADEMY', 1);
+
 delete from BuildingModifiers where BuildingType = 'BUILDING_RESEARCH_LAB';
 insert or replace into BuildingModifiers
     (BuildingType,                  ModifierId)
 values
+    ('BUILDING_JNR_ACADEMY',         'HD_ACADEMY_REGIONAL_CULTURE'),
+    ('BUILDING_JNR_ACADEMY',         'HD_ACADEMY_REGIONAL_RANGE'),
     ('BUILDING_JNR_SCHOOL',         'CITY_SCHOOL_SPECILTY_DISTRICT_SCIENCE'),
     ('BUILDING_JNR_SCHOOL',         'CITY_SCHOOL_CAMPUS_DISTRICT_ADJACENCY'),
 --    ('BUILDING_JNR_SCHOOL',         'CITY_SCHOOL_PRINTING_DISTRICT_PERCENT_ATTACH'),
@@ -150,6 +157,8 @@ values
 insert or replace into Modifiers
     (ModifierId,                                    ModifierType,                                               SubjectRequirementSetId)
 values
+    ('HD_ACADEMY_REGIONAL_CULTURE',         'MODIFIER_SINGLE_CITY_ADJUST_PROPERTY',             'HD_PLOT_BINARY_COMPRESS_ACADEMY_1_REQUIREMENTS'),
+    ('HD_ACADEMY_REGIONAL_RANGE',           'MODIFIER_SINGLE_CITY_ADJUST_PROPERTY',             'PLAYER_HAS_TECH_PAPER_MAKING_HD_REQUIREMENTS'),
     ('CITY_SCHOOL_SPECILTY_DISTRICT_SCIENCE',       'MODIFIER_CITY_DISTRICTS_ADJUST_YIELD_CHANGE',             'DISTRICT_IS_SPECIALTY_DISTRICT_REQUIREMENTS'),
     ('CITY_SCHOOL_CAMPUS_DISTRICT_ADJACENCY',       'MODIFIER_SINGLE_CITY_DISTRICT_ADJACENCY',                  NULL),
     ('CITY_SCHOOL_PRINTING_DISTRICT_PERCENT_ATTACH','MODIFIER_CITY_DISTRICTS_ATTACH_MODIFIER',                  'DISTRICT_IS_SPECIALTY_DISTRICT_REQUIREMENTS'),
@@ -205,6 +214,10 @@ update Modifiers set OwnerRequirementSetId = 'PLAYER_HAS_TECH_INTEGRATED_CIRCUIT
 insert or replace into ModifierArguments
     (ModifierId,                                    Name,           Value)
 values
+	('HD_ACADEMY_REGIONAL_CULTURE',				    'Key',		    'HD_SINGLE_BUILDING_PROVIDE_REGIONAL_YIELD_BONUS_BUILDING_JNR_ACADEMY_YIELD_CULTURE'),
+	('HD_ACADEMY_REGIONAL_CULTURE',					'Amount',	    1),
+	('HD_ACADEMY_REGIONAL_RANGE',				    'Key',		    'HD_SINGLE_BUILDING_EXTRA_REGIONAL_RANGE_BUILDING_JNR_ACADEMY'),
+	('HD_ACADEMY_REGIONAL_RANGE',					'Amount',	    1),
     ('CITY_SCHOOL_SPECILTY_DISTRICT_SCIENCE',       'YieldType',    'YIELD_SCIENCE'),
 	('CITY_SCHOOL_SPECILTY_DISTRICT_SCIENCE',       'Amount',       2),
     ('CITY_SCHOOL_CAMPUS_DISTRICT_ADJACENCY',       'DistrictType', 'DISTRICT_CAMPUS'),
