@@ -30,9 +30,8 @@ values
     ("LOC_BUILDING_IZ_WATER_MILL_NAME",                 "Hydraulic Artisans"), -- Water-powered Workshop
     ("LOC_BUILDING_IZ_WATER_MILL_DESCRIPTION",          "Can only be built when the Industrial Zone is adjacent to River. +1 [ICON_Production] Production for Districts adjacent to river in this city."),
     ("LOC_BUILDING_JNR_WIND_MILL_DESCRIPTION",          "+1 [ICON_Production] Production for Districts on or adjacent to Shallow Sea and Lake. +1 [ICON_Production] Production for Districts on Hills or adjacent to Mountains."), -- improved tiles adjacent to sea or lakes.
-    ("LOC_BUILDING_WORKSHOP_DESCRIPTION",               "Improved tiles in the City have +1 [ICON_Production] Production"), -- Mines, Quarries and Lumber mills over resources in this city gain +1 [ICON_Production] Production.
     ("LOC_BUILDING_JNR_MANUFACTURY_DESCRIPTION",        "Each [ICON_Citizen] Citizen in the city provides +0.5 [ICON_PRODUCTION] Production."), -- Farms, Plantations, Camps and Pastures over resources in this city gain +1 [ICON_Production] Production.
-    ("LOC_BUILDING_JNR_CHEMICAL_DESCRIPTION",           "+7% [ICON_Production] Production and +7 [ICON_SCIENCE] Science for each type of Strategic resource this City has properly improved."),
+    ("LOC_BUILDING_JNR_CHEMICAL_DESCRIPTION",           "+2 [ICON_Production] Production and [ICON_SCIENCE] Science from every type of Chemistry Resource you controlled. +7% [ICON_Production] Production from every type of improved Chemistry Resource in this city."),
     ("LOC_BUILDING_JNR_FREIGHT_YARD_DESCRIPTION",       "[ICON_Citizen] Citizens in this city provide +1 [ICON_Production] Production and +2 [ICON_Gold] Gold."),
     -- ("LOC_BUILDING_ELECTRONICS_FACTORY_DESCRIPTION_UC_JNR",  "A building unique to Japan that replace Logistics Center. Provides regional [ICON_Science] Science and [ICON_Culture] Culture yields. [ICON_Citizen] Citizens in this city provide +1 [ICON_Production] Production and +2 [ICON_Gold] Gold."),
     -- Boosts
@@ -67,13 +66,11 @@ values
     ("zh_Hans_CN",  "LOC_BUILDING_JNR_WIND_MILL_NAME",                          "风车"),
     ("zh_Hans_CN",  "LOC_BUILDING_JNR_WIND_MILL_DESCRIPTION",                   "相邻或位于水域的区域+1 [ICON_Production] 生产力。相邻山脉或位于丘陵的区域+1 [ICON_Production] 生产力。"),
     ("zh_Hans_CN",  "LOC_BUILDING_JNR_MANUFACTURY_NAME",                        "手工工场"),
-    ("zh_Hans_CN",  "LOC_BUILDING_WORKSHOP_DESCRIPTION",                        "本城已改良单元格+1 [ICON_Production] 生产力。"), -- 为本城改良资源的矿山、采石场和伐木场+1 [ICON_Production] 生产力。
-    ("zh_Hans_CN",  "LOC_BUILDING_JNR_MANUFACTURY_DESCRIPTION",                 "城市中每位 [ICON_Citizen] 公民提供+0.5 [ICON_PRODUCTION] 生产力。"), -- 为本城改良资源的农场、种植园、营地和牧场+1 [ICON_Production] 生产力。
+    ("zh_Hans_CN",  "LOC_BUILDING_JNR_MANUFACTURY_DESCRIPTION",                 "城市中每位 [ICON_Citizen] 公民提供+0.5 [ICON_PRODUCTION] 生产力。"),
     ("zh_Hans_CN",  "LOC_BUILDING_JNR_CHEMICAL_NAME",                           "化工厂"),
-    ("zh_Hans_CN",  "LOC_BUILDING_JNR_CHEMICAL_DESCRIPTION",                    "本城每拥有一种被改良的战略资源，获得+7 [ICON_Science] 科技值和+7% [ICON_Production] 生产力。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_JNR_CHEMICAL_DESCRIPTION",                    "你每拥有一种化学资源，+2 [ICON_Production] 生产力和 [ICON_Science] 科技值。本城每拥有一种改良的化学资源，+7% [ICON_Production] 生产力。"),
     ("zh_Hans_CN",  "LOC_BUILDING_JNR_FREIGHT_YARD_NAME",                       "物流中心"),
     ("zh_Hans_CN",  "LOC_BUILDING_JNR_FREIGHT_YARD_DESCRIPTION",                "本城每个 [ICON_Citizen] 公民额外产出+1 [ICON_Production] 生产力和+2 [ICON_Gold] 金币。"),
-    -- ("zh_Hans_CN",  "LOC_BUILDING_ELECTRONICS_FACTORY_DESCRIPTION_UC_JNR",      "日本特色建筑，取代物流中心，提供可辐射的 [ICON_Science] 科技和 [ICON_Culture] 文化值。 本城每个 [ICON_Citizen] 公民额外产出+1 [ICON_Production] 生产力和+2 [ICON_Gold] 金币。"),
     -- Boosts
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_MASS_PRODUCTION_JNR_UC",                 "建造1座手工工场。"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_MASS_PRODUCTION_JNR_UC",        "手工工场规模日益增大，更为高效的生产方式也孕育而生。"),
@@ -82,13 +79,8 @@ values
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_CLASS_STRUGGLE_HD",                      "建造3座工业区三级建筑。"),
     ("zh_Hans_CN",  "LOC_GREATPERSON_WORKSHOP_CULTURE",                         "工业区二级建筑+1 [ICON_Culture] 文化值。"),
     ("zh_Hans_CN",  "LOC_HD_GREATPERSON_GRANT_IZ_TIER1_BUILDING",               "若相邻河流，立即在该区域建造水力作坊。[NEWLINE]工业区一级建筑+1 [ICON_PRODUCTION] 生产力。"),
-    ("zh_Hans_CN",  "LOC_GREATPERSON_JAMES_WATT_ACTIVE",  						"立即在该区域建造风车、工作坊和工厂。[NEWLINE]工业区三级建筑+3 [ICON_PRODUCTION] 生产力。"),
-    -- Policies
-    -- ("zh_Hans_CN",  "LOC_POLICY_INVENTION_DESCRIPTION_XP2",                     "每回合的 [ICON_GreatEngineer] 大工程师点数+4。每有一座工作坊或手工工场，每回合的 [ICON_GreatEngineer] 大工程师点数便+4。"),
-    -- ("zh_Hans_CN",  "LOC_POLICY_SCIENCE_FOUNDATIONS_DL_DESCRIPTION",            "每有一所大学，每回合的 [ICON_GreatScientist] 大科学家点数便+4；每有一所研究实验室，每回合的 [ICON_GreatScientist] 大科学家点数便+8。每有一座工厂、电子厂或化工厂，每回合的 [ICON_GreatEngineer] 大工程师点数便+4；每有一座发电厂或物流中心，每回合的 [ICON_GreatEngineer] 大工程师点数便+8。"),
-    -- ("zh_Hans_CN",  "LOC_POLICY_THIRD_ALTERNATIVE_DESCRIPTION_JNR_UC_PRD",      "每座军营建筑、航空港建筑、物流中心、燃煤发电厂、燃油发电厂和核电站产出的 [ICON_Culture] 文化值+1、[ICON_Gold] 金币+2。"),
+    ("zh_Hans_CN",  "LOC_GREATPERSON_JAMES_WATT_ACTIVE",  						"立即在该区域建造风车、建造工坊和工厂。[NEWLINE]工业区三级建筑+3 [ICON_PRODUCTION] 生产力。"),
     -- 奇观
-    -- ("zh_Hans_CN",  "LOC_BUILDING_RUHR_VALLEY_DESCRIPTION",                  "该城市+20% [ICON_Production] 生产力，此城中每个矿山和采石场+2 [ICON_Production] 生产力。通往此城的国际 [ICON_TradeRoute] 商路为双方+3 [ICON_PRODUCTION] 生产力。通往此城的国内 [ICON_TradeRoute] 商路+5 [ICON_PRODUCTION] 生产力。必须沿河而建，且与拥有工厂、电子厂或化工厂的工业区区域相邻。"), 
     ("zh_Hans_CN",  "LOC_PROJECT_JNR_CONVERT_REACTOR_TO_FREIGHT_NAME",          "转换为物流中心"),
     ("zh_Hans_CN",  "LOC_PROJECT_JNR_CONVERT_REACTOR_TO_FREIGHT_SHORT_NAME",    "转换为物流中心"),
     ("zh_Hans_CN",  "LOC_PROJECT_JNR_CONVERT_REACTOR_TO_FREIGHT_DESCRIPTION",   "将城市中的发电站变更为{LOC_BUILDING_JNR_FREIGHT_YARD_NAME}.[NEWLINE][NEWLINE]{LOC_BUILDING_JNR_FREIGHT_YARD_NAME}:[NEWLINE]{LOC_BUILDING_JNR_FREIGHT_YARD_DESCRIPTION}"),
@@ -100,7 +92,7 @@ UPDATE LocalizedText SET Text=REPLACE(Text, 'Workshop','Tier 2 building of Indus
     'LOC_TRAIT_LEADER_VICTORIA_ALT_DESCRIPTION',
     'LOC_POLICY_INVENTION_DESCRIPTION_XP2'
 );
-UPDATE LocalizedText SET Text=REPLACE(Text, '工作坊','工业区二级建筑') WHERE Tag in (
+UPDATE LocalizedText SET Text=REPLACE(Text, '建造工坊','工业区二级建筑') WHERE Tag in (
     'LOC_TRAIT_LEADER_VICTORIA_ALT_DESCRIPTION',
     'LOC_POLICY_INVENTION_DESCRIPTION_XP2'
 );

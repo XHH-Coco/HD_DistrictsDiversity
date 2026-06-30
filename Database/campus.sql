@@ -102,8 +102,8 @@ update Buildings set RegionalRange = 6 where BuildingType = 'BUILDING_UNIVERSITY
 insert or replace into HD_Building_Base_On_ResourceClassification (BuildingType, ResourceClassificationType, DetectRange, PropertyKey) values
 	('BUILDING_JNR_ACADEMY', 'RESOURCE_CLASSIFICATION_HD_STATIONERY', 'PLAYER', 'HD_PLOT_BINARY_COMPRESS_ACADEMY');
 
-insert or replace into HD_Binary_Compress_Keys (Key, MaxExp) values
-	('HD_PLOT_BINARY_COMPRESS_ACADEMY', 1);
+insert or replace into HD_Binary_Compress_AtLeast (Key, AtLeast) values
+	('HD_PLOT_BINARY_COMPRESS_ACADEMY', 2);
 
 delete from BuildingModifiers where BuildingType = 'BUILDING_RESEARCH_LAB';
 insert or replace into BuildingModifiers
@@ -157,7 +157,7 @@ values
 insert or replace into Modifiers
     (ModifierId,                                    ModifierType,                                               SubjectRequirementSetId)
 values
-    ('HD_ACADEMY_REGIONAL_CULTURE',         'MODIFIER_SINGLE_CITY_ADJUST_PROPERTY',             'HD_PLOT_BINARY_COMPRESS_ACADEMY_1_REQUIREMENTS'),
+    ('HD_ACADEMY_REGIONAL_CULTURE',         'MODIFIER_SINGLE_CITY_ADJUST_PROPERTY',             'HD_PLOT_BINARY_COMPRESS_ACADEMY_AT_LEAST_2_REQUIREMENTS'),
     ('HD_ACADEMY_REGIONAL_RANGE',           'MODIFIER_SINGLE_CITY_ADJUST_PROPERTY',             'PLAYER_HAS_TECH_PAPER_MAKING_HD_REQUIREMENTS'),
     ('CITY_SCHOOL_SPECILTY_DISTRICT_SCIENCE',       'MODIFIER_CITY_DISTRICTS_ADJUST_YIELD_CHANGE',             'DISTRICT_IS_SPECIALTY_DISTRICT_REQUIREMENTS'),
     ('CITY_SCHOOL_CAMPUS_DISTRICT_ADJACENCY',       'MODIFIER_SINGLE_CITY_DISTRICT_ADJACENCY',                  NULL),

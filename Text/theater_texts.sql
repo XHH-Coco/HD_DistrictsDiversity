@@ -18,7 +18,7 @@ values
     ("LOC_BUILDING_MARAE_DESCRIPTION_UC_JNR",                   "A building unique to the Māori. Replaces Assembly. +2 [ICON_CULTURE] Culture and +2 [ICON_FAITH] Faith to all of this city's tiles with a passable feature or natural wonder. +1 [ICON_CULTURE] Culture for every three Shallow Sea and Lake tiles in this city. After Flight is researched, receive +1 [ICON_TOURISM] Tourism to all of this city's tiles with a feature or natural wonder. Has no Great Work slots."),
     -- 陈列室
     ("LOC_BUILDING_JNR_CABINET_NAME",                           "Cabinet"),
-    ("LOC_BUILDING_JNR_CABINET_DESCRIPTION",                    "+2 [ICON_CULTURE] Culture for all Speciality District. +50% [ICON_TOURISM] Tourism for Great Works in this city."),
+    ("LOC_BUILDING_JNR_CABINET_DESCRIPTION",                    "+1 [ICON_CULTURE] Culture from every type of Art or Decoration Resource you controlled. +50% [ICON_TOURISM] Tourism for Great Works in this city."),
     -- 官学
     ("LOC_BUILDING_JNR_MANSION_NAME",                           "Guanxue"),
     ("LOC_BUILDING_JNR_MANSION_DESCRIPTION",                    "Guanxue, or literally official school, refers to the school system directly organized and administered by either central or local governments of Imperial China."),
@@ -87,7 +87,7 @@ values
     ("zh_Hans_CN",  "LOC_BUILDING_MARAE_DESCRIPTION_UC_JNR",                   "毛利特色建筑。取代公民大会。城市中所有包含可通行地貌或自然奇观的单元格+2 [ICON_CULTURE] 文化值与 [ICON_FAITH] 信仰值。此城中每拥有3个浅海或湖泊单元格，则+1 [ICON_CULTURE] 文化值。研究“飞行”科技后，城市中所有包含地貌或自然奇观的单元格+1 [ICON_TOURISM] 旅游业绩。无巨作槽位。"),
     -- 陈列室
     ("zh_Hans_CN",  "LOC_BUILDING_JNR_CABINET_NAME",                           "陈列室"),
-    ("zh_Hans_CN",  "LOC_BUILDING_JNR_CABINET_DESCRIPTION",                    "此城市每个专业化区域+2 [ICON_CULTURE] 文化值。所在城市所有巨作+50% [ICON_TOURISM] 旅游业绩。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_JNR_CABINET_DESCRIPTION",                    "你每拥有一种艺术或饰品资源，+1 [ICON_CULTURE] 文化值。所在城市所有巨作+50% [ICON_TOURISM] 旅游业绩。"),
     -- 官学
     ("zh_Hans_CN",  "LOC_BUILDING_JNR_MANSION_NAME",                           "官学"),
     ("zh_Hans_CN",  "LOC_BUILDING_JNR_MANSION_DESCRIPTION",                    "官学是指中国封建朝廷直接举办和管辖，以及历代官府按照行政区划在地方所办的学校系统。官学包括中央官学和地方官学，共同构成了中国古代最主要的官学教育制度。"),

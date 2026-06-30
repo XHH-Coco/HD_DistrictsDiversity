@@ -11,7 +11,7 @@ update Building_YieldChanges set YieldChange = 2 where YieldType = 'YIELD_FAITH'
 insert or replace into Building_YieldChanges
 	(BuildingType,						YieldType,				YieldChange)
 values
-    ('BUILDING_JNR_ALTAR',              'YIELD_FAITH',          3),
+    ('BUILDING_JNR_ALTAR',              'YIELD_FAITH',          2),
     ('BUILDING_JNR_MONASTERY',          'YIELD_FAITH',          5),
     ('BUILDING_STAVE_CHURCH',           'YIELD_CULTURE',        2),
     ('BUILDING_JNR_HOSPITIUM',          'YIELD_FAITH',          10),
@@ -97,19 +97,19 @@ values
     ('REQUIRES_CITY_HAS_NO_10_POPULATION',                      'Amount',           10);
 --建筑特效
 insert or replace into HD_Building_Base_On_ResourceClassification (BuildingType, ResourceClassificationType, DetectRange, PropertyKey) values
-	('BUILDING_JNR_ALTAR', 'RESOURCE_CLASSIFICATION_HD_MEDICINE', 'PLAYER', 'HD_PLOT_BINARY_COMPRESS_ALTAR1'),
-	('BUILDING_JNR_ALTAR', 'RESOURCE_CLASSIFICATION_HD_CELEBRATION', 'PLAYER', 'HD_PLOT_BINARY_COMPRESS_ALTAR2');
+	('BUILDING_JNR_ALTAR', 'RESOURCE_CLASSIFICATION_HD_MEDICINE', 'PLAYER', 'HD_PLOT_BINARY_COMPRESS_ALTAR_SCIENCE'),
+	('BUILDING_JNR_ALTAR', 'RESOURCE_CLASSIFICATION_HD_CELEBRATION', 'PLAYER', 'HD_PLOT_BINARY_COMPRESS_ALTAR_RANGE');
 
-insert or replace into HD_Binary_Compress_Keys (Key, MaxExp) values
-	('HD_PLOT_BINARY_COMPRESS_ALTAR1', 1),
-	('HD_PLOT_BINARY_COMPRESS_ALTAR2', 1);
+insert or replace into HD_Binary_Compress_AtLeast (Key, AtLeast) values
+	('HD_PLOT_BINARY_COMPRESS_ALTAR_SCIENCE',   2),
+	('HD_PLOT_BINARY_COMPRESS_ALTAR_RANGE',     2);
 
 insert or replace into Modifiers
 	(ModifierId,									ModifierType,															SubjectRequirementSetId)
 values
 --祭坛
-    ('HD_ALTAR_REGIONAL_FAITH',             'MODIFIER_SINGLE_CITY_ADJUST_PROPERTY',             'HD_PLOT_BINARY_COMPRESS_ALTAR1_1_REQUIREMENTS'),
-    ('HD_ALTAR_REGIONAL_RANGE',           'MODIFIER_SINGLE_CITY_ADJUST_PROPERTY',             'HD_PLOT_BINARY_COMPRESS_ALTAR2_1_REQUIREMENTS'),
+    ('HD_ALTAR_REGIONAL_SCIENCE',             'MODIFIER_SINGLE_CITY_ADJUST_PROPERTY',             'HD_PLOT_BINARY_COMPRESS_ALTAR_SCIENCE_AT_LEAST_2_REQUIREMENTS'),
+    ('HD_ALTAR_REGIONAL_RANGE',           'MODIFIER_SINGLE_CITY_ADJUST_PROPERTY',             'HD_PLOT_BINARY_COMPRESS_ALTAR_RANGE_AT_LEAST_2_REQUIREMENTS'),
 --教堂
     ('JNR_MONASTERY_HOLYSITE_ADJACENT',             'MODIFIER_SINGLE_CITY_DISTRICT_ADJUST_YIELD_MODIFIER',                  Null),
     ('JNR_MONASTERY_HOLYSITE_ADJACENT_LATE',        'MODIFIER_SINGLE_CITY_DISTRICT_ADJUST_YIELD_MODIFIER',                  'PLAYER_HAS_CIVIC_REFORMED_CHURCH_REQUIREMENTS'),
@@ -144,8 +144,8 @@ insert or replace into ModifierArguments
 	(ModifierId,									Name,						Value)
 values
 --祭坛
-    ('HD_ALTAR_REGIONAL_FAITH',				    'Key',		    'HD_SINGLE_BUILDING_PROVIDE_REGIONAL_YIELD_BONUS_BUILDING_JNR_ALTAR_YIELD_SCIENCE'),
-	('HD_ALTAR_REGIONAL_FAITH',					'Amount',	    1),
+    ('HD_ALTAR_REGIONAL_SCIENCE',				    'Key',		    'HD_SINGLE_BUILDING_PROVIDE_REGIONAL_YIELD_BONUS_BUILDING_JNR_ALTAR_YIELD_SCIENCE'),
+	('HD_ALTAR_REGIONAL_SCIENCE',					'Amount',	    1),
 	('HD_ALTAR_REGIONAL_RANGE',				    'Key',		    'HD_SINGLE_BUILDING_EXTRA_REGIONAL_RANGE_BUILDING_JNR_ALTAR'),
 	('HD_ALTAR_REGIONAL_RANGE',					'Amount',	    1),
 --教堂
@@ -202,7 +202,7 @@ insert or replace into BuildingModifiers
 	(BuildingType,						ModifierId)
 values
 --祭坛
-	('BUILDING_JNR_ALTAR',				'HD_ALTAR_REGIONAL_FAITH'),
+	('BUILDING_JNR_ALTAR',				'HD_ALTAR_REGIONAL_SCIENCE'),
 	('BUILDING_JNR_ALTAR',				'HD_ALTAR_REGIONAL_RANGE'),
 	('BUILDING_JNR_ALTAR',				'SHRINE_BUILDER_PURCHASE'),
 --二级建筑

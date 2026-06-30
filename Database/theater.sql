@@ -24,6 +24,7 @@ insert or replace into Building_YieldChanges
 	(BuildingType,														YieldType,					YieldChange)
 values
 	('BUILDING_JNR_ASSEMBLY',									'YIELD_CULTURE',		3),
+	('BUILDING_JNR_CABINET',									'YIELD_CULTURE',		4),
 	('BUILDING_JNR_MANSION',									'YIELD_CULTURE',		3),
 	('BUILDING_JNR_MANSION',									'YIELD_SCIENCE',		1),
 	('BUILDING_JNR_OPERA',										'YIELD_CULTURE',		5),
@@ -151,8 +152,6 @@ values
 	-- 古罗马剧场
 	('BUILDING_AMPHITHEATER',			'HD_AMPHITHEATER_WRITING_CULTURE_BOOST'),
 	('BUILDING_AMPHITHEATER',			'HD_AMPHITHEATER_WRITING_TOURISM_BOOST'),
-	-- 陈列室
-	('BUILDING_JNR_CABINET',			'HD_CABINET_CITY_DISTRICTS_CULTURE'),
 	-- 歌剧院
 	('BUILDING_JNR_OPERA',				'HD_OPERA_MUSIC_CULTURE_BOOST'),
 	('BUILDING_JNR_OPERA',				'HD_OPERA_EXTRA_GREAT_MUSICIAN_POINTS'),
@@ -201,9 +200,6 @@ insert or replace into Modifiers
 values
 	-- 公民大会
 	('HD_ASSEMBLY_POPULATION_CULTURE',				'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_PER_POPULATION',				Null),
-	-- ('HD_ASSEMBLY_POPULATION_CULTURE_GOVERNOR',				'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_PER_POPULATION',				'CITY_HAS_GOVERNOR_REQUIREMENTS'),
-	-- 陈列室
-	('HD_CABINET_CITY_DISTRICTS_CULTURE',			'MODIFIER_CITY_DISTRICTS_ADJUST_YIELD_CHANGE',							'DISTRICT_IS_SPECIALTY_DISTRICT_REQUIREMENTS'),
 	-- 古罗马剧场
 	('HD_AMPHITHEATER_WRITING_CULTURE_BOOST',		'MODIFIER_SINGLE_CITY_ADJUST_GREATWORK_YIELD',							Null),
 	('HD_AMPHITHEATER_WRITING_TOURISM_BOOST',		'MODIFIER_SINGLE_CITY_ADJUST_TOURISM',									Null),
@@ -213,7 +209,6 @@ values
 	-- 大酒店
 	('HD_HOTEL_THEATER_ADJACENCY_TOURISM',			'MODIFIER_CITY_DISTRICTS_ADJUST_TOURISM_ADJACENCY_YIELD_MOFIFIER',		'DISTRICT_IS_THEATER'),
 	('HD_HOTEL_IMPROVEMENT_TOURISM_BOOST',			'MODIFIER_SINGLE_CITY_ADJUST_IMPROVEMENT_TOURISM',						Null),
-	-- ('HD_HOTEL_DISTRICT_ADJACENCY',					'MODIFIER_SINGLE_CITY_DISTRICT_ADJUST_YIELD_MODIFIER',					NULL),
 	-- 艺术刊社
 	('HD_ART_PUBLISHING_HOUSE_POPULATION_CULTURE',					'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_PER_POPULATION',				Null),
 	('HD_ART_PUBLISHING_HOUSE_ART_CULTURE_1',					'MODIFIER_SINGLE_CITY_ADJUST_GREATWORK_YIELD',				Null),
@@ -230,13 +225,6 @@ values
 	('HD_CINEMA_DISTRICT_CULTURE',			'MODIFIER_CITY_DISTRICTS_ADJUST_YIELD_CHANGE',							'HD_DISTRICTS_IS_NOT_WONDERS_REQUIREMENTS'),
 	-- 广播中心
 	('HD_BROADCAST_MUISIC_TOURISM_BOOST',			'MODIFIER_SINGLE_CITY_ADJUST_TOURISM',									Null);
-	-- 媒体中心
-	-- ('HD_MEDIA_POPULATION_CULTURE',					'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_PER_POPULATION',				Null),
-	-- ('HD_MEDIA_POPULATION_GOLD',					'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_PER_POPULATION',				Null),
-	-- ('HD_MEDIA_WONDER_TOURISM',						'MODIFIER_PLAYER_CITIES_ADJUST_TOURISM',								Null),
-	-- ('HD_MEDIA_NATIONALPARK_TOURISM',				'MODIFIER_PLAYER_CITIES_ADJUST_NATIONAL_PARK_TOURISM',					Null),
-	-- ('HD_MEDIA_WONDER_TOURISM_POWERED',				'MODIFIER_PLAYER_CITIES_ADJUST_TOURISM',								Null),
-	-- ('HD_MEDIA_NATIONALPARK_TOURISM_POWERED',		'MODIFIER_PLAYER_CITIES_ADJUST_NATIONAL_PARK_TOURISM',					Null);
 
 update Modifiers set OwnerRequirementSetId = 'CITY_IS_POWERED' where ModifierId = 'HD_MEDIA_WONDER_TOURISM_POWERED' or ModifierId = 'HD_MEDIA_NATIONALPARK_TOURISM_POWERED';
 -- update Modifiers set SubjectStackLimit = 5 where ModifierId = 'HD_MEDIA_WONDER_TOURISM' or ModifierId = 'HD_MEDIA_NATIONALPARK_TOURISM';
@@ -247,11 +235,6 @@ values
 	-- 公民大会
 	('HD_ASSEMBLY_POPULATION_CULTURE',				'YieldType',				'YIELD_CULTURE'),
 	('HD_ASSEMBLY_POPULATION_CULTURE',				'Amount',					0.5),
-	-- ('HD_ASSEMBLY_POPULATION_CULTURE_GOVERNOR',				'YieldType',				'YIELD_CULTURE'),
-	-- ('HD_ASSEMBLY_POPULATION_CULTURE_GOVERNOR',				'Amount',					0.2),
-	-- 陈列室
-	('HD_CABINET_CITY_DISTRICTS_CULTURE',			'YieldType',				'YIELD_CULTURE'),
-	('HD_CABINET_CITY_DISTRICTS_CULTURE',			'Amount',					2),
 	-- 古罗马剧场
 	('HD_AMPHITHEATER_WRITING_CULTURE_BOOST',		'GreatWorkObjectType',		'GREATWORKOBJECT_WRITING'),
 	('HD_AMPHITHEATER_WRITING_CULTURE_BOOST',		'YieldType',				'YIELD_CULTURE'),
@@ -268,8 +251,6 @@ values
 	('HD_HOTEL_THEATER_ADJACENCY_TOURISM',			'YieldType',				'YIELD_CULTURE'),
 	('HD_HOTEL_THEATER_ADJACENCY_TOURISM',			'Amount',					100),
 	('HD_HOTEL_IMPROVEMENT_TOURISM_BOOST',			'Amount',					50),
-	-- ('HD_HOTEL_DISTRICT_ADJACENCY',					'YieldType',				'YIELD_CULTURE'),
-	-- ('HD_HOTEL_DISTRICT_ADJACENCY',					'Amount',					100),
 	-- 艺术刊社
 	('HD_ART_PUBLISHING_HOUSE_POPULATION_CULTURE',					'YieldType',			'YIELD_CULTURE'),
 	('HD_ART_PUBLISHING_HOUSE_POPULATION_CULTURE',					'Amount',					1),
@@ -303,17 +284,6 @@ values
 	-- 广播中心
 	('HD_BROADCAST_MUISIC_TOURISM_BOOST',			'GreatWorkObjectType',		'GREATWORKOBJECT_MUSIC'),
 	('HD_BROADCAST_MUISIC_TOURISM_BOOST',			'ScalingFactor',			200);
-	-- -- 媒体中心
-	-- ('HD_MEDIA_POPULATION_CULTURE',					'YieldType',				'YIELD_CULTURE'),
-	-- ('HD_MEDIA_POPULATION_CULTURE',					'Amount',					1),
-	-- ('HD_MEDIA_POPULATION_GOLD',					'YieldType',				'YIELD_GOLD'),
-	-- ('HD_MEDIA_POPULATION_GOLD',					'Amount',					3),
-	-- ('HD_MEDIA_WONDER_TOURISM',						'BoostsWonders',			1),
-	-- ('HD_MEDIA_WONDER_TOURISM',						'ScalingFactor',			125),
-	-- ('HD_MEDIA_NATIONALPARK_TOURISM',				'Amount',					25),
-	-- ('HD_MEDIA_WONDER_TOURISM_POWERED',				'BoostsWonders',			1),
-	-- ('HD_MEDIA_WONDER_TOURISM_POWERED',				'ScalingFactor',			125),
-	-- ('HD_MEDIA_NATIONALPARK_TOURISM_POWERED',		'Amount',					25);
 
 	-- 大酒店
 insert or replace into Building_YieldDistrictCopies
@@ -322,6 +292,33 @@ values
 	('BUILDING_JNR_GRAND_HOTEL',	'YIELD_CULTURE',			'YIELD_CULTURE');
 
 	-- 陈列室
+insert or replace into HD_Building_Base_On_ResourceClassification (BuildingType, ResourceClassificationType, DetectRange, PropertyKey) values
+	('BUILDING_JNR_CABINET', 'RESOURCE_CLASSIFICATION_HD_ART', 				'PLAYER', 'HD_PLOT_BINARY_COMPRESS_CABINET'),
+	('BUILDING_JNR_CABINET', 'RESOURCE_CLASSIFICATION_HD_DECORATION', 'PLAYER', 'HD_PLOT_BINARY_COMPRESS_CABINET');
+
+insert or replace into HD_Binary_Compress_Keys (Key, MaxExp) values
+	('HD_PLOT_BINARY_COMPRESS_CABINET', 4);
+
+insert or replace into BuildingModifiers (BuildingType, ModifierId)
+	select 'BUILDING_JNR_CABINET', 'HD_CABINET_CULTURE_' || Exp
+	from HD_Binary_Compress where Exp < 5;
+
+insert or replace into Modifiers (ModifierId, ModifierType, OwnerRequirementSetId)
+	select 'HD_CABINET_CULTURE_' || Exp, 'MODIFIER_BUILDING_YIELD_CHANGE', 'HD_PLOT_BINARY_COMPRESS_CABINET_' || Exp || '_REQUIREMENTS'
+	from HD_Binary_Compress where Exp < 5;
+
+insert or replace into ModifierArguments (ModifierId, Name, Value)
+	select 'HD_CABINET_CULTURE_' || Exp, 'BuildingType', 'BUILDING_JNR_CABINET'
+	from HD_Binary_Compress where Exp < 5;
+
+insert or replace into ModifierArguments (ModifierId, Name, Value)
+	select 'HD_CABINET_CULTURE_' || Exp, 'YieldType', 'YIELD_CULTURE'
+	from HD_Binary_Compress where Exp < 5;
+
+insert or replace into ModifierArguments (ModifierId, Name, Value)
+	select 'HD_CABINET_CULTURE_' || Exp, 'Amount', Amount
+	from HD_Binary_Compress where Exp < 5;
+
 insert or replace into BuildingModifiers
 	(BuildingType,						ModifierId)
 select

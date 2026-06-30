@@ -3,7 +3,8 @@ insert or replace into Building_YieldChanges
     (BuildingType,                      YieldType,         	 	YieldChange)
 values
     ('BUILDING_JNR_MANUFACTURY',        'YIELD_PRODUCTION', 	6),
-    ('BUILDING_JNR_CHEMICAL',           'YIELD_PRODUCTION', 	6),
+    ('BUILDING_JNR_CHEMICAL',           'YIELD_PRODUCTION', 	2),
+    ('BUILDING_JNR_CHEMICAL',           'YIELD_SCIENCE', 	    2),
     ('BUILDING_POWER_PLANT',            'YIELD_SCIENCE',    	3);
 -- Citizen
 insert or replace into Building_CitizenYieldChanges
@@ -59,35 +60,68 @@ values
     ('FREIGHT_YARD_POP_GOLD',                           'YieldType',    'YIELD_GOLD'),
     ('FREIGHT_YARD_POP_GOLD',                           'Amount',       2);
 
-insert or replace into BuildingModifiers (BuildingType, ModifierId) select
-    'BUILDING_JNR_CHEMICAL',    'CHEMICAL_HAS_'||ResourceType||'_BONUS_SCIENCE'
-from Resources where ResourceClassType = 'RESOURCECLASS_STRATEGIC';
+-- 化工厂 本体产出
+insert or replace into HD_Building_Base_On_ResourceClassification (BuildingType, ResourceClassificationType, DetectRange, PropertyKey) values
+	('BUILDING_JNR_CHEMICAL', 'RESOURCE_CLASSIFICATION_HD_CHEMISTRY', 'PLAYER', 'HD_PLOT_BINARY_COMPRESS_CHEMICAL');
 
-insert or replace into Modifiers (ModifierId, ModifierType, SubjectRequirementSetId) select
-    'CHEMICAL_HAS_'||ResourceType||'_BONUS_SCIENCE', 'MODIFIER_SINGLE_CITY_ADJUST_YIELD_CHANGE',  'HD_CITY_HAS_IMPROVED_' || ResourceType || '_REQUIRMENTS'
-from Resources where ResourceClassType = 'RESOURCECLASS_STRATEGIC';
-;
-insert or replace into ModifierArguments (ModifierId, Name, Value) select
-    'CHEMICAL_HAS_'||ResourceType||'_BONUS_SCIENCE', 'YieldType',  'YIELD_SCIENCE'
-from Resources where ResourceClassType = 'RESOURCECLASS_STRATEGIC';
-insert or replace into ModifierArguments (ModifierId, Name, Value) select
-    'CHEMICAL_HAS_'||ResourceType||'_BONUS_SCIENCE', 'Amount',  7
-from Resources where ResourceClassType = 'RESOURCECLASS_STRATEGIC';
+insert or replace into HD_Binary_Compress_Keys (Key, MaxExp) values
+	('HD_PLOT_BINARY_COMPRESS_CHEMICAL', 3);
 
+insert or replace into BuildingModifiers (BuildingType, ModifierId)
+	select 'BUILDING_JNR_CHEMICAL', 'HD_CHEMICAL_SCIENCE_' || Exp
+	from HD_Binary_Compress where Exp < 4;
+
+insert or replace into Modifiers (ModifierId, ModifierType, OwnerRequirementSetId)
+	select 'HD_CHEMICAL_SCIENCE_' || Exp, 'MODIFIER_BUILDING_YIELD_CHANGE', 'HD_PLOT_BINARY_COMPRESS_CHEMICAL_' || Exp || '_REQUIREMENTS'
+	from HD_Binary_Compress where Exp < 4;
+
+insert or replace into ModifierArguments (ModifierId, Name, Value)
+	select 'HD_CHEMICAL_SCIENCE_' || Exp, 'BuildingType', 'BUILDING_JNR_CHEMICAL'
+	from HD_Binary_Compress where Exp < 4;
+
+insert or replace into ModifierArguments (ModifierId, Name, Value)
+	select 'HD_CHEMICAL_SCIENCE_' || Exp, 'YieldType', 'YIELD_SCIENCE'
+	from HD_Binary_Compress where Exp < 4;
+
+insert or replace into ModifierArguments (ModifierId, Name, Value)
+	select 'HD_CHEMICAL_SCIENCE_' || Exp, 'Amount', Amount * 2
+	from HD_Binary_Compress where Exp < 4;
+
+insert or replace into BuildingModifiers (BuildingType, ModifierId)
+	select 'BUILDING_JNR_CHEMICAL', 'HD_CHEMICAL_PRODUCTION_' || Exp
+	from HD_Binary_Compress where Exp < 4;
+
+insert or replace into Modifiers (ModifierId, ModifierType, OwnerRequirementSetId)
+	select 'HD_CHEMICAL_PRODUCTION_' || Exp, 'MODIFIER_BUILDING_YIELD_CHANGE', 'HD_PLOT_BINARY_COMPRESS_CHEMICAL_' || Exp || '_REQUIREMENTS'
+	from HD_Binary_Compress where Exp < 4;
+
+insert or replace into ModifierArguments (ModifierId, Name, Value)
+	select 'HD_CHEMICAL_PRODUCTION_' || Exp, 'BuildingType', 'BUILDING_JNR_CHEMICAL'
+	from HD_Binary_Compress where Exp < 4;
+
+insert or replace into ModifierArguments (ModifierId, Name, Value)
+	select 'HD_CHEMICAL_PRODUCTION_' || Exp, 'YieldType', 'YIELD_PRODUCTION'
+	from HD_Binary_Compress where Exp < 4;
+
+insert or replace into ModifierArguments (ModifierId, Name, Value)
+	select 'HD_CHEMICAL_PRODUCTION_' || Exp, 'Amount', Amount * 2
+	from HD_Binary_Compress where Exp < 4;
+
+-- 化工厂 百分比
 insert or replace into BuildingModifiers (BuildingType, ModifierId) select
     'BUILDING_JNR_CHEMICAL',    'CHEMICAL_HAS_'||ResourceType||'_BONUS_PRODUCTION_RATIO'
-from Resources where ResourceClassType = 'RESOURCECLASS_STRATEGIC';
+from HD_Resource_Classification where ResourceClassificationType = 'RESOURCE_CLASSIFICATION_HD_CHEMISTRY';
 
 insert or replace into Modifiers (ModifierId, ModifierType, SubjectRequirementSetId) select
     'CHEMICAL_HAS_'||ResourceType||'_BONUS_PRODUCTION_RATIO', 'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_MODIFIER',  'HD_CITY_HAS_IMPROVED_' || ResourceType || '_REQUIRMENTS'
-from Resources where ResourceClassType = 'RESOURCECLASS_STRATEGIC';
+from HD_Resource_Classification where ResourceClassificationType = 'RESOURCE_CLASSIFICATION_HD_CHEMISTRY';
 
 insert or replace into ModifierArguments (ModifierId, Name, Value) select
     'CHEMICAL_HAS_'||ResourceType||'_BONUS_PRODUCTION_RATIO', 'YieldType',  'YIELD_PRODUCTION'
-from Resources where ResourceClassType = 'RESOURCECLASS_STRATEGIC';
+from HD_Resource_Classification where ResourceClassificationType = 'RESOURCE_CLASSIFICATION_HD_CHEMISTRY';
 insert or replace into ModifierArguments (ModifierId, Name, Value) select
     'CHEMICAL_HAS_'||ResourceType||'_BONUS_PRODUCTION_RATIO', 'Amount',  7
-from Resources where ResourceClassType = 'RESOURCECLASS_STRATEGIC';
+from HD_Resource_Classification where ResourceClassificationType = 'RESOURCE_CLASSIFICATION_HD_CHEMISTRY';
 
 --------------------------------------------------------------
 -- Boosts

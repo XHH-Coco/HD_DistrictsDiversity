@@ -8,14 +8,14 @@ insert or replace into EnglishText
     (Tag,                                                           Text)
 values
     -- 货栈
-    ("LOC_BUILDING_JNR_WAYSTATION_NAME",                            "Emporium"),
-    ("LOC_BUILDING_JNR_WAYSTATION_DESCRIPTION",                     "Each improved resource provides +4 [ICON_GOLD] Gold in this city."),
+    ("LOC_BUILDING_JNR_WAYSTATION_NAME",                            "Waystation"),
+    ("LOC_BUILDING_JNR_WAYSTATION_DESCRIPTION",                     "If city has improved Transit Resources, +2 [ICON_FOOD] Food and +1 [ICON_PRODUCTION] Production."),
     -- 市场
     ("LOC_BUILDING_MARKET_NAME",                                    "Market"),
     ("LOC_BUILDING_MARKET_DESCRIPTION_UC_JNR",                      "+1 [ICON_TradeRoute] Trade Route capacity. [ICON_CITIZEN] Citizens in the City provide +1 [ICON_GOLD] Gold."),
     -- 铸币厂
     ("LOC_BUILDING_JNR_MINT_NAME",                                  "Mint"),
-    ("LOC_BUILDING_JNR_MINT_DESCRIPTION",                           "+1 [ICON_TradeRoute] Trade Route capacity. For each Minting Resource you controlled, +3 [ICON_Gold] Gold for regional yield. If you have at least 2 Minting Resources, +1 regional range tile."),
+    ("LOC_BUILDING_JNR_MINT_DESCRIPTION",                           "+1 [ICON_TradeRoute] Trade Route capacity. For each Minting Resource you controlled, +2 [ICON_Gold] Gold for regional yield. If you have at least 2 Minting Resources, +1 regional range tile."),
     -- 纺织会馆
     ("LOC_BUILDING_SUKIENNICE_NAME",                                "Krakow Sukiennice"),
     ("LOC_BUILDING_SUKIENNICE_DESCRIPTION_UC_JNR",                  "A building unique to Poland. This building can only be built once per civilization. [NEWLINE][NEWLINE]Culture Bomb adjacent tiles when completing a Commercial Hub district. [NEWLINE]For each +8 adjacency bonus of Commercial Hub district in this city, provides +1 [ICON_TradeRoute] Trade Route capacity. Provides [ICON_PRODUCTION] Production equal to 25% adjacency of Commercial Hub district in this city to Domestic [ICON_TRADEROUTE] Trade Routes to this city. Provides [ICON_GOLD] Gold equal to 75% adjacency of Commercial Hub district in this city to International [ICON_TRADEROUTE] Trade Routes starting from this city. [NEWLINE][NEWLINE] When you build International [ICON_TradeRoute] Trade Routes, receive a random luxury resource and its yields improved by the destination city. This effect can only be obtained once from each destination city."),
@@ -100,13 +100,13 @@ insert or replace into LocalizedText
 values
     -- 货栈
     ("zh_Hans_CN",  "LOC_BUILDING_JNR_WAYSTATION_NAME",                            "货栈"),
-    ("zh_Hans_CN",  "LOC_BUILDING_JNR_WAYSTATION_DESCRIPTION",                     "本城每种改良的资源为本城+4 [ICON_GOLD] 金币。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_JNR_WAYSTATION_DESCRIPTION",                     "本城若拥有改良的运载资源，+2 [ICON_FOOD] 食物和+1 [ICON_PRODUCTION] 生产力。"),
     -- 市场
     ("zh_Hans_CN",  "LOC_BUILDING_MARKET_NAME",                                    "市场"),
     ("zh_Hans_CN",  "LOC_BUILDING_MARKET_DESCRIPTION_UC_JNR",                      "+1 [ICON_TradeRoute] 贸易路线容量。所在城市每位 [ICON_Citizen] 公民+1 [ICON_GOLD] 金币。"),
     -- 铸币厂
     ("zh_Hans_CN",  "LOC_BUILDING_JNR_MINT_NAME",                                  "铸币厂"),
-    ("zh_Hans_CN",  "LOC_BUILDING_JNR_MINT_DESCRIPTION",                           "+1 [ICON_TradeRoute] 贸易路线容量。你每拥有一种货币资源，辐射产出+3 [ICON_Gold] 金币。若你拥有至少2种货币资源，辐射范围+1单元格。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_JNR_MINT_DESCRIPTION",                           "+1 [ICON_TradeRoute] 贸易路线容量。你每拥有一种货币资源，辐射产出+2 [ICON_Gold] 金币。若你拥有至少2种货币资源，辐射范围+1单元格。"),
     -- 纺织会馆
     ("zh_Hans_CN",  "LOC_BUILDING_SUKIENNICE_NAME",                                "克拉科夫纺织会馆"),
     ("zh_Hans_CN",  "LOC_BUILDING_SUKIENNICE_DESCRIPTION_UC_JNR",                  "波兰特色建筑，文明中一次仅限建造一座该建筑。[NEWLINE][NEWLINE]建成商业中心后对相邻单元格释放文化炸弹。[NEWLINE]本城的商业中心每拥有+8相邻加成，提供+1 [ICON_TradeRoute] 贸易路线容量。以本城为目的地的国内 [ICON_TRADEROUTE] 贸易路线获得25%本城商业中心相邻加成的 [ICON_PRODUCTION] 生产力；本城出发的国际 [ICON_TRADEROUTE] 贸易路线获得75%本城商业中心相邻加成的 [ICON_GOLD] 金币。[NEWLINE][NEWLINE]本城建立国际 [ICON_TRADEROUTE] 贸易路线时，随机获得一份目的地城市开发的奢侈资源以及其产出，仅能从每座目的地城市获得一次该效果。"),

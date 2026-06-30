@@ -546,52 +546,52 @@ where exists (select GreatWorkSlotType from GreatWorkSlotTypes where GreatWorkSl
 
 -- 植物园
 insert or replace into HD_Building_Base_On_ResourceClassification (BuildingType, ResourceClassificationType, DetectRange, PropertyKey) values
-	('BUILDING_JNR_BOTANICAL_GARDEN', 	'RESOURCE_CLASSIFICATION_IMPROVEMENT_FARM',						'PLAYER', 'HD_PLOT_BINARY_COMPRESS_BOTANICAL_GARDEN'),
-	('BUILDING_JNR_BOTANICAL_GARDEN', 	'RESOURCE_CLASSIFICATION_IMPROVEMENT_PLANTATION',			'PLAYER', 'HD_PLOT_BINARY_COMPRESS_BOTANICAL_GARDEN'),
-	('BUILDING_JNR_BOTANICAL_GARDEN', 	'RESOURCE_CLASSIFICATION_IMPROVEMENT_LUMBER_MILL',		'PLAYER',	'HD_PLOT_BINARY_COMPRESS_BOTANICAL_GARDEN');
+	('BUILDING_JNR_BOTANICAL_GARDEN', 	'RESOURCE_CLASSIFICATION_HD_CROPS',					'PLAYER', 'HD_PLOT_BINARY_COMPRESS_BOTANICAL_GARDEN'),
+	('BUILDING_JNR_BOTANICAL_GARDEN', 	'RESOURCE_CLASSIFICATION_HD_FRUIT',					'PLAYER', 'HD_PLOT_BINARY_COMPRESS_BOTANICAL_GARDEN'),
+	('BUILDING_JNR_BOTANICAL_GARDEN', 	'RESOURCE_CLASSIFICATION_HD_ORNAMENTAL',		'PLAYER',	'HD_PLOT_BINARY_COMPRESS_BOTANICAL_GARDEN');
 
 insert or replace into HD_Binary_Compress_Keys (Key, MaxExp) values
-	('HD_PLOT_BINARY_COMPRESS_BOTANICAL_GARDEN', 	6);
+	('HD_PLOT_BINARY_COMPRESS_BOTANICAL_GARDEN', 	4);
 
 insert or replace into BuildingModifiers (BuildingType, ModifierId)
 	select 'BUILDING_JNR_BOTANICAL_GARDEN', 'HD_BOTANICAL_GARDEN_SCIENCE_' || Exp
-	from HD_Binary_Compress where Exp < 7;
+	from HD_Binary_Compress where Exp < 5;
 
 insert or replace into Modifiers (ModifierId, ModifierType, OwnerRequirementSetId)
 	select 'HD_BOTANICAL_GARDEN_SCIENCE_' || Exp, 'MODIFIER_BUILDING_YIELD_CHANGE', 'HD_PLOT_BINARY_COMPRESS_BOTANICAL_GARDEN_' || Exp || '_REQUIREMENTS'
-	from HD_Binary_Compress where Exp < 7;
+	from HD_Binary_Compress where Exp < 5;
 
 insert or replace into ModifierArguments (ModifierId, Name, Value)
 	select 'HD_BOTANICAL_GARDEN_SCIENCE_' || Exp, 'BuildingType', 'BUILDING_JNR_BOTANICAL_GARDEN'
-	from HD_Binary_Compress where Exp < 7;
+	from HD_Binary_Compress where Exp < 5;
 
 insert or replace into ModifierArguments (ModifierId, Name, Value)
 	select 'HD_BOTANICAL_GARDEN_SCIENCE_' || Exp, 'YieldType', 'YIELD_SCIENCE'
-	from HD_Binary_Compress where Exp < 7;
+	from HD_Binary_Compress where Exp < 5;
 
 insert or replace into ModifierArguments (ModifierId, Name, Value)
-	select 'HD_BOTANICAL_GARDEN_SCIENCE_' || Exp, 'Amount', Amount
-	from HD_Binary_Compress where Exp < 7;
+	select 'HD_BOTANICAL_GARDEN_SCIENCE_' || Exp, 'Amount', Amount * 2
+	from HD_Binary_Compress where Exp < 5;
 
 insert or replace into BuildingModifiers (BuildingType, ModifierId)
 	select 'BUILDING_JNR_BOTANICAL_GARDEN', 'HD_BOTANICAL_GARDEN_GOLD_' || Exp
-	from HD_Binary_Compress where Exp < 7;
+	from HD_Binary_Compress where Exp < 5;
 
 insert or replace into Modifiers (ModifierId, ModifierType, OwnerRequirementSetId)
 	select 'HD_BOTANICAL_GARDEN_GOLD_' || Exp, 'MODIFIER_BUILDING_YIELD_CHANGE', 'HD_PLOT_BINARY_COMPRESS_BOTANICAL_GARDEN_' || Exp || '_REQUIREMENTS'
-	from HD_Binary_Compress where Exp < 7;
+	from HD_Binary_Compress where Exp < 5;
 
 insert or replace into ModifierArguments (ModifierId, Name, Value)
 	select 'HD_BOTANICAL_GARDEN_GOLD_' || Exp, 'BuildingType', 'BUILDING_JNR_BOTANICAL_GARDEN'
-	from HD_Binary_Compress where Exp < 7;
+	from HD_Binary_Compress where Exp < 5;
 
 insert or replace into ModifierArguments (ModifierId, Name, Value)
 	select 'HD_BOTANICAL_GARDEN_GOLD_' || Exp, 'YieldType', 'YIELD_GOLD'
-	from HD_Binary_Compress where Exp < 7;
+	from HD_Binary_Compress where Exp < 5;
 
 insert or replace into ModifierArguments (ModifierId, Name, Value)
-	select 'HD_BOTANICAL_GARDEN_GOLD_' || Exp, 'Amount', Amount * 3
-	from HD_Binary_Compress where Exp < 7;
+	select 'HD_BOTANICAL_GARDEN_GOLD_' || Exp, 'Amount', Amount * 6
+	from HD_Binary_Compress where Exp < 5;
 
 --------------------------------------------------
 insert or ignore into RequirementSetRequirements

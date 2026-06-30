@@ -27,7 +27,8 @@ update Building_YieldChanges set YieldChange = 2 where YieldType = 'YIELD_FOOD' 
 insert or replace into Building_YieldChanges
 	(BuildingType,						YieldType,				YieldChange)
 values
-	('BUILDING_JNR_MINT',				'YIELD_GOLD',			9),
+	('BUILDING_JNR_WAYSTATION',				'YIELD_GOLD',			6),
+	('BUILDING_JNR_MINT',				'YIELD_GOLD',			8),
 	('BUILDING_JNR_MERCHANT_QUARTER',	'YIELD_GOLD',			10),
 	('BUILDING_JNR_GUILDHALL',			'YIELD_PRODUCTION',			2),
 	('BUILDING_JNR_GUILDHALL',			'YIELD_GOLD',			9),
@@ -152,7 +153,8 @@ insert or replace into BuildingModifiers
 	(BuildingType,						ModifierId)
 values
 	-- 货栈
-	('BUILDING_JNR_WAYSTATION',			'WAYSTATION_RESOURCES_GOLD'),
+	('BUILDING_JNR_WAYSTATION',			'HD_WAYSTATION_FOOD'),
+	('BUILDING_JNR_WAYSTATION',			'HD_WAYSTATION_PRODUCTION'),
 	-- 市场
 	('BUILDING_MARKET',	                    'MARKET_POP_GOLD'),
 	-- 铸币厂
@@ -218,11 +220,12 @@ values
 
 insert or replace into Modifiers (ModifierId, ModifierType, SubjectRequirementSetId) values
 	-- 货栈
-	('WAYSTATION_RESOURCES_GOLD',				'MODIFIER_SINGLE_CITY_ADJUST_YIELD_BY_NUMBER_RESOURCES',							NULL),
+	('HD_WAYSTATION_FOOD',				'MODIFIER_BUILDING_YIELD_CHANGE',							'HD_CITY_HAS_IMPROVED_RESOURCE_CLASSIFICATION_HD_TRANSIT_REQUIRMENTS'),
+	('HD_WAYSTATION_PRODUCTION',				'MODIFIER_BUILDING_YIELD_CHANGE',							'HD_CITY_HAS_IMPROVED_RESOURCE_CLASSIFICATION_HD_TRANSIT_REQUIRMENTS'),
 	-- 市场
 	('MARKET_POP_GOLD',				                'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_PER_POPULATION',				NULL),
 	-- 铸币厂
-	('HD_MINT_ADD_REGIONAL_RANGE',						'MODIFIER_SINGLE_CITY_ADJUST_PROPERTY',		'HD_PLOT_BINARY_COMPRESS_MINT_1_REQUIREMENTS'),
+	('HD_MINT_ADD_REGIONAL_RANGE',						'MODIFIER_SINGLE_CITY_ADJUST_PROPERTY',		'HD_PLOT_BINARY_COMPRESS_MINT_AT_LEAST_2_REQUIREMENTS'),
 	-- 银行
 	('BANK_POP_GOLD',								'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_PER_POPULATION',				NULL),
 	('BANK_EXTRA_GREAT_MERCHANT_POINTS',								'MODIFIER_PLAYER_ADJUST_GREAT_PERSON_POINTS_PERCENT',				NULL),
@@ -276,8 +279,12 @@ insert or replace into ModifierArguments
 	(ModifierId,									Name,						Value)
 values
 	-- 货栈
-	('WAYSTATION_RESOURCES_GOLD',				 		'YieldType',			'YIELD_GOLD'),
-	('WAYSTATION_RESOURCES_GOLD',					 	'Amount',					4),
+	('HD_WAYSTATION_FOOD',					'YieldType',				'YIELD_FOOD'),
+	('HD_WAYSTATION_FOOD',					'Amount',					2),
+	('HD_WAYSTATION_FOOD',					'BuildingType',					'BUILDING_JNR_WAYSTATION'),
+	('HD_WAYSTATION_PRODUCTION',					'YieldType',				'YIELD_PRODUCTION'),
+	('HD_WAYSTATION_PRODUCTION',					'Amount',					1),
+	('HD_WAYSTATION_PRODUCTION',					'BuildingType',					'BUILDING_JNR_WAYSTATION'),
 	-- 市场
 	('MARKET_POP_GOLD',				            	'YieldType',				'YIELD_GOLD'),
 	('MARKET_POP_GOLD',					            'Amount',					1),
@@ -378,6 +385,9 @@ insert or replace into HD_Building_Base_On_ResourceClassification (BuildingType,
 insert or replace into HD_Binary_Compress_Keys (Key, MaxExp) values
 	('HD_PLOT_BINARY_COMPRESS_MINT', 2);
 
+insert or replace into HD_Binary_Compress_AtLeast (Key, AtLeast) values
+	('HD_PLOT_BINARY_COMPRESS_MINT', 2);
+
 insert or replace into BuildingModifiers (BuildingType, ModifierId) select
  'BUILDING_JNR_MINT', 'HD_MINT_GOLD_' || Exp
 from HD_Binary_Compress where Exp < 3;
@@ -391,7 +401,7 @@ insert or replace into ModifierArguments (ModifierId, Name, Value) select
 from HD_Binary_Compress where Exp < 3;
 
 insert or replace into ModifierArguments (ModifierId, Name, Value) select
-	'HD_MINT_GOLD_' || Exp, 'Amount', Amount * 3
+	'HD_MINT_GOLD_' || Exp, 'Amount', Amount * 2
 from HD_Binary_Compress where Exp < 3;
 
 -- 市场部：公司模式
