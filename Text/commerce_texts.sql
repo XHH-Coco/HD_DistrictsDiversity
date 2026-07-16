@@ -106,7 +106,7 @@ values
     ("zh_Hans_CN",  "LOC_BUILDING_MARKET_DESCRIPTION_UC_JNR",                      "+1 [ICON_TradeRoute] 贸易路线容量。所在城市每位 [ICON_Citizen] 公民+1 [ICON_GOLD] 金币。"),
     -- 铸币厂
     ("zh_Hans_CN",  "LOC_BUILDING_JNR_MINT_NAME",                                  "铸币厂"),
-    ("zh_Hans_CN",  "LOC_BUILDING_JNR_MINT_DESCRIPTION",                           "+1 [ICON_TradeRoute] 贸易路线容量。你每拥有一种货币资源，辐射产出+2 [ICON_Gold] 金币。若你拥有至少2种货币资源，辐射范围+1单元格。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_JNR_MINT_DESCRIPTION",                           "+1 [ICON_TradeRoute] 贸易路线容量。你每拥有一种货币资源，辐射产出+2 [ICON_Gold] 金币。若你拥有至少2种货币资源，+1辐射范围。"),
     -- 纺织会馆
     ("zh_Hans_CN",  "LOC_BUILDING_SUKIENNICE_NAME",                                "克拉科夫纺织会馆"),
     ("zh_Hans_CN",  "LOC_BUILDING_SUKIENNICE_DESCRIPTION_UC_JNR",                  "波兰特色建筑，文明中一次仅限建造一座该建筑。[NEWLINE][NEWLINE]建成商业中心后对相邻单元格释放文化炸弹。[NEWLINE]本城的商业中心每拥有+8相邻加成，提供+1 [ICON_TradeRoute] 贸易路线容量。以本城为目的地的国内 [ICON_TRADEROUTE] 贸易路线获得25%本城商业中心相邻加成的 [ICON_PRODUCTION] 生产力；本城出发的国际 [ICON_TRADEROUTE] 贸易路线获得75%本城商业中心相邻加成的 [ICON_GOLD] 金币。[NEWLINE][NEWLINE]本城建立国际 [ICON_TRADEROUTE] 贸易路线时，随机获得一份目的地城市开发的奢侈资源以及其产出，仅能从每座目的地城市获得一次该效果。"),

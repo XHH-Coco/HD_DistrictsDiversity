@@ -113,7 +113,7 @@ insert or replace into BuildingModifiers (BuildingType, ModifierId) select
 from HD_Resource_Classification where ResourceClassificationType = 'RESOURCE_CLASSIFICATION_HD_CHEMISTRY';
 
 insert or replace into Modifiers (ModifierId, ModifierType, SubjectRequirementSetId) select
-    'CHEMICAL_HAS_'||ResourceType||'_BONUS_PRODUCTION_RATIO', 'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_MODIFIER',  'HD_CITY_HAS_IMPROVED_' || ResourceType || '_REQUIRMENTS'
+    'CHEMICAL_HAS_'||ResourceType||'_BONUS_PRODUCTION_RATIO', 'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_MODIFIER',  'HD_CITY_HAS_IMPROVED_' || ResourceType || '_REQUIREMENTS'
 from HD_Resource_Classification where ResourceClassificationType = 'RESOURCE_CLASSIFICATION_HD_CHEMISTRY';
 
 insert or replace into ModifierArguments (ModifierId, Name, Value) select
@@ -172,36 +172,11 @@ values
     -- Pantheon
     ('PLOT_IS_ADJACENT_TO_RIVER',                               'REQUIRES_PLOT_ADJACENT_TO_RIVER'),
     ('PLOT_IS_ADJACENT_TO_RIVER',                               'HD_REQUIRES_DISTRICT_IS_NOT_DISTRICT_WONDER');
-
--- City States
-insert or ignore into RequirementSets
-    (RequirementSetId,                                          RequirementSetType)
-values
-    ('HD_CITY_HAS_INDUSTRIAL_TIER_4_BUILDING_REQUIREMENTS',     'REQUIREMENTSET_TEST_ANY');
-
-delete from RequirementSetRequirements where RequirementSetId like 'HD_CITY_HAS_INDUSTRIAL_TIER_%_BUILDING_REQUIREMENTS';
-insert or ignore into RequirementSetRequirements
-    (RequirementSetId,                                          RequirementId)
-values
-    ('HD_CITY_HAS_INDUSTRIAL_TIER_1_BUILDING_REQUIREMENTS',     'REQUIRES_CITY_HAS_BUILDING_IZ_WATER_MILL'),
-    ('HD_CITY_HAS_INDUSTRIAL_TIER_1_BUILDING_REQUIREMENTS',     'REQUIRES_CITY_HAS_BUILDING_JNR_WIND_MILL'),
-    ('HD_CITY_HAS_INDUSTRIAL_TIER_2_BUILDING_REQUIREMENTS',     'REQUIRES_CITY_HAS_BUILDING_WORKSHOP'),
-    ('HD_CITY_HAS_INDUSTRIAL_TIER_2_BUILDING_REQUIREMENTS',     'REQUIRES_CITY_HAS_BUILDING_JNR_MANUFACTURY'),
-    ('HD_CITY_HAS_INDUSTRIAL_TIER_3_BUILDING_REQUIREMENTS',     'REQUIRES_CITY_HAS_BUILDING_FACTORY'),
-    ('HD_CITY_HAS_INDUSTRIAL_TIER_3_BUILDING_REQUIREMENTS',     'REQUIRES_CITY_HAS_BUILDING_JNR_CHEMICAL'),
-    ('HD_CITY_HAS_INDUSTRIAL_TIER_3_BUILDING_REQUIREMENTS',     'REQUIRES_CITY_HAS_BUILDING_HD_ELECTRONICS_FACTORY'),
-    ('HD_CITY_HAS_INDUSTRIAL_TIER_4_BUILDING_REQUIREMENTS',     'REQUIRES_CITY_HAS_BUILDING_COAL_POWER_PLANT'),
-    ('HD_CITY_HAS_INDUSTRIAL_TIER_4_BUILDING_REQUIREMENTS',     'REQUIRES_CITY_HAS_BUILDING_FOSSIL_FUEL_POWER_PLANT'),
-    ('HD_CITY_HAS_INDUSTRIAL_TIER_4_BUILDING_REQUIREMENTS',     'REQUIRES_CITY_HAS_BUILDING_POWER_PLANT'),
-    ('HD_CITY_HAS_INDUSTRIAL_TIER_4_BUILDING_REQUIREMENTS',     'REQUIRES_CITY_HAS_BUILDING_JNR_FREIGHT_YARD'),
-    ('HD_CITY_HAS_INDUSTRIAL_TIER_4_BUILDING_REQUIREMENTS',     'REQUIRES_CITY_HAS_BUILDING_HD_INTERNET_COMPANY');
-
 ----------------------------------------------------------------------------------------------------------------------------
 -- Traits and Policy
 ----------------------------------------------------------------------------------------------------------------------------
 -- Modifiers
 --------------------------------------------------------------
-UPDATE Modifiers SET SubjectRequirementSetId='HD_CITY_HAS_INDUSTRIAL_TIER_2_BUILDING_REQUIREMENTS' WHERE ModifierId='TRAIT_GREAT_ENGINEER_FACTORY_MODIFIER';
 UPDATE Modifiers SET SubjectRequirementSetId='CITY_HAS_DISTRICT_INDUSTRIAL_ZONE_TIER_3_BUILDING_REQUIREMENTS' WHERE ModifierId in ('RUHR_VALLEY_CITIES_PRODUCTION_MODIFIER', 'RUHR_VALLEY_CITIES_EXTRA_GREAT_ENGINEER_POINTS');
 --------------------------------------------------------------
 -- Traits
@@ -270,6 +245,3 @@ delete from GreatWorks where GreatWorkType like 'GREATWORK_PRODUCT_JNR_%';
 
 delete from District_Adjacencies where YieldChangeId = 'JNR_UC_Industry_Production';
 delete from District_Adjacencies where YieldChangeId = 'JNR_UC_Corporation_Production';
-
--- 博洛尼亚bug修复 by xiaoxiao
-update Modifiers set SubjectRequirementSetId = 'HD_CITY_HAS_INDUSTRIAL_TIER_1_BUILDING_REQUIREMENTS' where SubjectRequirementSetId = 'BUILDING_IS_WORKSHOP';

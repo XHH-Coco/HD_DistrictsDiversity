@@ -89,7 +89,7 @@ insert or replace into LocalizedText
     (Language,      Tag,                                                        Text)
 values
     ("zh_Hans_CN",  "LOC_BUILDING_JNR_ACADEMY_NAME",                            "私塾"),
-    ("zh_Hans_CN",  "LOC_BUILDING_JNR_ACADEMY_DESCRIPTION",                     "若你拥有至少2种文具资源，辐射产出+1 [ICON_Culture] 文化值。解锁“造纸术”科技后，辐射范围+1单元格。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_JNR_ACADEMY_DESCRIPTION",                     "若你拥有至少2种文具资源，辐射产出+1 [ICON_Culture] 文化值。解锁“造纸术”科技后，+1辐射范围。"),
     ("zh_Hans_CN",  "LOC_BUILDING_JNR_SCHOOL_NAME",                             "城市学校"),
     ("zh_Hans_CN",  "LOC_BUILDING_JNR_SCHOOL_DESCRIPTION",                      "本城的每个专业化区域+2 [ICON_Science] 科技值。此学院从每个相邻区域获得标准相邻加成。"),
     ("zh_Hans_CN",  "LOC_BUILDING_UNIVERSITY_DESCRIPTION",                      "每位 [ICON_CITIZEN] 公民+0.5 [ICON_Science] 科技值。"),

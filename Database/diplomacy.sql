@@ -41,7 +41,7 @@ values
 insert or replace into PolicyModifiers
 	(PolicyType,                  				ModifierId)
 select
-	PolicyType,									'CHANCERY_TRADE_ROUTE_SCIENCE_CHANGE'
+	PolicyType,									'CHANCERY_TRADE_ROUTE_GOLD_CHANGE'
 from Policies where GovernmentSlotType = 'SLOT_DIPLOMATIC';
 insert or replace into PolicyModifiers
 	(PolicyType,                  				ModifierId)
@@ -95,7 +95,7 @@ values
 
 -- 国家安全局
 INSERT OR IGNORE INTO Modifiers (ModifierId, ModifierType, SubjectRequirementSetId) select
-	'CHANCERY_SPIES_' || DistrictType || '_ADJACENCY', 'MODIFIER_PLAYER_DISTRICTS_ADJUST_BASE_YIELD_CHANGE', 'HD_DISTRICT_IS_' || DistrictType || '_WITHIN_1_TILE'
+	'CHANCERY_SPIES_' || DistrictType || '_ADJACENCY', 'MODIFIER_PLAYER_DISTRICTS_ADJUST_BASE_YIELD_CHANGE', 'HD_DISTRICT_IS_' || DistrictType || '_WITHIN_1_TILE_REQUIREMENTS'
 from DistrictCorrespondingYieldType_HD where HasAdjacency = 1;
 
 INSERT OR IGNORE INTO ModifierArguments (ModifierId, Name, Value) select

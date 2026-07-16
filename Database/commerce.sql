@@ -220,8 +220,8 @@ values
 
 insert or replace into Modifiers (ModifierId, ModifierType, SubjectRequirementSetId) values
 	-- 货栈
-	('HD_WAYSTATION_FOOD',				'MODIFIER_BUILDING_YIELD_CHANGE',							'HD_CITY_HAS_IMPROVED_RESOURCE_CLASSIFICATION_HD_TRANSIT_REQUIRMENTS'),
-	('HD_WAYSTATION_PRODUCTION',				'MODIFIER_BUILDING_YIELD_CHANGE',							'HD_CITY_HAS_IMPROVED_RESOURCE_CLASSIFICATION_HD_TRANSIT_REQUIRMENTS'),
+	('HD_WAYSTATION_FOOD',				'MODIFIER_BUILDING_YIELD_CHANGE',							'HD_CITY_HAS_IMPROVED_RESOURCE_CLASSIFICATION_HD_TRANSIT_REQUIREMENTS'),
+	('HD_WAYSTATION_PRODUCTION',				'MODIFIER_BUILDING_YIELD_CHANGE',							'HD_CITY_HAS_IMPROVED_RESOURCE_CLASSIFICATION_HD_TRANSIT_REQUIREMENTS'),
 	-- 市场
 	('MARKET_POP_GOLD',				                'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_PER_POPULATION',				NULL),
 	-- 铸币厂
@@ -519,7 +519,8 @@ where exists (select GreatWorkSlotType from GreatWorkSlotTypes where GreatWorkSl
 -- 尤里卡/鼓舞改动
 --------------------------------------------------------------
 	-- 资本主义
-update Boosts set NumItems = 1, TriggerDescription = 'LOC_BOOST_TRIGGER_CAPITALISM_HD' where CivicType = 'CIVIC_CAPITALISM';
+update Boosts set NumItems = 1, TriggerDescription = 'LOC_BOOST_TRIGGER_CAPITALISM_HD' where CivicType = 'CIVIC_CAPITALISM'
+	and not exists (select ImprovementType from Improvements where ImprovementType = 'IMPROVEMENT_CORPORATION');
 
 	-- 公会
 update Boosts set BuildingType = NULL, DistrictType = 'DISTRICT_COMMERCIAL_HUB', BoostClass = 'BOOST_TRIGGER_HAVE_X_DISTRICTS',
@@ -674,46 +675,6 @@ values
 	('TRAIT_LEADER_MAJOR_CIV',	'STEAM_POWER_TECHBOOST_JNR_FREEPORT_JNR_HAVEN_JNR'),
 	('TRAIT_LEADER_MAJOR_CIV',	'STEAM_POWER_TECHBOOST_SHIPYARD_JNR_FREEPORT_JNR');
 --------------------------------------------------------------
-
--- 城邦使者加成改动
---------------------------------------------------------------
-insert or ignore into RequirementSetRequirements
-	(RequirementSetId,												RequirementId)
-values
-	-- City State
-	('HD_CITY_HAS_TRADE_TIER_1_BUILDING_REQUIREMENTS',		       	'REQUIRES_CITY_HAS_BUILDING_JNR_MINT'),
-	('HD_CITY_HAS_TRADE_TIER_1_BUILDING_REQUIREMENTS',		       	'REQUIRES_CITY_HAS_BUILDING_JNR_WAYSTATION'),
-	('HD_CITY_HAS_TRADE_TIER_2_BUILDING_REQUIREMENTS',		       	'REQUIRES_CITY_HAS_BUILDING_JNR_GUILDHALL'),
-	('HD_CITY_HAS_TRADE_TIER_2_BUILDING_REQUIREMENTS',		       	'REQUIRES_CITY_HAS_BUILDING_JNR_MERCHANT_QUARTER'),
-	('HD_CITY_HAS_TRADE_TIER_3_BUILDING_REQUIREMENTS',		       	'REQUIRES_CITY_HAS_BUILDING_JNR_COMMODITY_EXCHANGE'),
-	('HD_CITY_HAS_TRADE_TIER_3_BUILDING_REQUIREMENTS',		       	'REQUIRES_CITY_HAS_BUILDING_JNR_MARKETING_AGENCY'),
-
-	('HD_CITY_HAS_TRADE_TIER_1_BUILDING_REQUIREMENTS',      		'REQUIRES_CITY_HAS_BUILDING_JNR_LIGHTHOUSE_FISHING'),
-	('HD_CITY_HAS_TRADE_TIER_2_BUILDING_REQUIREMENTS',      		'REQUIRES_CITY_HAS_BUILDING_JNR_ENTREPOT'),
-	('HD_CITY_HAS_TRADE_TIER_2_BUILDING_REQUIREMENTS',      		'REQUIRES_CITY_HAS_BUILDING_JNR_FISH_MARKET'),
-	('HD_CITY_HAS_TRADE_TIER_3_BUILDING_REQUIREMENTS',      		'REQUIRES_CITY_HAS_BUILDING_JNR_OFFSHORE_TERMINAL'),
-	('HD_CITY_HAS_TRADE_TIER_3_BUILDING_REQUIREMENTS',      		'REQUIRES_CITY_HAS_BUILDING_JNR_NAVAL_BASE');
-
-    -- CSE 海洋城邦适配
-update RequirementSetRequirements set RequirementSetId = 'HD_CITY_HAS_CSE_MARITIME_TIER_1_BUILDING_REQUIREMENTS'
-where exists (select Type from CSE_ClassTypes where Type = 'CSE_MARITIME') and 
-    (RequirementSetId = 'HD_CITY_HAS_TRADE_TIER_1_BUILDING_REQUIREMENTS' and RequirementId = 'REQUIRES_CITY_HAS_BUILDING_JNR_LIGHTHOUSE_FISHING');
-
-update RequirementSetRequirements set RequirementSetId = 'HD_CITY_HAS_CSE_MARITIME_TIER_2_BUILDING_REQUIREMENTS'
-where exists (select Type from CSE_ClassTypes where Type = 'CSE_MARITIME') and 
-    (RequirementSetId = 'HD_CITY_HAS_TRADE_TIER_2_BUILDING_REQUIREMENTS' and RequirementId = 'REQUIRES_CITY_HAS_BUILDING_JNR_ENTREPOT');
-
-update RequirementSetRequirements set RequirementSetId = 'HD_CITY_HAS_CSE_MARITIME_TIER_2_BUILDING_REQUIREMENTS'
-where exists (select Type from CSE_ClassTypes where Type = 'CSE_MARITIME') and 
-    (RequirementSetId = 'HD_CITY_HAS_TRADE_TIER_2_BUILDING_REQUIREMENTS' and RequirementId = 'REQUIRES_CITY_HAS_BUILDING_JNR_FISH_MARKET');
-
-update RequirementSetRequirements set RequirementSetId = 'HD_CITY_HAS_CSE_MARITIME_TIER_3_BUILDING_REQUIREMENTS'
-where exists (select Type from CSE_ClassTypes where Type = 'CSE_MARITIME') and 
-    (RequirementSetId = 'HD_CITY_HAS_TRADE_TIER_3_BUILDING_REQUIREMENTS' and RequirementId = 'REQUIRES_CITY_HAS_BUILDING_JNR_OFFSHORE_TERMINAL');
-
-update RequirementSetRequirements set RequirementSetId = 'HD_CITY_HAS_CSE_MARITIME_TIER_3_BUILDING_REQUIREMENTS'
-where exists (select Type from CSE_ClassTypes where Type = 'CSE_MARITIME') and 
-    (RequirementSetId = 'HD_CITY_HAS_TRADE_TIER_3_BUILDING_REQUIREMENTS' and RequirementId = 'REQUIRES_CITY_HAS_BUILDING_JNR_NAVAL_BASE');
 --------------------------------------------------------------
 
 -- 政策卡改动

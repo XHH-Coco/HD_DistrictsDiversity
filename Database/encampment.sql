@@ -169,7 +169,7 @@ select
 from Resources where ResourceClassType = 'RESOURCECLASS_STRATEGIC';
 
 insert or replace into Modifiers (ModifierId, ModifierType, OwnerRequirementSetId, SubjectRequirementSetId) select
-    'PRISON_HAS_'||ResourceType||'_BONUS_CAMPUS', 'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_MODIFIER',  'HD_CITY_HAS_IMPROVED_' || ResourceType || '_REQUIRMENTS',  'HD_DISTRICT_IS_DISTRICT_CAMPUS_ADJACENT'
+    'PRISON_HAS_'||ResourceType||'_BONUS_CAMPUS', 'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_MODIFIER',  'HD_CITY_HAS_IMPROVED_' || ResourceType || '_REQUIREMENTS',  'HD_DISTRICT_IS_DISTRICT_CAMPUS_ADJACENT'
 from Resources where ResourceClassType = 'RESOURCECLASS_STRATEGIC';
 
 insert or replace into ModifierArguments (ModifierId, Name, Value) select
@@ -187,7 +187,7 @@ select
 from Resources where ResourceClassType = 'RESOURCECLASS_STRATEGIC';
 
 insert or replace into Modifiers (ModifierId, ModifierType, OwnerRequirementSetId, SubjectRequirementSetId) select
-    'PRISON_HAS_'||ResourceType||'_BONUS_ENCAMPMENT', 'MODIFIER_CITY_DISTRICTS_ADJUST_YIELD_MODIFIER',  'HD_CITY_HAS_IMPROVED_' || ResourceType || '_REQUIRMENTS',  'DISTRICT_IS_ENCAMPMENT'
+    'PRISON_HAS_'||ResourceType||'_BONUS_ENCAMPMENT', 'MODIFIER_CITY_DISTRICTS_ADJUST_YIELD_MODIFIER',  'HD_CITY_HAS_IMPROVED_' || ResourceType || '_REQUIREMENTS',  'DISTRICT_IS_ENCAMPMENT'
 from Resources where ResourceClassType = 'RESOURCECLASS_STRATEGIC';
 
 insert or replace into ModifierArguments (ModifierId, Name, Value) select
@@ -319,17 +319,7 @@ values
 update Modifiers set SubjectRequirementSetId = 'CITY_HAS_DISTRICT_ENCAMPMENT_TIER_1_BUILDING_REQUIREMENTS' where SubjectRequirementSetId = 'BUILDING_IS_BARRACKS_STABLE_MILITARITIC_CITY_STATE' and ModifierID = 'HEAD_FALCONER_BARRACKS_STABLE_SCIENCE_BONUS1';
 update Modifiers set SubjectRequirementSetId = 'CITY_HAS_DISTRICT_ENCAMPMENT_TIER_2_BUILDING_REQUIREMENTS' where SubjectRequirementSetId = 'BUILDING_IS_ARMORY' and ModifierID = 'HEAD_FALCONER_ARMORY_SCIENCE_BONUS1';
 update Modifiers set SubjectRequirementSetId = 'CITY_HAS_DISTRICT_ENCAMPMENT_TIER_3_BUILDING_REQUIREMENTS' where SubjectRequirementSetId = 'BUILDING_IS_MILITARY_ACADEMY' and ModifierID = 'HEAD_FALCONER_MILITARY_ACADEMY_SCIENCE_BONUS1';
---使者产出
-insert or ignore into RequirementSetRequirements
-    (RequirementSetId,                                          RequirementId)
-values
-	('HD_CITY_HAS_MILITARISTIC_TIER_1_BUILDING_REQUIREMENTS',	'REQUIRES_CITY_HAS_BUILDING_JNR_TARGET_RANGE'),
-	('HD_CITY_HAS_MILITARISTIC_TIER_2_BUILDING_REQUIREMENTS',	'REQUIRES_CITY_HAS_BUILDING_JNR_CAVALIER'),
-	('HD_CITY_HAS_MILITARISTIC_TIER_2_BUILDING_REQUIREMENTS',	'REQUIRES_CITY_HAS_BUILDING_JNR_DEPOT'),
-	('HD_CITY_HAS_MILITARISTIC_TIER_3_BUILDING_REQUIREMENTS',	'REQUIRES_CITY_HAS_BUILDING_JNR_ARSENAL'),
-	('HD_CITY_HAS_MILITARISTIC_TIER_3_BUILDING_REQUIREMENTS',	'REQUIRES_CITY_HAS_BUILDING_JNR_PRISON');
--- delete from TraitModifiers where ModifierId = 'MINOR_CIV_MILITARISTIC_TRAIT_LARGE_INFLUENCE_UNIT_PRODUCTION_HD_CONSULATE_ATTACH';
--- delete from TraitModifiers where ModifierId = 'MINOR_CIV_MILITARISTIC_TRAIT_LARGEST_INFLUENCE_UNIT_PRODUCTION_HD_CHANCERY_ATTACH';
+
 --伟人点
 INSERT OR IGNORE INTO Building_GreatPersonPoints
 		(BuildingType,					GreatPersonClassType,			PointsPerTurn)

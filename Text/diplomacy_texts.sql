@@ -5,7 +5,7 @@ values
     ("LOC_PLAYER_YIELD_SCIENCE_EMBASSIES",			                "+{1_Num} from Embassies"),
     ("LOC_BUILDING_CONSULATE_NAME",			                        "Consulate"),
     ("LOC_BUILDING_CONSULATE_DESCRIPTION",			                "+2 Influence Points per turn. Gain +1 [ICON_ENVOY] Envoy.[NEWLINE]Alliance Points with all allies increase by an additional .5 per turn. For your current highest alliance lever, each level provides +3 [ICON_Gold] Gold to international [ICON_TRADEROUTE] Trade Routes. [NEWLINE]Can only be built once in a civilization."),
-    ("LOC_BUILDING_CHANCERY_DESCRIPTION",			                "+3 Influence Points per turn. Gain +1 [ICON_ENVOY] Envoy.[NEWLINE]+100% [ICON_Favor] Favor per turn from Alliance Level. every Cultural Policy in your government provide +1 [ICON_Science] Science and +1 [ICON_Culture] Culture for the [ICON_TRADEROUTE] Trade Routes to an Ally's city. [NEWLINE]Can only be built once in a civilization."),
+    ("LOC_BUILDING_CHANCERY_DESCRIPTION",			                "+3 Influence Points per turn. Gain +1 [ICON_ENVOY] Envoy.[NEWLINE]+100% [ICON_Favor] Favor per turn from Alliance Level. every Cultural Policy in your government provide +1 [ICON_Culture] Culture and +3 [ICON_GOLD] Gold for the [ICON_TRADEROUTE] Trade Routes to an Ally's city. [NEWLINE]Can only be built once in a civilization."),
     ("LOC_BUILDING_JNR_CONSULATE_CITYSTATES_NAME",			        "Foreign Ministry"),
     ("LOC_BUILDING_JNR_CONSULATE_CITYSTATES_DESCRIPTION",			"+2 Influence Points per turn. Gain +1 [ICON_ENVOY] Envoy.[NEWLINE]Leveraging City States costs half [ICON_Gold] Gold. City State units gain +4 [ICON_Strength] Combat Strength if you are the City State's Suzerain (including Leveraged Units).[NEWLINE]Alliances grant half their [ICON_TradeRoute] Trade Route yield bonuses to all your [ICON_TradeRoute] Trade Route to city states. [NEWLINE]Can only be built once in a civilization."),
     ("LOC_BUILDING_JNR_CONSULATE_SPIES_NAME",			            "Intelligence Agency"),
@@ -28,7 +28,7 @@ values
     ("zh_Hans_CN",  "LOC_BUILDING_CONSULATE_DESCRIPTION",                           "每回合影响力点数+2。获得1名 [ICON_ENVOY] 使者。[NEWLINE]所有类型的同盟点数每回合+0.5。您最高级的同盟，每一级为国际 [ICON_TRADEROUTE] 贸易路线+3 [ICON_Gold] 金币。[NEWLINE]文明中一次仅限建造一座该建筑。"),
     -- 大使馆
     ("zh_Hans_CN",  "LOC_BUILDING_CHANCERY_NAME",                                   "总领馆"),
-    ("zh_Hans_CN",  "LOC_BUILDING_CHANCERY_DESCRIPTION",                            "每回合影响力点数+3。获得1名 [ICON_ENVOY] 使者。[NEWLINE]来自同盟等级的 [ICON_Favor] 外交支持+100%。政体中每个生效中的文化政策卡使通往同盟城市的 [ICON_TradeRoute] 贸易路线获得+1 [ICON_Science] 科技值与+1 [ICON_Culture] 文化值。[NEWLINE]文明中一次仅限建造一座该建筑。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_CHANCERY_DESCRIPTION",                            "每回合影响力点数+3。获得1名 [ICON_ENVOY] 使者。[NEWLINE]来自同盟等级的 [ICON_Favor] 外交支持+100%。政体中每个生效中的文化政策卡使通往同盟城市的 [ICON_TradeRoute] 贸易路线获得+1 [ICON_Culture] 文化值和+3 [ICON_GOLD] 金币。[NEWLINE]文明中一次仅限建造一座该建筑。"),
     -- 外交部
     ("zh_Hans_CN",  "LOC_BUILDING_JNR_CONSULATE_CITYSTATES_NAME",                   "外交部"),
     ("zh_Hans_CN",  "LOC_BUILDING_JNR_CONSULATE_CITYSTATES_DESCRIPTION",            "每回合影响力点数+2。获得1名 [ICON_ENVOY] 使者。[NEWLINE]征募城邦单位征兵花费的 [ICON_GOLD] 金币减少50%。宗主城邦单位获得+4 [ICON_Strength] 战斗力（包括征兵时）。[NEWLINE]通往城邦的 [ICON_TradeRoute] 贸易路线获得您所拥有的所有同盟赋予 [ICON_TradeRoute] 贸易路线产出的一半产出。[NEWLINE]文明中一次仅限建造一座该建筑。"),

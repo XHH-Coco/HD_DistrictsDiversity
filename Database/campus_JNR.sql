@@ -41,9 +41,6 @@ FROM    Buildings_XP2
 WHERE   BuildingType='BUILDING_RESEARCH_LAB';
 --------------------------------------------------------------
 
--- BuildingReplaces
---------------------------------------------------------------
--- UPDATE BuildingReplaces SET ReplacesBuildingType='BUILDING_JNR_SCHOOL' WHERE CivUniqueBuildingType='BUILDING_NAVIGATION_SCHOOL';
 --------------------------------------------------------------
 
 -- BuildingPrereqs
@@ -166,10 +163,6 @@ DELETE FROM StartingBuildings WHERE District='DISTRICT_CAMPUS';
 -- UC_CMP_Bonuses_Yields
 -- Author: JNR
 --------------------------------------------------------------
-
--- Buildings
---------------------------------------------------------------
--- UPDATE Buildings SET RegionalRange=6 WHERE BuildingType='BUILDING_JNR_EDUCATION';
 --------------------------------------------------------------
 
 -- Building_GreatPersonPoints
@@ -182,19 +175,9 @@ VALUES  ('BUILDING_JNR_ACADEMY',        'GREAT_PERSON_CLASS_SCIENTIST', 1),
         ('BUILDING_JNR_ARCHITECTURE',   'GREAT_PERSON_CLASS_SCIENTIST', 1),
         ('BUILDING_JNR_LABORATORY',     'GREAT_PERSON_CLASS_SCIENTIST', 1),
         ('BUILDING_JNR_LIBERAL_ARTS',   'GREAT_PERSON_CLASS_SCIENTIST', 1),
-        -- ('BUILDING_JNR_LIBERAL_ARTS',   'GREAT_PERSON_CLASS_WRITER',    1),
-        -- ('BUILDING_JNR_LIBERAL_ARTS',   'GREAT_PERSON_CLASS_ARTIST',    1),
-        -- ('BUILDING_JNR_LIBERAL_ARTS',   'GREAT_PERSON_CLASS_MUSICIAN',  1),
         ('BUILDING_JNR_EDUCATION',      'GREAT_PERSON_CLASS_SCIENTIST', 1);
 --------------------------------------------------------------
 
--- Building_YieldChangesBonusWithPower
---------------------------------------------------------------
--- INSERT OR IGNORE INTO Building_YieldChangesBonusWithPower
---         (BuildingType,              YieldType,          YieldChange)
--- SELECT  'BUILDING_JNR_EDUCATION',   'YIELD_SCIENCE',    4
--- FROM    Building_YieldChangesBonusWithPower
--- WHERE   BuildingType='BUILDING_RESEARCH_LAB' AND YieldType='YIELD_SCIENCE';
 --------------------------------------------------------------
 
 -- UC_CMP_Bonuses_Special
@@ -229,14 +212,6 @@ UPDATE  Boosts SET
 WHERE   CivicType='CIVIC_NUCLEAR_PROGRAM';
 --------------------------------------------------------------
 
--- Technologies
---------------------------------------------------------------
---
--- Disabled due common adjacency values not being granular enough for 25% increments.
---
---UPDATE Technologies SET
---Description='LOC_TECH_ASTRONOMY_DESCRIPTION_JNR_UC'
---WHERE TechnologyType='TECH_ASTRONOMY';
 --------------------------------------------------------------
 
 -- Requirements
@@ -359,22 +334,6 @@ VALUES  ('TRAIT_LEADER_MAJOR_CIV',  'SCHOOL_PRINTING_TECHBOOST_SCHOOL_JNR'),
         ('TRAIT_LEADER_MAJOR_CIV',  'SCHOOL_PRINTING_TECHBOOST_MIX_JNR');
 --------------------------------------------------------------
 
--- DistrictModifiers
---------------------------------------------------------------
---
--- Disabled due common adjacency values not being granular enough for 25% increments.
---
---INSERT OR IGNORE INTO DistrictModifiers
-        --(DistrictType,            ModifierId)
---VALUES    ('DISTRICT_CAMPUS',     'CAMPUS_ASTRONOMYSCIENCE_JNR');
---
---INSERT OR IGNORE INTO DistrictModifiers
-        --(DistrictType,            ModifierId)
---SELECT    CivUniqueDistrictType,  'UNIQUECAMPUS_ASTRONOMYSCIENCE_JNR'
---FROM  DistrictReplaces
---WHERE ReplacesDistrictType='DISTRICT_CAMPUS';
---------------------------------------------------------------
-
 ----------------------------------------------------------------------------------------------------------------------------
 -- Nobel Price
 ----------------------------------------------------------------------------------------------------------------------------
@@ -387,8 +346,8 @@ UPDATE EmergencyRewards SET Description='LOC_EMERGENCY_REWARD_NOBEL_PRIZE_PHY_TO
 
 -- RequirementSetRequirements
 --------------------------------------------------------------
-UPDATE RequirementSetRequirements SET RequirementId='REQUIRES_CITY_HAS_CAMPUS_TIER2_JNR'    WHERE RequirementSetId='NOBEL_PRIZE_FIRST_PLACE_UNIVERSITY_RESOURCES_REQUIREMENTS'  AND RequirementId='REQUIRES_CITY_HAS_UNIVERSITY';
-UPDATE RequirementSetRequirements SET RequirementId='REQUIRES_CITY_HAS_CAMPUS_TIER3_JNR'    WHERE RequirementSetId='NOBEL_PRIZE_TOP_TIER_RESEARCH_LAB_RESOURCES_REQUIREMENTS'   AND RequirementId='REQUIRES_CITY_HAS_RESEARCH_LAB';
+-- UPDATE RequirementSetRequirements SET RequirementId='REQUIRES_CITY_HAS_CAMPUS_TIER2_JNR'    WHERE RequirementSetId='NOBEL_PRIZE_FIRST_PLACE_UNIVERSITY_RESOURCES_REQUIREMENTS'  AND RequirementId='REQUIRES_CITY_HAS_UNIVERSITY';
+-- UPDATE RequirementSetRequirements SET RequirementId='REQUIRES_CITY_HAS_CAMPUS_TIER3_JNR'    WHERE RequirementSetId='NOBEL_PRIZE_TOP_TIER_RESEARCH_LAB_RESOURCES_REQUIREMENTS'   AND RequirementId='REQUIRES_CITY_HAS_RESEARCH_LAB';
 --------------------------------------------------------------
 
 ----------------------------------------------------------------------------------------------------------------------------
@@ -402,26 +361,4 @@ INSERT OR IGNORE INTO RandomEvent_PillagedBuildings
 SELECT  RandomEventType,    'BUILDING_JNR_EDUCATION'
 FROM    RandomEvent_PillagedBuildings
 WHERE   BuildingType='BUILDING_RESEARCH_LAB';
---------------------------------------------------------------
-
--- UC_CMP_Requirements
--- Author: JNR
---------------------------------------------------------------
-
--- Requirements
---------------------------------------------------------------
-INSERT OR IGNORE INTO Requirements
-        (RequirementId,                                     RequirementType)
-VALUES  ('REQUIRES_CITY_HAS_CAMPUS_TIER1_JNR',              'REQUIREMENT_REQUIREMENTSET_IS_MET'),
-        ('REQUIRES_CITY_HAS_CAMPUS_TIER2_JNR',              'REQUIREMENT_REQUIREMENTSET_IS_MET'),
-        ('REQUIRES_CITY_HAS_CAMPUS_TIER3_JNR',              'REQUIREMENT_REQUIREMENTSET_IS_MET');
---------------------------------------------------------------
-
--- RequirementArguments
---------------------------------------------------------------
-INSERT OR IGNORE INTO RequirementArguments
-        (RequirementId,                                     Name,               Value)
-VALUES  ('REQUIRES_CITY_HAS_CAMPUS_TIER1_JNR',              'RequirementSetId', 'HD_CITY_HAS_SCIENTIFIC_TIER_1_BUILDING_REQUIREMENTS'),
-        ('REQUIRES_CITY_HAS_CAMPUS_TIER2_JNR',              'RequirementSetId', 'HD_CITY_HAS_SCIENTIFIC_TIER_2_BUILDING_REQUIREMENTS'),
-        ('REQUIRES_CITY_HAS_CAMPUS_TIER3_JNR',              'RequirementSetId', 'HD_CITY_HAS_SCIENTIFIC_TIER_3_BUILDING_REQUIREMENTS');
 --------------------------------------------------------------

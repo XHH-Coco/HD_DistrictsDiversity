@@ -354,50 +354,6 @@ update Boosts set BoostClass = 'BOOST_TRIGGER_HAVE_X_BUILDINGS', NumItems = 2, B
 update Boosts set BoostClass = 'BOOST_TRIGGER_NONE_LATE_GAME_CRITICAL_TECH', NumItems = 0, BuildingType = null where CivicType = 'CIVIC_FINANCE_HD';
 --------------------------------------------------------------
 
--- 城邦使者加成改动
---------------------------------------------------------------
-insert or ignore into RequirementSets
-	(RequirementSetId,												RequirementSetType)
-values
-	('HD_CITY_HAS_CULTURAL_TIER_4_BUILDING_REQUIREMENTS',			'REQUIREMENTSET_TEST_ANY'),
-	('HD_CITY_HAS_CULTURAL_TIER_3_BUILDING_REQUIREMENTS_MUSEUM',	'REQUIREMENTSET_TEST_ANY');
-
-insert or ignore into RequirementSetRequirements
-	(RequirementSetId,												RequirementId)
-values
-	('HD_CITY_HAS_CULTURAL_TIER_1_BUILDING_REQUIREMENTS',       	'REQUIRES_CITY_HAS_BUILDING_JNR_ASSEMBLY'),
-    ('HD_CITY_HAS_CULTURAL_TIER_2_BUILDING_REQUIREMENTS',       	'REQUIRES_CITY_HAS_BUILDING_JNR_CABINET'),
-    ('HD_CITY_HAS_CULTURAL_TIER_2_BUILDING_REQUIREMENTS',       	'REQUIRES_CITY_HAS_BUILDING_JNR_MANSION'),
-    ('HD_CITY_HAS_CULTURAL_TIER_3_BUILDING_REQUIREMENTS',       	'REQUIRES_CITY_HAS_BUILDING_JNR_OPERA'),
-    ('HD_CITY_HAS_CULTURAL_TIER_3_BUILDING_REQUIREMENTS',       	'REQUIRES_CITY_HAS_BUILDING_JNR_GRAND_HOTEL'),
-    ('HD_CITY_HAS_CULTURAL_TIER_3_BUILDING_REQUIREMENTS',       	'REQUIRES_CITY_HAS_BUILDING_HD_ART_PUBLISHING_HOUSE'),
-    ('HD_CITY_HAS_CULTURAL_TIER_4_BUILDING_REQUIREMENTS',       	'REQUIRES_CITY_HAS_BUILDING_BROADCAST_CENTER'),
-    ('HD_CITY_HAS_CULTURAL_TIER_4_BUILDING_REQUIREMENTS',       	'REQUIRES_CITY_HAS_BUILDING_JNR_MEDIA_CENTER'),
-    ('HD_CITY_HAS_CULTURAL_TIER_3_BUILDING_REQUIREMENTS_MUSEUM',    'REQUIRES_CITY_HAS_BUILDING_MUSEUM_ART'),
-    ('HD_CITY_HAS_CULTURAL_TIER_3_BUILDING_REQUIREMENTS_MUSEUM',    'REQUIRES_CITY_HAS_BUILDING_MUSEUM_ARTIFACT');
-
-insert or replace into Modifiers
-	(ModifierId,																	ModifierType,											SubjectRequirementSetId)
-values
-	('MINOR_CIV_CULTURAL_TRAIT_LARGEST_INFLUENCE_YIELD_CULTURE_HD_MUSEUM',			'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_CHANGE',		'HD_CITY_HAS_CULTURAL_TIER_3_BUILDING_REQUIREMENTS_MUSEUM'),
-	('MINOR_CIV_CULTURAL_TRAIT_LARGEST_INFLUENCE_YIELD_CULTURE_HD_MUSEUM_ATTACH',	'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',					'PLAYER_HAS_LARGEST_INFLUENCE');
-
-insert or replace into ModifierArguments
-	(ModifierId,																	Name,					Value)
-values
-	('MINOR_CIV_CULTURAL_TRAIT_LARGEST_INFLUENCE_YIELD_CULTURE_HD_MUSEUM_ATTACH',	'ModifierId',			'MINOR_CIV_CULTURAL_TRAIT_LARGEST_INFLUENCE_YIELD_CULTURE_HD_MUSEUM'),
-	('MINOR_CIV_CULTURAL_TRAIT_LARGEST_INFLUENCE_YIELD_CULTURE_HD_MUSEUM',			'Amount',				3),
-	('MINOR_CIV_CULTURAL_TRAIT_LARGEST_INFLUENCE_YIELD_CULTURE_HD_MUSEUM',			'YieldType',			'YIELD_CULTURE');
-
-insert or replace into TraitModifiers
-	(TraitType,								ModifierId)
-values
-	('MINOR_CIV_CULTURAL_TRAIT',			'MINOR_CIV_CULTURAL_TRAIT_LARGEST_INFLUENCE_YIELD_CULTURE_HD_MUSEUM_ATTACH');
-
-delete from RequirementSetRequirements where RequirementSetId = 'HD_CITY_HAS_CULTURAL_TIER_2_BUILDING_REQUIREMENTS' and RequirementId = 'REQUIRES_CITY_HAS_BUILDING_MUSEUM_ARTIFACT';
-delete from RequirementSetRequirements where RequirementSetId = 'HD_CITY_HAS_CULTURAL_TIER_2_BUILDING_REQUIREMENTS' and RequirementId = 'REQUIRES_CITY_HAS_BUILDING_MUSEUM_ART';
-delete from RequirementSetRequirements where RequirementSetId = 'HD_CITY_HAS_CULTURAL_TIER_3_BUILDING_REQUIREMENTS' and RequirementId = 'REQUIRES_CITY_HAS_BUILDING_BROADCAST_CENTER';
---------------------------------------------------------------
 
 -- 政策卡改动
 --------------------------------------------------------------
@@ -484,9 +440,6 @@ values
 	('HD_FASHIONABLE_DISTRICT_THEATER_4_REQUIREMENTS',	'REQUIRES_CITY_HAS_WONDER'),
 	('HD_FASHIONABLE_DISTRICT_THEATER_4_REQUIREMENTS',	'REQUIRES_PLOT_BREATHTAKING_APPEAL');
 
-	-- 超级大国
--- update Modifiers set SubjectRequirementSetId = 'HD_CITY_HAS_CULTURAL_TIER_4_BUILDING_REQUIREMENTS' where ModifierId = 'SUPERPOWER_CULTURE_ATTACH';
-
 -- 科教兴国
 update Modifiers set SubjectRequirementSetId = 'CITY_HAS_DISTRICT_THEATER_TIER_4_BUILDING_REQUIREMENTS' where ModifierId = 'HD_SCIENCE_AND_EDUCATION_GOLD';
 
@@ -508,14 +461,11 @@ values
 	('HD_CITY_HAS_OPERA_OR_HOTLE',					'REQUIRES_CITY_HAS_BUILDING_JNR_OPERA'),
 	('HD_CITY_HAS_OPERA_OR_HOTLE',					'REQUIRES_CITY_HAS_BUILDING_JNR_GRAND_HOTEL'),
 	('HD_CITY_HAS_OPERA_OR_HOTLE',					'REQUIRES_CITY_HAS_BUILDING_HD_ART_PUBLISHING_HOUSE');
+
+--------------------------------------------------------------
+-- 市政需求调整
 --------------------------------------------------------------
 
--- 杂项改动
---------------------------------------------------------------
-	-- 神圣之光 博洛尼亚 道观
-update Modifiers set SubjectRequirementSetId = 'HD_CITY_HAS_CULTURAL_TIER_1_BUILDING_REQUIREMENTS' where SubjectRequirementSetId = 'BUILDING_IS_AMPHITHEATER';
-
-	-- 市政需求调整
 update CivicRandomCosts set Cost = 6300 where Cost = 4800;
 update CivicRandomCosts set Cost = 6400 where Cost = 4900;
 -- 未来时代
@@ -547,7 +497,7 @@ update Civics set Cost = 150 where Cost = 150;
 -- 远古
 update Civics set Cost = 90 where Cost = 90;
 update Civics set Cost = 60 where Cost = 60;
-update Civics set Cost = 40 where Cost = 40;
+update Civics set Cost = 30 where Cost = 30;
 
 -- -- Civic Tree v4
 -- update Civics set Cost = 260 where CivicType = 'CIVIC_LITERARY_TRADITION_HD';  

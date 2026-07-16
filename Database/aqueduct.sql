@@ -130,23 +130,6 @@ select
     'HD_BATHHOUSE_' || DistrictType || '_' || GreatPersonClassType,  'Amount',  4
 from DistrictCorrespondingGPP_HD;
 
--- City states
-delete from RequirementSetRequirements where RequirementSetId = 'HD_CITY_HAS_CSE_AGRICULTURAL_TIER_1_BUILDING_REQUIREMENTS';
-delete from RequirementSetRequirements where RequirementSetId = 'HD_CITY_HAS_CSE_AGRICULTURAL_TIER_2_BUILDING_REQUIREMENTS';
-
-insert or ignore into RequirementSetRequirements (RequirementSetId,    RequirementId)
-select 'HD_CITY_HAS_CSE_AGRICULTURAL_TIER_1_BUILDING_REQUIREMENTS',     'REQUIRES_CITY_HAS_DISTRICT_AQUEDUCT'
-from CSE_ClassTypes where Type = 'CSE_AGRICULTURAL';
-insert or ignore into RequirementSetRequirements (RequirementSetId,    RequirementId)
-select 'HD_CITY_HAS_CSE_AGRICULTURAL_TIER_2_BUILDING_REQUIREMENTS',     'REQUIRES_CITY_HAS_BUILDING_JNR_ORCHARD'
-from CSE_ClassTypes where Type = 'CSE_AGRICULTURAL';
-insert or ignore into RequirementSetRequirements (RequirementSetId,    RequirementId)
-select 'HD_CITY_HAS_CSE_AGRICULTURAL_TIER_2_BUILDING_REQUIREMENTS',     'REQUIRES_CITY_HAS_BUILDING_JNR_HAMMER_WORKS'
-from CSE_ClassTypes where Type = 'CSE_AGRICULTURAL';
-insert or ignore into RequirementSetRequirements (RequirementSetId,    RequirementId)
-select 'HD_CITY_HAS_CSE_AGRICULTURAL_TIER_2_BUILDING_REQUIREMENTS',     'REQUIRES_CITY_HAS_BUILDING_JNR_BATHHOUSE'
-from CSE_ClassTypes where Type = 'CSE_AGRICULTURAL';
-
 --req
 insert or ignore into RequirementSetRequirements
 	(RequirementSetId,												RequirementId)

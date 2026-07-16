@@ -49,9 +49,7 @@ insert or ignore into RequirementSets
     (RequirementSetId,                                          RequirementSetType)
 values
     ('BUILDING_IS_HOSPITIUM_OR_GARDEN',                         'REQUIREMENTSET_TEST_ANY'),
-    ('BUILDING_IS_SHRINE_OR_ALTAR',                             'REQUIREMENTSET_TEST_ANY'),
     ('BUILDING_IS_TEMPLE_OR_MONASTERY_OR_ALCHEMY_ROOM',         'REQUIREMENTSET_TEST_ANY'),
-    ('HD_HOLY_SITE_HAS_SHRINE_OR_ALTAR',                        'REQUIREMENTSET_TEST_ALL'),
     ('HD_HOLY_SITE_HAS_TEMPLE_OR_MONASTERY_OR_ALCHEMY_ROOM',     'REQUIREMENTSET_TEST_ALL'),
     ('HD_HOLY_SITE_HAS_HOSPITIUM_OR_GARDEN',                    'REQUIREMENTSET_TEST_ALL'),
     ('HD_CITY_HAS_10_POP',                                      'REQUIREMENTSET_TEST_ALL'),
@@ -59,16 +57,12 @@ values
 insert or ignore into RequirementSetRequirements
     (RequirementSetId,                                          RequirementId)
 values
-    ('BUILDING_IS_SHRINE_OR_ALTAR',                             'REQUIRES_CITY_HAS_BUILDING_SHRINE'),
-    ('BUILDING_IS_SHRINE_OR_ALTAR',                             'REQUIRES_CITY_HAS_BUILDING_JNR_ALTAR'),
     ('BUILDING_IS_TEMPLE_OR_MONASTERY_OR_ALCHEMY_ROOM',         'REQUIRES_CITY_HAS_BUILDING_JNR_MONASTERY'),
     ('BUILDING_IS_TEMPLE_OR_MONASTERY_OR_ALCHEMY_ROOM',         'REQUIRES_CITY_HAS_BUILDING_TEMPLE'),
     ('BUILDING_IS_TEMPLE_OR_MONASTERY_OR_ALCHEMY_ROOM',         'REQUIRES_CITY_HAS_BUILDING_STAVE_CHURCH'),
     ('BUILDING_IS_TEMPLE_OR_MONASTERY_OR_ALCHEMY_ROOM',         'REQUIRES_CITY_HAS_BUILDING_HD_ALCHEMY_ROOM'),
     ('BUILDING_IS_HOSPITIUM_OR_GARDEN',                         'REQUIRES_CITY_HAS_BUILDING_JNR_HOSPITIUM'),
     ('BUILDING_IS_HOSPITIUM_OR_GARDEN',                         'REQUIRES_CITY_HAS_BUILDING_JNR_GARDEN'),
-    ('HD_HOLY_SITE_HAS_SHRINE_OR_ALTAR',                        'REQUIRES_DISTRICT_IS_HOLY_SITE'),
-    ('HD_HOLY_SITE_HAS_SHRINE_OR_ALTAR',                        'REQUIRES_BUILDING_IS_SHRINE_OR_ALTAR'),
     ('HD_HOLY_SITE_HAS_TEMPLE_OR_MONASTERY_OR_ALCHEMY_ROOM',    'REQUIRES_DISTRICT_IS_HOLY_SITE'),
     ('HD_HOLY_SITE_HAS_TEMPLE_OR_MONASTERY_OR_ALCHEMY_ROOM',    'REQUIRES_BUILDING_IS_TEMPLE_OR_MONASTERY_OR_ALCHEMY_ROOM'),
     ('HD_HOLY_SITE_HAS_HOSPITIUM_OR_GARDEN',                    'REQUIRES_DISTRICT_IS_HOLY_SITE'),
@@ -79,7 +73,6 @@ values
 insert or ignore into Requirements
     (RequirementId,                                             RequirementType)
 values
-    ('REQUIRES_BUILDING_IS_SHRINE_OR_ALTAR',                    'REQUIREMENT_REQUIREMENTSET_IS_MET'),
     ('REQUIRES_BUILDING_IS_TEMPLE_OR_MONASTERY_OR_ALCHEMY_ROOM','REQUIREMENT_REQUIREMENTSET_IS_MET'),
     ('REQUIRES_BUILDING_IS_HOSPITIUM_OR_GARDEN',                'REQUIREMENT_REQUIREMENTSET_IS_MET');
 
@@ -91,7 +84,6 @@ values
 insert or ignore into RequirementArguments
     (RequirementId,                                             Name,               Value)
 values
-    ('REQUIRES_BUILDING_IS_SHRINE_OR_ALTAR',                    'RequirementSetId', 'BUILDING_IS_SHRINE_OR_ALTAR'),
     ('REQUIRES_BUILDING_IS_TEMPLE_OR_MONASTERY_OR_ALCHEMY_ROOM','RequirementSetId', 'BUILDING_IS_TEMPLE_OR_MONASTERY_OR_ALCHEMY_ROOM'),
     ('REQUIRES_BUILDING_IS_HOSPITIUM_OR_GARDEN',                'RequirementSetId', 'BUILDING_IS_HOSPITIUM_OR_GARDEN'),
     ('REQUIRES_CITY_HAS_NO_10_POPULATION',                      'Amount',           10);
@@ -292,14 +284,7 @@ update Modifiers set SubjectRequirementSetId = 'CITY_HAS_DISTRICT_HOLY_SITE_TIER
 
 -- 城邦改动
 --------------------------------------------------------------
---博洛尼亚
-update Modifiers set SubjectRequirementSetId = 'BUILDING_IS_SHRINE_OR_ALTAR' where ModifierId = 'MINOR_CIV_BOLOGNA_GREAT_PROPHET_POINTS_BONUS';
 --本体产出
-insert or ignore into RequirementSetRequirements
-    (RequirementSetId,                                          RequirementId)
-values
-    ('HD_CITY_HAS_RELIGIOUS_TIER_1_BUILDING_REQUIREMENTS',      'REQUIRES_CITY_HAS_BUILDING_JNR_ALTAR'),
-    ('HD_CITY_HAS_RELIGIOUS_TIER_2_BUILDING_REQUIREMENTS',      'REQUIRES_CITY_HAS_BUILDING_JNR_MONASTERY');
 insert or replace into Modifiers
 	(ModifierId,														ModifierType,											SubjectRequirementSetId)
 values
@@ -317,10 +302,6 @@ insert or replace into TraitModifiers
 	(TraitType,								ModifierId)
 values
 	('MINOR_CIV_RELIGIOUS_TRAIT',			'MINOR_CIV_RELIGIOUS_TRAIT_LARGEST_INFLUENCE_YIELD_FAITH_ATTACH');
---奇观改动
---米纳克希神庙
--- update Modifiers set SubjectRequirementSetId = 'HD_HOLY_SITE_HAS_SHRINE_OR_ALTAR' where ModifierId = 'MEENAKSHI_SHRINE_FOOD';
--- update Modifiers set SubjectRequirementSetId = 'HD_HOLY_SITE_HAS_TEMPLE_OR_MONASTERY_OR_ALCHEMY_ROOM' where ModifierId = 'MEENAKSHI_TEMPLE_FOOD';
 
 --木板教堂
 delete from BuildingModifiers where ModifierId in (

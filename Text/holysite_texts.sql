@@ -23,7 +23,7 @@ insert or replace into LocalizedText
 values
     ("zh_Hans_CN",  "LOC_BUILDING_SHRINE_DESCRIPTION",                      "允许使用 [ICON_FAITH] 信仰值购买建造者和传教士。"),
     ("zh_Hans_CN",  "LOC_BUILDING_JNR_ALTAR_NAME",                          "祭坛"),
-    ("zh_Hans_CN",  "LOC_BUILDING_JNR_ALTAR_DESCRIPTION",                   "若你拥有至少2种医药资源，辐射产出+1 [ICON_Science] 科技值。若你拥有至少2种庆典资源，辐射范围+1单元格。允许使用 [ICON_FAITH] 信仰值购买建造者和传教士。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_JNR_ALTAR_DESCRIPTION",                   "若你拥有至少2种医药资源，辐射产出+1 [ICON_Science] 科技值。若你拥有至少2种庆典资源，+1辐射范围。允许使用 [ICON_FAITH] 信仰值购买建造者和传教士。"),
     ("zh_Hans_CN",  "LOC_BUILDING_TEMPLE_DESCRIPTION",                      "允许使用 [ICON_FAITH] 信仰值购买开拓者、使徒、上师、审判官，拥有特定信仰还可购买武僧。"),
     ("zh_Hans_CN",  "LOC_BUILDING_JNR_MONASTERY_NAME",                      "教堂"),
     ("zh_Hans_CN",  "LOC_BUILDING_JNR_MONASTERY_DESCRIPTION",               "允许使用 [ICON_FAITH] 信仰值购买开拓者、使徒、上师、审判官，拥有特定信仰还可购买武僧。"),
