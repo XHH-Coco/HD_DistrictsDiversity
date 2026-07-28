@@ -5,8 +5,8 @@
 -- 建筑本体修改
 --------------------------------------------------------------
 	-- 基本信息
-update Buildings set PrereqCivic = 'CIVIC_GAMES_RECREATION',		PrereqTech = Null,							Maintenance = 1,		Cost = 160,	Entertainment=1,	RegionalRange=4,	CitizenSlots = Null,	Description = 'LOC_BUILDING_ARENA_DESCRIPTION_UC_JNR'					where BuildingType = 'BUILDING_ARENA';
-update Buildings set PrereqCivic = 'CIVIC_GAMES_RECREATION',		PrereqTech = Null,							Maintenance = 1,		Cost = 120,	Entertainment=1,	RegionalRange=4,	CitizenSlots = Null,	Description = 'LOC_BUILDING_TLACHTLI_DESCRIPTION_UC_JNR'				where BuildingType = 'BUILDING_TLACHTLI';
+update Buildings set PrereqCivic = 'CIVIC_GAMES_RECREATION',		PrereqTech = Null,							Maintenance = 1,		Cost = 160,	Entertainment=1,	RegionalRange=4,	CitizenSlots = Null, Description = 'LOC_BUILDING_ARENA_HD_DESCRIPTION' where BuildingType = 'BUILDING_ARENA';
+update Buildings set PrereqCivic = 'CIVIC_GAMES_RECREATION',		PrereqTech = Null,							Maintenance = 1,		Cost = 160,	Entertainment=1,	RegionalRange=5,	CitizenSlots = Null, Description = 'LOC_BUILDING_TLACHTLI_HD_DESCRIPTION' where BuildingType = 'BUILDING_TLACHTLI';
 update Buildings set PrereqCivic = 'CIVIC_HUMANISM',				PrereqTech = Null,							Maintenance = 4,		Cost = 300,	Entertainment=2,	RegionalRange=0,	CitizenSlots = Null where BuildingType = 'BUILDING_ZOO';
 update Buildings set PrereqCivic = 'CIVIC_PROFESSIONAL_SPORTS',		PrereqTech = Null,							Maintenance = 12,		Cost = 650,	Entertainment=2,	RegionalRange=6,	CitizenSlots = Null,	Description = 'LOC_BUILDING_STADIUM_DESCRIPTION_UC_JNR'					where BuildingType = 'BUILDING_STADIUM';
 update Buildings set PrereqCivic = NULL,							PrereqTech = 'TECH_SQUARE_RIGGING',			Maintenance = 1,		Cost = 220,	Entertainment=2,	RegionalRange=6,	CitizenSlots = Null,	Description = 'LOC_BUILDING_FERRIS_WHEEL_DESCRIPTION_UC_JNR'			where BuildingType = 'BUILDING_FERRIS_WHEEL';
@@ -21,7 +21,6 @@ update Buildings set Description = 'LOC_BUILDING_JNR_FOOD_COURT_DESCRIPTION_PROD
 	and exists (select GreatWorkSlotType from GreatWorkSlotTypes where GreatWorkSlotType = 'GREATWORKSLOT_PRODUCT');
 	-- 基础产出
 update Building_YieldChanges set YieldChange = 12, YieldType = 'YIELD_GOLD' where BuildingType = 'BUILDING_FERRIS_WHEEL';
-update Building_YieldChanges set YieldChange = 2 where BuildingType = 'BUILDING_ARENA';
 
 insert or replace into Building_YieldChanges
 	(BuildingType,						YieldType,				YieldChange)
@@ -73,21 +72,12 @@ where exists (select GreatWorkSlotType from GreatWorkSlotTypes where GreatWorkSl
 
 -- 建筑特效修改
 --------------------------------------------------------------
-delete from CivicModifiers where ModifierId = 'CONSERVATION_ARENA_TOURISM';
 delete from BuildingModifiers where BuildingType = 'BUILDING_STADIUM' or BuildingType = 'BUILDING_FERRIS_WHEEL' or BuildingType = 'BUILDING_AQUATICS_CENTER';
 
 insert or replace into BuildingModifiers
 	(BuildingType,						ModifierId)
 values
-	-- ('BUILDING_JNR_TOURNEY',			'ARENA_POP_CULTURE'),
-	-- ('BUILDING_JNR_TOURNEY',			'ARENA_POP_GOLD'),
-	-- ('BUILDING_JNR_TOURNEY',			'ARENA_POP_CULTURE_2'),
-	-- ('BUILDING_JNR_TOURNEY',			'ARENA_POP_GOLD_2'),
-	-- ('BUILDING_JNR_TOURNEY',			'TOURNEY_EXTRA_GREAT_MUSICIAN_PONITS'),
 	('BUILDING_JNR_TOURNEY',			'TOURNEY_EXTRA_AMENIYT'),
-
-	('BUILDING_ARENA',					'ARENA_EXTRA_CULTURE'),
-	('BUILDING_ARENA',					'ARENA_EXTRA_AMENIYT'),
 
 	('BUILDING_JNR_THEME_PARK',			'THEME_PARK_WONDER_YIELD'),
 	('BUILDING_JNR_THEME_PARK',			'THEME_PARK_WONDER_YIELD_POWERED'),
@@ -115,9 +105,6 @@ insert or replace into Modifiers
 	(ModifierId,									ModifierType,															SubjectRequirementSetId)
 values
 	('TOURNEY_EXTRA_AMENIYT',							'MODIFIER_ADJUST_AMENITIES_IN_DISTRICT',				'PLOT_BREATHTAKING_APPEAL'),
-
-	('ARENA_EXTRA_CULTURE',							'MODIFIER_BUILDING_YIELD_CHANGE',								'HD_ARENA_REQUIREMENTS'),
-	('ARENA_EXTRA_AMENIYT',							'MODIFIER_ADJUST_AMENITIES_IN_DISTRICT',								'HD_ARENA_REQUIREMENTS'),
 	
 	('THEME_PARK_WONDER_YIELD',						'MODIFIER_SINGLE_CITY_ADJUST_WONDER_YIELD_CHANGE',						Null),
 	('THEME_PARK_WONDER_YIELD_POWERED',				'MODIFIER_SINGLE_CITY_ADJUST_WONDER_YIELD_CHANGE',						Null),
@@ -150,11 +137,6 @@ insert or replace into ModifierArguments
 	(ModifierId,									Name,						Value)
 values
 	('TOURNEY_EXTRA_AMENIYT',							'Amount',				1),
-
-	('ARENA_EXTRA_CULTURE',							'BuildingType',				'BUILDING_ARENA'),
-	('ARENA_EXTRA_CULTURE',							'YieldType',				'YIELD_CULTURE'),
-	('ARENA_EXTRA_CULTURE',							'Amount',					1),
-	('ARENA_EXTRA_AMENIYT',							'Amount',					1),
 
 	('THEME_PARK_WONDER_YIELD',						'YieldType',				'YIELD_CULTURE'),
 	('THEME_PARK_WONDER_YIELD',						'Amount',					3),
@@ -225,85 +207,6 @@ insert or replace into ModifierArguments
 select
 	'HD_TOURNEY_' || BuildingType || '_CULTURE',	'Amount', 			1
 from Buildings where PrereqDistrict = 'DISTRICT_CITY_CENTER' and BuildingType not in (select BuildingType from HD_DUMMY_BUILDINGS) and BuildingType not in (select CivUniqueBuildingType from BuildingReplaces);
-
-	-- 蹴球场
-insert or replace into BuildingModifiers
-	(BuildingType,						ModifierId)
-select
-	'BUILDING_TLACHTLI',				'TLACHTLI_POP_CULTURE'
-where exists ( select BuildingType from Buildings where BuildingType = 'BUILDING_TLACHTLI');
-
-insert or replace into BuildingModifiers
-	(BuildingType,						ModifierId)
-select
-	'BUILDING_TLACHTLI',				'TLACHTLI_CIVILIAN_MOVE'
-where exists ( select BuildingType from Buildings where BuildingType = 'BUILDING_TLACHTLI');
-
-insert or replace into Modifiers
-	(ModifierId,									ModifierType,															SubjectRequirementSetId)
-select
-	'TLACHTLI_POP_CULTURE',							'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_PER_POPULATION',				'CITY_HAS_IMPROVED_LUXURY_RESOURCE'
-where exists ( select BuildingType from Buildings where BuildingType = 'BUILDING_TLACHTLI');
-
-insert or replace into Modifiers
-	(ModifierId,									ModifierType,															SubjectRequirementSetId,		Permanent,	OwnerRequirementSetId)
-select
-	'TLACHTLI_CIVILIAN_MOVE',						'MODIFIER_SINGLE_CITY_GRANT_ABILITY_FOR_TRAINED_UNITS',					'UNIT_IS_CIVILIAN_CLASS',		1,			'CITY_HAS_IMPROVED_LUXURY_RESOURCE'
-where exists ( select BuildingType from Buildings where BuildingType = 'BUILDING_TLACHTLI');
-
-insert or replace into ModifierArguments
-	(ModifierId,									Name,						Value)
-select
-	'TLACHTLI_POP_CULTURE',							'YieldType',				'YIELD_CULTURE'
-where exists ( select BuildingType from Buildings where BuildingType = 'BUILDING_TLACHTLI');
-
-insert or replace into ModifierArguments
-	(ModifierId,									Name,						Value)
-select
-	'TLACHTLI_POP_CULTURE',							'Amount',					0.5
-where exists ( select BuildingType from Buildings where BuildingType = 'BUILDING_TLACHTLI');
-
-insert or replace into ModifierArguments
-	(ModifierId,									Name,						Value)
-select
-	'TLACHTLI_CIVILIAN_MOVE',						'AbilityType',				'ABILITY_TLACHTLI_CIVILIAN_MOVE'
-where exists ( select BuildingType from Buildings where BuildingType = 'BUILDING_TLACHTLI');
-
-insert or ignore into Types
-	(Type,									Kind)
-select
-	'ABILITY_TLACHTLI_CIVILIAN_MOVE',		'KIND_ABILITY'
-where exists ( select BuildingType from Buildings where BuildingType = 'BUILDING_TLACHTLI');
-
-insert or replace into UnitAbilities
-	(UnitAbilityType,						Name,											Description,										Inactive)
-select
-	'ABILITY_TLACHTLI_CIVILIAN_MOVE',		'LOC_ABILITY_TLACHTLI_CIVILIAN_MOVE_NAME',		'LOC_ABILITY_TLACHTLI_CIVILIAN_MOVE_DESCRIPTION',	1
-where exists ( select BuildingType from Buildings where BuildingType = 'BUILDING_TLACHTLI');
-
-insert or replace into UnitAbilityModifiers
-	(UnitAbilityType,						ModifierId)
-select
-	'ABILITY_TLACHTLI_CIVILIAN_MOVE',		'ABILITY_TLACHTLI_CIVILIAN_MOVE_MODIFIER'
-where exists ( select BuildingType from Buildings where BuildingType = 'BUILDING_TLACHTLI');
-
-insert or replace into Modifiers
-	(ModifierId,									ModifierType,															Permanent)
-select
-	'ABILITY_TLACHTLI_CIVILIAN_MOVE_MODIFIER',		'MODIFIER_PLAYER_UNIT_ADJUST_MOVEMENT',									1
-where exists ( select BuildingType from Buildings where BuildingType = 'BUILDING_TLACHTLI');
-
-insert or replace into ModifierArguments
-	(ModifierId,									Name,						Value)
-select
-	'ABILITY_TLACHTLI_CIVILIAN_MOVE_MODIFIER',		'Amount',					1
-where exists ( select BuildingType from Buildings where BuildingType = 'BUILDING_TLACHTLI');
-
-insert or replace into TypeTags
-	(Type,											Tag)
-select
-	'ABILITY_TLACHTLI_CIVILIAN_MOVE',				'CLASS_LANDCIVILIAN'
-where exists ( select BuildingType from Buildings where BuildingType = 'BUILDING_TLACHTLI');
 
 	-- 博览会
 delete from BuildingModifiers where BuildingType = 'BUILDING_JNR_THEME_PARK'

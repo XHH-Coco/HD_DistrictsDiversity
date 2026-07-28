@@ -17,74 +17,32 @@ update Modifiers set SubjectRequirementSetId = 'PLAYER_HAS_BUILDING_JNR_CONSULAT
 update ModifierArguments set Value = 2 where ModifierId = 'JNR_CONSULATE_ALLIANCE_POINTS';
 update ModifierArguments set Value = 1 where ModifierId = 'MERCHANTCONFEDERATION_INFLUENCETOKENGOLD' and Name = 'Amount';
 
-insert or replace into BuildingModifiers
-    (BuildingType,                  			ModifierId)
-values
+insert or replace into BuildingModifiers (BuildingType, ModifierId) values
 	--领事馆
-	('BUILDING_CONSULATE',         	            'CONSULATE_INFLUENCEPOINTS'),
-	('BUILDING_CONSULATE',         	            'DIPLOMATIC_QUARTER_AWARD_ONE_INFLUENCE_TOKEN'),
-	('BUILDING_CONSULATE',         	            'JNR_CONSULATE_ALLIANCE_POINTS'),
-	-- ('BUILDING_CONSULATE',         	            'CONSULATE_TRADEROUTE_ALLIANCE_LEVEL_1'),
-	-- ('BUILDING_CONSULATE',         	            'CONSULATE_TRADEROUTE_ALLIANCE_LEVEL_2'),
-	-- ('BUILDING_CONSULATE',         	            'CONSULATE_TRADEROUTE_ALLIANCE_LEVEL_3'),
-	('BUILDING_CONSULATE',         	            'CONSULATE_TRADE_GOLD_ALLIANCE_LEVEL_1'),
-	('BUILDING_CONSULATE',         	            'CONSULATE_TRADE_GOLD_ALLIANCE_LEVEL_2'),
-	('BUILDING_CONSULATE',         	            'CONSULATE_TRADE_GOLD_ALLIANCE_LEVEL_3'),
+	('BUILDING_CONSULATE',	'CONSULATE_INFLUENCEPOINTS'),
+	('BUILDING_CONSULATE',	'DIPLOMATIC_QUARTER_AWARD_ONE_INFLUENCE_TOKEN'),
+	('BUILDING_CONSULATE',	'JNR_CONSULATE_ALLIANCE_POINTS'),
+	('BUILDING_CONSULATE',	'CONSULATE_TRADE_GOLD_ALLIANCE_LEVEL_1'),
+	('BUILDING_CONSULATE',	'CONSULATE_TRADE_GOLD_ALLIANCE_LEVEL_2'),
+	('BUILDING_CONSULATE',	'CONSULATE_TRADE_GOLD_ALLIANCE_LEVEL_3'),
 	--大使馆
-	('BUILDING_CHANCERY',         	            'CHANCERY_INFLUENCEPOINTS'),
-	('BUILDING_CHANCERY',         	            'DIPLOMATIC_QUARTER_AWARD_ONE_INFLUENCE_TOKEN'),
-	('BUILDING_CHANCERY',			            'JNR_CHANCERY_ALLIANCE_FAVOR'),
+	('BUILDING_CHANCERY',		'CHANCERY_INFLUENCEPOINTS'),
+	('BUILDING_CHANCERY',		'DIPLOMATIC_QUARTER_AWARD_ONE_INFLUENCE_TOKEN'),
+	('BUILDING_CHANCERY',		'JNR_CHANCERY_ALLIANCE_FAVOR'),
+	('BUILDING_CHANCERY',		'HD_CHANCERY_PLAYER_PROPERTY'),
 	-- 国安局
 	('BUILDING_JNR_CHANCERY_SPIES',				'CHANCERY_SPIES_ADJACENCY_ABILITY');
 
---大使馆同盟商路加产   
-insert or replace into PolicyModifiers
-	(PolicyType,                  				ModifierId)
-select
-	PolicyType,									'CHANCERY_TRADE_ROUTE_GOLD_CHANGE'
-from Policies where GovernmentSlotType = 'SLOT_DIPLOMATIC';
-insert or replace into PolicyModifiers
-	(PolicyType,                  				ModifierId)
-select
-	PolicyType,									'CHANCERY_TRADE_ROUTE_CULTURE_CHANGE'
-from Policies where GovernmentSlotType = 'SLOT_DIPLOMATIC';
-
---国际汇兑处商路产出加成
--- with TraitModifiers_Pre
--- 	(TraitType,								ModifierId)
--- as (values
--- 	('MINOR_CIV_CULTURAL_TRAIT',		    'JNR_CHANCERY_UNIQUE_INFLUENCE_CULTURAL'),
--- 	('MINOR_CIV_INDUSTRIAL_TRAIT',		    'JNR_CHANCERY_UNIQUE_INFLUENCE_INDUSTRIAL'),
--- 	('MINOR_CIV_MILITARISTIC_TRAIT',	    'JNR_CHANCERY_UNIQUE_INFLUENCE_MILITARISTIC'),
--- 	('MINOR_CIV_RELIGIOUS_TRAIT',		    'JNR_CHANCERY_UNIQUE_INFLUENCE_RELIGIOUS'),
--- 	('MINOR_CIV_SCIENTIFIC_TRAIT',		    'JNR_CHANCERY_UNIQUE_INFLUENCE_SCIENTIFIC'),
--- 	('MINOR_CIV_TRADE_TRAIT',			    'JNR_CHANCERY_UNIQUE_INFLUENCE_TRADE'),
---     ('MINOR_CIV_CSE_MARITIME_TRAIT',	    'JNR_CHANCERY_UNIQUE_INFLUENCE_MARITIME'),
--- 	('MINOR_CIV_CSE_AGRICULTURAL_TRAIT',    'JNR_CHANCERY_UNIQUE_INFLUENCE_AGRICULTURAL'))
--- insert or replace into TraitModifiers
--- 	(TraitType,		ModifierId)
--- select
--- 	TraitType,		ModifierId
--- from TraitModifiers_Pre where TraitType in (select TraitType from Traits);
-
-insert or replace into Modifiers
-	(ModifierId,									ModifierType,												SubjectStackLimit,	SubjectRequirementSetId)
-values
-	--领事馆商路容量
-	-- ('CONSULATE_TRADEROUTE_ALLIANCE_LEVEL_1',		'MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_CAPACITY',				NULL,				'PLAYER_IS_ALLY_LEVEL_1_AND_HAS_CONSULATE'),
-	-- ('CONSULATE_TRADEROUTE_ALLIANCE_LEVEL_2',		'MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_CAPACITY',				NULL,				'PLAYER_IS_ALLY_LEVEL_2_AND_HAS_CONSULATE'),
-	-- ('CONSULATE_TRADEROUTE_ALLIANCE_LEVEL_3',		'MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_CAPACITY',				NULL,				'PLAYER_IS_ALLY_LEVEL_3_AND_HAS_CONSULATE'),
+insert or replace into Modifiers (ModifierId, ModifierType, SubjectStackLimit, SubjectRequirementSetId) values
+	('HD_CHANCERY_PLAYER_PROPERTY',							'MODIFIER_PLAYER_ADJUST_PROPERTY',		NULL,				NULL),
 	('CONSULATE_TRADE_GOLD_ALLIANCE_LEVEL_1',		'MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_YIELD_FOR_INTERNATIONAL',				NULL,				'PLAYER_IS_ALLY_LEVEL_1_AND_HAS_CONSULATE'),
 	('CONSULATE_TRADE_GOLD_ALLIANCE_LEVEL_2',		'MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_YIELD_FOR_INTERNATIONAL',				NULL,				'PLAYER_IS_ALLY_LEVEL_2_AND_HAS_CONSULATE'),
 	('CONSULATE_TRADE_GOLD_ALLIANCE_LEVEL_3',		'MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_YIELD_FOR_INTERNATIONAL',				NULL,				'PLAYER_IS_ALLY_LEVEL_3_AND_HAS_CONSULATE'),
 	('CHANCERY_SPIES_ADJACENCY_ABILITY',				'MODIFIER_PLAYER_UNITS_GRANT_ABILITY',															NULL,				'UNIT_IS_SPY');
 
-insert or replace into ModifierArguments
-	(ModifierId,									Name,			Value)
-values
-	-- ('CONSULATE_TRADEROUTE_ALLIANCE_LEVEL_1',		'Amount',		1),
-	-- ('CONSULATE_TRADEROUTE_ALLIANCE_LEVEL_2',		'Amount',		1),
-	-- ('CONSULATE_TRADEROUTE_ALLIANCE_LEVEL_3',		'Amount',		1);
+insert or replace into ModifierArguments (ModifierId, Name, Value) values
+	('HD_CHANCERY_PLAYER_PROPERTY',							'Key',		'HD_PLAYER_NEED_COUNT_CULTURAL_POLICY'),
+	('HD_CHANCERY_PLAYER_PROPERTY',							'Amount',		1),
 	('CONSULATE_TRADE_GOLD_ALLIANCE_LEVEL_1',		'Amount',		3),
 	('CONSULATE_TRADE_GOLD_ALLIANCE_LEVEL_2',		'Amount',		3),
 	('CONSULATE_TRADE_GOLD_ALLIANCE_LEVEL_3',		'Amount',		3),
@@ -118,3 +76,52 @@ insert or replace into UnitAbilities (UnitAbilityType, Name, Description, Inacti
 insert or replace into UnitAbilityModifiers (UnitAbilityType, ModifierId) select
 	'ABILITY_CHANCERY_SPY_ADJACENCY', 'CHANCERY_SPIES_' || DistrictType || '_ADJACENCY'
 from DistrictCorrespondingYieldType_HD where HasAdjacency = 1;
+
+-- 总领馆
+insert or ignore into BuildingModifiers (BuildingType, ModifierId) select
+	'BUILDING_CHANCERY', 'HD_CHANCERY_CULTURE_' || Exp || '_ATTACH'
+from HD_Binary_Compress where Exp < 5;
+
+insert or ignore into Modifiers (ModifierId, ModifierType, SubjectRequirementSetId) select
+	'HD_CHANCERY_CULTURE_' || Exp || '_ATTACH', 'MODIFIER_PLAYER_CAPITAL_CITY_ATTACH_MODIFIER', 'HD_PLOT_BINARY_COMPRESS_PLAYER_CULTURAL_POLICY_' || Exp || '_REQUIREMENTS'
+from HD_Binary_Compress where Exp < 5;
+
+insert or ignore into ModifierArguments (ModifierId, Name, Value) select
+	'HD_CHANCERY_CULTURE_' || Exp || '_ATTACH', 'ModifierId', 'HD_CHANCERY_CULTURE_' || Exp
+from HD_Binary_Compress where Exp < 5;
+
+insert or ignore into Modifiers (ModifierId, ModifierType) select
+	'HD_CHANCERY_CULTURE_' || Exp, 'MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_ORIGIN_YIELD_FOR_ALLY_ROUTE'
+from HD_Binary_Compress where Exp < 5;
+
+insert or ignore into ModifierArguments (ModifierId, Name, Value) select
+	'HD_CHANCERY_CULTURE_' || Exp, 'YieldType', 'YIELD_CULTURE'
+from HD_Binary_Compress where Exp < 5;
+
+insert or ignore into ModifierArguments (ModifierId, Name, Value) select
+	'HD_CHANCERY_CULTURE_' || Exp, 'Amount', Amount
+from HD_Binary_Compress where Exp < 5;
+
+insert or ignore into BuildingModifiers (BuildingType, ModifierId) select
+	'BUILDING_CHANCERY', 'HD_CHANCERY_GOLD_' || Exp || '_ATTACH'
+from HD_Binary_Compress where Exp < 5;
+
+insert or ignore into Modifiers (ModifierId, ModifierType, SubjectRequirementSetId) select
+	'HD_CHANCERY_GOLD_' || Exp || '_ATTACH', 'MODIFIER_PLAYER_CAPITAL_CITY_ATTACH_MODIFIER', 'HD_PLOT_BINARY_COMPRESS_PLAYER_CULTURAL_POLICY_' || Exp || '_REQUIREMENTS'
+from HD_Binary_Compress where Exp < 5;
+
+insert or ignore into ModifierArguments (ModifierId, Name, Value) select
+	'HD_CHANCERY_GOLD_' || Exp || '_ATTACH', 'ModifierId', 'HD_CHANCERY_GOLD_' || Exp
+from HD_Binary_Compress where Exp < 5;
+
+insert or ignore into Modifiers (ModifierId, ModifierType) select
+	'HD_CHANCERY_GOLD_' || Exp, 'MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_ORIGIN_YIELD_FOR_ALLY_ROUTE'
+from HD_Binary_Compress where Exp < 5;
+
+insert or ignore into ModifierArguments (ModifierId, Name, Value) select
+	'HD_CHANCERY_GOLD_' || Exp, 'YieldType', 'YIELD_GOLD'
+from HD_Binary_Compress where Exp < 5;
+
+insert or ignore into ModifierArguments (ModifierId, Name, Value) select
+	'HD_CHANCERY_GOLD_' || Exp, 'Amount', Amount * 3
+from HD_Binary_Compress where Exp < 5;

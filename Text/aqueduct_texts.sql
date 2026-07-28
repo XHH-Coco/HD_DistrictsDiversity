@@ -13,13 +13,13 @@ values
     ("LOC_DISTRICT_BATH_DESCRIPTION_JNR_UC",                    "A district unique to Rome, replacing the Cistern district. [NEWLINE]+1 [ICON_FOOD] Food, +2 [ICON_Housing] Housing and +1 [ICON_Amenities] Amenity. +1 [ICON_PRODUCTION] Production if adjacent to Mountain tiles. +1 [ICON_SCIENCE] Science if on or adjacent to Geothermal Fissure tiles. +100% building speed towards the buildings inside it.[NEWLINE]It provides this city with a source of fresh water from an adjacent River, Lake, Oasis, or Mountain. Cities that do not yet have existing fresh water receive up to 6 [ICON_Housing] Housing. Cities that already have existing fresh water will instead get +2 [ICON_Housing] Housing. Prevents [ICON_Food] Food loss during Drought. [NEWLINE]Must be built adjacent to the City Center. [NEWLINE]Military Engineers can spend a charge to complete 30% of an Aqueduct's production."),
     -- 
     ("LOC_BUILDING_JNR_ORCHARD_NAME",                           "Orchard"),
-    ("LOC_BUILDING_JNR_ORCHARD_DESCRIPTION",                    "+1 [ICON_Food] Food to Farms and Lumber Mills in this city."),
-    ("LOC_BUILDING_JNR_HAMMER_WORKS_NAME",                      "Hammer Works"), -- Water-powered Foundry
-    ("LOC_BUILDING_JNR_HAMMER_WORKS_DESCRIPTION",               "+1 [ICON_PRODUCTION] Production to Mines and Quarries in this city."),
+    ("LOC_BUILDING_JNR_ORCHARD_DESCRIPTION",                    "+1 [ICON_Food] Food to Farms and Lumber Mills in this city. Orchard extra +1 [ICON_Food] Food if city has improved Fruit or Vegetable Resources."),
+    ("LOC_BUILDING_JNR_HAMMER_WORKS_NAME",                      "Hammer Works"),
+    ("LOC_BUILDING_JNR_HAMMER_WORKS_DESCRIPTION",               "+1 [ICON_PRODUCTION] Production to Mines and Quarries in this city. Hammer Works extra +1 [ICON_PRODUCTION] Production if city has improved Construction or Metallurgy Resources."),
     ("LOC_BUILDING_JNR_BATHHOUSE_NAME",                         "Bathhouse"),
-    ("LOC_BUILDING_JNR_BATHHOUSE_DESCRIPTION",                  "+4 corresponding [ICON_GREATPERSON] Great People points from each type of adjacent district which providing [ICON_GREATPERSON] Great People points."),
+    ("LOC_BUILDING_JNR_BATHHOUSE_DESCRIPTION",                  "+4 corresponding [ICON_GREATPERSON] Great People points from each type of adjacent district which providing [ICON_GREATPERSON] Great People points. Bathhouse extra +3 [ICON_GOLD] Gold if city has improved Medicine or Household Resources."),
     ("LOC_BUILDING_HD_HYDRAULIC_SPINNING_WHEEL_NAME",           "Hydraulic Spinning Wheel"),
-    ("LOC_BUILDING_HD_HYDRAULIC_SPINNING_WHEEL_DESCRIPTION",    "+1 [ICON_PRODUCTION] Production to Camps, Pastures and Plantations in this city."),
+    ("LOC_BUILDING_HD_HYDRAULIC_SPINNING_WHEEL_DESCRIPTION",    "+1 [ICON_PRODUCTION] Production to Camps, Pastures and Plantations in this city. Hydraulic Spinning Wheel extra +1 [ICON_PRODUCTION] Production if city has improved Leather or Cloth Resources."),
     ("LOC_BUILDING_SEWER_DESCRIPTION",                          "+20% Growth rate in this city."),
     ("LOC_BUILDING_THERMAL_BATH_DESCRIPTION_UC_JNR",            "Building unique to Hungary. [ICON_CITIZEN] Citizens in this city provide +0.5 [ICON_CULTURE] Culture and +0.5 [ICON_GOLD] Gold.");
     
@@ -37,13 +37,13 @@ values
     ("zh_Hans_CN",  "LOC_DISTRICT_BATH_NAME_JNR_UC",                            "水渠"),
     ("zh_Hans_CN",  "LOC_DISTRICT_BATH_DESCRIPTION_JNR_UC",                     "罗马特色区域，取代“蓄水池“。[NEWLINE]提供+1 [ICON_FOOD] 食物、+2 [ICON_Housing] 住房和+1 [ICON_Amenities] 宜居度。若相邻山脉单元格，则+1 [ICON_PRODUCTION] 生产力。若相邻或位于地热裂缝单元格，则+1 [ICON_Science] 科技值。修建其中的建筑时+100%建造速度。[NEWLINE]从相邻河流、湖泊、绿洲或山脉引水，为该城市提供淡水资源。尚未拥有淡水资源的城市最多获得6个 [ICON_Housing] 住房。已有淡水资源的城市则+2 [ICON_Housing] 住房。干旱时可防止 [ICON_Food] 食物损失。[NEWLINE]必须修建在与市中心相邻的单元格中。[NEWLINE]军事工程师可消耗1次使用次数来完成水渠30%的修建进度。"),
     ("zh_Hans_CN",  "LOC_BUILDING_JNR_ORCHARD_NAME",                            "果园"),
-    ("zh_Hans_CN",  "LOC_BUILDING_JNR_ORCHARD_DESCRIPTION",                     "本城的农场和伐木场+1 [ICON_Food] 食物。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_JNR_ORCHARD_DESCRIPTION",                     "本城的农场和伐木场+1 [ICON_Food] 食物。若本城有改良的水果或蔬菜资源，果园额外+1 [ICON_FOOD] 食物。"),
     ("zh_Hans_CN",  "LOC_BUILDING_JNR_HAMMER_WORKS_NAME",                       "水力锻锤"),
-    ("zh_Hans_CN",  "LOC_BUILDING_JNR_HAMMER_WORKS_DESCRIPTION",                "本城的矿山和采石场+1 [ICON_PRODUCTION] 生产力。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_JNR_HAMMER_WORKS_DESCRIPTION",                "本城的矿山和采石场+1 [ICON_PRODUCTION] 生产力。若本城有改良的建造或冶金资源，水力锻锤额外+1 [ICON_PRODUCTION] 生产力。"),
     ("zh_Hans_CN",  "LOC_BUILDING_JNR_BATHHOUSE_NAME",                          "浴场"),
-    ("zh_Hans_CN",  "LOC_BUILDING_JNR_BATHHOUSE_DESCRIPTION",                   "每相邻一种提供 [ICON_GREATPERSON] 伟人点数的区域，提供+4对应 [ICON_GREATPERSON] 伟人点数。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_JNR_BATHHOUSE_DESCRIPTION",                   "每相邻一种提供 [ICON_GREATPERSON] 伟人点数的区域，提供+4对应 [ICON_GREATPERSON] 伟人点数。若本城有改良的医药或家居资源，浴场额外+3 [ICON_GOLD] 金币。"),
     ("zh_Hans_CN",  "LOC_BUILDING_HD_HYDRAULIC_SPINNING_WHEEL_NAME",            "水力纺车"),
-    ("zh_Hans_CN",  "LOC_BUILDING_HD_HYDRAULIC_SPINNING_WHEEL_DESCRIPTION",     "本城的牧场、营地和种植园+1 [ICON_PRODUCTION] 生产力。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_HD_HYDRAULIC_SPINNING_WHEEL_DESCRIPTION",     "本城的牧场、营地和种植园+1 [ICON_PRODUCTION] 生产力。若本城有改良的皮革或服装资源，水力纺车额外+1 [ICON_PRODUCTION] 生产力。"),
     ("zh_Hans_CN",  "LOC_BUILDING_SEWER_DESCRIPTION",                           "本城+20%余粮。"),
     ("zh_Hans_CN",  "LOC_BUILDING_THERMAL_BATH_DESCRIPTION_UC_JNR",             "匈牙利特色建筑。城市中每位 [ICON_CITIZEN] 公民+0.5 [ICON_CULTURE] 文化值和+0.5 [ICON_GOLD] 金币。");
 

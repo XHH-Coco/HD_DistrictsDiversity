@@ -6,9 +6,6 @@ values
     -- 娱乐中心
     ("LOC_BUILDING_JNR_TOURNEY_DESCRIPTION",                     "+1 [ICON_Amenities] Amenity if built in tiles with Breathtaking Appeal. +1 [ICON_CULTURE] Culture to Buildings in City Center."),
     ("LOC_BUILDING_JNR_TOURNEY_NAME",                            "Goulan"),
-    ("LOC_BUILDING_ARENA_DESCRIPTION_UC_JNR",                    "Provides +1 [ICON_CULTURE] Culture and +1 [ICON_Amenities] Amenity if this city owns Pastures or Camps over resources."),
-    ("LOC_BUILDING_TLACHTLI_DESCRIPTION_UC_JNR",                 "A building unique to the Aztecs. [ICON_CITIZEN] Citizens in this city provide +0.5 [ICON_CULTURE] Culture if this city owns properly improved luxury resources. +1 [ICON_MOVEMENT] Movement to Civilian units trained in this city."),
-    ("LOC_ABILITY_TLACHTLI_CIVILIAN_MOVE_DESCRIPTION",           "Tlachtli Tradition: +1 [ICON_MOVEMENT] Movement."),
     ("LOC_BUILDING_JNR_BOTANICAL_GARDEN_NAME",                   "Botanical Garden"),
     ("LOC_BUILDING_JNR_BOTANICAL_GARDEN_DESCRIPTION",            "+2 [ICON_SCIENCE] Science and +6 [ICON_Gold] Gold from every type of Crops, Fruit or Ornamental Resource you controlled."),
     ("LOC_BUILDING_STADIUM_DESCRIPTION_UC_JNR",                  "If this City is [ICON_POWER] powered, specialty districts provide corresponding yield to each [ICON_CITIZEN] Citizens in the city. This bonus extends to all specialty districts within 6 tiles that do not already have a bonus from another Stadium."),
@@ -38,9 +35,6 @@ values
     -- 娱乐中心
     ("zh_Hans_CN",  "LOC_BUILDING_JNR_TOURNEY_DESCRIPTION",                     "若位于惊艳的单元格则额外+1 [ICON_Amenities] 宜居度。本城市中心建筑+1 [ICON_CULTURE] 文化值。"), 
     ("zh_Hans_CN",  "LOC_BUILDING_JNR_TOURNEY_NAME",                            "勾栏瓦舍"),
-    ("zh_Hans_CN",  "LOC_BUILDING_ARENA_DESCRIPTION_UC_JNR",                    "如果城市拥有改良资源的营地或牧场，则额外+1 [ICON_CULTURE] 文化值，+1 [ICON_Amenities] 宜居度。"),
-    ("zh_Hans_CN",  "LOC_BUILDING_TLACHTLI_DESCRIPTION_UC_JNR",                 "阿兹特克特色建筑。如果城市拥有改良的奢侈资源，则每位 [ICON_CITIZEN] 市民+0.5 [ICON_CULTURE] 文化值，且城市中生产的平民单位+1 [ICON_MOVEMENT] 移动力。"),
-    ("zh_Hans_CN",  "LOC_ABILITY_TLACHTLI_CIVILIAN_MOVE_DESCRIPTION",           "蹴球传统：该单位身强体健，永久+1 [ICON_MOVEMENT] 移动力。"),
     ("zh_Hans_CN",  "LOC_BUILDING_JNR_BOTANICAL_GARDEN_NAME",                   "植物园"),
     ("zh_Hans_CN",  "LOC_BUILDING_JNR_BOTANICAL_GARDEN_DESCRIPTION",            "你每拥有一种庄稼、水果或花木资源，+2 [ICON_SCIENCE] 科技值和+6 [ICON_GOLD] 金币。"),
     ("zh_Hans_CN",  "LOC_BUILDING_STADIUM_DESCRIPTION_UC_JNR",                  "若此城 [ICON_POWER] 供电充足，则6个单元格内的专业化区域为其所在城市的每位 [ICON_CITIZEN] 市民提供对应产出（前提是其尚未从其他的“体育场”建筑获得加成）。"),

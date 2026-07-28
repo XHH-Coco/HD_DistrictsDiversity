@@ -48,13 +48,18 @@ insert or replace into BuildingModifiers
 values
     ('BUILDING_JNR_ORCHARD',        'ORCHARD_ADD_LUMBER_MILL_FOOD'),
     ('BUILDING_JNR_ORCHARD',        'ORCHARD_ADD_FARM_RESOURCE_FOOD'),
+    ('BUILDING_JNR_ORCHARD',        'HD_ORCHARD_FOOD'),
 
     ('BUILDING_JNR_HAMMER_WORKS',   'HAMMER_WORKS_ADD_MINE_PRODUCTION'),
     ('BUILDING_JNR_HAMMER_WORKS',   'HAMMER_WORKS_ADD_QUARRY_PRODUCTION'),
+    ('BUILDING_JNR_HAMMER_WORKS',   'HD_HAMMER_WORKS_PRODUCTION'),
 
     ('BUILDING_HD_HYDRAULIC_SPINNING_WHEEL',      'HYDRAULIC_SPINNING_WHEEL_CAMP_PRODUCTION'),
     ('BUILDING_HD_HYDRAULIC_SPINNING_WHEEL',      'HYDRAULIC_SPINNING_WHEEL_PASTURE_PRODUCTION'),
     ('BUILDING_HD_HYDRAULIC_SPINNING_WHEEL',      'HYDRAULIC_SPINNING_WHEEL_PLANTATION_PRODUCTION'),
+    ('BUILDING_HD_HYDRAULIC_SPINNING_WHEEL',      'HD_HYDRAULIC_SPINNING_WHEEL_PRODUCTION'),
+
+    ('BUILDING_JNR_BATHHOUSE',      'HD_BATHHOUSE_GOLD'),
 
 	('BUILDING_THERMAL_BATH',		'BUILDING_THERMAL_BATH_POP_CULTURE'),
 	('BUILDING_THERMAL_BATH',		'BUILDING_THERMAL_BATH_POP_GOLD');
@@ -62,6 +67,11 @@ values
 insert or replace into Modifiers
     (ModifierId,                                            ModifierType,                                               SubjectRequirementSetId)
 values
+    ('HD_ORCHARD_FOOD',                                     'MODIFIER_BUILDING_YIELD_CHANGE',                           'HD_ORCHARD_REQUIREMENTS'),
+    ('HD_HAMMER_WORKS_PRODUCTION',                          'MODIFIER_BUILDING_YIELD_CHANGE',                           'HD_HAMMER_WORKS_REQUIREMENTS'),
+    ('HD_HYDRAULIC_SPINNING_WHEEL_PRODUCTION',              'MODIFIER_BUILDING_YIELD_CHANGE',                           'HD_HYDRAULIC_SPINNING_WHEEL_REQUIREMENTS'),
+    ('HD_BATHHOUSE_GOLD',                                   'MODIFIER_BUILDING_YIELD_CHANGE',                           'HD_BATHHOUSE_REQUIREMENTS'),
+
     ('BATH_ADJUST_INSIDE_BUILDINGS_PRODUCTION_SPEED',       'MODIFIER_SINGLE_CITY_ADJUST_BUILDING_PRODUCTION',          NULL),
     
     ('ORCHARD_ADD_LUMBER_MILL_FOOD',                        'MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD',              'PLOT_HAS_IMPROVEMENT_LUMBER_MILL_REQUIREMENTS'),
@@ -80,6 +90,19 @@ values
 insert or replace into ModifierArguments
     (ModifierId,                                        Name,           Value)
 values
+    ('HD_ORCHARD_FOOD',                                 'BuildingType', 'BUILDING_JNR_ORCHARD'),
+    ('HD_ORCHARD_FOOD',                                 'YieldType',    'YIELD_FOOD'),
+    ('HD_ORCHARD_FOOD',                                 'Amount',       1),
+    ('HD_HAMMER_WORKS_PRODUCTION',                      'BuildingType', 'BUILDING_JNR_HAMMER_WORKS'),
+    ('HD_HAMMER_WORKS_PRODUCTION',                      'YieldType',    'YIELD_PRODUCTION'),
+    ('HD_HAMMER_WORKS_PRODUCTION',                      'Amount',       1),
+    ('HD_HYDRAULIC_SPINNING_WHEEL_PRODUCTION',          'BuildingType', 'BUILDING_HD_HYDRAULIC_SPINNING_WHEEL'),
+    ('HD_HYDRAULIC_SPINNING_WHEEL_PRODUCTION',          'YieldType',    'YIELD_PRODUCTION'),
+    ('HD_HYDRAULIC_SPINNING_WHEEL_PRODUCTION',          'Amount',       1),
+    ('HD_BATHHOUSE_GOLD',                               'BuildingType', 'BUILDING_JNR_BATHHOUSE'),
+    ('HD_BATHHOUSE_GOLD',                               'YieldType',    'YIELD_GOLD'),
+    ('HD_BATHHOUSE_GOLD',                               'Amount',       3),
+
     ('BATH_ADJUST_INSIDE_BUILDINGS_PRODUCTION_SPEED',   'DistrictType', 'DISTRICT_AQUEDUCT'),
     ('BATH_ADJUST_INSIDE_BUILDINGS_PRODUCTION_SPEED',   'Amount',       100),
 

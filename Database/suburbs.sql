@@ -42,6 +42,14 @@ values
 	('BUILDING_JNR_ART_GALLERY',		  'YIELD_CULTURE',				2),
 	('BUILDING_JNR_MEDITATION',		    'YIELD_GOLD',						6);
 --------------------------------------------------------------
+-- 二进制
+insert or replace into HD_Building_Base_On_ResourceClassification (BuildingType, ResourceClassificationType, DetectRange, PropertyKey) values
+	('BUILDING_JNR_HOSPITAL',     'RESOURCE_CLASSIFICATION_HD_MEDICINE',  'PLAYER', 'HD_PLOT_BINARY_COMPRESS_HOSPITAL'),
+	('BUILDING_JNR_ART_GALLERY',  'RESOURCE_CLASSIFICATION_HD_ART',       'PLAYER', 'HD_PLOT_BINARY_COMPRESS_ART_GALLERY');
+
+insert or replace into HD_Binary_Compress_Keys (Key, MaxExp) values
+	('HD_PLOT_BINARY_COMPRESS_HOSPITAL',    4),
+	('HD_PLOT_BINARY_COMPRESS_ART_GALLERY', 4);
 
 -- 建筑特效修改
 --------------------------------------------------------------
@@ -51,8 +59,6 @@ values
   ('BUILDING_JNR_TRANSIT_HUB',        'HD_JNR_TRANSIT_HUB_CIVILIAN_MOVE'),
 
   ('BUILDING_JNR_HOSPITAL',           'HD_JNR_HOSPITAL_UNIT_HEAL'),
-  ('BUILDING_JNR_HOSPITAL',           'HD_JNR_HOSPITAL_EXTRA_GREAT_SCIENTIST_POINTS_1'),
-  ('BUILDING_JNR_HOSPITAL',           'HD_JNR_HOSPITAL_EXTRA_GREAT_SCIENTIST_POINTS_2'),
   ('BUILDING_JNR_HOSPITAL',           'HD_JNR_HOSPITAL_SET_PROPERTY'),
   
   ('BUILDING_JNR_RECYCLING_PLANT',    'HD_JNR_RECYCLING_PLANT_APPEAL'),
@@ -60,9 +66,6 @@ values
   ('BUILDING_JNR_RECYCLING_PLANT',    'HD_JNR_RECYCLING_PLANT_GREAT_ENGINEER_POINTS_2'),
   ('BUILDING_JNR_RECYCLING_PLANT',    'HD_JNR_RECYCLING_PLANT_SET_PROPERTY'),
 
-  ('BUILDING_JNR_ART_GALLERY',        'HD_JNR_ART_GALLERY_PLAYER_WRITER_GPP'),
-  ('BUILDING_JNR_ART_GALLERY',        'HD_JNR_ART_GALLERY_PLAYER_ARTIST_GPP'),
-  ('BUILDING_JNR_ART_GALLERY',        'HD_JNR_ART_GALLERY_PLAYER_MUSICIAN_GPP'),
   ('BUILDING_JNR_ART_GALLERY',        'HD_JNR_ART_GALLERY_CITIES_WRITING_TOURISM'),
   ('BUILDING_JNR_ART_GALLERY',        'HD_JNR_ART_GALLERY_CITIES_SCULPTURE_TOURISM'),
   ('BUILDING_JNR_ART_GALLERY',        'HD_JNR_ART_GALLERY_CITIES_PORTRAIT_TOURISM'),
@@ -91,8 +94,6 @@ values
   
   -- 医院
   ('HD_JNR_HOSPITAL_UNIT_HEAL',                       'MODIFIER_PLAYER_UNITS_ADJUST_HEAL_PER_TURN',               Null,                                                        'OBJECT_IS_AT_OR_ADJACENT',          Null),
-  ('HD_JNR_HOSPITAL_EXTRA_GREAT_SCIENTIST_POINTS_1',  'MODIFIER_PLAYER_ADJUST_GREAT_PERSON_POINTS_PERCENT',       Null,                                                        Null,                                Null),
-  ('HD_JNR_HOSPITAL_EXTRA_GREAT_SCIENTIST_POINTS_2',  'MODIFIER_PLAYER_ADJUST_GREAT_PERSON_POINTS_PERCENT',       'PLAYER_HAS_TECH_MEDICAL_SCIENCE_HD_REQUIREMENTS',           Null,                                Null),
   ('HD_JNR_HOSPITAL_SET_PROPERTY',                    'MODIFIER_PLAYER_ADJUST_PROPERTY',                          Null,                                                        Null,                                Null),
   
   -- 垃圾回收中心
@@ -102,9 +103,6 @@ values
   ('HD_JNR_RECYCLING_PLANT_SET_PROPERTY',             'MODIFIER_SINGLE_CITY_ADJUST_PROPERTY',                     Null,                                                        Null,                                Null),
     
   -- 艺术街区
-  ('HD_JNR_ART_GALLERY_PLAYER_WRITER_GPP',            'MODIFIER_PLAYER_ADJUST_GREAT_PERSON_POINTS_PERCENT',       Null,                       Null,                                                           Null),
-  ('HD_JNR_ART_GALLERY_PLAYER_ARTIST_GPP',            'MODIFIER_PLAYER_ADJUST_GREAT_PERSON_POINTS_PERCENT',       Null,                       Null,                                                           Null),
-  ('HD_JNR_ART_GALLERY_PLAYER_MUSICIAN_GPP',          'MODIFIER_PLAYER_ADJUST_GREAT_PERSON_POINTS_PERCENT',       Null,                       Null,                                                           Null),
   ('HD_JNR_ART_GALLERY_CITIES_WRITING_TOURISM',       'MODIFIER_PLAYER_CITIES_ADJUST_TOURISM',                    'CITY_IS_POWERED',          Null,                                                           Null),
   ('HD_JNR_ART_GALLERY_CITIES_SCULPTURE_TOURISM',     'MODIFIER_PLAYER_CITIES_ADJUST_TOURISM',                    'CITY_IS_POWERED',          Null,                                                           Null),
   ('HD_JNR_ART_GALLERY_CITIES_PORTRAIT_TOURISM',      'MODIFIER_PLAYER_CITIES_ADJUST_TOURISM',                    'CITY_IS_POWERED',          Null,                                                           Null),
@@ -137,10 +135,6 @@ values
   -- 医院
   ('HD_JNR_HOSPITAL_UNIT_HEAL',                       'Amount',                   20),
   ('HD_JNR_HOSPITAL_UNIT_HEAL',                       'Type',                     'ALL'),
-  ('HD_JNR_HOSPITAL_EXTRA_GREAT_SCIENTIST_POINTS_1',  'GreatPersonClassType',     'GREAT_PERSON_CLASS_SCIENTIST'),
-  ('HD_JNR_HOSPITAL_EXTRA_GREAT_SCIENTIST_POINTS_1',  'Amount',                   10),
-  ('HD_JNR_HOSPITAL_EXTRA_GREAT_SCIENTIST_POINTS_2',  'GreatPersonClassType',     'GREAT_PERSON_CLASS_SCIENTIST'),
-  ('HD_JNR_HOSPITAL_EXTRA_GREAT_SCIENTIST_POINTS_2',  'Amount',                   10),
   ('HD_JNR_HOSPITAL_SET_PROPERTY',                    'Key',                      'HD_PLAYER_HAS_JNR_HOSPITAL'),
   ('HD_JNR_HOSPITAL_SET_PROPERTY',                    'Amount',                   1),
   
@@ -154,12 +148,6 @@ values
   ('HD_JNR_RECYCLING_PLANT_SET_PROPERTY',             'Amount',                   1),
   
   -- 艺术街区
-  ('HD_JNR_ART_GALLERY_PLAYER_WRITER_GPP',            'Amount',                   10),
-  ('HD_JNR_ART_GALLERY_PLAYER_WRITER_GPP',            'GreatPersonClassType',     'GREAT_PERSON_CLASS_WRITER'),
-  ('HD_JNR_ART_GALLERY_PLAYER_ARTIST_GPP',            'Amount',                   10),
-  ('HD_JNR_ART_GALLERY_PLAYER_ARTIST_GPP',            'GreatPersonClassType',     'GREAT_PERSON_CLASS_ARTIST'),
-  ('HD_JNR_ART_GALLERY_PLAYER_MUSICIAN_GPP',          'Amount',                   10),
-  ('HD_JNR_ART_GALLERY_PLAYER_MUSICIAN_GPP',          'GreatPersonClassType',     'GREAT_PERSON_CLASS_MUSICIAN'),
   ('HD_JNR_ART_GALLERY_CITIES_WRITING_TOURISM',       'ScalingFactor',            300),
   ('HD_JNR_ART_GALLERY_CITIES_WRITING_TOURISM',       'GreatWorkObjectType',      'GREATWORKOBJECT_WRITING'),
   ('HD_JNR_ART_GALLERY_CITIES_SCULPTURE_TOURISM',     'ScalingFactor',            300),
@@ -277,6 +265,40 @@ from DistrictCorrespondingYieldType_HD where HasAdjacency = 1;
 insert or replace into ModifierArguments (ModifierId, Name, Value) select
   'HD_TRANSIT_HUB_' || DistrictType || '_ADJACENCY_LATE', 'Amount', 50
 from DistrictCorrespondingYieldType_HD where HasAdjacency = 1;
+
+-- 中心医院
+insert or replace into BuildingModifiers(BuildingType, ModifierId) select
+  'BUILDING_JNR_HOSPITAL', 'HD_JNR_HOSPITAL_EXTRA_GREAT_SCIENTIST_POINTS_' || Exp
+from HD_Binary_Compress where Exp < 5;
+
+insert or replace into Modifiers (ModifierId, ModifierType, OwnerRequirementSetId) select
+  'HD_JNR_HOSPITAL_EXTRA_GREAT_SCIENTIST_POINTS_' || Exp, 'MODIFIER_PLAYER_ADJUST_GREAT_PERSON_POINTS_PERCENT', 'HD_PLOT_BINARY_COMPRESS_HOSPITAL_' || Exp || '_REQUIREMENTS'
+from HD_Binary_Compress where Exp < 5;
+
+insert or replace into ModifierArguments (ModifierId, Name, Value) select
+  'HD_JNR_HOSPITAL_EXTRA_GREAT_SCIENTIST_POINTS_' || Exp, 'GreatPersonClassType', 'GREAT_PERSON_CLASS_SCIENTIST'
+from HD_Binary_Compress where Exp < 5;
+
+insert or replace into ModifierArguments (ModifierId, Name, Value) select
+  'HD_JNR_HOSPITAL_EXTRA_GREAT_SCIENTIST_POINTS_' || Exp, 'Amount', Amount * 2
+from HD_Binary_Compress where Exp < 5;
+
+-- 艺术街区
+insert or replace into BuildingModifiers(BuildingType, ModifierId) select
+  'BUILDING_JNR_ART_GALLERY', 'HD_JNR_ART_GALLERY_EXTRA_' || GreatPersonClassType || '_POINTS_' || Exp
+from HD_Binary_Compress, GreatPersonClasses where Exp < 5 and GreatPersonClassType in ('GREAT_PERSON_CLASS_WRITER', 'GREAT_PERSON_CLASS_ARTIST', 'GREAT_PERSON_CLASS_MUSICIAN');
+
+insert or replace into Modifiers (ModifierId, ModifierType, OwnerRequirementSetId) select
+  'HD_JNR_ART_GALLERY_EXTRA_' || GreatPersonClassType || '_POINTS_' || Exp, 'MODIFIER_PLAYER_ADJUST_GREAT_PERSON_POINTS_PERCENT', 'HD_PLOT_BINARY_COMPRESS_ART_GALLERY_' || Exp || '_REQUIREMENTS'
+from HD_Binary_Compress, GreatPersonClasses where Exp < 5 and GreatPersonClassType in ('GREAT_PERSON_CLASS_WRITER', 'GREAT_PERSON_CLASS_ARTIST', 'GREAT_PERSON_CLASS_MUSICIAN');
+
+insert or replace into ModifierArguments (ModifierId, Name, Value) select
+  'HD_JNR_ART_GALLERY_EXTRA_' || GreatPersonClassType || '_POINTS_' || Exp, 'GreatPersonClassType', GreatPersonClassType
+from HD_Binary_Compress, GreatPersonClasses where Exp < 5 and GreatPersonClassType in ('GREAT_PERSON_CLASS_WRITER', 'GREAT_PERSON_CLASS_ARTIST', 'GREAT_PERSON_CLASS_MUSICIAN');
+
+insert or replace into ModifierArguments (ModifierId, Name, Value) select
+  'HD_JNR_ART_GALLERY_EXTRA_' || GreatPersonClassType || '_POINTS_' || Exp, 'Amount', Amount * 2
+from HD_Binary_Compress, GreatPersonClasses where Exp < 5 and GreatPersonClassType in ('GREAT_PERSON_CLASS_WRITER', 'GREAT_PERSON_CLASS_ARTIST', 'GREAT_PERSON_CLASS_MUSICIAN');
 
 -------------------------------------------------------------- 
 insert or replace into GlobalParameters (Name, Value) values
