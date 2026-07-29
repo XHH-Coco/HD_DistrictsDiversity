@@ -214,17 +214,17 @@ insert or replace into TypeTags (Type, Tag) values
 insert or replace into BuildingModifiers(BuildingType, ModifierId) select
   a.BuildingType, 'HD_TRANSIT_HUB_' || b.DistrictType || '_ADJACENCY'
 from HD_Building_Classification a, DistrictCorrespondingYieldType_HD b
-  where a.BuildingClassificationType = 'BUILDING_CLASSIFICATION_TRANSPORTATION_FACILITIES' and b.HasAdjacency = 1;
+  where a.BuildingClassificationType = 'BUILDING_CLASSIFICATION_TRANSPORTATION' and b.HasAdjacency = 1;
 
 insert or replace into DistrictModifiers(DistrictType, ModifierId) select
   a.DistrictType, 'HD_TRANSIT_HUB_' || b.DistrictType || '_ADJACENCY'
 from HD_District_Classification a, DistrictCorrespondingYieldType_HD b
-  where a.DistrictClassificationType = 'DISTRICT_CLASSIFICATION_TRANSPORTATION_FACILITIES' and b.HasAdjacency = 1;
+  where a.DistrictClassificationType = 'DISTRICT_CLASSIFICATION_TRANSPORTATION' and b.HasAdjacency = 1;
 
 insert or replace into ImprovementModifiers(ImprovementType, ModifierId) select
   a.ImprovementType, 'HD_TRANSIT_HUB_' || b.DistrictType || '_ADJACENCY'
 from HD_Improvement_Classification a, DistrictCorrespondingYieldType_HD b
-  where a.ImprovementClassificationType = 'IMPROVEMENT_CLASSIFICATION_TRANSPORTATION_FACILITIES' and b.HasAdjacency = 1;
+  where a.ImprovementClassificationType = 'IMPROVEMENT_CLASSIFICATION_TRANSPOTATION' and b.HasAdjacency = 1;
 
 insert or replace into Modifiers (ModifierId, ModifierType, OwnerRequirementSetId, SubjectRequirementSetId, SubjectStackLimit) select
   'HD_TRANSIT_HUB_' || DistrictType || '_ADJACENCY', 'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_MODIFIER', 'PLAYER_HAS_BUILDING_JNR_TRANSIT_HUB_REQUIREMENTS', 'HD_DISTRICT_IS_' || DistrictType || '_ADJACENT', 1
@@ -242,17 +242,17 @@ from DistrictCorrespondingYieldType_HD where HasAdjacency = 1;
 insert or replace into BuildingModifiers(BuildingType, ModifierId) select
   a.BuildingType, 'HD_TRANSIT_HUB_' || b.DistrictType || '_ADJACENCY_LATE'
 from HD_Building_Classification a, DistrictCorrespondingYieldType_HD b
-  where a.BuildingClassificationType = 'BUILDING_CLASSIFICATION_TRANSPORTATION_FACILITIES' and b.HasAdjacency = 1;
+  where a.BuildingClassificationType = 'BUILDING_CLASSIFICATION_TRANSPORTATION' and b.HasAdjacency = 1;
 
 insert or replace into DistrictModifiers(DistrictType, ModifierId) select
   a.DistrictType, 'HD_TRANSIT_HUB_' || b.DistrictType || '_ADJACENCY_LATE'
 from HD_District_Classification a, DistrictCorrespondingYieldType_HD b
-  where a.DistrictClassificationType = 'DISTRICT_CLASSIFICATION_TRANSPORTATION_FACILITIES' and b.HasAdjacency = 1;
+  where a.DistrictClassificationType = 'DISTRICT_CLASSIFICATION_TRANSPORTATION' and b.HasAdjacency = 1;
 
 insert or replace into ImprovementModifiers(ImprovementType, ModifierId) select
   a.ImprovementType, 'HD_TRANSIT_HUB_' || b.DistrictType || '_ADJACENCY_LATE'
 from HD_Improvement_Classification a, DistrictCorrespondingYieldType_HD b
-  where a.ImprovementClassificationType = 'IMPROVEMENT_CLASSIFICATION_TRANSPORTATION_FACILITIES' and b.HasAdjacency = 1;
+  where a.ImprovementClassificationType = 'IMPROVEMENT_CLASSIFICATION_TRANSPOTATION' and b.HasAdjacency = 1;
 
 insert or replace into Modifiers (ModifierId, ModifierType, OwnerRequirementSetId, SubjectRequirementSetId, SubjectStackLimit) select
   'HD_TRANSIT_HUB_' || DistrictType || '_ADJACENCY_LATE', 'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_MODIFIER', 'PLAYER_HAS_BUILDING_JNR_TRANSIT_HUB_AND_TECH_MODERN_TRAFFIC_HD_REQUIREMENTS', 'HD_DISTRICT_IS_' || DistrictType || '_ADJACENT', 1

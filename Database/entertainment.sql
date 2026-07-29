@@ -293,15 +293,15 @@ where exists (select GreatWorkSlotType from GreatWorkSlotTypes where GreatWorkSl
 	-- 游客接待中心
 insert or replace into BuildingModifiers(BuildingType, ModifierId) select
   BuildingType, 'HD_CASINO_WONDER_TOURISM'
-from HD_Building_Classification where BuildingClassificationType = 'BUILDING_CLASSIFICATION_TRANSPORTATION_FACILITIES';
+from HD_Building_Classification where BuildingClassificationType = 'BUILDING_CLASSIFICATION_TRANSPORTATION';
 
 insert or replace into DistrictModifiers(DistrictType, ModifierId) select
   DistrictType, 'HD_CASINO_WONDER_TOURISM'
-from HD_District_Classification where DistrictClassificationType = 'DISTRICT_CLASSIFICATION_TRANSPORTATION_FACILITIES';
+from HD_District_Classification where DistrictClassificationType = 'DISTRICT_CLASSIFICATION_TRANSPORTATION';
 
 insert or replace into ImprovementModifiers(ImprovementType, ModifierId) select
   ImprovementType, 'HD_CASINO_WONDER_TOURISM'
-from HD_Improvement_Classification where ImprovementClassificationType = 'IMPROVEMENT_CLASSIFICATION_TRANSPORTATION_FACILITIES';
+from HD_Improvement_Classification where ImprovementClassificationType = 'IMPROVEMENT_CLASSIFICATION_TRANSPOTATION';
 
 	-- 体育场
 insert or replace into BuildingModifiers
