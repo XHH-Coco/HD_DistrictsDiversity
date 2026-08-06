@@ -495,9 +495,3 @@ insert or replace into ModifierArguments (ModifierId, Name, Value)
 insert or replace into ModifierArguments (ModifierId, Name, Value)
 	select 'HD_BOTANICAL_GARDEN_GOLD_' || Exp, 'Amount', Amount * 6
 	from HD_Binary_Compress where Exp < 5;
-
---------------------------------------------------
-insert or ignore into RequirementSetRequirements
-	(RequirementSetId,						RequirementId)
-values
-	('HD_CITY_HAS_ZOO_OR_BOTANICAL_GARDEN',	'REQUIRES_CITY_HAS_BUILDING_JNR_BOTANICAL_GARDEN');
