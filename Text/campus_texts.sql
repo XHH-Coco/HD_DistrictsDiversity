@@ -69,11 +69,11 @@ VALUES  ('LOC_BUILDING_JNR_ACADEMY_NAME',                           'Sishu'),
 
 -- Change wonder descriptions
 --------------------------------------------------------------
-UPDATE LocalizedText SET Text=REPLACE(Text, 'with a Library',       'with a Library or Sishu')                              WHERE Tag LIKE 'LOC_NAT_WONDER_CL_COLLEGE%';
-UPDATE LocalizedText SET Text=REPLACE(Text, 'with a Library',       'with a Library or Sishu')                              WHERE Tag LIKE 'LOC_BUILDING_GREAT_LIBRARY%';
-UPDATE LocalizedText SET Text=REPLACE(Text, 'with a University',    'with a University or City School')                     WHERE Tag LIKE 'LOC_BUILDING_OXFORD_UNIVERSITY%';
-UPDATE LocalizedText SET Text=REPLACE(Text, 'with a University',    'with a University or City School')                     WHERE Tag LIKE 'LOC_BUILDING_UNIVERSITY_SANKORE%';
-UPDATE LocalizedText SET Text=REPLACE(Text, 'with a Research Lab',  'with an Institute of Technology or Community College') WHERE Tag LIKE 'LOC_BUILDING_AMUNDSEN_SCOTT%';
+UPDATE LocalizedText SET Text=REPLACE(Text, 'with a Library',       'with a Tier 1 building') WHERE Tag LIKE 'LOC_NAT_WONDER_CL_COLLEGE%';
+UPDATE LocalizedText SET Text=REPLACE(Text, 'with a Library',       'with a Tier 1 building') WHERE Tag LIKE 'LOC_BUILDING_GREAT_LIBRARY%';
+UPDATE LocalizedText SET Text=REPLACE(Text, 'with a University',    'with a Tier 2 building') WHERE Tag LIKE 'LOC_BUILDING_OXFORD_UNIVERSITY%';
+UPDATE LocalizedText SET Text=REPLACE(Text, 'with a University',    'with a Tier 2 building') WHERE Tag LIKE 'LOC_BUILDING_UNIVERSITY_SANKORE%';
+UPDATE LocalizedText SET Text=REPLACE(Text, 'Tier 3 building',  'Tier 4 building') WHERE Tag = 'LOC_BUILDING_AMUNDSEN_SCOTT_RESEARCH_STATION_DESCRIPTION';
 --------------------------------------------------------------
 
 -- --------------------------------------------------------------------------------
@@ -138,11 +138,11 @@ values
 
 -- Change wonder descriptions
 --------------------------------------------------------------
-UPDATE LocalizedText SET Text=REPLACE(Text, '有图书馆',      '有图书馆或私塾')                       WHERE Tag LIKE 'LOC_NAT_WONDER_CL_COLLEGE%';
-UPDATE LocalizedText SET Text=REPLACE(Text, '有图书馆',      '有图书馆或私塾')                       WHERE Tag LIKE 'LOC_BUILDING_GREAT_LIBRARY%';
-UPDATE LocalizedText SET Text=REPLACE(Text, '有大学',        '有大学或城市学校')                     WHERE Tag LIKE 'LOC_BUILDING_OXFORD_UNIVERSITY%';
-UPDATE LocalizedText SET Text=REPLACE(Text, '有大学',        '有大学或城市学校')                     WHERE Tag LIKE 'LOC_BUILDING_UNIVERSITY_SANKORE%';
-UPDATE LocalizedText SET Text=REPLACE(Text, '有“研究实验室”', '有“理工学院”或“综合大学”')             WHERE Tag LIKE 'LOC_BUILDING_AMUNDSEN_SCOTT%';
+UPDATE LocalizedText SET Text=REPLACE(Text, '有图书馆',      '有学院一级建筑') WHERE Tag LIKE 'LOC_NAT_WONDER_CL_COLLEGE%';
+UPDATE LocalizedText SET Text=REPLACE(Text, '有图书馆',      '有学院一级建筑') WHERE Tag LIKE 'LOC_BUILDING_GREAT_LIBRARY%';
+UPDATE LocalizedText SET Text=REPLACE(Text, '有大学',        '有学院二级建筑') WHERE Tag LIKE 'LOC_BUILDING_OXFORD_UNIVERSITY%';
+UPDATE LocalizedText SET Text=REPLACE(Text, '有大学',        '有学院二级建筑') WHERE Tag LIKE 'LOC_BUILDING_UNIVERSITY_SANKORE%';
+UPDATE LocalizedText SET Text=REPLACE(Text, '三级建筑', '四级建筑') WHERE Tag = 'LOC_BUILDING_AMUNDSEN_SCOTT_RESEARCH_STATION_DESCRIPTION';
 -- --------------------------------------------------------------
 
 -- Policy
