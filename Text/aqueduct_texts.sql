@@ -20,8 +20,7 @@ values
     ("LOC_BUILDING_JNR_BATHHOUSE_DESCRIPTION",                  "+4 corresponding [ICON_GREATPERSON] Great People points from each type of adjacent district which providing [ICON_GREATPERSON] Great People points. Bathhouse extra +3 [ICON_GOLD] Gold if city has improved Medicine or Household Resources."),
     ("LOC_BUILDING_HD_HYDRAULIC_SPINNING_WHEEL_NAME",           "Hydraulic Spinning Wheel"),
     ("LOC_BUILDING_HD_HYDRAULIC_SPINNING_WHEEL_DESCRIPTION",    "+1 [ICON_PRODUCTION] Production to Camps, Pastures and Plantations in this city. Hydraulic Spinning Wheel extra +1 [ICON_PRODUCTION] Production if city has improved Leather or Cloth Resources."),
-    ("LOC_BUILDING_SEWER_DESCRIPTION",                          "+20% Growth rate in this city."),
-    ("LOC_BUILDING_THERMAL_BATH_DESCRIPTION_UC_JNR",            "Building unique to Hungary. [ICON_CITIZEN] Citizens in this city provide +0.5 [ICON_CULTURE] Culture and +0.5 [ICON_GOLD] Gold.");
+    ("LOC_BUILDING_SEWER_DESCRIPTION",                          "+20% Growth rate in this city.");
     
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
@@ -44,8 +43,7 @@ values
     ("zh_Hans_CN",  "LOC_BUILDING_JNR_BATHHOUSE_DESCRIPTION",                   "每相邻一种提供 [ICON_GREATPERSON] 伟人点数的区域，提供+4对应 [ICON_GREATPERSON] 伟人点数。若本城有改良的医药或家居资源，浴场额外+3 [ICON_GOLD] 金币。"),
     ("zh_Hans_CN",  "LOC_BUILDING_HD_HYDRAULIC_SPINNING_WHEEL_NAME",            "水力纺车"),
     ("zh_Hans_CN",  "LOC_BUILDING_HD_HYDRAULIC_SPINNING_WHEEL_DESCRIPTION",     "本城的牧场、营地和种植园+1 [ICON_PRODUCTION] 生产力。若本城有改良的皮革或服装资源，水力纺车额外+1 [ICON_PRODUCTION] 生产力。"),
-    ("zh_Hans_CN",  "LOC_BUILDING_SEWER_DESCRIPTION",                           "本城+20%余粮。"),
-    ("zh_Hans_CN",  "LOC_BUILDING_THERMAL_BATH_DESCRIPTION_UC_JNR",             "匈牙利特色建筑。城市中每位 [ICON_CITIZEN] 公民+0.5 [ICON_CULTURE] 文化值和+0.5 [ICON_GOLD] 金币。");
+    ("zh_Hans_CN",  "LOC_BUILDING_SEWER_DESCRIPTION",                           "本城+20%余粮。");
 
 UPDATE  LocalizedText
 SET     Text = REPLACE(Text, '水渠', '蓄水池')

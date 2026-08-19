@@ -7,7 +7,8 @@
 	-- 基本信息
 update Buildings set PrereqCivic = 'CIVIC_GAMES_RECREATION',		PrereqTech = Null,							Maintenance = 1,		Cost = 160,	Entertainment=1,	RegionalRange=4,	CitizenSlots = Null, Description = 'LOC_BUILDING_ARENA_HD_DESCRIPTION' where BuildingType = 'BUILDING_ARENA';
 update Buildings set PrereqCivic = 'CIVIC_GAMES_RECREATION',		PrereqTech = Null,							Maintenance = 1,		Cost = 160,	Entertainment=1,	RegionalRange=5,	CitizenSlots = Null, Description = 'LOC_BUILDING_TLACHTLI_HD_DESCRIPTION' where BuildingType = 'BUILDING_TLACHTLI';
-update Buildings set PrereqCivic = 'CIVIC_HUMANISM',				PrereqTech = Null,							Maintenance = 4,		Cost = 300,	Entertainment=2,	RegionalRange=0,	CitizenSlots = Null where BuildingType = 'BUILDING_ZOO';
+update Buildings set PrereqCivic = 'CIVIC_COMMERCIAL_CAPITALISM_HD', PrereqTech = Null,							Maintenance = 4,		Cost = 300,	Entertainment=2,	RegionalRange=0,	CitizenSlots = Null where BuildingType = 'BUILDING_ZOO';
+update Buildings set Description = 'LOC_BUILDING_THERMAL_BATH_DESCRIPTION_UC_JNR' where BuildingType = 'BUILDING_THERMAL_BATH';
 update Buildings set PrereqCivic = 'CIVIC_PROFESSIONAL_SPORTS',		PrereqTech = Null,							Maintenance = 12,		Cost = 650,	Entertainment=2,	RegionalRange=6,	CitizenSlots = Null,	Description = 'LOC_BUILDING_STADIUM_DESCRIPTION_UC_JNR'					where BuildingType = 'BUILDING_STADIUM';
 update Buildings set PrereqCivic = NULL,							PrereqTech = 'TECH_SQUARE_RIGGING',			Maintenance = 1,		Cost = 220,	Entertainment=2,	RegionalRange=6,	CitizenSlots = Null,	Description = 'LOC_BUILDING_FERRIS_WHEEL_DESCRIPTION_UC_JNR'			where BuildingType = 'BUILDING_FERRIS_WHEEL';
 update Buildings set PrereqCivic = NULL,							PrereqTech = 'TECH_OCEANOGRAPHY_HD',			Maintenance = 4,		Cost = 300,	Entertainment=2,	RegionalRange=0,	CitizenSlots = Null where BuildingType = 'BUILDING_AQUARIUM';
@@ -473,7 +474,7 @@ insert or replace into ModifierArguments (ModifierId, Name, Value)
 	from HD_Binary_Compress where Exp < 5;
 
 insert or replace into ModifierArguments (ModifierId, Name, Value)
-	select 'HD_BOTANICAL_GARDEN_SCIENCE_' || Exp, 'Amount', Amount * 2
+	select 'HD_BOTANICAL_GARDEN_SCIENCE_' || Exp, 'Amount', Amount * 1
 	from HD_Binary_Compress where Exp < 5;
 
 insert or replace into BuildingModifiers (BuildingType, ModifierId)

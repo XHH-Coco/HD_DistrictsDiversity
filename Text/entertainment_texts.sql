@@ -6,8 +6,9 @@ values
     -- 娱乐中心
     ("LOC_BUILDING_JNR_TOURNEY_DESCRIPTION",                     "+1 [ICON_Amenities] Amenity if built in tiles with Breathtaking Appeal. +1 [ICON_CULTURE] Culture to Buildings in City Center."),
     ("LOC_BUILDING_JNR_TOURNEY_NAME",                            "Goulan"),
+    ("LOC_BUILDING_THERMAL_BATH_DESCRIPTION_UC_JNR",             "{LOC_BUILDING_THERMAL_BATH_DESCRIPTION}"),
     ("LOC_BUILDING_JNR_BOTANICAL_GARDEN_NAME",                   "Botanical Garden"),
-    ("LOC_BUILDING_JNR_BOTANICAL_GARDEN_DESCRIPTION",            "+2 [ICON_SCIENCE] Science and +6 [ICON_Gold] Gold from every type of Crops, Fruit or Ornamental Resource you controlled."),
+    ("LOC_BUILDING_JNR_BOTANICAL_GARDEN_DESCRIPTION",            "+1 [ICON_SCIENCE] Science and +6 [ICON_Gold] Gold from every type of Crops, Fruit or Ornamental Resource you controlled."),
     ("LOC_BUILDING_STADIUM_DESCRIPTION_UC_JNR",                  "If this City is [ICON_POWER] powered, specialty districts provide corresponding yield to each [ICON_CITIZEN] Citizens in the city. This bonus extends to all specialty districts within 6 tiles that do not already have a bonus from another Stadium."),
     ("LOC_BUILDING_JNR_THEME_PARK_NAME",                         "Exposition"),
     ("LOC_BUILDING_JNR_THEME_PARK_DESCRIPTION",                  "+3 [ICON_CULTURE] Culture and +3 [ICON_Gold] Gold to each Wonders in this city. double these yields if city is [ICON_POWER] powered."),
@@ -35,8 +36,9 @@ values
     -- 娱乐中心
     ("zh_Hans_CN",  "LOC_BUILDING_JNR_TOURNEY_DESCRIPTION",                     "若位于惊艳的单元格则额外+1 [ICON_Amenities] 宜居度。本城市中心建筑+1 [ICON_CULTURE] 文化值。"), 
     ("zh_Hans_CN",  "LOC_BUILDING_JNR_TOURNEY_NAME",                            "勾栏瓦舍"),
+    ("zh_Hans_CN",  "LOC_BUILDING_THERMAL_BATH_DESCRIPTION_UC_JNR",             "{LOC_BUILDING_THERMAL_BATH_DESCRIPTION}"),
     ("zh_Hans_CN",  "LOC_BUILDING_JNR_BOTANICAL_GARDEN_NAME",                   "植物园"),
-    ("zh_Hans_CN",  "LOC_BUILDING_JNR_BOTANICAL_GARDEN_DESCRIPTION",            "你每拥有一种庄稼、水果或花木资源，+2 [ICON_SCIENCE] 科技值和+6 [ICON_GOLD] 金币。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_JNR_BOTANICAL_GARDEN_DESCRIPTION",            "你每拥有一种庄稼、水果或花木资源，+1 [ICON_SCIENCE] 科技值和+6 [ICON_GOLD] 金币。"),
     ("zh_Hans_CN",  "LOC_BUILDING_STADIUM_DESCRIPTION_UC_JNR",                  "若此城 [ICON_POWER] 供电充足，则6个单元格内的专业化区域为其所在城市的每位 [ICON_CITIZEN] 市民提供对应产出（前提是其尚未从其他的“体育场”建筑获得加成）。"),
     ("zh_Hans_CN",  "LOC_BUILDING_JNR_THEME_PARK_NAME",                         "博览会"),
     ("zh_Hans_CN",  "LOC_BUILDING_JNR_THEME_PARK_DESCRIPTION",                  "城市中每座奇观+3 [ICON_CULTURE] 文化值和+3 [ICON_GOLD] 金币；此城 [ICON_POWER] 供电充足时，该效果翻倍。"),

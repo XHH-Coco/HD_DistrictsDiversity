@@ -9,18 +9,15 @@ update Districts set Cost = 48, Maintenance = 1, PrereqTech = 'TECH_IRRIGATION' 
 update Districts set Cost = 60,PrereqTech = NULL, PrereqCivic = 'CIVIC_EARLY_EMPIRE' where DistrictType = 'DISTRICT_SUK_TORFBAEIR';
 update Districts set Entertainment = 1, Name='LOC_DISTRICT_BATH_NAME_JNR_UC', Description = 'LOC_DISTRICT_BATH_DESCRIPTION_JNR_UC' where DistrictType = 'DISTRICT_BATH';
 --------------------------------------------------------------
-update Buildings set Cost = 120, Maintenance = 2, CitizenSlots = 0, Housing = 1, Entertainment = 2, PrereqTech = 'TECH_MATHEMATICS', RegionalRange = 0, PrereqCivic = NULL, Description = 'LOC_BUILDING_THERMAL_BATH_DESCRIPTION_UC_JNR' where BuildingType = 'BUILDING_THERMAL_BATH';
 update Buildings set Cost = 120, Maintenance = 2, CitizenSlots = 0, Housing = 1, Entertainment = 0, PrereqTech = 'TECH_CONSTRUCTION' where BuildingType = 'BUILDING_JNR_ORCHARD';
 update Buildings set Cost = 120, Maintenance = 2, CitizenSlots = 0, Housing = 1, Entertainment = 0, PrereqTech = 'TECH_ENGINEERING' where BuildingType = 'BUILDING_JNR_HAMMER_WORKS';
 update Buildings set Cost = 120, Maintenance = 2, CitizenSlots = 0, Housing = 1, Entertainment = 0, PrereqTech = 'TECH_MATHEMATICS' where BuildingType = 'BUILDING_JNR_BATHHOUSE';
 update Buildings set Cost = 120, Maintenance = 2, CitizenSlots = 0, Housing = 1, Entertainment = 0, PrereqTech = 'TECH_TEXTILE_HD' where BuildingType = 'BUILDING_HD_HYDRAULIC_SPINNING_WHEEL';
 update Buildings set Cost = 200, Maintenance = 5, CitizenSlots = 0, Housing = 2, Entertainment = 1 where BuildingType = 'BUILDING_SEWER';
 
-delete from Building_YieldChanges where BuildingType = 'BUILDING_THERMAL_BATH';
 insert or replace into Building_YieldChanges
     (BuildingType,                              YieldType,          YieldChange)
 values
-    ('BUILDING_THERMAL_BATH',                   'YIELD_CULTURE',    2),
     ('BUILDING_JNR_ORCHARD',                    'YIELD_FOOD',       4),
     ('BUILDING_JNR_HAMMER_WORKS',               'YIELD_PRODUCTION', 2),
     ('BUILDING_JNR_HAMMER_WORKS',               'YIELD_SCIENCE',    2),
@@ -42,7 +39,6 @@ insert or replace into DistrictModifiers
 values
     ('DISTRICT_BATH',               'BATH_ADJUST_INSIDE_BUILDINGS_PRODUCTION_SPEED');
 
-delete from BuildingModifiers where BuildingType = 'BUILDING_THERMAL_BATH';
 insert or replace into BuildingModifiers
     (BuildingType,                  ModifierId)
 values
@@ -59,10 +55,7 @@ values
     ('BUILDING_HD_HYDRAULIC_SPINNING_WHEEL',      'HYDRAULIC_SPINNING_WHEEL_PLANTATION_PRODUCTION'),
     ('BUILDING_HD_HYDRAULIC_SPINNING_WHEEL',      'HD_HYDRAULIC_SPINNING_WHEEL_PRODUCTION'),
 
-    ('BUILDING_JNR_BATHHOUSE',      'HD_BATHHOUSE_GOLD'),
-
-	('BUILDING_THERMAL_BATH',		'BUILDING_THERMAL_BATH_POP_CULTURE'),
-	('BUILDING_THERMAL_BATH',		'BUILDING_THERMAL_BATH_POP_GOLD');
+    ('BUILDING_JNR_BATHHOUSE',      'HD_BATHHOUSE_GOLD');
 
 insert or replace into Modifiers
     (ModifierId,                                            ModifierType,                                               SubjectRequirementSetId)
@@ -82,10 +75,7 @@ values
 
     ('HYDRAULIC_SPINNING_WHEEL_CAMP_PRODUCTION',            'MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD',   			'PLOT_HAS_IMPROVEMENT_CAMP_REQUIREMENTS'),
     ('HYDRAULIC_SPINNING_WHEEL_PASTURE_PRODUCTION',         'MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD',   			'PLOT_HAS_IMPROVEMENT_PASTURE_REQUIREMENTS'),
-    ('HYDRAULIC_SPINNING_WHEEL_PLANTATION_PRODUCTION',      'MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD',   			'PLOT_HAS_IMPROVEMENT_PLANTATION_REQUIREMENTS'),
-
-	('BUILDING_THERMAL_BATH_POP_CULTURE',					'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_PER_POPULATION',	NULL),
-	('BUILDING_THERMAL_BATH_POP_GOLD',						'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_PER_POPULATION',	NULL);
+    ('HYDRAULIC_SPINNING_WHEEL_PLANTATION_PRODUCTION',      'MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD',   			'PLOT_HAS_IMPROVEMENT_PLANTATION_REQUIREMENTS');
 
 insert or replace into ModifierArguments
     (ModifierId,                                        Name,           Value)
@@ -121,12 +111,7 @@ values
     ('HYDRAULIC_SPINNING_WHEEL_PASTURE_PRODUCTION',     'YieldType',    'YIELD_PRODUCTION'),
     ('HYDRAULIC_SPINNING_WHEEL_PASTURE_PRODUCTION',     'Amount',       1),
     ('HYDRAULIC_SPINNING_WHEEL_PLANTATION_PRODUCTION',  'YieldType',    'YIELD_PRODUCTION'),
-    ('HYDRAULIC_SPINNING_WHEEL_PLANTATION_PRODUCTION',  'Amount',       1),
-
-	('BUILDING_THERMAL_BATH_POP_CULTURE',				'YieldType',	'YIELD_CULTURE'),
-	('BUILDING_THERMAL_BATH_POP_CULTURE',				'Amount',		0.5),
-	('BUILDING_THERMAL_BATH_POP_GOLD',					'YieldType',	'YIELD_GOLD'),
-	('BUILDING_THERMAL_BATH_POP_GOLD',					'Amount',		0.5);
+    ('HYDRAULIC_SPINNING_WHEEL_PLANTATION_PRODUCTION',  'Amount',       1);
 
 -- 浴场
 insert or replace into BuildingModifiers
@@ -152,12 +137,6 @@ insert or replace into ModifierArguments
 select
     'HD_BATHHOUSE_' || DistrictType || '_' || GreatPersonClassType,  'Amount',  4
 from DistrictCorrespondingGPP_HD;
-
---req
-insert or ignore into RequirementSetRequirements
-	(RequirementSetId,												RequirementId)
-values
-	('CITY_HAS_DISTRICT_AQUEDUCT_TIER_1_BUILDING_REQUIREMENTS',		'REQUIRES_CITY_HAS_BUILDING_THERMAL_BATH');
 
 --大浴场
 update Buildings set AdjacentDistrict = 'DISTRICT_AQUEDUCT' where BuildingType = 'BUILDING_GREAT_BATH';

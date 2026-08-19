@@ -25,9 +25,6 @@ UPDATE Buildings SET PrereqDistrict='DISTRICT_AQUEDUCT', Cost=290, Housing=1, Ci
 
 UPDATE Buildings SET InternalOnly=1 WHERE BuildingType='BUILDING_JNR_WATER_TREATMENT';
 --------------------------------------------------------------
-delete from BuildingReplaces where CivUniqueBuildingType = 'BUILDING_THERMAL_BATH';
-update Buildings set PrereqDistrict = 'DISTRICT_AQUEDUCT' where BuildingType = 'BUILDING_THERMAL_BATH';
-delete from BuildingPrereqs where Building = 'BUILDING_THERMAL_BATH' or PrereqBuilding = 'BUILDING_THERMAL_BATH';
 -- BuildingPrereqs
 --------------------------------------------------------------
 INSERT OR IGNORE INTO BuildingPrereqs
@@ -35,8 +32,7 @@ INSERT OR IGNORE INTO BuildingPrereqs
 VALUES  ('BUILDING_SEWER',              'BUILDING_JNR_ORCHARD'),
         ('BUILDING_SEWER',              'BUILDING_JNR_HAMMER_WORKS'),
         ('BUILDING_SEWER',              'BUILDING_JNR_BATHHOUSE'),
-        ('BUILDING_SEWER',              'BUILDING_HD_HYDRAULIC_SPINNING_WHEEL'),
-        ('BUILDING_SEWER',              'BUILDING_THERMAL_BATH');
+        ('BUILDING_SEWER',              'BUILDING_HD_HYDRAULIC_SPINNING_WHEEL');
 
 -- MutuallyExclusiveBuildings
 --------------------------------------------------------------
@@ -45,25 +41,16 @@ INSERT OR IGNORE INTO MutuallyExclusiveBuildings
 VALUES  ('BUILDING_JNR_ORCHARD',        'BUILDING_JNR_HAMMER_WORKS'),
         ('BUILDING_JNR_ORCHARD',        'BUILDING_JNR_BATHHOUSE'),
         ('BUILDING_JNR_ORCHARD',        'BUILDING_HD_HYDRAULIC_SPINNING_WHEEL'),
-        ('BUILDING_JNR_ORCHARD',        'BUILDING_THERMAL_BATH'),
 
         ('BUILDING_JNR_HAMMER_WORKS',   'BUILDING_JNR_ORCHARD'),
         ('BUILDING_JNR_HAMMER_WORKS',   'BUILDING_JNR_BATHHOUSE'),
         ('BUILDING_JNR_HAMMER_WORKS',   'BUILDING_HD_HYDRAULIC_SPINNING_WHEEL'),
-        ('BUILDING_JNR_HAMMER_WORKS',   'BUILDING_THERMAL_BATH'),
 
         ('BUILDING_JNR_BATHHOUSE',      'BUILDING_JNR_ORCHARD'),
         ('BUILDING_JNR_BATHHOUSE',      'BUILDING_JNR_HAMMER_WORKS'),
         ('BUILDING_JNR_BATHHOUSE',      'BUILDING_HD_HYDRAULIC_SPINNING_WHEEL'),
-        ('BUILDING_JNR_BATHHOUSE',      'BUILDING_THERMAL_BATH'),
-
-        ('BUILDING_THERMAL_BATH',       'BUILDING_JNR_ORCHARD'),
-        ('BUILDING_THERMAL_BATH',       'BUILDING_JNR_HAMMER_WORKS'),
-        ('BUILDING_THERMAL_BATH',       'BUILDING_JNR_BATHHOUSE'),
-        ('BUILDING_THERMAL_BATH',       'BUILDING_HD_HYDRAULIC_SPINNING_WHEEL'),
 
         ('BUILDING_HD_HYDRAULIC_SPINNING_WHEEL',      'BUILDING_JNR_ORCHARD'),
         ('BUILDING_HD_HYDRAULIC_SPINNING_WHEEL',      'BUILDING_JNR_HAMMER_WORKS'),
-        ('BUILDING_HD_HYDRAULIC_SPINNING_WHEEL',      'BUILDING_JNR_BATHHOUSE'),
-        ('BUILDING_HD_HYDRAULIC_SPINNING_WHEEL',      'BUILDING_THERMAL_BATH');
+        ('BUILDING_HD_HYDRAULIC_SPINNING_WHEEL',      'BUILDING_JNR_BATHHOUSE');
 --------------------------------------------------------------

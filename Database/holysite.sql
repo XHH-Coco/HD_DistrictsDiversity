@@ -14,16 +14,10 @@ values
     ('BUILDING_JNR_ALTAR',              'YIELD_FAITH',          2),
     ('BUILDING_JNR_MONASTERY',          'YIELD_FAITH',          5),
     ('BUILDING_STAVE_CHURCH',           'YIELD_CULTURE',        2),
-    ('BUILDING_JNR_HOSPITIUM',          'YIELD_FAITH',          10),
-    ('BUILDING_JNR_HOSPITIUM',          'YIELD_CULTURE',        4),
+    ('BUILDING_JNR_HOSPITIUM',          'YIELD_FAITH',          3),
+    ('BUILDING_JNR_HOSPITIUM',          'YIELD_CULTURE',        2),
     ('BUILDING_JNR_GARDEN',             'YIELD_FAITH',          10),
     ('BUILDING_JNR_GARDEN',             'YIELD_FOOD',           4);
-
--- insert or replace into Building_YieldDistrictCopies
--- 	(BuildingType,					OldYieldType,				NewYieldType)
--- values
--- 	('BUILDING_JNR_HOSPITIUM',	    'YIELD_FAITH',			    'YIELD_CULTURE'),
---     ('BUILDING_JNR_GARDEN',	        'YIELD_FAITH',			    'YIELD_FOOD');
 
 --建筑购买平民单位调整
 -- delete from BuildingModifiers where BuildingType = 'BUILDING_TEMPLE' and ModifierId = 'TEMPLE_SETTLER_PURCHASE';
@@ -106,31 +100,17 @@ values
     ('JNR_MONASTERY_HOLYSITE_ADJACENT',             'MODIFIER_SINGLE_CITY_DISTRICT_ADJUST_YIELD_MODIFIER',                  Null),
     ('JNR_MONASTERY_HOLYSITE_ADJACENT_LATE',        'MODIFIER_SINGLE_CITY_DISTRICT_ADJUST_YIELD_MODIFIER',                  'PLAYER_HAS_CIVIC_REFORMED_CHURCH_REQUIREMENTS'),
     ('TEMPLE_FAITH_PERCENTAGE_BOOST_LATE',          'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_MODIFIER',                      'PLAYER_HAS_CIVIC_REFORMED_CHURCH_REQUIREMENTS'),
---救济院    
- --   ('HOSPITIUM_RELIGOUS_TOURISM',                  'MODIFIER_SINGLE_CITY_ADJUST_TOURISM',                                  NULL),
+--救济院
     ('HOSPITIUM_RELIGOUS_TOURISM_1',                'MODIFIER_SINGLE_CITY_ADJUST_TOURISM',                                  NULL),
     ('HOSPITIUM_RELIGOUS_TOURISM_2',                'MODIFIER_SINGLE_CITY_ADJUST_TOURISM',                                  NULL),
     ('HOSPITIUM_RELIGOUS_TOURISM_3',                'MODIFIER_SINGLE_CITY_ADJUST_TOURISM',                                  NULL),
-    ('HOSPITIUM_POP_FAITH',                         'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_PER_POPULATION',                NULL),
-    ('HOSPITIUM_POP_CULTURE',                       'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_PER_POPULATION',                NULL),
+    ('HD_HOSPITIUM_CITY_PROPERTY',                  'MODIFIER_SINGLE_CITY_ADJUST_PROPERTY',                                 NULL),
 --花园
-    -- ('GARDEN_GREATGENERALPOINTS',                   'MODIFIER_SINGLE_CITY_DISTRICTS_ADJUST_GREAT_PERSON_POINTS',            'DISTRICT_IS_ENCAMPMENT'),
-    -- ('GARDEN_GREATADMIRALPOINTS',                   'MODIFIER_SINGLE_CITY_DISTRICTS_ADJUST_GREAT_PERSON_POINTS',            'DISTRICT_IS_HARBOR'),
-    -- ('GARDEN_GREATENGINEERPOINTS',                  'MODIFIER_SINGLE_CITY_DISTRICTS_ADJUST_GREAT_PERSON_POINTS',            'DISTRICT_IS_INDUSTRIAL_ZONE'),
-    -- ('GARDEN_GREATMERCHANTPOINTS',                  'MODIFIER_SINGLE_CITY_DISTRICTS_ADJUST_GREAT_PERSON_POINTS',            'DISTRICT_IS_COMMERCIAL_HUB'),
-    -- ('GARDEN_GREATPROPHETPOINTS',                   'MODIFIER_SINGLE_CITY_DISTRICTS_ADJUST_GREAT_PERSON_POINTS',            'DISTRICT_IS_HOLY_SITE'),
-    -- ('GARDEN_GREATSCIENTISTPOINTS',                 'MODIFIER_SINGLE_CITY_DISTRICTS_ADJUST_GREAT_PERSON_POINTS',            'DISTRICT_IS_CAMPUS'),
-    -- ('GARDEN_GREATWRITERPOINTS',                    'MODIFIER_SINGLE_CITY_DISTRICTS_ADJUST_GREAT_PERSON_POINTS',            'DISTRICT_IS_THEATER'),
-    -- ('GARDEN_GREATARTISTPOINTS',                    'MODIFIER_SINGLE_CITY_DISTRICTS_ADJUST_GREAT_PERSON_POINTS',            'DISTRICT_IS_THEATER'),
-    -- ('GARDEN_GREATMUSICIANPOINTS',                  'MODIFIER_SINGLE_CITY_DISTRICTS_ADJUST_GREAT_PERSON_POINTS',            'DISTRICT_IS_THEATER'),
     ('GARDEN_ADJUST_GREAT_PERSON_POINT_BONUS',      'MODIFIER_CITY_INCREASE_GREAT_PERSON_POINT_BONUS',                      'HD_CITY_HAS_10_POP'),
     ('GARDEN_ADJUST_GROWTH_RATE',                   'MODIFIER_SINGLE_CITY_ADJUST_CITY_GROWTH',                              'HD_CITY_HAS_NO_10_POP'),
     ('GARDEN_GREATWORKOBJECT_SCULPTURE_TOURISM_BONUS',                   'MODIFIER_SINGLE_CITY_ADJUST_TOURISM',             NULL),
     ('GARDEN_GREATWORKOBJECT_PORTRAIT_TOURISM_BONUS',                   'MODIFIER_SINGLE_CITY_ADJUST_TOURISM',              NULL),
     ('GARDEN_GREATWORKOBJECT_LANDSCAPE_TOURISM_BONUS',                   'MODIFIER_SINGLE_CITY_ADJUST_TOURISM',             NULL);
---上师庙
-    -- ('MEENAKSHI_GARDEN_FOOD',						'MODIFIER_PLAYER_DISTRICTS_ATTACH_MODIFIER',			                'HD_HOLY_SITE_HAS_HOSPITIUM_OR_GARDEN'),
-	-- ('MEENAKSHI_GARDEN_FOOD_MODIFIER',  			'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',                                    'REQUIRE_PLOT_ADJACENT_TO_OWNER');
 
 insert or replace into ModifierArguments
 	(ModifierId,									Name,						Value)
@@ -154,29 +134,9 @@ values
     ('HOSPITIUM_RELIGOUS_TOURISM_2',                'ScalingFactor',            150),
     ('HOSPITIUM_RELIGOUS_TOURISM_3',                'GreatWorkObjectType',      'GREATWORKOBJECT_MUSIC'),
     ('HOSPITIUM_RELIGOUS_TOURISM_3',                'ScalingFactor',            150),
-    ('HOSPITIUM_POP_FAITH',			                'YieldType',				'YIELD_FAITH'),
-	('HOSPITIUM_POP_FAITH',			                'Amount',					0.5),
-    ('HOSPITIUM_POP_CULTURE',			            'YieldType',				'YIELD_CULTURE'),
-	('HOSPITIUM_POP_CULTURE',			            'Amount',					0.5),
+	('HD_HOSPITIUM_CITY_PROPERTY',					'Key',						'HD_CITY_NEED_COUNT_POSITIVE_AMENITY'),
+	('HD_HOSPITIUM_CITY_PROPERTY',  				'Amount',					1),
 --花园
-    -- ('GARDEN_GREATGENERALPOINTS',					'GreatPersonClassType',     'GREAT_PERSON_CLASS_GENERAL'),
-    -- ('GARDEN_GREATGENERALPOINTS',					'Amount',					2),
-    -- ('GARDEN_GREATADMIRALPOINTS',					'GreatPersonClassType',     'GREAT_PERSON_CLASS_ADMIRAL'),
-    -- ('GARDEN_GREATADMIRALPOINTS',					'Amount',					2),
-    -- ('GARDEN_GREATENGINEERPOINTS',					'GreatPersonClassType',     'GREAT_PERSON_CLASS_ENGINEER'),
-    -- ('GARDEN_GREATENGINEERPOINTS',					'Amount',					2),
-    -- ('GARDEN_GREATMERCHANTPOINTS',					'GreatPersonClassType',     'GREAT_PERSON_CLASS_MERCHANT'),
-    -- ('GARDEN_GREATMERCHANTPOINTS',					'Amount',					2),
-    -- ('GARDEN_GREATPROPHETPOINTS',					'GreatPersonClassType',     'GREAT_PERSON_CLASS_PROPHET'),
-    -- ('GARDEN_GREATPROPHETPOINTS',					'Amount',					2),
-    -- ('GARDEN_GREATSCIENTISTPOINTS',					'GreatPersonClassType',     'GREAT_PERSON_CLASS_SCIENTIST'),
-    -- ('GARDEN_GREATSCIENTISTPOINTS',					'Amount',					2),
-    -- ('GARDEN_GREATWRITERPOINTS',					'GreatPersonClassType',     'GREAT_PERSON_CLASS_WRITER'),
-    -- ('GARDEN_GREATWRITERPOINTS',					'Amount',					2),
-    -- ('GARDEN_GREATARTISTPOINTS',					'GreatPersonClassType',     'GREAT_PERSON_CLASS_ARTIST'),
-    -- ('GARDEN_GREATARTISTPOINTS',					'Amount',					2),
-    -- ('GARDEN_GREATMUSICIANPOINTS',					'GreatPersonClassType',     'GREAT_PERSON_CLASS_MUSICIAN'),
-    -- ('GARDEN_GREATMUSICIANPOINTS',					'Amount',					2),
     ('GARDEN_ADJUST_GREAT_PERSON_POINT_BONUS',      'Amount',                   20),
     ('GARDEN_ADJUST_GROWTH_RATE',                   'Amount',                   20),
     ('GARDEN_GREATWORKOBJECT_SCULPTURE_TOURISM_BONUS',      'GreatWorkObjectType',      'GREATWORKOBJECT_SCULPTURE'),
@@ -185,10 +145,7 @@ values
     ('GARDEN_GREATWORKOBJECT_PORTRAIT_TOURISM_BONUS',      'ScalingFactor',      150),
     ('GARDEN_GREATWORKOBJECT_LANDSCAPE_TOURISM_BONUS',      'GreatWorkObjectType',      'GREATWORKOBJECT_LANDSCAPE'),
     ('GARDEN_GREATWORKOBJECT_LANDSCAPE_TOURISM_BONUS',      'ScalingFactor',      150);
---上师庙
-    -- ('MEENAKSHI_GARDEN_FOOD',             			'ModifierId',  	            'MEENAKSHI_GARDEN_FOOD_MODIFIER'),
-	-- ('MEENAKSHI_GARDEN_FOOD_MODIFIER',    			'YieldType',   	            'YIELD_FOOD'),
-	-- ('MEENAKSHI_GARDEN_FOOD_MODIFIER',    			'Amount',	   	            1);
+
 delete from BuildingModifiers where (BuildingType = 'BUILDING_TEMPLE' or BuildingType = 'BUILDING_STAVE_CHURCH') and ModifierId = 'TEMPLE_FAITH_PERCENTAGE_BOOST';
 insert or replace into BuildingModifiers
 	(BuildingType,						ModifierId)
@@ -199,37 +156,43 @@ values
 	('BUILDING_JNR_ALTAR',				'SHRINE_BUILDER_PURCHASE'),
 --二级建筑
     ('BUILDING_JNR_MONASTERY',          'TEMPLE_SETTLER_PURCHASE'),
---    ('BUILDING_JNR_MONASTERY',          'TEMPLE_FAITH_PERCENTAGE_BOOST'),
---    ('BUILDING_JNR_MONASTERY',          'TEMPLE_FAITH_PERCENTAGE_BOOST_LATE'),
---    ('BUILDING_STAVE_CHURCH',           'TEMPLE_FAITH_PERCENTAGE_BOOST_LATE'),
-
---    ('BUILDING_PRASAT',                 'JNR_MONASTERY_HOLYSITE_ADJACENT'),
---    ('BUILDING_TEMPLE',                 'JNR_MONASTERY_HOLYSITE_ADJACENT'),
---    ('BUILDING_PRASAT',                 'JNR_MONASTERY_HOLYSITE_ADJACENT_LATE'),
---    ('BUILDING_TEMPLE',                 'JNR_MONASTERY_HOLYSITE_ADJACENT_LATE'),
 --救济院
     ('BUILDING_JNR_HOSPITIUM',          'HOSPITIUM_RELIGOUS_TOURISM_1'),
     ('BUILDING_JNR_HOSPITIUM',          'HOSPITIUM_RELIGOUS_TOURISM_2'),
     ('BUILDING_JNR_HOSPITIUM',          'HOSPITIUM_RELIGOUS_TOURISM_3'),
-    ('BUILDING_JNR_HOSPITIUM',          'HOSPITIUM_POP_FAITH'),
-    ('BUILDING_JNR_HOSPITIUM',          'HOSPITIUM_POP_CULTURE'),
+    ('BUILDING_JNR_HOSPITIUM',          'HD_HOSPITIUM_CITY_PROPERTY'),
 --花园
-    -- ('BUILDING_JNR_GARDEN',             'GARDEN_GREATGENERALPOINTS'),
-    -- ('BUILDING_JNR_GARDEN',             'GARDEN_GREATADMIRALPOINTS'),
-    -- ('BUILDING_JNR_GARDEN',             'GARDEN_GREATENGINEERPOINTS'),
-    -- ('BUILDING_JNR_GARDEN',             'GARDEN_GREATMERCHANTPOINTS'),
-    -- ('BUILDING_JNR_GARDEN',             'GARDEN_GREATPROPHETPOINTS'),
-    -- ('BUILDING_JNR_GARDEN',             'GARDEN_GREATSCIENTISTPOINTS'),
-    -- ('BUILDING_JNR_GARDEN',             'GARDEN_GREATWRITERPOINTS'),
-    -- ('BUILDING_JNR_GARDEN',             'GARDEN_GREATARTISTPOINTS'),
-    -- ('BUILDING_JNR_GARDEN',             'GARDEN_GREATMUSICIANPOINTS');
     ('BUILDING_JNR_GARDEN',             'GARDEN_ADJUST_GROWTH_RATE'),
     ('BUILDING_JNR_GARDEN',             'GARDEN_ADJUST_GREAT_PERSON_POINT_BONUS'),
     ('BUILDING_JNR_GARDEN',             'GARDEN_GREATWORKOBJECT_SCULPTURE_TOURISM_BONUS'),
     ('BUILDING_JNR_GARDEN',             'GARDEN_GREATWORKOBJECT_PORTRAIT_TOURISM_BONUS'),
     ('BUILDING_JNR_GARDEN',             'GARDEN_GREATWORKOBJECT_LANDSCAPE_TOURISM_BONUS');
---上师庙
-    --('BUILDING_MEENAKSHI_TEMPLE',	    'MEENAKSHI_GARDEN_FOOD');
+
+-- 救济院
+insert or ignore into BuildingModifiers (BuildingType, ModifierId) select
+	'BUILDING_JNR_HOSPITIUM', 'HD_HOSPITIUM_REGIONAL_FAITH_' || Exp || '_ATTACH'
+from HD_Binary_Compress where Exp < 7;
+
+insert or ignore into Modifiers (ModifierId, ModifierType, SubjectRequirementSetId) select
+	'HD_HOSPITIUM_REGIONAL_FAITH_' || Exp || '_ATTACH', 'MODIFIER_CITY_OWNER_ATTACH_MODIFIER', 'HD_PLOT_BINARY_COMPRESS_CITY_POSITIVE_AMENITY_' || Exp || '_REQUIREMENTS'
+from HD_Binary_Compress where Exp < 7;
+
+insert or replace into ModifierArguments (ModifierId, Name, Value) select
+    'HD_HOSPITIUM_REGIONAL_FAITH_' || Exp || '_ATTACH', 'ModifierId', 'HD_HOSPITIUM_REGIONAL_FAITH_' || Exp
+from HD_Binary_Compress where Exp < 7;
+
+insert or ignore into Modifiers (ModifierId, ModifierType) select
+	'HD_HOSPITIUM_REGIONAL_FAITH_' || Exp, 'MODIFIER_SINGLE_CITY_ADJUST_PROPERTY'
+from HD_Binary_Compress where Exp < 7;
+
+insert or replace into ModifierArguments (ModifierId, Name, Value) select
+    'HD_HOSPITIUM_REGIONAL_FAITH_' || Exp, 'Key', 'HD_SINGLE_BUILDING_PROVIDE_REGIONAL_YIELD_BONUS_BUILDING_JNR_HOSPITIUM_YIELD_FAITH'
+from HD_Binary_Compress where Exp < 7;
+
+insert or replace into ModifierArguments (ModifierId, Name, Value) select
+    'HD_HOSPITIUM_REGIONAL_FAITH_' || Exp, 'Amount', Amount
+from HD_Binary_Compress where Exp < 7;
+
 insert or replace into Building_CitizenYieldChanges
     (BuildingType,                  YieldType,          YieldChange)
 values
@@ -383,3 +346,6 @@ insert or replace into ModifierArguments
 values
 	('HD_RIGHTEOUSNESS_OF_FAITH_HOLY_SITE_4',	'YieldType',	'YIELD_SCIENCE,YIELD_CULTURE'),
 	('HD_RIGHTEOUSNESS_OF_FAITH_HOLY_SITE_4',	'Amount',		'5,5');
+
+-- 鼓舞
+update Boosts set BoostClass = 'BOOST_TRIGGER_NONE_LATE_GAME_CRITICAL_TECH', NumItems = 0, BuildingType = null where CivicType = 'CIVIC_SOCIAL_SECURITY_SYSTEM_HD';
