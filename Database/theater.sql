@@ -292,27 +292,27 @@ insert or replace into HD_Building_Base_On_ResourceClassification (BuildingType,
 	('BUILDING_JNR_CABINET', 'RESOURCE_CLASSIFICATION_HD_DECORATION', 'PLAYER', 'HD_PLOT_BINARY_COMPRESS_CABINET');
 
 insert or replace into HD_Binary_Compress_Keys (Key, MaxExp) values
-	('HD_PLOT_BINARY_COMPRESS_CABINET', 4);
+	('HD_PLOT_BINARY_COMPRESS_CABINET', 5);
 
 insert or replace into BuildingModifiers (BuildingType, ModifierId)
 	select 'BUILDING_JNR_CABINET', 'HD_CABINET_CULTURE_' || Exp
-	from HD_Binary_Compress where Exp < 5;
+	from HD_Binary_Compress where Exp < 6;
 
 insert or replace into Modifiers (ModifierId, ModifierType, OwnerRequirementSetId)
 	select 'HD_CABINET_CULTURE_' || Exp, 'MODIFIER_BUILDING_YIELD_CHANGE', 'HD_PLOT_BINARY_COMPRESS_CABINET_' || Exp || '_REQUIREMENTS'
-	from HD_Binary_Compress where Exp < 5;
+	from HD_Binary_Compress where Exp < 6;
 
 insert or replace into ModifierArguments (ModifierId, Name, Value)
 	select 'HD_CABINET_CULTURE_' || Exp, 'BuildingType', 'BUILDING_JNR_CABINET'
-	from HD_Binary_Compress where Exp < 5;
+	from HD_Binary_Compress where Exp < 6;
 
 insert or replace into ModifierArguments (ModifierId, Name, Value)
 	select 'HD_CABINET_CULTURE_' || Exp, 'YieldType', 'YIELD_CULTURE'
-	from HD_Binary_Compress where Exp < 5;
+	from HD_Binary_Compress where Exp < 6;
 
 insert or replace into ModifierArguments (ModifierId, Name, Value)
 	select 'HD_CABINET_CULTURE_' || Exp, 'Amount', Amount
-	from HD_Binary_Compress where Exp < 5;
+	from HD_Binary_Compress where Exp < 6;
 
 insert or replace into BuildingModifiers
 	(BuildingType,						ModifierId)
